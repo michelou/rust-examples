@@ -1,0 +1,15 @@
+[package]
+name = "_01_Formatted_Print"
+description = "Rust By Example"
+version = "1.0.0"
+license = "MIT License <https://www.rust-lang.org/policies/licenses>"
+authors = [ "Rust core team <core-team@rust-lang.org>" ]
+homepage = "https://rust-lang.org/"
+edition = "2018"
+publish = false
+
+[dependencies]
+
+[[bin]]
+name = "main"
+path = "src/main.rs"

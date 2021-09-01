@@ -1,0 +1,185 @@
+# <span id="top">Running Rust on Microsoft Windows</span>
+
+<table style="font-family:Helvetica,Arial;font-size:14px;line-height:1.6;">
+  <tr>
+  <td style="border:0;padding:0 10px 0 0;min-width:120px;"><a href="https://www.rust-lang.org/" rel="external"><img src="https://www.rust-lang.org/static/images/rust-logo-blk.svg" width="120" alt="Rust logo"/></a></td>
+  <td style="border:0;padding:0;vertical-align:text-top;">This repository gathers <a href="https://www.rust-lang.org/" rel="external">Rust</a> code examples coming from various websites and books.<br/>
+  It also includes several <a href="https://en.wikibooks.org/wiki/Windows_Batch_Scripting">batch files</a> for experimenting with <a href="https://www.rust-lang.org/" rel="external">Rust</a> on the <b>Microsoft Windows</b> platform.
+  </td>
+  </tr>
+</table>
+
+[Deno][deno_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Python][python_examples], [Scala 3][scala3_examples] and [TruffleSqueak][trufflesqueak_examples] are other trending topics we are currently monitoring.
+
+## <span id="proj_deps">Project dependencies</span>
+
+This project depends on two external software for the **Microsoft Windows** plaform:
+
+- [Git 2.33][git_downloads] ([*release notes*][git_relnotes])
+- [Rust 1.54][rust_downloads] ([*release notes*][rust_relnotes])
+
+> **&#9755;** ***Installation policy***<br/>
+> When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [`/opt/`][linux_opt] directory on Unix).
+
+For instance our development environment looks as follows (*September 2021*) <sup id="anchor_01"><a href="#footnote_01">[1]</a></sup>:
+
+<pre style="font-size:80%;">
+C:\opt\Git-2.33.0\      <i>(279 MB)</i>
+%USERPROFILE%\.cargo\   <i>(100 MB)</i>
+%USERPROFILE%\.rustup\  <i>(593 MB, installed toolchains and configuration options)</i>
+</pre>
+
+> **:mag_right:** Git for Windows provides a BASH emulation used to run [**`git`**][git_docs] from the command line (as well as over 250 Unix commands like [**`awk`**][man1_awk], [**`diff`**][man1_diff], [**`file`**][man1_file], [**`grep`**][man1_grep], [**`more`**][man1_more], [**`mv`**][man1_mv], [**`rmdir`**][man1_rmdir], [**`sed`**][man1_sed] and [**`wc`**][man1_wc]).
+
+## <span id="structure">Directory structure</span>
+
+This project is organized as follows:
+<pre style="font-size:80%;">
+bin\
+docs\
+rust-by-example\
+README.md
+<a href="RESOURCES.md">RESOURCES.md</a>
+<a href="SETUP.md">SETUP.md</a>
+<a href="setenv.bat">setenv.bat</a>
+</pre>
+
+where
+
+- directory [**`bin\`**](bin/) contains utility batch scripts.
+- directory [**`docs\`**](docs/) contains [Rust][rust_lang] related papers/articles.
+- directory [**`rust-by-example\`**](rust-by-example/) contains [Rust][rust_lang] code examples (see [`README.md`](rust-by-example/README.md) file).
+- file **`README.md`** is the [Markdown][github_markdown] document for this page.
+- file [**`RESOURCES.md`**](RESOURCES.md) is the [Markdown][github_markdown] document presenting external resources.
+- file [**`SETUP.md`**](SETUP.md) gives some [Rust][rust_lang] setup details.
+- file [**`setenv.bat`**](setenv.bat) is the batch script for setting up our environment.
+
+We also define a virtual drive **`R:`** in our working environment in order to reduce/hide the real path of our project directory (see article ["Windows command prompt limitation"][windows_limitation] from Microsoft Support).
+
+> **:mag_right:** We use the Windows external command [**`subst`**][windows_subst] to create virtual drives; for instance:
+>
+> <pre style="font-size:80%;">
+> <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/subst">subst</a> R: %USERPROFILE%\workspace\rust-examples</b>
+> </pre>
+
+In the next section we give a brief description of the batch files present in this project.
+
+## <span id="batch_commands">Batch commands</span>
+
+
+We distinguish different sets of batch commands:
+
+1. [**`setenv.bat`**](setenv.bat) - This batch command makes the external tools such as [**`cargo.exe`**][cargo_cli], [**`rustc.exe`**][rustc_cli] directly available from the command prompt.
+
+   <pre style="font-size:80%;">
+   <b>&gt; <a href="setenv.bat">setenv</a> help</b>
+   Usage: setenv { &lt;option&gt; | &lt;subcommand&gt; }
+   &nbsp;
+     Options:
+       -bash       start Git bash shell instead of Windows command prompt
+       -debug      show commands executed by this script
+       -verbose    display environment settings
+   &nbsp;
+     Subcommands:
+       help        display this help message</pre>
+
+2. [**`rust-by-example\*\build.bat`**](rust-by-example\01_Display\build-bat) - Finally each example can be built/run using the [**`build`**](rust-by-example\01_Display\build-bat) command.
+    > **&#9755;** While using **`cargo`** is the recommanded way to build/run [Rust][rust_lang] projects we also provide the batch command [**`build`**](examples/dotty-example-project/build.bat) in order to exercise the usage of the [**`rustc`**][rustc_cli] command.
+
+## <span id="usage_examples">Usage examples</span>
+
+### **`setenv.bat`**
+
+Command [**`setenv`**](setenv.bat) is executed once to setup your development environment:
+
+<pre style="font-size:80%;">
+<b>&gt; <a href="setenv.bat">setenv</a></b>
+Tool versions:
+   cargo 1.54.0, rustc 1.54.0, rustfmt 1.4.37-stable, rustup 1.24.3,
+   pelook v1.70, git 2.33.0.windows.1, diff 3.7, bash 4.4.23(1)-release
+&nbsp;
+<b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
+%USERPROFILE%\.cargo\bin\cargo.exe
+%USERPROFILE%\.cargo\bin\rustc.exe
+%USERPROFILE%\.cargo\bin\rustup.exe
+R:\bin\<a href="http://bytepointer.com/tools/index.htm#pelook">pelook.exe</a>
+</pre>
+
+Command [**`setenv -verbose`**](setenv.bat) also displays the tool paths:
+
+<pre style="font-size:80%;">
+<b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
+Tool versions:
+   cargo 1.54.0, rustc 1.54.0, rustfmt 1.4.37-stable, rustup 1.24.3,
+   pelook v1.70, git 2.33.0.windows.1, diff 3.7, bash 4.4.23(1)-release
+Tool paths:
+   %USERPROFILE%\.cargo\bin\cargo.exe
+   %USERPROFILE%\.cargo\bin\rustc.exe
+   %USERPROFILE%\.cargo\bin\rustfmt.exe
+   %USERPROFILE%\.cargo\bin\rustup.exe
+   R:\bin\pelook.exe
+   C:\opt\Git-2.33.0\bin\git.exe
+   C:\opt\Git-2.33.0\mingw64\bin\git.exe
+   C:\opt\Git-2.33.0\usr\bin\diff.exe
+   C:\opt\Git-2.33.0\bin\bash.exe
+Environment variables:
+   "CARGO_HOME=%USERPROFILE%\.cargo"
+   "GIT_HOME=C:\opt\Git-2.33.0"
+   "MSYS_HOME=C:\opt\msys64"
+   "RUSTUP_HOME=%USERPROFILE%\.rustup"
+</pre>
+
+## <span id="footnotes">Footnotes</span>
+
+<span name="footnote_01">[1]</span> ***Downloads*** [↩](#anchor_01)
+
+<p style="margin:0 0 1em 20px;">
+In our case we downloaded the following installation files (see <a href="#proj_deps">section 1</a>):
+</p>
+<pre style="margin:0 0 1em 20px; font-size:80%;">
+<a href="https://www.rust-lang.org/tools/install">rust-init.exe</a>                     <i>( 8 MB)</i>
+<a hef="https://git-scm.com/download/win">PortableGit-2.33.0-64-bit.7z.exe</a>  <i>(42 MB)</i>
+</pre>
+
+<p style="margin:0 0 1em 20px;">
+Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b><code>rustup</code></b></a> tool is installed, we can update our installation by simply running <b><code>rustup update</code></b>. 
+</p>
+
+***
+
+*[mics](https://lampwww.epfl.ch/~michelou/)/September 2021* [**&#9650;**](#top)
+<span id="bottom">&nbsp;</span>
+
+<!-- link refs -->
+
+[cargo_cli]: https://doc.rust-lang.org/cargo/commands/cargo.html
+[deno_examples]: https://github.com/michelou/deno-examples
+[git_docs]: https://git-scm.com/docs/git
+[git_downloads]: https://git-scm.com/download/win
+[github_markdown]: https://github.github.com/gfm/
+[git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.33.0.txt
+[graalvm_examples]: https://github.com/michelou/graalvm-examples
+[haskell_examples]: https://github.com/michelou/haskell-examples
+[kotlin_examples]: https://github.com/michelou/kotlin-examples
+[linux_opt]: https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/opt.html
+[llvm_examples]: https://github.com/michelou/llvm-examples
+[man1_awk]: https://www.linux.org/docs/man1/awk.html
+[man1_diff]: https://www.linux.org/docs/man1/diff.html
+[man1_file]: https://www.linux.org/docs/man1/file.html
+[man1_grep]: https://www.linux.org/docs/man1/grep.html
+[man1_more]: https://www.linux.org/docs/man1/more.html
+[man1_mv]: https://www.linux.org/docs/man1/mv.html
+[man1_rmdir]: https://www.linux.org/docs/man1/rmdir.html
+[man1_sed]: https://www.linux.org/docs/man1/sed.html
+[man1_wc]: https://www.linux.org/docs/man1/wc.html
+[python_examples]: https://github.com/michelou/python-examples
+[rust_downloads]: https://www.rust-lang.org/tools/install
+[rust_lang]: https://www.rust-lang.org/
+[rust_relnotes]: https://github.com/rust-lang/rust/blob/master/RELEASES.md
+[rustc_cli]: https://doc.rust-lang.org/rustc/command-line-arguments.html
+[rustup_cli]: https://github.com/rust-lang/rustup/blob/master/README.md
+[scala3_examples]: https://github.com/michelou/dotty-examples
+[trufflesqueak_examples]: https://github.com/michelou/trufflesqueak-examples
+[windows_limitation]: https://support.microsoft.com/en-gb/help/830473/command-prompt-cmd-exe-command-line-string-limitation
+[windows_subst]: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/subst
+[zip_archive]: https://www.howtogeek.com/178146/

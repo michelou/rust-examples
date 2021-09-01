@@ -1,0 +1,4 @@
+# see https://doc.rust-lang.org/cargo/reference/config.html
+
+[build]
+rustflags = ["-A", "unused-variables", "-A", "unused_assignments"]
