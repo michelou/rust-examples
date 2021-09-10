@@ -16,7 +16,7 @@
 This project depends on two external software for the **Microsoft Windows** plaform:
 
 - [Git 2.33][git_downloads] ([*release notes*][git_relnotes])
-- [Rust 1.54][rust_downloads] ([*release notes*][rust_relnotes])
+- [Rust 1.55][rust_downloads] ([*release notes*][rust_relnotes])
 
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [`/opt/`][linux_opt] directory on Unix).
@@ -95,14 +95,14 @@ Command [**`setenv`**](setenv.bat) is executed once to setup your development en
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
-   cargo 1.54.0, rustc 1.54.0, rustfmt 1.4.37-stable, rustup 1.24.3,
-   pelook v1.70, git 2.33.0.windows.1, diff 3.7, bash 4.4.23(1)-release
+   cargo 1.55.0, rustc 1.55.0, rustfmt 1.4.37-stable, rustup 1.23.1,
+   pelook v1.7.3, git 2.33.0.windows.1, diff 3.7, bash 4.4.23(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
 %USERPROFILE%\.cargo\bin\cargo.exe
 %USERPROFILE%\.cargo\bin\rustc.exe
 %USERPROFILE%\.cargo\bin\rustup.exe
-R:\bin\<a href="http://bytepointer.com/tools/index.htm#pelook">pelook.exe</a>
+R:\bin\pelook.exe</pre>
 </pre>
 
 Command [**`setenv -verbose`**](setenv.bat) also displays the tool paths:
@@ -110,8 +110,8 @@ Command [**`setenv -verbose`**](setenv.bat) also displays the tool paths:
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
-   cargo 1.54.0, rustc 1.54.0, rustfmt 1.4.37-stable, rustup 1.24.3,
-   pelook v1.70, git 2.33.0.windows.1, diff 3.7, bash 4.4.23(1)-release
+   cargo 1.55.0, rustc 1.55.0, rustfmt 1.4.37-stable, rustup 1.24.3,
+   pelook v1.7.3, git 2.33.0.windows.1, diff 3.7, bash 4.4.23(1)-release
 Tool paths:
    %USERPROFILE%\.cargo\bin\cargo.exe
    %USERPROFILE%\.cargo\bin\rustc.exe
@@ -131,14 +131,14 @@ Environment variables:
 
 ## <span id="footnotes">Footnotes</span>
 
-<span name="footnote_01">[1]</span> ***Downloads*** [↩](#anchor_01)
+<b name="footnote_01">[1]</b> ***Downloads*** [↩](#anchor_01)
 
 <p style="margin:0 0 1em 20px;">
 In our case we downloaded the following installation files (see <a href="#proj_deps">section 1</a>):
 </p>
 <pre style="margin:0 0 1em 20px; font-size:80%;">
 <a href="https://www.rust-lang.org/tools/install">rust-init.exe</a>                     <i>( 8 MB)</i>
-<a hef="https://git-scm.com/download/win">PortableGit-2.33.0-64-bit.7z.exe</a>  <i>(42 MB)</i>
+<a href="https://git-scm.com/download/win">PortableGit-2.33.0-64-bit.7z.exe</a>  <i>(42 MB)</i>
 </pre>
 
 <p style="margin:0 0 1em 20px;">
