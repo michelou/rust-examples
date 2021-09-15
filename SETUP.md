@@ -8,13 +8,17 @@
   </tr>
 </table>
 
+In normal case we are facing one of the following situations:
+- [Fresh installation](#installation).
+- [Installation update](#updated]).
+
 ## <span id="installation">Fresh Installation</span>
 
 Command **`rustup-init --help`** displays the available options:
 
 <pre style="font-size:80%;">
 <b>&gt; %USERPROFILE%\downloads\<a href="https://rust-lang.github.io/rustup/installation/index.html">rustup-init</a> --help</b>
-rustup-init 1.22.1 (b01adbbc3 2020-07-08)
+rustup-init 1.24.3 (ce5817a94 2021-05-31)
 The installer for rustup
 
 USAGE:
@@ -94,8 +98,8 @@ Current installation options:
 %USERPROFILE%\.cargo\bin\rustfmt.exe
 %USERPROFILE%\.cargo\bin\rustup.exe
 &nbsp;
-<b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a> --version</b>
-rustc 1.53.0 (53cb7b09b 2021-06-17)
+<b>&gt; %USERPROFILE%\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a> --version</b>
+rustc 1.54.0 (a178d0322 2021-07-26)
 </pre>
 
 ## <span id="update">Installation update</span>
@@ -105,26 +109,21 @@ Command **`rustup update stable`** updates an existing [Rust][rust_lang] install
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2021-07-27, rust 1.54.0 (a178d0322 2021-07-26)
-info: downloading component 'rust-std' for 'x86_64-pc-windows-gnu'
- 23.0 MiB /  23.0 MiB (100 %)   1.3 MiB/s in 18s ETA:  0s
-info: downloading component 'cargo'
-  3.6 MiB /   3.6 MiB (100 %)   1.3 MiB/s in  3s ETA:  0s
+info: latest update on 2021-09-09, rust version 1.55.0 (c8dfcfe04 2021-09-06)
 [...]
-info: installing component 'rust-docs'
- 14.9 MiB /  14.9 MiB (100 %) 402.7 KiB/s in  3m 34s ETA:  0s
-info: installing component 'rust-std'
- 21.0 MiB /  21.0 MiB (100 %)   6.5 MiB/s in  1m 47s ETA:  0s
-  6 IO-ops /   6 IO-ops (100 %)   1 IOPS in  3s ETA:  0s
+ 20.1 MiB /  20.1 MiB (100 %)   1.2 MiB/s in 17s ETA:  0s
+info: downloading component 'rustc'
+ 75.4 MiB /  75.4 MiB (100 %)   1.2 MiB/s in  1m  6s ETA:  0s
+info: downloading component 'rustfmt'
+  2.1 MiB /   2.1 MiB (100 %)   1.2 MiB/s in  1s ETA:  0s
+[...]
 info: installing component 'rustc'
- 50.1 MiB /  50.1 MiB (100 %)  11.4 MiB/s in  5s ETA:  0s
- 12 IO-ops /  12 IO-ops (100 %)   3 IOPS in  3s ETA:  0s
+ 75.4 MiB /  75.4 MiB (100 %)  12.0 MiB/s in  6s ETA:  0s
 info: installing component 'rustfmt'
-info: checking for self-updates
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.54.0 (a178d0322 2021-07-26) (from rustc 1.53.0 (53cb7b09b 2021-06-17))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.55.0 (c8dfcfe04 2021-09-06) (from rustc 1.54.0 (a178d0322 2021-07-26))
 
-info: cleaning up downloads & tmp directories
+info: checking for self-updatess
 </pre>
 
 
@@ -133,7 +132,7 @@ info: cleaning up downloads & tmp directories
 <span name="footnote_01">[1]</span> ***Installation settings*** [↩](#anchor_01)
 
 <pre style="margin:0 0 1em 20px; font-size:80%;">
-<b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/type">type</a> <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.rustup\settings.toml</b>
+<b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/type">type</a> %USERPROFILE%\.rustup\settings.toml</b>
 default_host_triple = "x86_64-pc-windows-msvc"
 default_toolchain = "stable"
 profile = "default"

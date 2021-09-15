@@ -18,7 +18,9 @@
 
 ## <span id="blogs">Blogs</span>
 
-- [Rust and the JVM][blog_fraenkel] by Micolas Fränkel, July 2021.
+- [Rust's Vector][blog_fraenkel_9] by Nicolas Fränkel, August 2021.
+- [diceroller, a sample Rust project][blog_fraenkel_8] by Nicolas Fränkel, July 2021.
+- [Rust and the JVM][blog_fraenkel_7] by Nicolas Fränkel, July 2021.
 - [C++ Is Faster and Safer Than Rust: Benchmarked by Yandex][blog_roman] by Roman, May 2020.
 - [What is Rust and why is it so popular?](https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/) by Jake Goulding, January 2020.
 - [Using Rust in Windows](https://msrc-blog.microsoft.com/2019/11/07/using-rust-in-windows/), November 2019.
@@ -96,7 +98,9 @@ version = "12"
 [article_dreimanis]: https://serokell.io/blog/rust-guide
 [article_half_hour]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
 [article_oxide]: https://arxiv.org/abs/1903.00982
-[blog_fraenkel]: https://blog.frankel.ch/start-rust/7/
+[blog_fraenkel_7]: https://blog.frankel.ch/start-rust/7/
+[blog_fraenkel_8]: https://blog.frankel.ch/start-rust/8/
+[blog_fraenkel_9]: https://blog.frankel.ch/start-rust/9/
 [blog_roman]: https://pvs-studio.com/en/blog/posts/0733/
 [book_klabnik]: https://github.com/rust-lang/book
 [book_matzinger]: https://www.packtpub.com/product/rust-programming-cookbook/9781789530667
