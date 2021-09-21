@@ -1,0 +1,20 @@
+[package]
+name = "Chapter01"
+description = "Mastering Rust (2nd Ed.)"
+version = "1.0.0"
+authors = [ "Rahul Sharma", "Vesa Kaihlavirta" ]
+homepage = "https://www.packtpub.com/application-development/mastering-rust-second-edition"
+edition = "2018"
+publish = false
+## specify either --bin arrays or the above field
+default-run = "arrays"
+
+[dependencies]
+
+[[bin]]
+name = "arrays"
+path = "src/arrays.rs"
+
+[[bin]]
+name = "closures"
+path = "src/closures.rs"

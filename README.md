@@ -25,8 +25,8 @@ For instance our development environment looks as follows (*September 2021*) <su
 
 <pre style="font-size:80%;">
 C:\opt\Git-2.33.0\      <i>(279 MB)</i>
-%USERPROFILE%\.cargo\   <i>(100 MB)</i>
-%USERPROFILE%\.rustup\  <i>(593 MB, installed toolchains and configuration options)</i>
+<a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\   <i>(100 MB)</i>
+<a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.rustup\  <i>(593 MB, installed toolchains and configuration options)</i>
 </pre>
 
 > **:mag_right:** Git for Windows provides a BASH emulation used to run [**`git`**][git_docs] from the command line (as well as over 250 Unix commands like [**`awk`**][man1_awk], [**`diff`**][man1_diff], [**`file`**][man1_file], [**`grep`**][man1_grep], [**`more`**][man1_more], [**`mv`**][man1_mv], [**`rmdir`**][man1_rmdir], [**`sed`**][man1_sed] and [**`wc`**][man1_wc]).
@@ -37,6 +37,7 @@ This project is organized as follows:
 <pre style="font-size:80%;">
 bin\
 docs\
+mastering-rust\
 rust-by-example\
 README.md
 <a href="RESOURCES.md">RESOURCES.md</a>
@@ -48,6 +49,7 @@ where
 
 - directory [**`bin\`**](bin/) contains utility batch scripts.
 - directory [**`docs\`**](docs/) contains [Rust][rust_lang] related papers/articles.
+- directory [**`mastering-rust\`**](mastering-rust/) contains [Rust][rust_lang] code examples (see [`README.md`](mastering-rust/README.md) file).
 - directory [**`rust-by-example\`**](rust-by-example/) contains [Rust][rust_lang] code examples (see [`README.md`](rust-by-example/README.md) file).
 - file **`README.md`** is the [Markdown][github_markdown] document for this page.
 - file [**`RESOURCES.md`**](RESOURCES.md) is the [Markdown][github_markdown] document presenting external resources.
@@ -59,7 +61,7 @@ We also define a virtual drive **`R:`** in our working environment in order to r
 > **:mag_right:** We use the Windows external command [**`subst`**][windows_subst] to create virtual drives; for instance:
 >
 > <pre style="font-size:80%;">
-> <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/subst">subst</a> R: %USERPROFILE%\workspace\rust-examples</b>
+> <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/subst">subst</a> R: <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\workspace\rust-examples</b>
 > </pre>
 
 In the next section we give a brief description of the batch files present in this project.
@@ -95,14 +97,14 @@ Command [**`setenv`**](setenv.bat) is executed once to setup your development en
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
-   cargo 1.55.0, rustc 1.55.0, rustfmt 1.4.37-stable, rustup 1.23.1,
-   pelook v1.7.3, git 2.33.0.windows.1, diff 3.7, bash 4.4.23(1)-release
+   cargo 1.55.0, rustc 1.55.0, rustfmt 1.4.37-stable, rustup 1.24.3,
+   pelook v1.73, git 2.33.0.windows.1, diff 3.7, bash 4.4.23(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
 %USERPROFILE%\.cargo\bin\cargo.exe
 %USERPROFILE%\.cargo\bin\rustc.exe
 %USERPROFILE%\.cargo\bin\rustup.exe
-R:\bin\pelook.exe</pre>
+R:\bin\<a href="http://bytepointer.com/tools/index.htm#pelook">pelook.exe</a>
 </pre>
 
 Command [**`setenv -verbose`**](setenv.bat) also displays the tool paths:
@@ -111,7 +113,7 @@ Command [**`setenv -verbose`**](setenv.bat) also displays the tool paths:
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
    cargo 1.55.0, rustc 1.55.0, rustfmt 1.4.37-stable, rustup 1.24.3,
-   pelook v1.7.3, git 2.33.0.windows.1, diff 3.7, bash 4.4.23(1)-release
+   pelook v1.73, git 2.33.0.windows.1, diff 3.7, bash 4.4.23(1)-release
 Tool paths:
    %USERPROFILE%\.cargo\bin\cargo.exe
    %USERPROFILE%\.cargo\bin\rustc.exe
