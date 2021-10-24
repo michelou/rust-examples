@@ -259,7 +259,7 @@ if not exist "%_CARGO_HOME%\bin\cargo.exe" (
 set "_CARGO_PATH=;%_CARGO_HOME%\bin"
 goto :eof
 
-@rem output parameter(s): _GIT_HOME, _GIT_PATH
+@rem output parameters: _GIT_HOME, _GIT_PATH
 :git
 set _GIT_HOME=
 set _GIT_PATH=
