@@ -29,9 +29,11 @@
 
 ## <span id="books">Books</span>
 
+- [Rust in Action][book_mcnamara] by Tim McNamara, June 2021.<br/><span style="font-size:80%;">(Manning, ISBN 978-1-6172-9455-6, 456 pages)</span>
+- [Beginning Rust Programming][book_messier] by Ric Messier, March 2021.<br/><span style="font-size:80%;">(Wiley, ISBN 978-1-119-71297-8, 416 pages)</span>
 - [The Rust Programming Language][book_klabnik] by Steve Klabnik and Carol Nichols, 2019.
-- [Rust Programming Cookbook][book_matzinger] by Claus Matzinger, 2019.
-- [Mastering Rust][book_sharma] (2<sup>nd</sup> Ed.) by Rahul Sharma and Vesa Kaihlavirta, January 2019.
+- [Rust Programming Cookbook][book_matzinger] by Claus Matzinger, 2019.<br/><span style="font-size:80%;">(Packt, ISBN 978-1-7895-3066-7, 444 pages)</span>
+- [Mastering Rust][book_sharma] (2<sup>nd</sup> Ed.) by Rahul Sharma and Vesa Kaihlavirta, January 2019.<br/><span style="font-size:80%;">(Packt, ISBN 978-1-7893-4657-2, 554 pages)</span>
 
 ## <span id="forums">Forums</span>
 
@@ -41,6 +43,7 @@
 
 ## <span id="news">News</span>
 
+- [**reddit**](https://www.reddit.com/) [r/rust](https://www.reddit.com/r/rust/) - The Rust Programming Language.
 - [This Week in Rust][news_this_week].
 
 ## <span id="papers">Papers</span>
@@ -51,19 +54,19 @@
 
 - [`ripgrep`][github_ripgrep]: recursively searches directories for a regex pattern.
 
-## <span id="training">Training</span>
+## <span id="training">Training and Tutorials</span>
 
 - [ferrous systems](https://ferrous-systems.com/) : [Rust Training Programs](https://ferrous-systems.com/training/).
+- [Rust for Hashkell Programmers](https://mmhaskell.com/rust).
+- [Working with Rust](https://mkaz.blog/working-with-rust/) by Marcus Kazmeierczak.
+- [24 Days of Rust](https://siciarz.net/24-days-rust-conclusion-2016/) by Zbigniew Siciarz, December 2016.
+  - [Day 1 - cargo subcommands](https://siciarz.net/24-days-rust-cargo-subcommands/)
+  - [Day 5 - environment variables](https://siciarz.net/24-days-rust-environment-variables/)
+  - [Day 8 - serde](https://siciarz.net/24-days-rust-serde/)
 
 ## <span id="tools">Tools</span>
 
 - [rust.analyzer](https://rust-analyzer.github.io/) - an implementation of [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) for the [Rust](https://www.rust-lang.org/) programming language.
-
-## <span id="tutorials">Tutorials</span>
-
-- [Rust Language Cheat Sheet](https://cheats.rs/).
-- [Rust for Hashkell Programmers](https://mmhaskell.com/rust).
-- [Working with Rust](https://mkaz.blog/working-with-rust/) by Marcus Kazmeierczak.
 
 ## <span id="videos">Videos</span>
 
@@ -102,8 +105,11 @@ version = "12"
 [blog_fraenkel_8]: https://blog.frankel.ch/start-rust/8/
 [blog_fraenkel_9]: https://blog.frankel.ch/start-rust/9/
 [blog_roman]: https://pvs-studio.com/en/blog/posts/0733/
+[blog_thorsten]: https://www.thorsten-hans.com/working-with-environment-variables-in-rust/
 [book_klabnik]: https://github.com/rust-lang/book
 [book_matzinger]: https://www.packtpub.com/product/rust-programming-cookbook/9781789530667
+[book_mcnamara]: https://www.manning.com/books/rust-in-action
+[book_messier]: https://www.wiley.com/en-us/Beginning+Rust+Programming-p-9781119712978
 [book_sharma]: https://www.packtpub.com/product/mastering-rust-second-edition/9781789346572
 [github_ripgrep]: https://github.com/BurntSushi/ripgrep
 [news_this_week]: https://this-week-in-rust.org/

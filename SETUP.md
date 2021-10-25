@@ -17,7 +17,7 @@ In normal case we are facing one of the following situations:
 Command **`rustup-init --help`** displays the available options:
 
 <pre style="font-size:80%;">
-<b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\downloads\<a href="https://rust-lang.github.io/rustup/installation/index.html">rustup-init</a> --help</b>
+<b>&gt; c:\opt\rust-1.24.3\rustup-init</a> --help</b>
 rustup-init 1.24.3 (ce5817a94 2021-05-31)
 The installer for rustup
 
@@ -43,7 +43,7 @@ OPTIONS:
 As a first run let's choose option `"3) Cancel installation"` inorder to *pay attention* to the default settings <sup id="anchor_01"><a href="#footnote_01">[1]</a></sup> with not installation actions:
 
 <pre style="font-size:80%;">
-<b>&gt; %USERPROFILE%\downloads\<a href="https://rust-lang.github.io/rustup/installation/index.html">rustup-init</a></b>
+<b>&gt; c:\opt\rust-1.24.3\<a href="https://rust-lang.github.io/rustup/installation/index.html">rustup-init</a></b>
 
 Welcome to Rust!
 
@@ -99,7 +99,7 @@ Current installation options:
 %USERPROFILE%\.cargo\bin\rustup.exe
 &nbsp;
 <b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a> --version</b>
-rustc 1.54.0 (a178d0322 2021-07-26)
+rustc 1.56.0 (09c42c458 2021-10-18)
 </pre>
 
 ## <span id="update">Installation update</span>
@@ -107,6 +107,9 @@ rustc 1.54.0 (a178d0322 2021-07-26)
 Command **`rustup update stable`** updates an existing [Rust][rust_lang] installation:
 
 <pre style="font-size:80%;">
+<b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> rustup</b>
+<a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\rustup.exe
+&nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
 info: latest update on 2021-09-09, rust version 1.55.0 (c8dfcfe04 2021-09-06)
@@ -120,10 +123,11 @@ info: downloading component 'rustfmt'
 info: installing component 'rustc'
  75.4 MiB /  75.4 MiB (100 %)  12.0 MiB/s in  6s ETA:  0s
 info: installing component 'rustfmt'
+info: checking for self-updates
 
   stable-x86_64-pc-windows-msvc updated - rustc 1.55.0 (c8dfcfe04 2021-09-06) (from rustc 1.54.0 (a178d0322 2021-07-26))
 
-info: checking for self-updatess
+info: cleaning up downloads & tmp directories
 </pre>
 
 
