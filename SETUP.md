@@ -17,7 +17,7 @@ In normal case we are facing one of the following situations:
 Command **`rustup-init --help`** displays the available options:
 
 <pre style="font-size:80%;">
-<b>&gt; %USERPROFILE%\downloads\<a href="https://rust-lang.github.io/rustup/installation/index.html">rustup-init</a> --help</b>
+<b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\downloads\<a href="https://rust-lang.github.io/rustup/installation/index.html">rustup-init</a> --help</b>
 rustup-init 1.24.3 (ce5817a94 2021-05-31)
 The installer for rustup
 
@@ -98,7 +98,7 @@ Current installation options:
 %USERPROFILE%\.cargo\bin\rustfmt.exe
 %USERPROFILE%\.cargo\bin\rustup.exe
 &nbsp;
-<b>&gt; %USERPROFILE%\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a> --version</b>
+<b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a> --version</b>
 rustc 1.54.0 (a178d0322 2021-07-26)
 </pre>
 
@@ -132,7 +132,7 @@ info: checking for self-updatess
 <span name="footnote_01">[1]</span> ***Installation settings*** [↩](#anchor_01)
 
 <pre style="margin:0 0 1em 20px; font-size:80%;">
-<b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/type">type</a> %USERPROFILE%\.rustup\settings.toml</b>
+<b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/type">type</a> <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.rustup\settings.toml</b>
 default_host_triple = "x86_64-pc-windows-msvc"
 default_toolchain = "stable"
 profile = "default"
@@ -143,7 +143,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/September 2021* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/October 2021* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
