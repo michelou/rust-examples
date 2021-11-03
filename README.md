@@ -16,15 +16,15 @@
 This project depends on two external software for the **Microsoft Windows** plaform:
 
 - [Git 2.33][git_downloads] ([*release notes*][git_relnotes])
-- [Rust 1.55][rust_downloads] ([*release notes*][rust_relnotes])
+- [Rust 1.55][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">[1]</a></sup> ([*release notes*][rust_relnotes])
 
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [`/opt/`][linux_opt] directory on Unix).
 
-For instance our development environment looks as follows (*September 2021*) <sup id="anchor_01"><a href="#footnote_01">[1]</a></sup>:
+For instance our development environment looks as follows (*November 2021*) <sup id="anchor_02"><a href="#footnote_02">[2]</a></sup>:
 
 <pre style="font-size:80%;">
-C:\opt\Git-2.33.0\      <i>(279 MB)</i>
+C:\opt\Git-2.33.1\      <i>(279 MB)</i>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\   <i>(100 MB)</i>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.rustup\  <i>(593 MB, installed toolchains and configuration options)</i>
 </pre>
@@ -98,7 +98,7 @@ Command [**`setenv`**](setenv.bat) is executed once to setup your development en
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
    cargo 1.55.0, rustc 1.55.0, rustfmt 1.4.37-stable, rustup 1.24.3,
-   pelook v1.73, git 2.33.0.windows.1, diff 3.7, bash 4.4.23(1)-release
+   pelook v1.73, git 2.33.1.windows.1, diff 3.7, bash 4.4.23(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
 %USERPROFILE%\.cargo\bin\cargo.exe
@@ -113,34 +113,53 @@ Command [**`setenv -verbose`**](setenv.bat) also displays the tool paths:
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
    cargo 1.55.0, rustc 1.55.0, rustfmt 1.4.37-stable, rustup 1.24.3,
-   pelook v1.73, git 2.33.0.windows.1, diff 3.7, bash 4.4.23(1)-release
+   pelook v1.73, git 2.33.1.windows.1, diff 3.7, bash 4.4.23(1)-release
 Tool paths:
    %USERPROFILE%\.cargo\bin\cargo.exe
    %USERPROFILE%\.cargo\bin\rustc.exe
    %USERPROFILE%\.cargo\bin\rustfmt.exe
    %USERPROFILE%\.cargo\bin\rustup.exe
    R:\bin\pelook.exe
-   C:\opt\Git-2.33.0\bin\git.exe
-   C:\opt\Git-2.33.0\mingw64\bin\git.exe
-   C:\opt\Git-2.33.0\usr\bin\diff.exe
-   C:\opt\Git-2.33.0\bin\bash.exe
+   C:\opt\Git-2.33.1\bin\git.exe
+   C:\opt\Git-2.33.1\mingw64\bin\git.exe
+   C:\opt\Git-2.33.1\usr\bin\diff.exe
+   C:\opt\Git-2.33.1\bin\bash.exe
 Environment variables:
    "CARGO_HOME=%USERPROFILE%\.cargo"
-   "GIT_HOME=C:\opt\Git-2.33.0"
+   "GIT_HOME=C:\opt\Git-2.33.1"
    "MSYS_HOME=C:\opt\msys64"
    "RUSTUP_HOME=%USERPROFILE%\.rustup"
 </pre>
 
 ## <span id="footnotes">Footnotes</span>
 
-<b name="footnote_01">[1]</b> ***Downloads*** [↩](#anchor_01)
+<span name="footnote_01">[1]</span> ***LLVM Backend*** [↩](#anchor_01)
+
+<p style="margin:0 0 1em 20px;">
+<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html"><code>rustc</code></a> uses LLVM for code generation (see section <a href="https://rustc-dev-guide.rust-lang.org/backend/codegen.html">Code Generation</a> in the online <a href="https://rustc-dev-guide.rust-lang.org/">Rustc Development Guide</a>).
+
+<pre style="margin:0 0 1em 20px; font-size:80%;">
+<b>&gt; <a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc</a> --version --verbose | <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr">findstr</a> /b "rustc LLVM"</b>
+rustc 1.55.0 (c8dfcfe04 2021-09-06)
+LLVM version: 12.0.1
+</pre>
+
+<table style="margin:0 0 1em 20px;">
+<tr><th>Rustc Version</th><th>LLVM Version</th></tr>
+<tr><td>1.56.0</td><td>13.0.0</td></tr>
+<tr><td>1.55.0</td><td>12.0.1</td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.52.0">1.52.0</a> - 1.54.0</td><td>12.0.0</td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.47.0">1.47.0</a> - 1.51.0</td><td>11.0.0</td></tr>
+</table>
+
+<span name="footnote_02">[2]</span> ***Downloads*** [↩](#anchor_02)
 
 <p style="margin:0 0 1em 20px;">
 In our case we downloaded the following installation files (see <a href="#proj_deps">section 1</a>):
 </p>
 <pre style="margin:0 0 1em 20px; font-size:80%;">
 <a href="https://www.rust-lang.org/tools/install">rust-init.exe</a>                     <i>( 8 MB)</i>
-<a href="https://git-scm.com/download/win">PortableGit-2.33.0-64-bit.7z.exe</a>  <i>(42 MB)</i>
+<a href="https://git-scm.com/download/win">PortableGit-2.33.1-64-bit.7z.exe</a>  <i>(42 MB)</i>
 </pre>
 
 <p style="margin:0 0 1em 20px;">
@@ -149,7 +168,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/September 2021* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/November 2021* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -159,7 +178,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [git_docs]: https://git-scm.com/docs/git
 [git_downloads]: https://git-scm.com/download/win
 [github_markdown]: https://github.github.com/gfm/
-[git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.33.0.txt
+[git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.33.1.txt
 [graalvm_examples]: https://github.com/michelou/graalvm-examples
 [haskell_examples]: https://github.com/michelou/haskell-examples
 [kotlin_examples]: https://github.com/michelou/kotlin-examples

@@ -43,7 +43,7 @@ OPTIONS:
 As a first run let's choose option `"3) Cancel installation"` inorder to *pay attention* to the default settings <sup id="anchor_01"><a href="#footnote_01">[1]</a></sup> with not installation actions:
 
 <pre style="font-size:80%;">
-<b>&gt; %USERPROFILE%\downloads\<a href="https://rust-lang.github.io/rustup/installation/index.html">rustup-init</a></b>
+<b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\downloads\<a href="https://rust-lang.github.io/rustup/installation/index.html">rustup-init</a></b>
 
 Welcome to Rust!
 
@@ -99,7 +99,7 @@ Current installation options:
 %USERPROFILE%\.cargo\bin\rustup.exe
 &nbsp;
 <b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a> --version</b>
-rustc 1.55.0 (c8dfcfe04 2021-09-06)
+rustc 1.24.3 (ce5817a94 2021-05-31)
 </pre>
 
 ## <span id="update">Installation update</span>
@@ -109,20 +109,15 @@ Command **`rustup update stable`** updates an existing [Rust][rust_lang] install
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2021-09-09, rust version 1.55.0 (c8dfcfe04 2021-09-06)
-[...]
- 20.1 MiB /  20.1 MiB (100 %)   1.2 MiB/s in 17s ETA:  0s
-info: downloading component 'rustc'
- 75.4 MiB /  75.4 MiB (100 %)   1.2 MiB/s in  1m  6s ETA:  0s
-info: downloading component 'rustfmt'
-  2.1 MiB /   2.1 MiB (100 %)   1.2 MiB/s in  1s ETA:  0s
+683.2 KiB / 683.2 KiB (100 %)  38.4 KiB/s in 36s ETA:  0s
+info: latest update on 2021-11-01, rust version 1.56.1 (59eed8a2a 2021-11-01)
+info: downloading component 'rust-std' for 'x86_64-pc-windows-gnu'
 [...]
 info: installing component 'rustc'
- 75.4 MiB /  75.4 MiB (100 %)  12.0 MiB/s in  6s ETA:  0s
+ 63.9 MiB /  63.9 MiB (100 %)  11.4 MiB/s in  6s ETA:  0s
 info: installing component 'rustfmt'
-info: checking for self-updates
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.55.0 (c8dfcfe04 2021-09-06) (from rustc 1.54.0 (a178d0322 2021-07-26))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.56.1 (59eed8a2a 2021-11-01) (from rustc 1.55.0 (c8dfcfe04 2021-09-06))
 
 info: cleaning up downloads & tmp directories
 </pre>
@@ -144,7 +139,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/September 2021* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/November 2021* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

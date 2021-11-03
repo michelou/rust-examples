@@ -21,17 +21,18 @@
 - [Rust's Vector][blog_fraenkel_9] by Nicolas Fränkel, August 2021.
 - [diceroller, a sample Rust project][blog_fraenkel_8] by Nicolas Fränkel, July 2021.
 - [Rust and the JVM][blog_fraenkel_7] by Nicolas Fränkel, July 2021.
+- [How to speed up the Rust compiler one last time][blog_nethercote] by Nicholas Nethercote, September 2020.
 - [C++ Is Faster and Safer Than Rust: Benchmarked by Yandex][blog_roman] by Roman, May 2020.
 - [What is Rust and why is it so popular?](https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/) by Jake Goulding, January 2020.
 - [Using Rust in Windows](https://msrc-blog.microsoft.com/2019/11/07/using-rust-in-windows/), November 2019.
 - [Getting started with Rust on the command line](https://asquera.de/blog/2018-01-20/getting-started-with-rust-on-the-command-line/), January 2018.
-
+- [Using C libraries in Rust: make a sys crate][blog_kornelski] by Pornel Kornelski.
 
 ## <span id="books">Books</span>
 
 - [Rust in Action][book_mcnamara] by Tim McNamara, June 2021.<br/><span style="font-size:80%;">(Manning, ISBN 978-1-6172-9455-6, 456 pages)</span>
 - [Beginning Rust Programming][book_messier] by Ric Messier, March 2021.<br/><span style="font-size:80%;">(Wiley, ISBN 978-1-119-71297-8, 416 pages)</span>
-- [The Rust Programming Language][book_klabnik] by Steve Klabnik and Carol Nichols, 2019.
+- [The Rust Programming Language][book_klabnik] by Steve Klabnik and Carol Nichols, August 2019.<br/><span style="font-size:80%;">(No Strach Press, ISBN 978-1-7185-0044-0, 526 pages)</span>
 - [Rust Programming Cookbook][book_matzinger] by Claus Matzinger, 2019.<br/><span style="font-size:80%;">(Packt, ISBN 978-1-7895-3066-7, 444 pages)</span>
 - [Mastering Rust][book_sharma] (2<sup>nd</sup> Ed.) by Rahul Sharma and Vesa Kaihlavirta, January 2019.<br/><span style="font-size:80%;">(Packt, ISBN 978-1-7893-4657-2, 554 pages)</span>
 
@@ -56,6 +57,15 @@
 
 ## <span id="training">Training and Tutorials</span>
 
+- [learn-rust Series](https://dev.to/cthutu/series/13395) by Matt Davies.
+  - [Rust #8: Strings](https://dev.to/cthutu/rust-8-strings-53o), August 2021.
+  - [Rust #7: Command-Line interfaces](https://dev.to/cthutu/rust-7-command-line-interfaces-4084), August 2021.
+  - [Rust #6: Exploring crates](https://dev.to/cthutu/rust-6-exploring-crates-3p6i), July 2021.
+  - [Rust #5: Naming conventions](https://dev.to/cthutu/rust-5-naming-conventions-3cjf), July 2021.
+  - [Rust #4: Options and Results (Part 2)](https://dev.to/cthutu/rust-4-options-and-results-part-2-5aca), July 2021.
+  - [Rust #3: Options, Results and Errors (Part 1)](https://dev.to/cthutu/rust-3-options-results-and-errors-part-1-4d52), July 2021.
+  - [Rust #2: Lifetimes, Owners and Borrowers, OH MY! ](https://dev.to/cthutu/rust-2-lifetimes-owners-and-borrowers-oh-my-3fem), June 2021.
+  - [Rust #1: Creating your development environment](https://dev.to/cthutu/rust-1-creating-your-development-environment-55bi), June 2021.
 - [ferrous systems](https://ferrous-systems.com/) : [Rust Training Programs](https://ferrous-systems.com/training/).
 - [Rust for Hashkell Programmers](https://mmhaskell.com/rust).
 - [Working with Rust](https://mkaz.blog/working-with-rust/) by Marcus Kazmeierczak.
@@ -64,8 +74,10 @@
   - [Day 5 - environment variables](https://siciarz.net/24-days-rust-environment-variables/)
   - [Day 8 - serde](https://siciarz.net/24-days-rust-serde/)
 
-## <span id="tools">Tools</span>
+## <span id="tools">Tools and Frameworks</span>
 
+- [Actix](https://github.com/actix/actix) - an Actor framework for Rust.
+- [Clap](https://clap.rs/) - a fast and modern CLI framework for Rust.
 - [rust.analyzer](https://rust-analyzer.github.io/) - an implementation of [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) for the [Rust](https://www.rust-lang.org/) programming language.
 
 ## <span id="videos">Videos</span>
@@ -92,7 +104,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/September 2021* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/November 2021* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -104,6 +116,8 @@ version = "12"
 [blog_fraenkel_7]: https://blog.frankel.ch/start-rust/7/
 [blog_fraenkel_8]: https://blog.frankel.ch/start-rust/8/
 [blog_fraenkel_9]: https://blog.frankel.ch/start-rust/9/
+[blog_kornelski]: https://kornel.ski/rust-sys-crate
+[blog_nethercote]: https://blog.mozilla.org/nnethercote/2020/09/08/how-to-speed-up-the-rust-compiler-one-last-time/
 [blog_roman]: https://pvs-studio.com/en/blog/posts/0733/
 [blog_thorsten]: https://www.thorsten-hans.com/working-with-environment-variables-in-rust/
 [book_klabnik]: https://github.com/rust-lang/book

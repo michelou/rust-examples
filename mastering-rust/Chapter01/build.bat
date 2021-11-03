@@ -78,7 +78,6 @@ set "_RUSTC_CMD=%CARGO_HOME%\bin\rustc.exe"
 set "_RUSTDOC_CMD=%CARGO_HOME%\bin\rustdoc.exe"
 
 set _PELOOK_CMD=pelook.exe
-set _PELOOK_OPTS=
 goto :eof
 
 :env_colors
@@ -278,7 +277,7 @@ echo.
 echo   %__BEG_P%Options:%__END%
 echo     %__BEG_O%-debug%__END%                show commands executed by this script
 echo     %__BEG_O%-edition:^<2015^|2018^>%__END%  set Rust edition
-echo     %__BEG_O%-main:^<name^>%__END%
+echo     %__BEG_O%-main:^<name^>%__END%          set main program ^(defaut: %__BEG_O%%_DEFAULT_RUN%%__END%^)
 echo     %__BEG_O%-target:^<gcc^|msvc^>%__END%    set plaform target ^(default: %__BEG_O%msvc%__END%/%__BEG_O%cl%__END%^)
 echo     %__BEG_O%-timer%__END%                display total elapsed time
 echo     %__BEG_O%-verbose%__END%              display progress messages
@@ -291,6 +290,10 @@ echo     %__BEG_O%dump%__END%                  dump PE/COFF infos for generated 
 echo     %__BEG_O%help%__END%                  display this help message
 echo     %__BEG_O%run%__END%                   run generated executable %__BEG_O%%_MAIN%%__END%
 echo     %__BEG_O%test%__END%                  test generated executable
+if %_VERBOSE%==0 goto :eof
+echo.
+echo   %__BEG_P%Build tools:%__END%
+echo     %__BEG_O%^> cargo clean ^& cargo run%__END%
 goto :eof
 
 :clean
@@ -355,7 +358,7 @@ if not exist "%_TARGET_DOCS_DIR%" mkdir "%_TARGET_DOCS_DIR%"
 
 set __SOURCE_FILES=
 set __N=0
-for %%f in (%_SOURCE_DIR%\*.rs) do (
+for %%f in (%_SOURCE_DIR%\%_MAIN%.rs) do (
     set __SOURCE_FILES=!__SOURCE_FILES! "%%f"
     set /a __N+=1
 )
@@ -380,13 +383,14 @@ if not exist "%__EXE_FILE%" (
     set _EXITCODE=1
     goto :eof
 )
+set __PELOOK_OPTS=
 if %_DEBUG%==1 (
-    echo %_DEBUG_LABEL% "%_PELOOK_CMD%" %_PELOOK_OPTS% "!__EXE_FILE:%_ROOT_DIR%=!" 1>&2
-    call "%_PELOOK_CMD%" %_PELOOK_OPTS% "%__EXE_FILE%"
+    echo %_DEBUG_LABEL% "%_PELOOK_CMD%" %__PELOOK_OPTS% "!__EXE_FILE:%_ROOT_DIR%=!" 1>&2
+    call "%_PELOOK_CMD%" %__PELOOK_OPTS% "%__EXE_FILE%"
 ) else (
     if %_VERBOSE%==1 echo Dump PE/COFF infos for executable !__EXE_FILE:%_ROOT_DIR%=! 1>&2
     echo executable:           !__EXE_FILE:%_ROOT_DIR%=!
-    call "%_PELOOK_CMD%" %_PELOOK_OPTS% "%__EXE_FILE%" | findstr "signature machine linkver modules"
+    call "%_PELOOK_CMD%" %__PELOOK_OPTS% "%__EXE_FILE%" | findstr "signature machine linkver modules"
 )
 if not %ERRORLEVEL%==0 (
     echo %_ERROR_LABEL% Dump of executable %_CRATE_NAME%.exe failed 1>&2
@@ -431,7 +435,7 @@ goto :eof
 if %_TIMER%==1 (
     for /f "delims=" %%i in ('powershell -c "(Get-Date)"') do set __TIMER_END=%%i
     call :duration "%_TIMER_START%" "!__TIMER_END!"
-    echo Total elapsed time: !_DURATION! 1>&2
+    echo Total execution time: !_DURATION! 1>&2
 )
 if %_DEBUG%==1 echo %_DEBUG_LABEL% _EXITCODE=%_EXITCODE% 1>&2
 exit /b %_EXITCODE%
