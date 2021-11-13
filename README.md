@@ -9,7 +9,7 @@
   </tr>
 </table>
 
-[Deno][deno_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Python][python_examples], [Scala 3][scala3_examples] and [TruffleSqueak][trufflesqueak_examples] are other trending topics we are currently monitoring.
+[Deno][deno_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Python][python_examples], [Scala 3][scala3_examples], [TruffleSqueak][trufflesqueak_examples] and [WiX][wix_examples] are other trending topics we are continuously monitoring.
 
 ## <span id="proj_deps">Project dependencies</span>
 
@@ -21,7 +21,7 @@ This project depends on two external software for the **Microsoft Windows** plaf
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [`/opt/`][linux_opt] directory on Unix).
 
-For instance our development environment looks as follows (*October 2021*) <sup id="anchor_01"><a href="#footnote_01">[1]</a></sup>:
+For instance our development environment looks as follows (*November 2021*) <sup id="anchor_01"><a href="#footnote_01">[1]</a></sup>:
 
 <pre style="font-size:80%;">
 C:\opt\Git-2.33.1\      <i>(279 MB)</i>
@@ -97,7 +97,7 @@ Command [**`setenv`**](setenv.bat) is executed once to setup your development en
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
-   cargo 1.56.0, rustc 1.56.0, rustfmt 1.4.37-stable, rustup 1.23.1,
+   cargo 1.56.1, rustc 1.56.1, rustfmt 1.4.37-stable, rustup 1.23.1,
    pelook v1.7.3, git 2.33.1.windows.1, diff 3.7, bash 4.4.23(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
@@ -112,7 +112,7 @@ Command [**`setenv -verbose`**](setenv.bat) also displays the tool paths:
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
-   cargo 1.56.0, rustc 1.56.0, rustfmt 1.4.37-stable, rustup 1.24.3,
+   cargo 1.56.1, rustc 1.56.1, rustfmt 1.4.37-stable, rustup 1.24.3,
    pelook v1.7.3, git 2.33.1.windows.1, diff 3.7, bash 4.4.23(1)-release
 Tool paths:
    %USERPROFILE%\.cargo\bin\cargo.exe
@@ -149,7 +149,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/October 2021* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/November 2021* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -184,4 +184,5 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [trufflesqueak_examples]: https://github.com/michelou/trufflesqueak-examples
 [windows_limitation]: https://support.microsoft.com/en-gb/help/830473/command-prompt-cmd-exe-command-line-string-limitation
 [windows_subst]: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/subst
+[wix_examples]: https://github.com/michelou/wix-examples
 [zip_archive]: https://www.howtogeek.com/178146/

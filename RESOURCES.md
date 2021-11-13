@@ -23,6 +23,7 @@
 - [Rust and the JVM][blog_fraenkel_7] by Nicolas Fränkel, July 2021.
 - [C++ Is Faster and Safer Than Rust: Benchmarked by Yandex][blog_roman] by Roman, May 2020.
 - [What is Rust and why is it so popular?](https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/) by Jake Goulding, January 2020.
+- [Rust Compiler Internals : Mid-level Intermediate Representation (MIR)][blog_kanishkar] by Kanishkar J, December 2019.
 - [Using Rust in Windows](https://msrc-blog.microsoft.com/2019/11/07/using-rust-in-windows/), November 2019.
 - [Getting started with Rust on the command line](https://asquera.de/blog/2018-01-20/getting-started-with-rust-on-the-command-line/), January 2018.
 
@@ -92,7 +93,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/October 2021* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/November 2021* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -104,6 +105,7 @@ version = "12"
 [blog_fraenkel_7]: https://blog.frankel.ch/start-rust/7/
 [blog_fraenkel_8]: https://blog.frankel.ch/start-rust/8/
 [blog_fraenkel_9]: https://blog.frankel.ch/start-rust/9/
+[blog_kanishkar]: https://kanishkarj.github.io/rust-internals-mir
 [blog_roman]: https://pvs-studio.com/en/blog/posts/0733/
 [blog_thorsten]: https://www.thorsten-hans.com/working-with-environment-variables-in-rust/
 [book_klabnik]: https://github.com/rust-lang/book
