@@ -10,7 +10,9 @@
 
 ## <span id="articles">Articles</span>
 
+- [The rustwasmc tool](https://www.secondstate.io/articles/rustwasmc/) by Second State, 2020.<br/>(GitHub project: [`second-state/rustwasmc`](https://github.com/second-state/rustwasmc))
 - [Introduction to Rust][article_dreimanis] by Gints Dreimanis, August 2020.
+- [Why I'm enjoying learning Rust as a Java programmer][article_bursell] by Mike Bursell, May 2020.
 - [Getting started with Cargo][article_cargo] by Gaurav Kamathe, March 2020.
 - [A half-hour to learn Rust][article_half_hour], January 2020.
 - [Oxide: The Essence of Rust][article_oxide] by Aaron Weiss &amp; al., March 2019.
@@ -93,11 +95,12 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/November 2021* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/December 2021* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
 
+[article_bursell]: https://opensource.com/article/20/5/rust-java
 [article_cargo]: https://opensource.com/article/20/3/rust-cargo
 [article_dreimanis]: https://serokell.io/blog/rust-guide
 [article_half_hour]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
