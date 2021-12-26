@@ -61,6 +61,7 @@
 
 - [ferrous systems](https://ferrous-systems.com/) : [Rust Training Programs](https://ferrous-systems.com/training/).
 - [Rust for Hashkell Programmers](https://mmhaskell.com/rust).
+- [Rust Language Cheat Sheet](https://cheats.rs/).
 - [Working with Rust](https://mkaz.blog/working-with-rust/) by Marcus Kazmeierczak.
 - [24 Days of Rust](https://siciarz.net/24-days-rust-conclusion-2016/) by Zbigniew Siciarz, December 2016.
   - [Day 1 - cargo subcommands](https://siciarz.net/24-days-rust-cargo-subcommands/)

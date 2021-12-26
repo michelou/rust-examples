@@ -9,7 +9,7 @@
   </tr>
 </table>
 
-[Deno][deno_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Python][python_examples], [Scala 3][scala3_examples], [TruffleSqueak][trufflesqueak_examples] and [WiX][wix_examples] are other trending topics we are continuously monitoring.
+[Deno][deno_examples], [Golang][golang_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Python][python_examples], [Scala 3][scala3_examples], [TruffleSqueak][trufflesqueak_examples] and [WiX][wix_examples] are other trending topics we are continuously monitoring.
 
 ## <span id="proj_deps">Project dependencies</span>
 
@@ -37,8 +37,8 @@ This project is organized as follows:
 <pre style="font-size:80%;">
 bin\
 docs\
-mastering-rust\{<a href="mastering-rust/README.md">README.md</a>}
-rust-by-example\
+mastering-rust\{<a href="mastering-rust/README.md">README.md</a>, ..}
+rust-by-example\{<a href="rust-by-example/README.md">README.md</a>, ..}
 README.md
 <a href="RESOURCES.md">RESOURCES.md</a>
 <a href="SETUP.md">SETUP.md</a>
@@ -97,7 +97,7 @@ Command [**`setenv`**](setenv.bat) is executed once to setup your development en
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
-   cargo 1.56.1, rustc 1.56.1, rustfmt 1.4.37-stable, rustup 1.23.1,
+   cargo 1.57.0, rustc 1.57.0, rustfmt 1.4.37-stable, rustup 1.23.1,
    pelook v1.7.3, git 2.34.1.windows.1, diff 3.8, bash 4.4.23(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
@@ -112,7 +112,7 @@ Command [**`setenv -verbose`**](setenv.bat) also displays the tool paths:
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
-   cargo 1.56.1, rustc 1.56.1, rustfmt 1.4.37-stable, rustup 1.24.3,
+   cargo 1.57.0, rustc 1.57.0, rustfmt 1.4.37-stable, rustup 1.24.3,
    pelook v1.7.3, git 2.34.1.windows.1, diff 3.8, bash 4.4.23(1)-release
 Tool paths:
    %USERPROFILE%\.cargo\bin\cargo.exe
@@ -135,17 +135,18 @@ Environment variables:
 
 <span id="footnote_01">[1]</span> ***Downloads*** [↩](#anchor_01)
 
-<p style="margin:0 0 1em 20px;">
+<dl><dd>
 In our case we downloaded the following installation files (see <a href="#proj_deps">section 1</a>):
-</p>
-<pre style="margin:0 0 1em 20px; font-size:80%;">
+</dd>
+<dd>
+<pre style="font-size:80%;">
 <a href="https://www.rust-lang.org/tools/install">rust-init.exe</a>                     <i>( 8 MB)</i>
 <a href="https://git-scm.com/download/win">PortableGit-2.34.1-64-bit.7z.exe</a>  <i>(42 MB)</i>
 </pre>
-
-<p style="margin:0 0 1em 20px;">
+</dd>
+<dd>
 Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b><code>rustup</code></b></a> tool is installed, we can update our installation by simply running <b><code>rustup update</code></b>. 
-</p>
+</dd></dl>
 
 ***
 
@@ -160,6 +161,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [git_downloads]: https://git-scm.com/download/win
 [github_markdown]: https://github.github.com/gfm/
 [git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.34.1.txt
+[golang_examples]: https://github.com/michelou/golang-examples
 [graalvm_examples]: https://github.com/michelou/graalvm-examples
 [haskell_examples]: https://github.com/michelou/haskell-examples
 [kotlin_examples]: https://github.com/michelou/kotlin-examples
@@ -175,7 +177,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [man1_sed]: https://www.linux.org/docs/man1/sed.html
 [man1_wc]: https://www.linux.org/docs/man1/wc.html
 [python_examples]: https://github.com/michelou/python-examples
-[rust_downloads]: https://www.rust-lang.org/tools/install
+[rust_downloads]: https://forge.rust-lang.org/infra/other-installation-methods.html#standalone-installers
 [rust_lang]: https://www.rust-lang.org/
 [rust_relnotes]: https://github.com/rust-lang/rust/blob/master/RELEASES.md
 [rustc_cli]: https://doc.rust-lang.org/rustc/command-line-arguments.html
