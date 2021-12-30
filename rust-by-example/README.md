@@ -2,14 +2,14 @@
 
 <table style="font-family:Helvetica,Arial;font-size:14px;line-height:1.6;">
   <tr>
-  <td style="border:0;padding:0 10px 0 0;min-width:120px;"><a href="https://www.rust-lang.org/" rel="external"><img src="https://www.rust-lang.org/static/images/rust-logo-blk.svg" width="120" alt="Rust logo"/></a></td>
+  <td style="border:0;padding:0 10px 0 0;min-width:120px;"><a href="https://www.rust-lang.org/" rel="external"><img src="https://www.rust-lang.org/static/images/rust-logo-blk.svg" width="120" alt="Rust project"/></a></td>
   <td style="border:0;padding:0;vertical-align:text-top;">This repository gathers <a href="https://www.rust-lang.org/" rel="external">Rust</a> code examples from the Book <a href="https://doc.rust-lang.org/rust-by-example/" rel="external">"Rust by Example"</a>.<br/>
   It also includes several <a href="https://en.wikibooks.org/wiki/Windows_Batch_Scripting">batch files</a> for experimenting with <a href="https://www.rust-lang.org/" rel="external">Rust</a> on the <b>Microsoft Windows</b> platform.
   </td>
   </tr>
 </table>
 
-## `01_Display`
+## <span id="01_Display">`01_Display`</a>
 
 Command `cargo run` executes the Rust program [`main.rs`](./01_Display/src/main.rs) :
 
@@ -39,7 +39,7 @@ Compile 1 Rust source files to directory "target"
 Hello World!
 </pre>
 
-## `02_Literals`
+## <span id="02_Literals">`02_Literals`</span>
 
 Command `cargo run` executes the Rust program [`main.rs`](./02_Literals/src/main.rs) :
 
@@ -63,7 +63,7 @@ One million is written as 1000000
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/December 2021* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/January 2022* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
