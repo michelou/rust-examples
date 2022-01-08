@@ -2,7 +2,7 @@
 
 <table style="font-family:Helvetica,Arial;font-size:14px;line-height:1.6;">
   <tr>
-  <td style="border:0;padding:0 10px 0 0;min-width:120px;"><a href="https://www.rust-lang.org/" rel="external"><img src="https://www.rust-lang.org/static/images/rust-logo-blk.svg" width="120" alt="Rust logo"/></a></td>
+  <td style="border:0;padding:0 10px 0 0;min-width:120px;"><a href="https://www.rust-lang.org/" rel="external"><img src="https://www.rust-lang.org/static/images/rust-logo-blk.svg" width="120" alt="Rust project"/></a></td>
   <td style="border:0;padding:0;vertical-align:text-top;">This repository gathers <a href="https://www.rust-lang.org/" rel="external">Rust</a> code examples coming from various websites and books.<br/>
   It also includes several <a href="https://en.wikibooks.org/wiki/Windows_Batch_Scripting">batch files</a> for experimenting with <a href="https://www.rust-lang.org/" rel="external">Rust</a> on the <b>Microsoft Windows</b> platform.
   </td>
@@ -37,8 +37,8 @@ This project is organized as follows:
 <pre style="font-size:80%;">
 bin\
 docs\
-mastering-rust\
-rust-by-example\
+mastering-rust\{<a href="mastering-rust/README.md">README.md</a>, ..}
+rust-by-example\{<a href="rust-by-example/README.md">README.md</a>, ..}
 README.md
 <a href="RESOURCES.md">RESOURCES.md</a>
 <a href="SETUP.md">SETUP.md</a>
@@ -173,7 +173,6 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 ***
 
 *[mics](https://lampwww.epfl.ch/~michelou/)/January 2022* [**&#9650;**](#top)
-
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -200,7 +199,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [man1_sed]: https://www.linux.org/docs/man1/sed.html
 [man1_wc]: https://www.linux.org/docs/man1/wc.html
 [python_examples]: https://github.com/michelou/python-examples
-[rust_downloads]: https://www.rust-lang.org/tools/install
+[rust_downloads]: https://forge.rust-lang.org/infra/other-installation-methods.html#standalone-installers
 [rust_lang]: https://www.rust-lang.org/
 [rust_relnotes]: https://github.com/rust-lang/rust/blob/master/RELEASES.md
 [rustc_cli]: https://doc.rust-lang.org/rustc/command-line-arguments.html

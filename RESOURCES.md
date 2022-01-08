@@ -10,7 +10,9 @@
 
 ## <span id="articles">Articles</span>
 
+- [The rustwasmc tool](https://www.secondstate.io/articles/rustwasmc/) by Second State, 2020.<br/>(GitHub project: [`second-state/rustwasmc`](https://github.com/second-state/rustwasmc))
 - [Introduction to Rust][article_dreimanis] by Gints Dreimanis, August 2020.
+- [Why I'm enjoying learning Rust as a Java programmer][article_bursell] by Mike Bursell, May 2020.
 - [Getting started with Cargo][article_cargo] by Gaurav Kamathe, March 2020.
 - [A half-hour to learn Rust][article_half_hour], January 2020.
 - [Oxide: The Essence of Rust][article_oxide] by Aaron Weiss &amp; al., March 2019.
@@ -24,6 +26,7 @@
 - [How to speed up the Rust compiler one last time][blog_nethercote] by Nicholas Nethercote, September 2020.
 - [C++ Is Faster and Safer Than Rust: Benchmarked by Yandex][blog_roman] by Roman, May 2020.
 - [What is Rust and why is it so popular?](https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/) by Jake Goulding, January 2020.
+- [Rust Compiler Internals : Mid-level Intermediate Representation (MIR)][blog_kanishkar] by Kanishkar J, December 2019.
 - [Using Rust in Windows](https://msrc-blog.microsoft.com/2019/11/07/using-rust-in-windows/), November 2019.
 - [Getting started with Rust on the command line](https://asquera.de/blog/2018-01-20/getting-started-with-rust-on-the-command-line/), January 2018.
 - [Using C libraries in Rust: make a sys crate][blog_kornelski] by Pornel Kornelski.
@@ -68,6 +71,7 @@
   - [Rust #1: Creating your development environment](https://dev.to/cthutu/rust-1-creating-your-development-environment-55bi), June 2021.
 - [ferrous systems](https://ferrous-systems.com/) : [Rust Training Programs](https://ferrous-systems.com/training/).
 - [Rust for Hashkell Programmers](https://mmhaskell.com/rust).
+- [Rust Language Cheat Sheet](https://cheats.rs/).
 - [Working with Rust](https://mkaz.blog/working-with-rust/) by Marcus Kazmeierczak.
 - [24 Days of Rust](https://siciarz.net/24-days-rust-conclusion-2016/) by Zbigniew Siciarz, December 2016.
   - [Day 1 - cargo subcommands](https://siciarz.net/24-days-rust-cargo-subcommands/)
@@ -109,6 +113,7 @@ version = "12"
 
 <!-- link refs -->
 
+[article_bursell]: https://opensource.com/article/20/5/rust-java
 [article_cargo]: https://opensource.com/article/20/3/rust-cargo
 [article_dreimanis]: https://serokell.io/blog/rust-guide
 [article_half_hour]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust

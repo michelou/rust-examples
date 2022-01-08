@@ -53,7 +53,7 @@ programming language, and its package manager, Cargo.
 It will add the cargo, rustc, rustup and other commands to
 Cargo's bin directory, located at:
 
-  <b>%USERPROFILE%\.cargo\bin</b>
+  <b><a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin</b>
 
 This can be modified with the CARGO_HOME environment variable.
 
@@ -84,7 +84,7 @@ Current installation options:
 </pre>
 
 <pre style="font-size:80%;">
-<b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> /r %USERPROFILE%\.cargo *.exe</b>
+<b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> /r <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo *.exe</b>
 %USERPROFILE%\.cargo\bin\cargo-clippy.exe
 %USERPROFILE%\.cargo\bin\cargo-fmt.exe
 %USERPROFILE%\.cargo\bin\cargo-miri.exe
@@ -113,11 +113,14 @@ Command **`rustup update stable`** updates an existing [Rust][rust_lang] install
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
 info: latest update on 2021-12-02, rust version 1.57.0 (f1edd0429 2021-11-29)
-info: downloading component 'rust-std' for 'x86_64-pc-windows-gnu'
+[...]
+info: downloading component 'rustc'
+ 65.2 MiB /  65.2 MiB (100 %)   1.2 MiB/s in 52s ETA:  0s
+info: downloading component 'rustfmt'
+  2.2 MiB /   2.2 MiB (100 %)   1.2 MiB/s in  1s ETA:  0s
 [...]
 info: installing component 'rustc'
- 65.2 MiB /  65.2 MiB (100 %)  10.4 MiB/s in  7s ETA:  0s
- 10 IO-ops /  10 IO-ops (100 %)   1 IOPS in  2s ETA:  0s
+ 65.2 MiB /  65.2 MiB (100 %)  12.4 MiB/s in  5s ETA:  0s
 info: installing component 'rustfmt'
 info: checking for self-updates
 
