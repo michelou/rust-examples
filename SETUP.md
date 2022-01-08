@@ -17,7 +17,7 @@ In normal case we are facing one of the following situations:
 Command **`rustup-init --help`** displays the available options:
 
 <pre style="font-size:80%;">
-<b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\downloads\<a href="https://rust-lang.github.io/rustup/installation/index.html">rustup-init</a> --help</b>
+<b>&gt; c:\opt\rust-1.24.3\rustup-init</a> --help</b>
 rustup-init 1.24.3 (ce5817a94 2021-05-31)
 The installer for rustup
 
@@ -99,7 +99,7 @@ Current installation options:
 %USERPROFILE%\.cargo\bin\rustup.exe
 &nbsp;
 <b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a> --version</b>
-rustc 1.24.3 (ce5817a94 2021-05-31)
+rustc 1.57.0 (f1edd0429 2021-11-29)
 </pre>
 
 ## <span id="update">Installation update</span>
@@ -107,17 +107,21 @@ rustc 1.24.3 (ce5817a94 2021-05-31)
 Command **`rustup update stable`** updates an existing [Rust][rust_lang] installation:
 
 <pre style="font-size:80%;">
+<b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> rustup</b>
+<a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\rustup.exe
+&nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-683.2 KiB / 683.2 KiB (100 %)  38.4 KiB/s in 36s ETA:  0s
-info: latest update on 2021-11-01, rust version 1.56.1 (59eed8a2a 2021-11-01)
+info: latest update on 2021-12-02, rust version 1.57.0 (f1edd0429 2021-11-29)
 info: downloading component 'rust-std' for 'x86_64-pc-windows-gnu'
 [...]
 info: installing component 'rustc'
- 63.9 MiB /  63.9 MiB (100 %)  11.4 MiB/s in  6s ETA:  0s
+ 65.2 MiB /  65.2 MiB (100 %)  10.4 MiB/s in  7s ETA:  0s
+ 10 IO-ops /  10 IO-ops (100 %)   1 IOPS in  2s ETA:  0s
 info: installing component 'rustfmt'
+info: checking for self-updates
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.56.1 (59eed8a2a 2021-11-01) (from rustc 1.55.0 (c8dfcfe04 2021-09-06))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.57.0 (f1edd0429 2021-11-29) (from rustc 1.56.1 (59eed8a2a 2021-11-01))
 
 info: cleaning up downloads & tmp directories
 </pre>
@@ -125,9 +129,10 @@ info: cleaning up downloads & tmp directories
 
 ## <span id="footnotes">Footnotes</span>
 
-<span name="footnote_01">[1]</span> ***Installation settings*** [↩](#anchor_01)
+<span id="footnote_01">[1]</span> ***Installation settings*** [↩](#anchor_01)
 
-<pre style="margin:0 0 1em 20px; font-size:80%;">
+<dl><dd>
+<pre style="font-size:80%;">
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/type">type</a> <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.rustup\settings.toml</b>
 default_host_triple = "x86_64-pc-windows-msvc"
 default_toolchain = "stable"
@@ -136,10 +141,11 @@ version = "12"
 
 [overrides]
 </pre>
+</dd></dl>
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/November 2021* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/January 2022* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
