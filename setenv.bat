@@ -206,7 +206,7 @@ goto :eof
 set _MSYS_HOME=
 
 set __GCC_CMD=
-for /f %%f in ('where gcc.exe 2^>NUL') do set __GCC_CMD=%%f
+for /f %%f in ('where gcc.exe 2^>NUL') do set "__GCC_CMD=%%f"
 if defined __GCC_CMD (
     if %_DEBUG%==1 echo %_DEBUG_LABEL% Using path of GNU Make executable found in PATH 1>&2
     for /f "delims=" %%i in ("%__GCC_CMD%") do set "__MAKE_BIN_DIR=%%~dpi"
