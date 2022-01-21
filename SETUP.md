@@ -99,7 +99,7 @@ Current installation options:
 %USERPROFILE%\.cargo\bin\rustup.exe
 &nbsp;
 <b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a> --version</b>
-rustc 1.57.0 (f1edd0429 2021-11-29)
+rustc 1.58.1 (db9d1b20b 2022-01-20)
 </pre>
 
 ## <span id="update">Installation update</span>
@@ -112,7 +112,7 @@ Command **`rustup update stable`** updates an existing [Rust][rust_lang] install
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2021-12-02, rust version 1.57.0 (f1edd0429 2021-11-29)
+info: latest update on 2022-01-20, rust version 1.58.1 (db9d1b20b 2022-01-20)
 [...]
 info: downloading component 'rustc'
  65.2 MiB /  65.2 MiB (100 %)   1.2 MiB/s in 52s ETA:  0s
@@ -124,7 +124,7 @@ info: installing component 'rustc'
 info: installing component 'rustfmt'
 info: checking for self-updates
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.57.0 (f1edd0429 2021-11-29) (from rustc 1.56.1 (59eed8a2a 2021-11-01))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.58.1 (db9d1b20b 2022-01-20) (from rustc 1.57.0 (f1edd0429 2021-11-29))
 
 info: cleaning up downloads & tmp directories
 </pre>
