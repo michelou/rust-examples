@@ -27,7 +27,7 @@ set _CARGO_PATH=
 set _GIT_PATH=
 
 call :msys
-if not %_EXITCODE%==0 goto :end
+if not %_EXITCODE%==0 goto end
 
 call :rust
 if not %_EXITCODE%==0 goto end
@@ -140,7 +140,7 @@ if %_DEBUG%==1 (
 )
 goto :eof
 
-@rem input parameter(s): %1: drive letter, %2: path to be substituted
+@rem input parameters: %1: drive letter, %2: path to be substituted
 :subst
 set __DRIVE_NAME=%~1
 set "__GIVEN_PATH=%~2"
@@ -201,7 +201,7 @@ echo   %__BEG_P%Subcommands:%__END%
 echo     %__BEG_O%help%__END%        display this help message
 goto :eof
 
-@rem output parameter(s): _MSYS_HOME
+@rem output parameter: _MSYS_HOME
 :msys
 set _MSYS_HOME=
 
@@ -232,7 +232,7 @@ if not exist "%_MSYS_HOME%\mingw64\bin\gcc.exe" (
 )
 goto :eof
 
-@rem output parameter(s): _CARGO_HOME, _CARGO_PATH
+@rem output parameters: _CARGO_HOME, _CARGO_PATH
 :rust
 set _CARGO_HOME=
 set _CARGO_PATH=

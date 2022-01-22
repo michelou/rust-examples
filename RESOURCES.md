@@ -10,6 +10,7 @@
 
 ## <span id="articles">Articles</span>
 
+- [Intro to Rust: The Modern-Day, Safe Low-Level Programming Language][article_novak] by Marcus Novak, December 2020.
 - [The rustwasmc tool](https://www.secondstate.io/articles/rustwasmc/) by Second State, 2020.<br/>(GitHub project: [`second-state/rustwasmc`](https://github.com/second-state/rustwasmc))
 - [Introduction to Rust][article_dreimanis] by Gints Dreimanis, August 2020.
 - [Why I'm enjoying learning Rust as a Java programmer][article_bursell] by Mike Bursell, May 2020.
@@ -30,6 +31,7 @@
 - [Using Rust in Windows](https://msrc-blog.microsoft.com/2019/11/07/using-rust-in-windows/), November 2019.
 - [Getting started with Rust on the command line](https://asquera.de/blog/2018-01-20/getting-started-with-rust-on-the-command-line/), January 2018.
 - [Using C libraries in Rust: make a sys crate][blog_kornelski] by Pornel Kornelski.
+- [Fearless Concurrency with Rust][blog_turon] by Aaron Turon, April 2015.
 
 ## <span id="books">Books</span>
 
@@ -60,6 +62,7 @@
 
 ## <span id="training">Training and Tutorials</span>
 
+- [A Not so Short Introduction to the Rust Programming Language][tutorial_mueller] by Kasper Müller, November 2021.
 - [learn-rust Series](https://dev.to/cthutu/series/13395) by Matt Davies.
   - [Rust #8: Strings](https://dev.to/cthutu/rust-8-strings-53o), August 2021.
   - [Rust #7: Command-Line interfaces](https://dev.to/cthutu/rust-7-command-line-interfaces-4084), August 2021.
@@ -87,8 +90,9 @@
 ## <span id="videos">Videos</span>
 
 - [Rust at Microsoft][youtube_levick] by Ryan Levick, May 2020 (0h44).
-- [Rust Programming Techniques][youtube_cameron] by Nicholas Cameron, January 2018  (1h32).
-- [The Rust Programming Language][youtube_turon] bye Aaron Turon, March 2015.
+- [Rust Programming Techniques][youtube_cameron] by Nicholas Cameron, January 2018 (1h32).
+- [Rust Concurrency Explained][youtube_crichton] by Alex Crichton, 2017.
+- [The Rust Programming Language][youtube_turon] bye Aaron Turon, March 2015 (1h05).
 
 <!--
 ## <span id="footnotes">Footnotes</span>
@@ -117,6 +121,7 @@ version = "12"
 [article_cargo]: https://opensource.com/article/20/3/rust-cargo
 [article_dreimanis]: https://serokell.io/blog/rust-guide
 [article_half_hour]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
+[article_novak]: https://www.wwt.com/article/intro-to-rust-the-modern-day-safe-low-level-programming-language
 [article_oxide]: https://arxiv.org/abs/1903.00982
 [blog_fraenkel_7]: https://blog.frankel.ch/start-rust/7/
 [blog_fraenkel_8]: https://blog.frankel.ch/start-rust/8/
@@ -125,6 +130,7 @@ version = "12"
 [blog_nethercote]: https://blog.mozilla.org/nnethercote/2020/09/08/how-to-speed-up-the-rust-compiler-one-last-time/
 [blog_roman]: https://pvs-studio.com/en/blog/posts/0733/
 [blog_thorsten]: https://www.thorsten-hans.com/working-with-environment-variables-in-rust/
+[blog_turon]: https://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html
 [book_klabnik]: https://github.com/rust-lang/book
 [book_matzinger]: https://www.packtpub.com/product/rust-programming-cookbook/9781789530667
 [book_mcnamara]: https://www.manning.com/books/rust-in-action
@@ -135,6 +141,8 @@ version = "12"
 [paper_astrauskas]: https://www.research-collection.ethz.ch/handle/20.500.11850/311092
 [rust_downloads]: https://www.rust-lang.org/tools/install
 [rust_relnotes]: https://github.com/rust-lang/rust/blob/master/RELEASES.md
+[tutorial_mueller]: https://towardsdatascience.com/a-not-so-short-introduction-to-the-rust-programming-language-2e8542a06b76
 [youtube_cameron]: https://youtu.be/vqavdUGKeb4
+[youtube_crichton]: https://youtu.be/Dbytx0ivH7Q
 [youtube_levick]: https://youtu.be/NQBVUjdkLAA
 [youtube_turon]: https://youtu.be/O5vzLKg7y-k
