@@ -29,6 +29,7 @@
 - [What is Rust and why is it so popular?](https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/) by Jake Goulding, January 2020.
 - [Rust Compiler Internals : Mid-level Intermediate Representation (MIR)][blog_kanishkar] by Kanishkar J, December 2019.
 - [Using Rust in Windows](https://msrc-blog.microsoft.com/2019/11/07/using-rust-in-windows/), November 2019.
+- [Existential types in Rust][blog_vaktor] by Vaktor, July 2018.
 - [Getting started with Rust on the command line](https://asquera.de/blog/2018-01-20/getting-started-with-rust-on-the-command-line/), January 2018.
 - [Using C libraries in Rust: make a sys crate][blog_kornelski] by Pornel Kornelski.
 - [Fearless Concurrency with Rust][blog_turon] by Aaron Turon, April 2015.
@@ -58,6 +59,7 @@
 
 ## <span id="projects">Projects</span>
 
+- [`Miri`](https://rustrepo.com/repo/rust-lang-miri) - an experimental interpreter for Rust's [mid-level intermediate representation][rust_mir] (MIR).
 - [`ripgrep`][github_ripgrep]: recursively searches directories for a regex pattern.
 
 ## <span id="training">Training and Tutorials</span>
@@ -112,7 +114,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/January 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/February 2022* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -126,11 +128,13 @@ version = "12"
 [blog_fraenkel_7]: https://blog.frankel.ch/start-rust/7/
 [blog_fraenkel_8]: https://blog.frankel.ch/start-rust/8/
 [blog_fraenkel_9]: https://blog.frankel.ch/start-rust/9/
+[blog_kanishkar]: https://kanishkarj.github.io/rust-internals-mir
 [blog_kornelski]: https://kornel.ski/rust-sys-crate
 [blog_nethercote]: https://blog.mozilla.org/nnethercote/2020/09/08/how-to-speed-up-the-rust-compiler-one-last-time/
 [blog_roman]: https://pvs-studio.com/en/blog/posts/0733/
 [blog_thorsten]: https://www.thorsten-hans.com/working-with-environment-variables-in-rust/
 [blog_turon]: https://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html
+[blog_vaktor]: https://varkor.github.io/blog/2018/07/03/existential-types-in-rust.html
 [book_klabnik]: https://github.com/rust-lang/book
 [book_matzinger]: https://www.packtpub.com/product/rust-programming-cookbook/9781789530667
 [book_mcnamara]: https://www.manning.com/books/rust-in-action
@@ -140,6 +144,7 @@ version = "12"
 [news_this_week]: https://this-week-in-rust.org/
 [paper_astrauskas]: https://www.research-collection.ethz.ch/handle/20.500.11850/311092
 [rust_downloads]: https://www.rust-lang.org/tools/install
+[rust_mir]: https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md
 [rust_relnotes]: https://github.com/rust-lang/rust/blob/master/RELEASES.md
 [tutorial_mueller]: https://towardsdatascience.com/a-not-so-short-introduction-to-the-rust-programming-language-2e8542a06b76
 [youtube_cameron]: https://youtu.be/vqavdUGKeb4
