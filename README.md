@@ -16,12 +16,12 @@
 This project depends on two external software for the **Microsoft Windows** plaform:
 
 - [Git 2.35][git_downloads] ([*release notes*][git_relnotes])
-- [Rust 1.58][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">[1]</a></sup> ([*release notes*][rust_relnotes])
+- [Rust 1.58][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
 
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [`/opt/`][linux_opt] directory on Unix).
 
-For instance our development environment looks as follows (*January 2022*) <sup id="anchor_02"><a href="#footnote_02">[2]</a></sup>:
+For instance our development environment looks as follows (*February 2022*) <sup id="anchor_02"><a href="#footnote_02">[2]</a></sup>:
 
 <pre style="font-size:80%;">
 C:\opt\Git-2.35.1\      <i>(282 MB)</i>
