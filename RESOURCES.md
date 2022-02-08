@@ -3,19 +3,22 @@
 <table style="font-family:Helvetica,Arial;font-size:14px;line-height:1.6;">
   <tr>
   <td style="border:0;padding:0 10px 0 0;min-width:120px;"><a href="https://www.rust-lang.org/"><img src="https://www.rust-lang.org/static/images/rust-logo-blk.svg" width="120" alt="Rust logo"/></a></td>
-  <td style="border:0;padding:0;vertical-align:text-top;">This document gathers <a href="https://www.rust-lang.org/" rel="external">Rust</a> related resources we have collected so far.
+  <td style="border:0;padding:0;vertical-align:text-top;">This document gathers <a href="https://www.rust-lang.org/" rel="external">Rust</a> related resources that caught our attention.
   </td>
   </tr>
 </table>
 
 ## <span id="articles">Articles</span>
 
+- [**fasterthanli** Articles](https://fasterthanli.me/articles) :
+  - [Some mistakes Rust doesn't catch][article_mistakes], February 2022.
+  - [Why is my Rust build so slow?][article_slow_build], December 2021.
+  - [A half-hour to learn Rust][article_half_hour], January 2020.
 - [Intro to Rust: The Modern-Day, Safe Low-Level Programming Language][article_novak] by Marcus Novak, December 2020.
 - [The rustwasmc tool](https://www.secondstate.io/articles/rustwasmc/) by Second State, 2020.<br/>(GitHub project: [`second-state/rustwasmc`](https://github.com/second-state/rustwasmc))
 - [Introduction to Rust][article_dreimanis] by Gints Dreimanis, August 2020.
 - [Why I'm enjoying learning Rust as a Java programmer][article_bursell] by Mike Bursell, May 2020.
 - [Getting started with Cargo][article_cargo] by Gaurav Kamathe, March 2020.
-- [A half-hour to learn Rust][article_half_hour], January 2020.
 - [Oxide: The Essence of Rust][article_oxide] by Aaron Weiss &amp; al., March 2019.
 
 
@@ -26,6 +29,7 @@
 - [Rust and the JVM][blog_fraenkel_7] by Nicolas Fränkel, July 2021.
 - [How to speed up the Rust compiler one last time][blog_nethercote] by Nicholas Nethercote, September 2020.
 - [C++ Is Faster and Safer Than Rust: Benchmarked by Yandex][blog_roman] by Roman, May 2020.
+- &#128077; [Why Discord is switching from Go to Rust][blog_howarth] by Jesse Howarth, February 2020.
 - [What is Rust and why is it so popular?](https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/) by Jake Goulding, January 2020.
 - [Rust Compiler Internals : Mid-level Intermediate Representation (MIR)][blog_kanishkar] by Kanishkar J, December 2019.
 - [Using Rust in Windows](https://msrc-blog.microsoft.com/2019/11/07/using-rust-in-windows/), November 2019.
@@ -123,11 +127,14 @@ version = "12"
 [article_cargo]: https://opensource.com/article/20/3/rust-cargo
 [article_dreimanis]: https://serokell.io/blog/rust-guide
 [article_half_hour]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
+[article_mistakes]: https://fasterthanli.me/articles/some-mistakes-rust-doesnt-catch
 [article_novak]: https://www.wwt.com/article/intro-to-rust-the-modern-day-safe-low-level-programming-language
+[article_slow_build]: https://fasterthanli.me/articles/why-is-my-rust-build-so-slow
 [article_oxide]: https://arxiv.org/abs/1903.00982
 [blog_fraenkel_7]: https://blog.frankel.ch/start-rust/7/
 [blog_fraenkel_8]: https://blog.frankel.ch/start-rust/8/
 [blog_fraenkel_9]: https://blog.frankel.ch/start-rust/9/
+[blog_howarth]: https://blog.discord.com/why-discord-is-switching-from-go-to-rust-a190bbca2b1f
 [blog_kanishkar]: https://kanishkarj.github.io/rust-internals-mir
 [blog_kornelski]: https://kornel.ski/rust-sys-crate
 [blog_nethercote]: https://blog.mozilla.org/nnethercote/2020/09/08/how-to-speed-up-the-rust-compiler-one-last-time/
