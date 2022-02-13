@@ -62,8 +62,6 @@ set _DEBUG_LABEL=%_NORMAL_BG_CYAN%[%_BASENAME%]%_RESET%
 set _ERROR_LABEL=%_STRONG_FG_RED%Error%_RESET%:
 set _WARNING_LABEL=%_STRONG_FG_YELLOW%Warning%_RESET%:
 
-set _CRATE_NAME=main
-
 set "_SOURCE_DIR=%_ROOT_DIR%src"
 set "_TARGET_DIR=%_ROOT_DIR%target"
 set "_TARGET_DOCS_DIR=%_TARGET_DIR%\docs"
@@ -77,7 +75,6 @@ set "_RUSTC_CMD=%CARGO_HOME%\bin\rustc.exe"
 set "_RUSTDOC_CMD=%CARGO_HOME%\bin\rustdoc.exe"
 
 set _PELOOK_CMD=pelook.exe
-set _PELOOK_OPTS=
 goto :eof
 
 :env_colors
@@ -127,7 +124,7 @@ set _STRONG_BG_BLUE=[104m
 goto :eof
 
 @rem input parameter: %*
-@rem output parameter(s): _CLEAN, _COMPILE, _RUN, _DEBUG, _TEST, _VERBOSE
+@rem output parameters: _CLEAN, _COMPILE, _RUN, _DEBUG, _TEST, _VERBOSE
 :args
 set _CLEAN=0
 set _COMPILE=0
@@ -185,6 +182,8 @@ goto :args_loop
 :args_done
 set _STDOUT_REDIRECT=1^>NUL
 if %_DEBUG%==1 set _STDOUT_REDIRECT=1^>^&2
+
+set _CRATE_NAME=main
 
 @rem General format: <arch>-<vendor>-<sys>-<abi> where
 @rem arch   = x86_64, i686, arm, mips, etc.
@@ -270,6 +269,12 @@ for %%f in (%_SOURCE_DIR%\*.rs) do (
     set __SOURCE_FILES=!__SOURCE_FILES! "%%f"
     set /a __N+=1
 )
+if %__N%==0 (
+    echo %_WARNING_LABEL% No Rust source file found 1>&2
+    goto :eof
+) else if %__N%==1 ( set __N_FILES=%__N% Rust source file
+) else ( set __N_FILES=%__N% Rust source files
+)
 set __PATH=%PATH%
 @rem We add gcc.exe to PATH if _TARGET=gnu
 if %_TARGET%==gnu set "PATH=%PATH%;%MSYS_HOME%\mingw64\bin"
@@ -286,11 +291,12 @@ set __RUSTC_OPTS=%_RUST_LINT_OPTS% %__RUST_CRATE_OPTS% --edition %_EDITION% --ou
 if %_DEBUG%==1 set __RUSTC_OPTS=-g %__RUSTC_OPTS%
 
 if %_DEBUG%==1 ( echo %_DEBUG_LABEL% "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FILES% 1>&2
-) else if %_VERBOSE%==1 ( echo Compile %__N% Rust source files to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
+) else if %_VERBOSE%==1 ( echo Compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
 )
 call "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FILES%
 if not %ERRORLEVEL%==0 (
     if %_TARGET%==gnu set "PATH=%__PATH%"
+    echo %_ERROR_LABEL% Failed to compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
     set _EXITCODE=1
     goto :eof
 )
@@ -325,13 +331,15 @@ if not exist "%__EXE_FILE%" (
     set _EXITCODE=1
     goto :eof
 )
+set __PELOOK_OPTS=
+
 if %_DEBUG%==1 (
-    echo %_DEBUG_LABEL% %_PELOOK_CMD% %_PELOOK_OPTS% !__EXE_FILE:%_ROOT_DIR%=! 1>&2
-    call "%_PELOOK_CMD%" %_PELOOK_OPTS% "%__EXE_FILE%"
+    echo %_DEBUG_LABEL% %_PELOOK_CMD% %__PELOOK_OPTS% !__EXE_FILE:%_ROOT_DIR%=! 1>&2
+    call "%_PELOOK_CMD%" %__PELOOK_OPTS% "%__EXE_FILE%"
 ) else (
     if %_VERBOSE%==1 echo Dump PE/COFF infos for executable "!__EXE_FILE:%_ROOT_DIR%=!" 1>&2
     echo executable:           !__EXE_FILE:%_ROOT_DIR%=!
-    call "%_PELOOK_CMD%" %_PELOOK_OPTS% "%__EXE_FILE%" | findstr "signature machine linkver modules"
+    call "%_PELOOK_CMD%" %__PELOOK_OPTS% "%__EXE_FILE%" | findstr "signature machine linkver modules"
 )
 if not %ERRORLEVEL%==0 (
     echo %_ERROR_LABEL% Dump of executable %_CRATE_NAME%.exe failed 1>&2
@@ -373,7 +381,7 @@ goto :eof
 if %_TIMER%==1 (
     for /f "delims=" %%i in ('powershell -c "(Get-Date)"') do set __TIMER_END=%%i
     call :duration "%_TIMER_START%" "!__TIMER_END!"
-    echo Total elapsed time: !_DURATION! 1>&2
+    echo Total execution time: !_DURATION! 1>&2
 )
 if %_DEBUG%==1 echo %_DEBUG_LABEL% _EXITCODE=%_EXITCODE% 1>&2
 exit /b %_EXITCODE%
