@@ -10,10 +10,14 @@
 
 ## <span id="articles">Articles</span>
 
-- [**fasterthanli** Articles](https://fasterthanli.me/articles) :
+- [**fasterthanli**](https://fasterthanli.me/articles) Articles :
   - [Some mistakes Rust doesn't catch][article_mistakes], February 2022.
   - [Why is my Rust build so slow?][article_slow_build], December 2021.
   - [A half-hour to learn Rust][article_half_hour], January 2020.
+- [**fettblog.eu**](https://fettblog.eu/articles) Articles:
+  - [Idiomatic Rust][article_baumgartner_idiomatic] by Stefan Baumgartner, December 2021.
+  - [Serverless Rust][article_baumgartner_serverless] by Stefan Baumgartner, December 2021.
+  - [Error handling in Rust][article_baumgartner_error] by Stefan Baumgartner, September 2021.
 - [Intro to Rust: The Modern-Day, Safe Low-Level Programming Language][article_novak] by Marcus Novak, December 2020.
 - [The rustwasmc tool](https://www.secondstate.io/articles/rustwasmc/) by Second State, 2020.<br/>(GitHub project: [`second-state/rustwasmc`](https://github.com/second-state/rustwasmc))
 - [Introduction to Rust][article_dreimanis] by Gints Dreimanis, August 2020.
@@ -123,6 +127,9 @@ version = "12"
 
 <!-- link refs -->
 
+[article_baumgartner_error]: https://fettblog.eu/rust-error-handling/
+[article_baumgartner_idiomatic]: https://fettblog.eu/slides/idiomatic-rust/
+[article_baumgartner_serverless]: https://fettblog.eu/slides/serverless-rust/
 [article_bursell]: https://opensource.com/article/20/5/rust-java
 [article_cargo]: https://opensource.com/article/20/3/rust-cargo
 [article_dreimanis]: https://serokell.io/blog/rust-guide
