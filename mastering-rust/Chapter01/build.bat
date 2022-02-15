@@ -325,6 +325,12 @@ for %%f in (%_SOURCE_DIR%\%_MAIN%.rs) do (
     set __SOURCE_FILES=!__SOURCE_FILES! "%%f"
     set /a __N+=1
 )
+if %__N%==0 (
+    echo %_WARNING_LABEL% No Rust source file found 1>&2
+    goto :eof
+) else if %__N%==1 ( set __N_FILES=%__N% Rust source file
+) else ( set __N_FILES=%__N% Rust source files
+)
 set __PATH=%PATH%
 @rem We add gcc.exe to PATH if _TARGET=gnu
 if %_TARGET%==gnu set "PATH=%PATH%;%MSYS_HOME%\mingw64\bin"
@@ -341,11 +347,12 @@ set __RUSTC_OPTS=%_RUST_LINT_OPTS% %__RUST_CRATE_OPTS% --edition %_EDITION% --ou
 if %_DEBUG%==1 set __RUSTC_OPTS=-g %__RUSTC_OPTS%
 
 if %_DEBUG%==1 ( echo %_DEBUG_LABEL% "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FILES% 1>&2
-) else if %_VERBOSE%==1 ( echo Compile %__N% Rust source files to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
+) else if %_VERBOSE%==1 ( echo Compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
 )
 call "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FILES%
 if not %ERRORLEVEL%==0 (
     if %_TARGET%==gnu set "PATH=%__PATH%"
+    echo %_ERROR_LABEL% Failed to compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
     set _EXITCODE=1
     goto :eof
 )
