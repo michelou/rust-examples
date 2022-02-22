@@ -9,7 +9,7 @@
   </tr>
 </table>
 
-[Ada][ada_examples], [Deno][deno_examples], [Golang][golang_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Python][python_examples], [Scala 3][scala3_examples], [Spring][spring_examples], [TruffleSqueak][trufflesqueak_examples] and [WiX][wix_examples] are other trending topics we are continuously monitoring.
+[Ada][ada_examples], [Akka][akka_examples], [Deno][deno_examples], [Golang][golang_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Python][python_examples], [Scala 3][scala3_examples], [Spring][spring_examples], [TruffleSqueak][trufflesqueak_examples] and [WiX][wix_examples] are other trending topics we are continuously monitoring.
 
 ## <span id="proj_deps">Project dependencies</span>
 
@@ -178,6 +178,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 <!-- link refs -->
 
 [ada_examples]: https://github.com/michelou/ada-examples
+[akka_examples]: https://github.com/michelou/akka-examples
 [cargo_cli]: https://doc.rust-lang.org/cargo/commands/cargo.html
 [deno_examples]: https://github.com/michelou/deno-examples
 [git_docs]: https://git-scm.com/docs/git
