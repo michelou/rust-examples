@@ -37,8 +37,8 @@ This project is organized as follows:
 <pre style="font-size:80%;">
 bin\
 docs\
-mastering-rust\{<a href="mastering-rust/README.md">README.md</a>, ..}
-rust-by-example\{<a href="rust-by-example/README.md">README.md</a>, ..}
+mastering-rust\{<a href="mastering-rust/README.md">README.md</a>, <a href="mastering-rust/Chapter01/">Chapter01</a>, etc.}
+rust-by-example\{<a href="rust-by-example/README.md">README.md</a>, <a href="rust-by-example/01_Display/">01_Display</a>, etc.}
 README.md
 <a href="RESOURCES.md">RESOURCES.md</a>
 <a href="SETUP.md">SETUP.md</a>

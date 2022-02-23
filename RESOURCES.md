@@ -10,14 +10,16 @@
 
 ## <span id="articles">Articles</span>
 
-- [**fasterthanli**](https://fasterthanli.me/articles) Articles :
+- [**fasterthanli**](https://fasterthanli.me/articles) articles :
   - [Some mistakes Rust doesn't catch][article_mistakes], February 2022.
   - [Why is my Rust build so slow?][article_slow_build], December 2021.
   - [A half-hour to learn Rust][article_half_hour], January 2020.
-- [**fettblog.eu**](https://fettblog.eu/articles) Articles:
+- [**fettblog.eu**](https://fettblog.eu/articles) articles :
   - [Idiomatic Rust][article_baumgartner_idiomatic] by Stefan Baumgartner, December 2021.
   - [Serverless Rust][article_baumgartner_serverless] by Stefan Baumgartner, December 2021.
   - [Error handling in Rust][article_baumgartner_error] by Stefan Baumgartner, September 2021.
+- [**Red Hat** Developer](https://developers.redhat.com/) articles :
+  - [How Rust makes Rayon's data parallelism magical][article_stone] by Josh Stone, April 2021.
 - [Intro to Rust: The Modern-Day, Safe Low-Level Programming Language][article_novak] by Marcus Novak, December 2020.
 - [The rustwasmc tool](https://www.secondstate.io/articles/rustwasmc/) by Second State, 2020.<br/>(GitHub project: [`second-state/rustwasmc`](https://github.com/second-state/rustwasmc))
 - [Introduction to Rust][article_dreimanis] by Gints Dreimanis, August 2020.
@@ -72,6 +74,7 @@
 
 ## <span id="training">Training and Tutorials</span>
 
+- [A Gentle Introduction To Rust][tutorial_donovan] by Steve Donovan, 2018.
 - [A Not so Short Introduction to the Rust Programming Language][tutorial_mueller] by Kasper Müller, November 2021.
 - [learn-rust Series](https://dev.to/cthutu/series/13395) by Matt Davies.
   - [Rust #8: Strings](https://dev.to/cthutu/rust-8-strings-53o), August 2021.
@@ -83,7 +86,7 @@
   - [Rust #2: Lifetimes, Owners and Borrowers, OH MY! ](https://dev.to/cthutu/rust-2-lifetimes-owners-and-borrowers-oh-my-3fem), June 2021.
   - [Rust #1: Creating your development environment](https://dev.to/cthutu/rust-1-creating-your-development-environment-55bi), June 2021.
 - [ferrous systems](https://ferrous-systems.com/) : [Rust Training Programs](https://ferrous-systems.com/training/).
-- [Rust for Hashkell Programmers](https://mmhaskell.com/rust).
+- [Rust for Haskell Programmers](https://mmhaskell.com/rust).
 - [Rust Language Cheat Sheet](https://cheats.rs/).
 - [Working with Rust](https://mkaz.blog/working-with-rust/) by Marcus Kazmeierczak.
 - [24 Days of Rust](https://siciarz.net/24-days-rust-conclusion-2016/) by Zbigniew Siciarz, December 2016.
@@ -136,8 +139,9 @@ version = "12"
 [article_half_hour]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
 [article_mistakes]: https://fasterthanli.me/articles/some-mistakes-rust-doesnt-catch
 [article_novak]: https://www.wwt.com/article/intro-to-rust-the-modern-day-safe-low-level-programming-language
-[article_slow_build]: https://fasterthanli.me/articles/why-is-my-rust-build-so-slow
 [article_oxide]: https://arxiv.org/abs/1903.00982
+[article_slow_build]: https://fasterthanli.me/articles/why-is-my-rust-build-so-slow
+[article_stone]: https://developers.redhat.com/blog/2021/04/30/how-rust-makes-rayons-data-parallelism-magical
 [blog_fraenkel_7]: https://blog.frankel.ch/start-rust/7/
 [blog_fraenkel_8]: https://blog.frankel.ch/start-rust/8/
 [blog_fraenkel_9]: https://blog.frankel.ch/start-rust/9/
@@ -160,6 +164,7 @@ version = "12"
 [rust_downloads]: https://www.rust-lang.org/tools/install
 [rust_mir]: https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md
 [rust_relnotes]: https://github.com/rust-lang/rust/blob/master/RELEASES.md
+[tutorial_donovan]: https://stevedonovan.github.io/rust-gentle-intro/
 [tutorial_mueller]: https://towardsdatascience.com/a-not-so-short-introduction-to-the-rust-programming-language-2e8542a06b76
 [youtube_cameron]: https://youtu.be/vqavdUGKeb4
 [youtube_crichton]: https://youtu.be/Dbytx0ivH7Q

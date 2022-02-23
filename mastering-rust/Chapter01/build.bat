@@ -238,10 +238,13 @@ if %_TARGET%==gnu if not defined MSYS_HOME (
     goto :eof
 )
 if %_DEBUG%==1 (
-    echo %_DEBUG_LABEL% Options    : _EDITION=%_EDITION% _MAIN=%_MAIN% _TARGET=%_TARGET% _TIMER=%_TIMER% _VERBOSE=%_VERBOSE% 1>&2
+    echo %_DEBUG_LABEL% Options    : _EDITION=%_EDITION% _TARGET=%_TARGET% _TIMER=%_TIMER% _VERBOSE=%_VERBOSE% 1>&2
     echo %_DEBUG_LABEL% Subcommands: _CLEAN=%_CLEAN% _COMPILE=%_COMPILE% _DOC=%_DOC% _DUMP=%_DUMP% _RUN=%_RUN% _TEST=%_TEST% 1>&2
     echo %_DEBUG_LABEL% Variables  : "CARGO_HOME=%CARGO_HOME%" 1>&2
+    echo %_DEBUG_LABEL% Variables  : "GIT_HOME=%GIT_HOME%" 1>&2
     echo %_DEBUG_LABEL% Variables  : "MSYS_HOME=%MSYS_HOME%" 1>&2
+    echo %_DEBUG_LABEL% Variables  : "RUSTUP_HOME=%RUSTUP_HOME%" 1>&2
+    echo %_DEBUG_LABEL% Variables  : _CRATE_NAME=%_CRATE_NAME% _CRATE_TYPE=%_CRATE_TYPE% 1>&2
     echo %_DEBUG_LABEL% Variables  : _TARGET_TRIPLE="%_TARGET_TRIPLE%" 1>&2
 )
 if %_TIMER%==1 for /f "delims=" %%i in ('powershell -c "(Get-Date)"') do set _TIMER_START=%%i
@@ -288,7 +291,7 @@ echo     %__BEG_O%compile%__END%               generate executable
 echo     %__BEG_O%doc%__END%                   generate HTML documentation
 echo     %__BEG_O%dump%__END%                  dump PE/COFF infos for generated executable
 echo     %__BEG_O%help%__END%                  display this help message
-echo     %__BEG_O%run%__END%                   run generated executable %__BEG_O%%_MAIN%%__END%
+echo     %__BEG_O%run%__END%                   run generated executable %__BEG_O%%_CRATE_NAME%%__END%
 echo     %__BEG_O%test%__END%                  test generated executable
 if %_VERBOSE%==0 goto :eof
 echo.
@@ -316,12 +319,14 @@ if not %ERRORLEVEL%==0 (
 goto :eof
 
 :compile
-setlocal
 if not exist "%_TARGET_DIR%" mkdir "%_TARGET_DIR%"
+
+call :action_required "%_TARGET_DIR%\%_CRATE_NAME%.exe" "%_SOURCE_DIR%\*.rs"
+if %_ACTION_REQUIRED%==0 goto :eof
 
 set __SOURCE_FILES=
 set __N=0
-for %%f in (%_SOURCE_DIR%\%_MAIN%.rs) do (
+for %%f in (%_SOURCE_DIR%\%_CRATE_NAME%.rs) do (
     set __SOURCE_FILES=!__SOURCE_FILES! "%%f"
     set /a __N+=1
 )
@@ -425,6 +430,61 @@ if not %ERRORLEVEL%==0 (
 goto :eof
 
 :test
+goto :eof
+
+@rem input parameter: 1=target file 2,3,..=path (wildcards accepted)
+@rem output parameter: _ACTION_REQUIRED
+:action_required
+set "__TARGET_FILE=%~1"
+
+set __PATH_ARRAY=
+set __PATH_ARRAY1=
+:action_path
+shift
+set "__PATH=%~1"
+if not defined __PATH goto action_next
+if defined __PATH_ARRAY set "__PATH_ARRAY=%__PATH_ARRAY%,"
+set __PATH_ARRAY=%__PATH_ARRAY%'%__PATH%'
+if defined __PATH_ARRAY1 set "__PATH_ARRAY1=%__PATH_ARRAY1%,"
+set __PATH_ARRAY1=%__PATH_ARRAY1%'!__PATH:%_ROOT_DIR%=!'
+goto action_path
+
+:action_next
+set __TARGET_TIMESTAMP=00000000000000
+for /f "usebackq" %%i in (`powershell -c "gci -path '%__TARGET_FILE%' -ea Stop | select -last 1 -expandProperty LastWriteTime | Get-Date -uformat %%Y%%m%%d%%H%%M%%S" 2^>NUL`) do (
+     set __TARGET_TIMESTAMP=%%i
+)
+set __SOURCE_TIMESTAMP=00000000000000
+for /f "usebackq" %%i in (`powershell -c "gci -recurse -path %__PATH_ARRAY% -ea Stop | sort LastWriteTime | select -last 1 -expandProperty LastWriteTime | Get-Date -uformat %%Y%%m%%d%%H%%M%%S" 2^>NUL`) do (
+    set __SOURCE_TIMESTAMP=%%i
+)
+call :newer %__SOURCE_TIMESTAMP% %__TARGET_TIMESTAMP%
+set _ACTION_REQUIRED=%_NEWER%
+if %_DEBUG%==1 (
+    echo %_DEBUG_LABEL% %__TARGET_TIMESTAMP% Target : '%__TARGET_FILE%' 1>&2
+    echo %_DEBUG_LABEL% %__SOURCE_TIMESTAMP% Sources: %__PATH_ARRAY% 1>&2
+    echo %_DEBUG_LABEL% _ACTION_REQUIRED=%_ACTION_REQUIRED% 1>&2
+) else if %_VERBOSE%==1 if %_ACTION_REQUIRED%==0 if %__SOURCE_TIMESTAMP% gtr 0 (
+    echo No action required ^(%__PATH_ARRAY1%^) 1>&2
+)
+goto :eof
+
+@rem output parameter: _NEWER
+:newer
+set __TIMESTAMP1=%~1
+set __TIMESTAMP2=%~2
+
+set __DATE1=%__TIMESTAMP1:~0,8%
+set __TIME1=%__TIMESTAMP1:~-6%
+
+set __DATE2=%__TIMESTAMP2:~0,8%
+set __TIME2=%__TIMESTAMP2:~-6%
+
+if %__DATE1% gtr %__DATE2% ( set _NEWER=1
+) else if %__DATE1% lss %__DATE2% ( set _NEWER=0
+) else if %__TIME1% gtr %__TIME2% ( set _NEWER=1
+) else ( set _NEWER=0
+)
 goto :eof
 
 @rem output parameter: _DURATION

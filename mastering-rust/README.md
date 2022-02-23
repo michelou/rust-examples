@@ -3,7 +3,7 @@
 <table style="font-family:Helvetica,Arial;font-size:14px;line-height:1.6;">
   <tr>
   <td style="border:0;padding:0 10px 0 0;min-width:120px;"><a href="https://www.rust-lang.org/" rel="external"><img src="https://www.rust-lang.org/static/images/rust-logo-blk.svg" width="120" alt="Rust logo"/></a></td>
-  <td style="border:0;padding:0;vertical-align:text-top;">Directory <code>mastering-rust\</code> gathers <a href="https://www.rust-lang.org/" rel="external">Rust</a> code examples from the Book <a href="https://www.packtpub.com/product/mastering-rust-second-edition/9781789346572" rel="external">"Mastering Rust"</a>.<br/>
+  <td style="border:0;padding:0;vertical-align:text-top;">Directory <code>mastering-rust\</code> gathers <a href="https://www.rust-lang.org/" rel="external">Rust</a> code examples from Sharma's book <a href="https://www.packtpub.com/product/mastering-rust-second-edition/9781789346572" rel="external"><i>Mastering Rust</i></a>.<br/>
   It also includes several <a href="https://en.wikibooks.org/wiki/Windows_Batch_Scripting">batch files</a> for experimenting with <a href="https://www.rust-lang.org/" rel="external">Rust</a> on the <b>Microsoft Windows</b> platform.
   </td>
   </tr>
@@ -81,7 +81,15 @@ Result from closure: 30
 
 ## <span id="chapter02">Chapter02</span>
 
-<i>tbd</i>
+<i>WIP</i>
+
+## <span id="chapter03">Chapter03</span>
+
+<i>WIP</i>
+
+## <span id="chapter04">Chapter04</span>
+
+<i>WIP</i>
 
 ## <span id="footnotes">Footnotes</span>
 
