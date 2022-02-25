@@ -16,7 +16,7 @@
 This project depends on two external software for the **Microsoft Windows** plaform:
 
 - [Git 2.35][git_downloads] ([*release notes*][git_relnotes])
-- [Rust 1.58][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
+- [Rust 1.59][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
 
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [`/opt/`][linux_opt] directory on Unix).
@@ -97,11 +97,11 @@ Command [**`setenv`**](setenv.bat) is executed once to setup your development en
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
-   cargo 1.58.1, rustc 1.58.1, rustfmt 1.4.37-stable, rustup 1.24.3,
+   cargo 1.59.0, rustc 1.59.0, rustfmt 1.4.37-stable, rustup 1.24.3,
    pelook v1.73, git 2.35.1.windows.1, diff 3.8, bash 4.4.23(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
-%USERPROFILE%\.cargo\bin\cargo.exe
+<a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\cargo.exe
 %USERPROFILE%\.cargo\bin\rustc.exe
 %USERPROFILE%\.cargo\bin\rustup.exe
 R:\bin\<a href="http://bytepointer.com/tools/index.htm#pelook">pelook.exe</a>
@@ -112,13 +112,13 @@ Command [**`setenv -verbose`**](setenv.bat) also displays the tool paths:
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
-   cargo 1.58.1, rustc 1.58.1, rustfmt 1.4.37-stable, rustup 1.24.3,
+   cargo 1.59.0, rustc 1.59.0, rustfmt 1.4.37-stable, rustup 1.24.3,
    pelook v1.73, git 2.35.1.windows.1, diff 3.8, bash 4.4.23(1)-release
 Tool paths:
-   %USERPROFILE%\.cargo\bin\cargo.exe
-   %USERPROFILE%\.cargo\bin\rustc.exe
-   %USERPROFILE%\.cargo\bin\rustfmt.exe
-   %USERPROFILE%\.cargo\bin\rustup.exe
+   <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/cargo/commands/">cargo.exe</a>
+   %USERPROFILE%\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a>
+   %USERPROFILE%\.cargo\bin\<a href="https://rust-lang.github.io/rustfmt">rustfmt.exe</a>
+   %USERPROFILE%\.cargo\bin\<a href="https://rust-lang.github.io/rustup/basics.html">rustup.exe</a>
    R:\bin\pelook.exe
    C:\opt\Git-2.35.1\bin\git.exe
    C:\opt\Git-2.35.1\mingw64\bin\git.exe
@@ -141,14 +141,14 @@ Environment variables:
 <dd>
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc</a> --version --verbose | <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr">findstr</a> /b "rustc LLVM"</b>
-rustc 1.58.1 (db9d1b20b 2022-01-20)
+rustc 1.59.0 (9d1b2106e 2022-02-23)
 LLVM version: 13.0.0
 </pre>
 </dd>
 <dd>
 <table>
 <tr><th>Rustc Version</th><th>LLVM Version</th></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.56.0">1.56.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.58.1">1.58.1</a></td><td><a href="https://releases.llvm.org/13.0.0/docs/ReleaseNotes.html">13.0.0</a></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.56.0">1.56.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.59.0">1.59.0</a></td><td><a href="https://releases.llvm.org/13.0.0/docs/ReleaseNotes.html">13.0.0</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.55.0">1.55.0</a></td><td>12.0.1</td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.52.0">1.52.0</a> - 1.54.0</td><td><a href="https://releases.llvm.org/12.0.0/docs/ReleaseNotes.html">12.0.0</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.47.0">1.47.0</a> - 1.51.0</td><td><a href="https://releases.llvm.org/11.0.0/docs/ReleaseNotes.html">11.0.0</a></td></tr>
@@ -167,7 +167,7 @@ In our case we downloaded the following installation files (see <a href="#proj_d
 </pre>
 </dd>
 <dd>
-Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b><code>rustup</code></b></a> tool is installed, we can update our installation by simply running <b><code>rustup update</code></b>. 
+Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b><code>rustup</code></b></a> tool is installed, we can update our installation by simply running <a href="https://rust-lang.github.io/rustup/basics.html"><b><code>rustup update</code></b></a>. 
 </dd></dl>
 
 ***
