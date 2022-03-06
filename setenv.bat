@@ -25,6 +25,10 @@ if %_HELP%==1 (
 
 set _CARGO_PATH=
 set _GIT_PATH=
+set _MAKE_PATH=
+
+call :make
+if not %_EXITCODE%==0 goto end
 
 call :msys
 if not %_EXITCODE%==0 goto end
@@ -201,6 +205,35 @@ echo   %__BEG_P%Subcommands:%__END%
 echo     %__BEG_O%help%__END%        display this help message
 goto :eof
 
+@rem output parameters: _MAKE_HOME, _MAKE_PATH
+:make
+set _MAKE_HOME=
+set _MAKE_PATH=
+
+set __MAKE_CMD=
+for /f %%f in ('where make.exe 2^>NUL') do set "__MAKE_CMD=%%f"
+if defined __MAKE_CMD (
+    if %_DEBUG%==1 echo %_DEBUG_LABEL% Using path of Make executable found in PATH 1>&2
+    rem keep _MAKE_PATH undefined since executable already in path
+    goto :eof
+) else if defined MAKE_HOME (
+    set "_MAKE_HOME=%MAKE_HOME%"
+    if %_DEBUG%==1 echo %_DEBUG_LABEL% Using environment variable MAKE_HOME 1>&2
+) else (
+    set _PATH=C:\opt
+    for /f %%f in ('dir /ad /b "!_PATH!\make-3*" 2^>NUL') do set "_MAKE_HOME=!_PATH!\%%f"
+    if defined _MAKE_HOME (
+        if %_DEBUG%==1 echo %_DEBUG_LABEL% Using default Make installation directory !_MAKE_HOME! 1>&2
+    )
+)
+if not exist "%_MAKE_HOME%\bin\make.exe" (
+    echo %_ERROR_LABEL% Make executable not found ^(%_MAKE_HOME%^) 1>&2
+    set _EXITCODE=1
+    goto :eof
+)
+set "_MAKE_PATH=;%_MAKE_HOME%\bin"
+goto :eof
+
 @rem output parameter: _MSYS_HOME
 :msys
 set _MSYS_HOME=
@@ -332,6 +365,11 @@ if %ERRORLEVEL%==0 (
     for /f "tokens=1-3,4,*" %%i in ('"%__BIN_DIR%\pelook.exe" /? ^| findstr /b PE') do set "__VERSIONS_LINE2=%__VERSIONS_LINE2% pelook %%l,"
     set __WHERE_ARGS=%__WHERE_ARGS% "%__BIN_DIR%:pelook.exe"
 )
+where /q "%MAKE_HOME%\bin:make.exe"
+if %ERRORLEVEL%==0 (
+    for /f "tokens=1,2,*" %%i in ('"%MAKE_HOME%\bin\make.exe" --version 2^>^&1 ^| findstr Make') do set "__VERSIONS_LINE2=%__VERSIONS_LINE2% make %%k,"
+    set __WHERE_ARGS=%__WHERE_ARGS% "%MAKE_HOME%\bin:make.exe"
+)
 where /q "%GIT_HOME%\bin:git.exe"
 if %ERRORLEVEL%==0 (
     for /f "tokens=1,2,*" %%i in ('"%GIT_HOME%\bin\git.exe" --version') do set "__VERSIONS_LINE2=%__VERSIONS_LINE2% git %%k,"
@@ -356,6 +394,7 @@ if %__VERBOSE%==1 (
     echo Environment variables: 1>&2
     if defined CARGO_HOME echo    "CARGO_HOME=%CARGO_HOME%" 1>&2
     if defined GIT_HOME echo    "GIT_HOME=%GIT_HOME%" 1>&2
+    if defined MAKE_HOME echo    "MAKE_HOME=%MAKE_HOME%" 1>&2
     if defined MSYS_HOME echo    "MSYS_HOME=%MSYS_HOME%" 1>&2
     if defined RUSTUP_HOME echo    "RUSTUP_HOME=%RUSTUP_HOME%" 1>&2
 )
@@ -369,9 +408,10 @@ endlocal & (
     if %_EXITCODE%==0 (
         if not defined CARGO_HOME set "CARGO_HOME=%_CARGO_HOME%"
         if not defined GIT_HOME set "GIT_HOME=%_GIT_HOME%"
+        if not defined MAKE_HOME set "MAKE_HOME=%_MAKE_HOME%"
         if not defined MSYS_HOME set "MSYS_HOME=%_MSYS_HOME%"
         if not defined RUSTUP_HOME set "RUSTUP_HOME=%USERPROFILE%\.rustup"
-        set "PATH=%PATH%%_CARGO_PATH%%_GIT_PATH%;%~dp0bin"
+        set "PATH=%PATH%%_CARGO_PATH%%_MAKE_PATH%%_GIT_PATH%;%~dp0bin"
         call :print_env %_VERBOSE%
         if %_BASH%==1 (
             @rem see https://conemu.github.io/en/GitForWindows.html

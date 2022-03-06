@@ -60,7 +60,7 @@ This can be modified with the CARGO_HOME environment variable.
 Rustup metadata and toolchains will be installed into the Rustup
 home directory, located at:
 
-  <b>%USERPROFILE%\.rustup</b>
+  <b><a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.rustup</b>
 
 This can be modified with the RUSTUP_HOME environment variable.
 
@@ -99,7 +99,7 @@ Current installation options:
 %USERPROFILE%\.cargo\bin\rustup.exe
 &nbsp;
 <b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a> --version</b>
-rustc 1.58.1 (db9d1b20b 2022-01-20)
+rustc 1.59.0 (9d1b2106e 2022-02-23)
 </pre>
 
 ## <span id="update">Installation update</span>
@@ -112,7 +112,7 @@ Command **`rustup update stable`** updates an existing [Rust][rust_lang] install
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2022-01-20, rust version 1.58.1 (db9d1b20b 2022-01-20)
+info: latest update on 2022-02-24, rust version 1.59.0 (9d1b2106e 2022-02-23)dd
 [...]
 info: downloading component 'rustc'
  65.2 MiB /  65.2 MiB (100 %)   1.2 MiB/s in 52s ETA:  0s
@@ -124,11 +124,38 @@ info: installing component 'rustc'
 info: installing component 'rustfmt'
 info: checking for self-updates
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.58.1 (db9d1b20b 2022-01-20) (from rustc 1.57.0 (f1edd0429 2021-11-29))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.59.0 (9d1b2106e 2022-02-23) (from rustc 1.57.0 (f1edd0429 2021-11-29))
 
 info: cleaning up downloads & tmp directories
 </pre>
 
+## <span id="cargo-audit">`cargo-audit`</span>
+
+Command `cargo audit` does audit `Cargo.lock` files for crates with security vulnerabilities (based on [`rustsec/advisory-db `](https://github.com/RustSec/advisory-db/)).
+
+<pre style="font-size:80%;">
+<b>&gt; cargo install cargo-audit</b>
+    Updating crates.io index
+  Downloaded cargo-audit v0.16.0
+  Downloaded 1 crate (35.7 KB) in 0.73s
+  Installing cargo-audit v0.16.0
+  Downloaded fixedbitset v0.4.1
+  [...]
+  Downloaded libgit2-sys v0.12.26+1.3.0
+  Downloaded 100 crates (10.4 MB) in 1m 11s (largest was `libgit2-sys` at 1.5 MB)
+   Compiling proc-macro2 v1.0.36
+   [...]
+   Compiling cargo-audit v0.16.0
+    Finished release [optimized] target(s) in 13m 36s
+  Installing %CARGO_HOME%\bin\cargo-audit.exe
+   Installed package `cargo-audit v0.16.0` (executable `cargo-audit.exe`)
+&nbsp;
+<b>&gt; cargo audit</b>
+    Fetching advisory database from `https://github.com/RustSec/advisory-db.git`
+      Loaded 400 security advisories (from %CARGO_HOME%\advisory-db)
+    Updating crates.io index
+    Scanning Cargo.lock for vulnerabilities (9 crate dependencies)
+</pre>
 
 ## <span id="footnotes">Footnotes</span>
 
@@ -148,9 +175,10 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/February 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/March 2022* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
 
 [rust_lang]: https://www.rust-lang.org/
+[rustc_cli]: https://man.archlinux.org/man/rustc.1.en

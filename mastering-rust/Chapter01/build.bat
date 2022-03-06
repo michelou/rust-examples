@@ -297,6 +297,7 @@ if %_VERBOSE%==0 goto :eof
 echo.
 echo   %__BEG_P%Build tools:%__END%
 echo     %__BEG_O%^> cargo clean ^& cargo run%__END%
+echo     %__BEG_O%^> make clean run%__END%
 goto :eof
 
 :clean

@@ -2,7 +2,7 @@
 
 <table style="font-family:Helvetica,Arial;font-size:14px;line-height:1.6;">
   <tr>
-  <td style="border:0;padding:0 10px 0 0;min-width:120px;"><a href="https://www.rust-lang.org/"><img src="https://www.rust-lang.org/static/images/rust-logo-blk.svg" width="120" alt="Rust logo"/></a></td>
+  <td style="border:0;padding:0 10px 0 0;min-width:120px;"><a href="https://www.rust-lang.org/" rel="external"><img src="https://www.rust-lang.org/static/images/rust-logo-blk.svg" width="120" alt="Rust logo"/></a></td>
   <td style="border:0;padding:0;vertical-align:text-top;">This document gathers <a href="https://www.rust-lang.org/" rel="external">Rust</a> related resources that caught our attention.
   </td>
   </tr>
@@ -26,7 +26,7 @@
 - [Why I'm enjoying learning Rust as a Java programmer][article_bursell] by Mike Bursell, May 2020.
 - [Getting started with Cargo][article_cargo] by Gaurav Kamathe, March 2020.
 - [Oxide: The Essence of Rust][article_oxide] by Aaron Weiss &amp; al., March 2019.
-
+- [Making a *-sys crate](https://kornel.ski/rust-sys-crate) by Kornel.
 
 ## <span id="blogs">Blogs</span>
 
@@ -34,6 +34,11 @@
 - [diceroller, a sample Rust project][blog_fraenkel_8] by Nicolas Fränkel, July 2021.
 - [Rust and the JVM][blog_fraenkel_7] by Nicolas Fränkel, July 2021.
 - [How to speed up the Rust compiler one last time][blog_nethercote] by Nicholas Nethercote, September 2020.
+- [PingCAP Blog](https://en.pingcap.com/blog/):
+  - [A Few More Reasons Rust Compiles Slowly](https://en.pingcap.com/blog/reasons-rust-compiles-slowly/) by Brian Anderson, June 2020.
+  - [Rust’s Huge Compilation Units](https://en.pingcap.com/blog/rust-huge-compilation-units/) by Brian Anderson, June 2020.
+  - [Generics and Compile-Time in Rust](https://en.pingcap.com/blog/generics-and-compile-time-in-rust/) by Brian Anderson, June 2020.
+  - [The Rust Compilation Model Calamity](https://en.pingcap.com/blog/rust-compilation-model-calamity/) by Brian Anderson, January 2020.
 - [C++ Is Faster and Safer Than Rust: Benchmarked by Yandex][blog_roman] by Roman, May 2020.
 - &#128077; [Why Discord is switching from Go to Rust][blog_howarth] by Jesse Howarth, February 2020.
 - [What is Rust and why is it so popular?](https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/) by Jake Goulding, January 2020.
@@ -46,6 +51,7 @@
 
 ## <span id="books">Books</span>
 
+- [Beginning Rust][book_milanesi] (2<sup>nd</sup> Ed.) by Carlo Milanesi, 2022.<br/><span style="font-size:80%;">(Apress, ISBN 978-1-4842-7208-4, 413 pages)</span>
 - [Rust in Action][book_mcnamara] by Tim McNamara, June 2021.<br/><span style="font-size:80%;">(Manning, ISBN 978-1-6172-9455-6, 456 pages)</span>
 - [Beginning Rust Programming][book_messier] by Ric Messier, March 2021.<br/><span style="font-size:80%;">(Wiley, ISBN 978-1-119-71297-8, 416 pages)</span>
 - [The Rust Programming Language][book_klabnik] by Steve Klabnik and Carol Nichols, August 2019.<br/><span style="font-size:80%;">(No Strach Press, ISBN 978-1-7185-0044-0, 526 pages)</span>
@@ -60,6 +66,13 @@
 
 ## <span id="news">News</span>
 
+- [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.59.0](https://blog.rust-lang.org/2022/02/24/Rust-1.59.0.html) February 2022.
+  - [Announcing Rust 1.58.0](https://blog.rust-lang.org/2022/01/13/Rust-1.58.0.html), January 2022.
+  - [Announcing Rust 1.57.0](https://blog.rust-lang.org/2021/12/02/Rust-1.57.0.html), December 2021.
+  - [Announcing Rust 1.56.0](https://blog.rust-lang.org/2021/10/21/Rust-1.56.0.html), October 2021.
+  - [Announcing Rust 1.55.0](https://blog.rust-lang.org/2021/09/09/Rust-1.55.0.html), September 2021.
+  - [Announcing Rust 1.38.0](https://blog.rust-lang.org/2019/09/26/Rust-1.38.0.html), September 2019.
 - [**reddit**](https://www.reddit.com/) [r/rust](https://www.reddit.com/r/rust/) - The Rust Programming Language.
 - [This Week in Rust][news_this_week].
 
@@ -70,11 +83,13 @@
 ## <span id="projects">Projects</span>
 
 - [`Miri`](https://rustrepo.com/repo/rust-lang-miri) - an experimental interpreter for Rust's [mid-level intermediate representation][rust_mir] (MIR).
+- [Redox](https://www.redox-os.org/) - a Unix-like Operating System written in [Rust][rust_lang].
 - [`ripgrep`][github_ripgrep]: recursively searches directories for a regex pattern.
+- [`winapi-rs`][github_winapi_rs] - Rust bindings to Windows API.
 
 ## <span id="training">Training and Tutorials</span>
 
-- [A Gentle Introduction To Rust][tutorial_donovan] by Steve Donovan, 2018.
+- [Rust for the Polyglot Programmer](https://www.chiark.greenend.org.uk/~ianmdlvl/rust-polyglot/) by Ian Jackson and contributors, 2021.
 - [A Not so Short Introduction to the Rust Programming Language][tutorial_mueller] by Kasper Müller, November 2021.
 - [learn-rust Series](https://dev.to/cthutu/series/13395) by Matt Davies.
   - [Rust #8: Strings](https://dev.to/cthutu/rust-8-strings-53o), August 2021.
@@ -86,6 +101,7 @@
   - [Rust #2: Lifetimes, Owners and Borrowers, OH MY! ](https://dev.to/cthutu/rust-2-lifetimes-owners-and-borrowers-oh-my-3fem), June 2021.
   - [Rust #1: Creating your development environment](https://dev.to/cthutu/rust-1-creating-your-development-environment-55bi), June 2021.
 - [ferrous systems](https://ferrous-systems.com/) : [Rust Training Programs](https://ferrous-systems.com/training/).
+- [A Gentle Introduction To Rust][tutorial_donovan] by Steve Donovan, 2018.
 - [Rust for Haskell Programmers](https://mmhaskell.com/rust).
 - [Rust Language Cheat Sheet](https://cheats.rs/).
 - [Working with Rust](https://mkaz.blog/working-with-rust/) by Marcus Kazmeierczak.
@@ -96,9 +112,10 @@
 
 ## <span id="tools">Tools and Frameworks</span>
 
-- [Actix](https://github.com/actix/actix) - an Actor framework for Rust.
-- [Clap](https://clap.rs/) - a fast and modern CLI framework for Rust.
-- [rust.analyzer](https://rust-analyzer.github.io/) - an implementation of [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) for the [Rust](https://www.rust-lang.org/) programming language.
+- [Actix](https://github.com/actix/actix) - an Actor framework for [Rust][rust_lang].
+- [cargo-ramdisk](https://github.com/PauMAVA/cargo-ramdisk) - a RAMdisk for faster [Rust][rust_lang] compilation (*Unix only*).
+- [Clap](https://clap.rs/) - a fast and modern CLI framework for [Rust][rust_lang].
+- [rust.analyzer](https://rust-analyzer.github.io/) - an implementation of [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) for the [Rust][rust_lang] programming language.
 
 ## <span id="videos">Videos</span>
 
@@ -125,7 +142,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/February 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/March 2022* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -157,11 +174,14 @@ version = "12"
 [book_matzinger]: https://www.packtpub.com/product/rust-programming-cookbook/9781789530667
 [book_mcnamara]: https://www.manning.com/books/rust-in-action
 [book_messier]: https://www.wiley.com/en-us/Beginning+Rust+Programming-p-9781119712978
+[book_milanesi]: https://link.springer.com/book/10.1007/978-1-4842-7208-4
 [book_sharma]: https://www.packtpub.com/product/mastering-rust-second-edition/9781789346572
 [github_ripgrep]: https://github.com/BurntSushi/ripgrep
+[github_winapi_rs]: https://github.com/retep998/winapi-rs/
 [news_this_week]: https://this-week-in-rust.org/
 [paper_astrauskas]: https://www.research-collection.ethz.ch/handle/20.500.11850/311092
 [rust_downloads]: https://www.rust-lang.org/tools/install
+[rust_lang]: https://www.rust-lang.org/
 [rust_mir]: https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md
 [rust_relnotes]: https://github.com/rust-lang/rust/blob/master/RELEASES.md
 [tutorial_donovan]: https://stevedonovan.github.io/rust-gentle-intro/
