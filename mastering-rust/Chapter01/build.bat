@@ -155,13 +155,13 @@ if exist "%__PROPS_FILE%" (
 goto :eof
 
 @rem input parameter: %*
-@rem output parameter(s): _CLEAN, _COMPILE, _RUN, _DEBUG, _TEST, _VERBOSE
+@rem output parameters: _CLEAN, _COMPILE, _RUN, _DEBUG, _TEST, _VERBOSE
 :args
 set _CLEAN=0
 set _COMPILE=0
 set _DOC=0
 set _DUMP=0
-set _EDITION=2018
+set _EDITION=2021
 set _HELP=0
 set _MAIN=%_DEFAULT_RUN%
 set _RUN=0
@@ -181,6 +181,7 @@ if "%__ARG:~0,1%"=="-" (
     if "%__ARG%"=="-debug" ( set _DEBUG=1
     ) else if "%__ARG%"=="-edition:2015" ( set _EDITION=2015
     ) else if "%__ARG%"=="-edition:2018" ( set _EDITION=2018
+    ) else if "%__ARG%"=="-edition:2021" ( set _EDITION=2021
     ) else if "%__ARG%"=="-help" ( set _HELP=1
     ) else if "%__ARG:~0,6%"=="-main:" (
         call :set_main "%__ARG:~6%"
@@ -278,21 +279,26 @@ if %_VERBOSE%==1 (
 echo Usage: %__BEG_O%%_BASENAME% { ^<option^> ^| ^<subcommand^> }%__END%
 echo.
 echo   %__BEG_P%Options:%__END%
-echo     %__BEG_O%-debug%__END%                show commands executed by this script
-echo     %__BEG_O%-edition:^<2015^|2018^>%__END%  set Rust edition
-echo     %__BEG_O%-main:^<name^>%__END%          set main program ^(defaut: %__BEG_O%%_DEFAULT_RUN%%__END%^)
-echo     %__BEG_O%-target:^<gcc^|msvc^>%__END%    set plaform target ^(default: %__BEG_O%msvc%__END%/%__BEG_O%cl%__END%^)
-echo     %__BEG_O%-timer%__END%                display total elapsed time
-echo     %__BEG_O%-verbose%__END%              display progress messages
+echo     %__BEG_O%-debug%__END%              show commands executed by this script
+echo     %__BEG_O%-edition:^<edition^>%__END%  set Rust edition
+echo     %__BEG_O%-main:^<name^>%__END%        set main program ^(defaut: %__BEG_O%%_DEFAULT_RUN%%__END%^)
+echo     %__BEG_O%-target:^<target^>%__END%    set plaform target ^(default: %__BEG_O%msvc%__END%/%__BEG_O%cl%__END%^)
+echo     %__BEG_O%-timer%__END%              display total elapsed time
+echo     %__BEG_O%-verbose%__END%            display progress messages
 echo.
 echo   %__BEG_P%Subcommands:%__END%
-echo     %__BEG_O%clean%__END%                 delete generated files
-echo     %__BEG_O%compile%__END%               generate executable
-echo     %__BEG_O%doc%__END%                   generate HTML documentation
-echo     %__BEG_O%dump%__END%                  dump PE/COFF infos for generated executable
-echo     %__BEG_O%help%__END%                  display this help message
-echo     %__BEG_O%run%__END%                   run generated executable %__BEG_O%%_CRATE_NAME%%__END%
-echo     %__BEG_O%test%__END%                  test generated executable
+echo     %__BEG_O%clean%__END%               delete generated files
+echo     %__BEG_O%compile%__END%             generate executable
+echo     %__BEG_O%doc%__END%                 generate HTML documentation
+echo     %__BEG_O%dump%__END%                dump PE/COFF infos for generated executable
+echo     %__BEG_O%help%__END%                display this help message
+echo     %__BEG_O%run%__END%                 run generated executable %__BEG_O%%_CRATE_NAME%%__END%
+echo     %__BEG_O%test%__END%                test generated executable
+echo.
+echo   %__BEG_P%Option values:%__END%
+echo     %__BEG_O%edition: 2015, 2018, 2021%__END%
+echo     %__DEB_O%name   : %_DEFAULT_RUN%, closures, enums, functions, hashmaps, etc.%__END%
+echo     %__BEG_O%target : cl, gcc, msvc%__END%
 if %_VERBOSE%==0 goto :eof
 echo.
 echo   %__BEG_P%Build tools:%__END%
