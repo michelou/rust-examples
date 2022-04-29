@@ -99,7 +99,7 @@ Current installation options:
 %USERPROFILE%\.cargo\bin\rustup.exe
 &nbsp;
 <b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a> --version</b>
-rustc 1.59.0 (9d1b2106e 2022-02-23)
+rustc 1.60.0 (7737e0b5c 2022-04-04)
 </pre>
 
 ## <span id="update">Installation update</span>
@@ -112,10 +112,10 @@ Command **`rustup update stable`** updates an existing [Rust][rust_lang] install
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2022-02-24, rust version 1.59.0 (9d1b2106e 2022-02-23)dd
+info: latest update on 2022-04-07, rust version 1.60.0 (7737e0b5c 2022-04-04)
 [...]
 info: downloading component 'rustc'
- 65.2 MiB /  65.2 MiB (100 %)   1.2 MiB/s in 52s ETA:  0s
+ 56.7 MiB /  56.7 MiB (100 %)   1.2 MiB/s in 52s ETA:  0s
 info: downloading component 'rustfmt'
   2.2 MiB /   2.2 MiB (100 %)   1.2 MiB/s in  1s ETA:  0s
 [...]
@@ -124,7 +124,7 @@ info: installing component 'rustc'
 info: installing component 'rustfmt'
 info: checking for self-updates
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.59.0 (9d1b2106e 2022-02-23) (from rustc 1.57.0 (f1edd0429 2021-11-29))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.60.0 (7737e0b5c 2022-04-04) (from rustc 1.59.0 (9d1b2106e 2022-02-23))
 
 info: cleaning up downloads & tmp directories
 </pre>
@@ -168,14 +168,14 @@ default_host_triple = "x86_64-pc-windows-msvc"
 default_toolchain = "stable"
 profile = "default"
 version = "12"
-
+&nbsp;
 [overrides]
 </pre>
 </dd></dl>
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/March 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/May 2022* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

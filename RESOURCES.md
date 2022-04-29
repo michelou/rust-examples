@@ -112,10 +112,13 @@
 
 ## <span id="tools">Tools and Frameworks</span>
 
-- [Actix](https://github.com/actix/actix) - an Actor framework for [Rust][rust_lang].
-- [cargo-ramdisk](https://github.com/PauMAVA/cargo-ramdisk) - a RAMdisk for faster [Rust][rust_lang] compilation (*Unix only*).
-- [Clap](https://clap.rs/) - a fast and modern CLI framework for [Rust][rust_lang].
-- [rust.analyzer](https://rust-analyzer.github.io/) - an implementation of [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) for the [Rust][rust_lang] programming language.
+- [Actix](https://github.com/actix/actix) &ndash; an Actor framework for [Rust][rust_lang].
+- [cargo-ramdisk](https://github.com/PauMAVA/cargo-ramdisk) &ndash; a RAMdisk for faster [Rust][rust_lang] compilation (*Unix only*).
+- [Clap](https://clap.rs/) &ndash; a fast and modern CLI framework for [Rust][rust_lang].
+- [diesel](https://github.com/diesel-rs/diesel) &ndash; a safe, extensible ORM and Query Builder for [Rust][rust_lang]. 
+- [fleet](https://fleet.rs/) &ndash; a build tool which makes your [Rust][rust_lang] builds up to 5x faster.
+- [redb](https://github.com/cberner/redb) &ndash; an embedded key-value database in pure [Rust][rust_lang]. 
+- [rust.analyzer](https://rust-analyzer.github.io/) &ndash; an implementation of [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) for the [Rust][rust_lang] programming language.
 
 ## <span id="videos">Videos</span>
 
@@ -142,7 +145,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/March 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/May 2022* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
