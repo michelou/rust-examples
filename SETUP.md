@@ -110,7 +110,7 @@ Command **`rustup update stable`** updates an existing [Rust][rust_lang] install
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> rustup</b>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\rustup.exe
 &nbsp;
-<b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html">rustup</a> update stable</b>
+<b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
 info: latest update on 2022-04-07, rust version 1.60.0 (7737e0b5c 2022-04-04)
 [...]
@@ -129,12 +129,18 @@ info: checking for self-updates
 info: cleaning up downloads & tmp directories
 </pre>
 
+> **:mag_right:** We can execute the following command to print an overview of what is installed on our system.
+> <pre style="font-size:80%;">
+> <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="externale">rustup</a> toolchain list</a>
+> stable-x86_64-pc-windows-msvc (default)
+> </pre>
+
 ## <span id="cargo-audit">`cargo-audit`</span>
 
-Command `cargo audit` does audit `Cargo.lock` files for crates with security vulnerabilities (based on [`rustsec/advisory-db `](https://github.com/RustSec/advisory-db/)).
+Command [`cargo audit`][cargo_audit] does audit `Cargo.lock` files for crates with security vulnerabilities (based on [`rustsec/advisory-db `](https://github.com/RustSec/advisory-db/)).
 
 <pre style="font-size:80%;">
-<b>&gt; cargo install cargo-audit</b>
+<b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/cargo.html" rel="external">cargo</a> install cargo-audit</b>
     Updating crates.io index
   Downloaded cargo-audit v0.16.0
   Downloaded 1 crate (35.7 KB) in 0.73s
@@ -150,7 +156,7 @@ Command `cargo audit` does audit `Cargo.lock` files for crates with security vul
   Installing %CARGO_HOME%\bin\cargo-audit.exe
    Installed package `cargo-audit v0.16.0` (executable `cargo-audit.exe`)
 &nbsp;
-<b>&gt; cargo audit</b>
+<b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/cargo.html" rel="external">cargo</a> audit</b>
     Fetching advisory database from `https://github.com/RustSec/advisory-db.git`
       Loaded 400 security advisories (from %CARGO_HOME%\advisory-db)
     Updating crates.io index
@@ -180,5 +186,6 @@ version = "12"
 
 <!-- link refs -->
 
+[cargo_audit]: https://lib.rs/crates/cargo-audit
 [rust_lang]: https://www.rust-lang.org/
 [rustc_cli]: https://man.archlinux.org/man/rustc.1.en
