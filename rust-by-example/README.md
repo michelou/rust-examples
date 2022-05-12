@@ -30,7 +30,7 @@ Debug: Point2D { x: 3.3, y: 7.2 }
 
 ## `01_HelloWorld`
 
-Command `build run` executes the Rust program [`main.rs`](./01_Helloworld/src/main.rs) :
+Command `build run` executes the Rust program [`main.rs`](./01_HelloWorld/src/main.rs) :
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="./01_HelloWorld/build.bat">build</a> -verbose clean run</b>
@@ -39,7 +39,7 @@ Compile 1 Rust source files to directory "target"
 Hello World!
 </pre>
 
-## <span id="02_Literals">`02_Literals`</span>
+## <span id="02_Literals">`02_Literals`</span>[**&#x25B4;**](#top)
 
 Command `cargo run` executes the Rust program [`main.rs`](./02_Literals/src/main.rs) :
 
@@ -59,6 +59,28 @@ NOT true is false
 1 << 5 is 32
 0x80 >> 2 is 0x20
 One million is written as 1000000
+</pre>
+
+## <span id="02_Primitives">`02_Primitives`</span>
+
+Command `cargo run` executes the Rust program [`main.rs`](./02_Primitives/src/main.rs) :
+
+<pre style="font-size:80%;">
+<b>&gt; <a href="./02_Primitives/build.bat">build</a> -verbose clean run</b>
+Compile 1 Rust source files to directory "target"
+[...]
+warning: value assigned to `mutable` is never read
+  --> R:\rust-by-example\02_Primitives\src\main.rs:27:5
+   |
+27 |     mutable = true as i32;
+   |     ^^^^^^^
+   |
+   = help: maybe it is overwritten before being read?
+
+warning: 4 warnings emitted
+
+inferred_type: 4294967296
+mutable: true
 </pre>
 
 ***

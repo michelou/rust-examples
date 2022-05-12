@@ -131,13 +131,13 @@ info: cleaning up downloads & tmp directories
 
 > **:mag_right:** We can execute the following command to print an overview of what is installed on our system.
 > <pre style="font-size:80%;">
-> <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="externale">rustup</a> toolchain list</a>
+> <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="externale">rustup</a> toolchain list</a></b>
 > stable-x86_64-pc-windows-msvc (default)
 > </pre>
 
 ## <span id="cargo-audit">`cargo-audit`</span>
 
-Command [`cargo audit`][cargo_audit] does audit `Cargo.lock` files for crates with security vulnerabilities (based on [`rustsec/advisory-db `](https://github.com/RustSec/advisory-db/)).
+Command [`cargo audit`][cargo_audit] does audit `Cargo.lock` files for crates with security vulnerabilities (based on [`rustsec/advisory-db`](https://github.com/RustSec/advisory-db/)).
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/cargo.html" rel="external">cargo</a> install cargo-audit</b>
