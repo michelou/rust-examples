@@ -14,7 +14,7 @@
 Command `cargo run` executes the Rust program [`main.rs`](./01_Display/src/main.rs) :
 
 <pre style="font-size:80%;">
-<b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/">cargo</a> clean &amp; <a href="https://doc.rust-lang.org/cargo/commands/">cargo</a> run</b>
+<b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/" rel="external">cargo</a> clean &amp; <a href="https://doc.rust-lang.org/cargo/commands/" rel="external">cargo</a> run</b>
    Compiling _01_Display v1.0.0 (R:\rust-by-example\01_Display)
     Finished dev [unoptimized + debuginfo] target(s) in 2.81s
      Running `target\debug\main.exe`
@@ -44,7 +44,7 @@ Hello World!
 Command `cargo run` executes the Rust program [`main.rs`](./02_Literals/src/main.rs) :
 
 <pre style="font-size:80%;">
-<b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/">cargo</a> clean && <a href="https://doc.rust-lang.org/cargo/commands/">cargo</a> run</b>
+<b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/" rel="external">cargo</a> clean && <a href="https://doc.rust-lang.org/cargo/commands/" rel="external">cargo</a> run</b>
    Compiling _02_Primitives v1.0.0 (R:\rust-by-example\02_Literals)
     Finished dev [unoptimized + debuginfo] target(s) in 2.53s
      Running `target\debug\main.exe`
@@ -85,7 +85,7 @@ mutable: true
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/May 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/June 2022* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

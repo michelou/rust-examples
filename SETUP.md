@@ -2,7 +2,7 @@
 
 <table style="font-family:Helvetica,Arial;font-size:14px;line-height:1.6;">
   <tr>
-  <td style="border:0;padding:0 10px 0 0;min-width:120px;"><a href="https://www.rust-lang.org/" rel="external"><img src="https://www.rust-lang.org/static/images/rust-logo-blk.svg" width="120" alt="Rust logo"/></a></td>
+  <td style="border:0;padding:0 10px 0 0;min-width:120px;"><a href="https://www.rust-lang.org/" rel="external"><img src="../docs/images/rust-logo-blk.svg" width="120" alt="Rust project"/></a></td>
   <td style="border:0;padding:0;vertical-align:text-top;">This document presents some <a href="https://www.rust-lang.org/" rel="external">Rust</a> setup details on the Windows platform.
   </td>
   </tr>
@@ -102,7 +102,7 @@ Current installation options:
 rustc 1.60.0 (7737e0b5c 2022-04-04)
 </pre>
 
-## <span id="update">Installation update</span>
+## <span id="update">Installation update</span>[**&#x25B4;**](#top)
 
 Command **`rustup update stable`** updates an existing [Rust][rust_lang] installation:
 
@@ -112,7 +112,7 @@ Command **`rustup update stable`** updates an existing [Rust][rust_lang] install
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2022-04-07, rust version 1.60.0 (7737e0b5c 2022-04-04)
+info: latest update on 2022-05-19, rust version 1.61.0 (fe5b13d68 2022-05-18)
 [...]
 info: downloading component 'rustc'
  56.7 MiB /  56.7 MiB (100 %)   1.2 MiB/s in 52s ETA:  0s
@@ -124,7 +124,7 @@ info: installing component 'rustc'
 info: installing component 'rustfmt'
 info: checking for self-updates
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.60.0 (7737e0b5c 2022-04-04) (from rustc 1.59.0 (9d1b2106e 2022-02-23))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.61.0 (fe5b13d68 2022-05-18) (from rustc 1.60.0 (7737e0b5c 2022-04-04))
 
 info: cleaning up downloads & tmp directories
 </pre>
@@ -163,7 +163,7 @@ Command [`cargo audit`][cargo_audit] does audit `Cargo.lock` files for crates wi
     Scanning Cargo.lock for vulnerabilities (9 crate dependencies)
 </pre>
 
-## <span id="footnotes">Footnotes</span>
+## <span id="footnotes">Footnotes</span>[**&#x25B4;**](#top)
 
 <span id="footnote_01">[1]</span> ***Installation settings*** [↩](#anchor_01)
 
@@ -181,7 +181,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/May 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/June 2022* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

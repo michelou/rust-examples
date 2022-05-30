@@ -49,7 +49,7 @@
 - [Using C libraries in Rust: make a sys crate][blog_kornelski] by Pornel Kornelski.
 - [Fearless Concurrency with Rust][blog_turon] by Aaron Turon, April 2015.
 
-## <span id="books">Books</span>
+## <span id="books">Books</span>[**&#x25B4;**](#top)
 
 - [Beginning Rust][book_milanesi] (2<sup>nd</sup> Ed.) by Carlo Milanesi, 2022.<br/><span style="font-size:80%;">(Apress, ISBN 978-1-4842-7208-4, 413 pages)</span>
 - [Rust in Action][book_mcnamara] by Tim McNamara, June 2021.<br/><span style="font-size:80%;">(Manning, ISBN 978-1-6172-9455-6, 456 pages)</span>
@@ -64,9 +64,11 @@
 - [Build exe file for Windows](https://users.rust-lang.org/t/build-exe-file-for-windows/19469), 2018.
 
 
-## <span id="news">News</span>
+## <span id="news">News</span>[**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.61.0](https://blog.rust-lang.org/2022/05/19/Rust-1.61.0.html), May 2022.
+  - [Announcing Rust 1.60.0](https://blog.rust-lang.org/2022/04/07/Rust-1.60.0.html), April 2022.
   - [Announcing Rust 1.59.0](https://blog.rust-lang.org/2022/02/24/Rust-1.59.0.html) February 2022.
   - [Announcing Rust 1.58.0](https://blog.rust-lang.org/2022/01/13/Rust-1.58.0.html), January 2022.
   - [Announcing Rust 1.57.0](https://blog.rust-lang.org/2021/12/02/Rust-1.57.0.html), December 2021.
@@ -80,7 +82,7 @@
 
 - [Leveraging Rust types for modular specification and verification](paper_astrauskas) by Vytautas Astrauskas et al., December 2018.
 
-## <span id="projects">Projects</span>
+## <span id="projects">Projects</span>[**&#x25B4;**](#top)
 
 - [`Miri`](https://rustrepo.com/repo/rust-lang-miri) - an experimental interpreter for Rust's [mid-level intermediate representation][rust_mir] (MIR).
 - [Redox](https://www.redox-os.org/) - a Unix-like Operating System written in [Rust][rust_lang].
@@ -110,7 +112,7 @@
   - [Day 5 - environment variables](https://siciarz.net/24-days-rust-environment-variables/)
   - [Day 8 - serde](https://siciarz.net/24-days-rust-serde/)
 
-## <span id="tools">Tools and Frameworks</span>
+## <span id="tools">Tools and Frameworks</span>[**&#x25B4;**](#top)
 
 - [Actix](https://github.com/actix/actix) &ndash; an Actor framework for [Rust][rust_lang].
 - [cargo-ramdisk](https://github.com/PauMAVA/cargo-ramdisk) &ndash; a RAMdisk for faster [Rust][rust_lang] compilation (*Unix only*).
@@ -145,7 +147,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/May 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/June 2022* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

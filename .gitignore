@@ -40,9 +40,11 @@ jmh_result.json
 *.src.tar.xz
 workingsets.xml
 
-# rust-examples project
+# project-specific
 *.exe
 *.lock
 *.pdb
+*_LOCAL.md
+*_LOCAL.txt
 *_LOCAL/
 .settings/
