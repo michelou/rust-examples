@@ -1,0 +1,1 @@
+Source: https://www.possiblerust.com/guide/enum-or-trait-object

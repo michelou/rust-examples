@@ -1,0 +1,16 @@
+[package]
+name = "Trait Objects"
+description = "Possible Rust - Trait Objects"
+version = "1.0.0"
+license = "MIT License <https://www.rust-lang.org/policies/licenses>"
+authors = [ "Andrew Lilley Brinker <abrinker@mitre.org>" ]
+homepage = "https://github.com/alilleybrinker"
+edition = "2018"
+publish = false
+
+[dependencies]
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
