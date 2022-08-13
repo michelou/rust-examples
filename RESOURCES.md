@@ -11,6 +11,7 @@
 ## <span id="articles">Articles</span>
 
 - [**fasterthanli**](https://fasterthanli.me/articles) articles :
+  - [When rustc explodes][article_explodes], July 2022.
   - [Some mistakes Rust doesn't catch][article_mistakes], February 2022.
   - [Why is my Rust build so slow?][article_slow_build], December 2021.
   - [A half-hour to learn Rust][article_half_hour], January 2020.
@@ -51,6 +52,12 @@
 
 ## <span id="books">Books</span>[**&#x25B4;**](#top)
 
+<!-- ISBN 13 (since 2007)
+  Registration group: 93 = India
+  The last number is the check number (X = 10).
+-->
+- [Rust Crash Course](https://bpbonline.com/products/rust-crash-course) by Abhishek Kumar, July 2022.<br/><span style="font-size:80%;">([BPB Online][bpb_online], ISBN 978-93-5551-095-2, 328 pages)</span>
+- [Learn Rust Programming](https://https://bpbonline.com/products/learn-rust-programming) by Claus Matzinger, July 2022.<br/><span style="font-size:80%;">([BPB Online][bpb_online], ISBN 978-93-5551-154-6, 268 pages)</span>
 - [Beginning Rust][book_milanesi] (2<sup>nd</sup> Ed.) by Carlo Milanesi, 2022.<br/><span style="font-size:80%;">(Apress, ISBN 978-1-4842-7208-4, 413 pages)</span>
 - [Rust in Action][book_mcnamara] by Tim McNamara, June 2021.<br/><span style="font-size:80%;">(Manning, ISBN 978-1-6172-9455-6, 456 pages)</span>
 - [Beginning Rust Programming][book_messier] by Ric Messier, March 2021.<br/><span style="font-size:80%;">(Wiley, ISBN 978-1-119-71297-8, 416 pages)</span>
@@ -67,6 +74,11 @@
 ## <span id="news">News</span>[**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.63.0](https://blog.rust-lang.org/2022/08/11/Rust-1.63.0.html), August 2022.
+  <!--
+  - [Announcing Rust 1.62.1](https://blog.rust-lang.org/2022/07/19/Rust-1.62.1.html), July 2022.
+  -->
+  - [Announcing Rust 1.62.0](https://blog.rust-lang.org/2022/06/30/Rust-1.62.0.html), June 2022.
   - [Announcing Rust 1.61.0](https://blog.rust-lang.org/2022/05/19/Rust-1.61.0.html), May 2022.
   - [Announcing Rust 1.60.0](https://blog.rust-lang.org/2022/04/07/Rust-1.60.0.html), April 2022.
   - [Announcing Rust 1.59.0](https://blog.rust-lang.org/2022/02/24/Rust-1.59.0.html) February 2022.
@@ -147,7 +159,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/July 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/August 2022* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -158,6 +170,7 @@ version = "12"
 [article_bursell]: https://opensource.com/article/20/5/rust-java
 [article_cargo]: https://opensource.com/article/20/3/rust-cargo
 [article_dreimanis]: https://serokell.io/blog/rust-guide
+[article_explodes]: https://fasterthanli.me/articles/when-rustc-explodes
 [article_half_hour]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
 [article_mistakes]: https://fasterthanli.me/articles/some-mistakes-rust-doesnt-catch
 [article_novak]: https://www.wwt.com/article/intro-to-rust-the-modern-day-safe-low-level-programming-language
@@ -175,6 +188,7 @@ version = "12"
 [blog_thorsten]: https://www.thorsten-hans.com/working-with-environment-variables-in-rust/
 [blog_turon]: https://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html
 [blog_vaktor]: https://varkor.github.io/blog/2018/07/03/existential-types-in-rust.html
+[bpb_online]: https://bpbonline.com
 [book_klabnik]: https://github.com/rust-lang/book
 [book_matzinger]: https://www.packtpub.com/product/rust-programming-cookbook/9781789530667
 [book_mcnamara]: https://www.manning.com/books/rust-in-action
