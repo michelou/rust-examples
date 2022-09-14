@@ -15,7 +15,7 @@ RUST_CRATE_OPTS = --crate-name "$(CRATE_NAME)" --crate-type $(CRATE_TYPE)
 ##############################################################################
 ## main rules
 
-SOURCES   = $(shell $(FIND) "$(SOURCE_DIR)" -type f -name *.rs 2>/dev/null)
+SOURCES   = $(shell $(FIND) "$(SOURCE_DIR)" -type f -name "*.rs" 2>/dev/null)
 TARGET    = $(TARGET_DIR)/$(CRATE_NAME)$(TARGET_SUFFIX)
 
 RUSTC_OPTS = $(RUST_LINT_OPTS) $(RUST_CRATE_OPTS) --edition $(RUST_EDITION) --out-dir "$(TARGET_DIR)" --target "$(TARGET_TRIPLE)"
