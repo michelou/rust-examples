@@ -56,6 +56,7 @@
   Registration group: 93 = India
   The last number is the check number (X = 10).
 -->
+- [Mastering Rust][book_uzayr], by Sufyan bin Uzayr, November 2022.<br/><span style="font-size:80%;">(CRC Press, ISBN 978-1-0323-1901-8, 318 pages)</span>
 - [Rust Crash Course](https://bpbonline.com/products/rust-crash-course) by Abhishek Kumar, July 2022.<br/><span style="font-size:80%;">([BPB Online][bpb_online], ISBN 978-93-5551-095-2, 328 pages)</span>
 - [Learn Rust Programming](https://https://bpbonline.com/products/learn-rust-programming) by Claus Matzinger, July 2022.<br/><span style="font-size:80%;">([BPB Online][bpb_online], ISBN 978-93-5551-154-6, 268 pages)</span>
 - [Beginning Rust][book_milanesi] (2<sup>nd</sup> Ed.) by Carlo Milanesi, 2022.<br/><span style="font-size:80%;">(Apress, ISBN 978-1-4842-7208-4, 413 pages)</span>
@@ -159,7 +160,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/September 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/October 2022* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -195,6 +196,7 @@ version = "12"
 [book_messier]: https://www.wiley.com/en-us/Beginning+Rust+Programming-p-9781119712978
 [book_milanesi]: https://link.springer.com/book/10.1007/978-1-4842-7208-4
 [book_sharma]: https://www.packtpub.com/product/mastering-rust-second-edition/9781789346572
+[book_uzayr]: https://www.routledge.com/Mastering-Rust-A-Beginners-Guide/Uzayr/p/book/9781032319018
 [github_ripgrep]: https://github.com/BurntSushi/ripgrep
 [github_winapi_rs]: https://github.com/retep998/winapi-rs/
 [news_this_week]: https://this-week-in-rust.org/

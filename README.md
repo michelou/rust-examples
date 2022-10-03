@@ -1,4 +1,4 @@
-# <span id="top">Running Rust on Microsoft Windows</span>
+# <span id="top">Playing with Rust on Windows</span>
 
 <table style="font-family:Helvetica,Arial;font-size:14px;line-height:1.6;">
   <tr>
@@ -16,12 +16,12 @@
 This project depends on two external software for the **Microsoft Windows** plaform:
 
 - [Git 2.37][git_downloads] ([*release notes*][git_relnotes])
-- [Rust 1.63][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
+- [Rust 1.64][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
 
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [`/opt/`][linux_opt] directory on Unix).
 
-For instance our development environment looks as follows (*September 2022*) <sup id="anchor_02">[2](#footnote_02)</sup>:
+For instance our development environment looks as follows (*October 2022*) <sup id="anchor_02">[2](#footnote_02)</sup>:
 
 <pre style="font-size:80%;">
 C:\opt\Git-2.37.3\      <i>(289 MB)</i>
@@ -98,13 +98,13 @@ Command [**`setenv`**](setenv.bat) is executed once to setup your development en
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
-   cargo 1.62.1, rustc 1.62.1, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#1438-2021-10-20" rel="external">1.4.38-stable</a>, rustup 1.25.1,
+   cargo 1.64.0, rustc 1.64.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#1438-2021-10-20" rel="external">1.4.38-stable</a>, rustup 1.25.1,
    pelook v1.73, git 2.37.3.windows.1, diff 3.8, bash 4.4.23(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\cargo.exe
-%USERPROFILE%\.cargo\bin\rustc.exe
-%USERPROFILE%\.cargo\bin\rustup.exe
+<a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\rustc.exe
+<a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\rustup.exe
 R:\bin\<a href="http://bytepointer.com/tools/index.htm#pelook">pelook.exe</a>
 </pre>
 
@@ -113,7 +113,7 @@ Command [**`setenv -verbose`**](setenv.bat) also displays the tool paths:
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
-   cargo 1.62.1, rustc 1.62.1, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#1438-2021-10-20" rel="external">1.4.38-stable</a>, rustup 1.25.1,
+   cargo 1.64.0, rustc 1.64.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#1438-2021-10-20" rel="external">1.4.38-stable</a>, rustup 1.25.1,
    pelook v1.73, git 2.37.3.windows.1, diff 3.8, bash 4.4.23(1)-release
 Tool paths:
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/cargo/commands/">cargo.exe</a>
@@ -142,13 +142,14 @@ Environment variables:
 <dd>
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc</a> --version --verbose | <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr">findstr</a> /b "rustc LLVM"</b>
-rustc 1.63.0 (4b91a6ea7 2022-08-08)
-LLVM version: 14.0.5
+rustc 1.64.0 (a55dd71d5 2022-09-19)
+LLVM version: 14.0.6
 </pre>
 </dd>
 <dd>
 <table>
 <tr><th>Rustc Version</th><th>LLVM Version</th></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.64.0" rel="external">1.64.0</a></td><td><a href="https://releases.llvm.org/14.0.0/docs/ReleaseNotes.html">14.0.6</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.62.0" rel="external">1.62.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.63.0" rel="external">1.63.0</a></td><td><a href="https://releases.llvm.org/14.0.5/docs/ReleaseNotes.html" rel="external">14.0.5</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.60.0" rel="external">1.60.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.61.0" rel="external">1.61.0</a></td><td><a href="https://releases.llvm.org/14.0.0/docs/ReleaseNotes.html" rel="external">14.0.0</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.56.0">1.56.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.59.0">1.59.0</a></td><td><a href="https://releases.llvm.org/13.0.0/docs/ReleaseNotes.html">13.0.0</a></td></tr>
@@ -175,7 +176,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/September 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/October 2022* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -212,7 +213,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [rustc_cli]: https://doc.rust-lang.org/rustc/command-line-arguments.html
 [rustup_cli]: https://github.com/rust-lang/rustup/blob/master/README.md
 [scala3_examples]: https://github.com/michelou/dotty-examples
-[spark_examples]: https://github.com/michelou/spark3-examples
+[spark_examples]: https://github.com/michelou/spark-examples
 [spring_examples]: https://github.com/michelou/spring-examples
 [trufflesqueak_examples]: https://github.com/michelou/trufflesqueak-examples
 [windows_limitation]: https://support.microsoft.com/en-gb/help/830473/command-prompt-cmd-exe-command-line-string-limitation
