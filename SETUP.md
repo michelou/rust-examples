@@ -2,7 +2,7 @@
 
 <table style="font-family:Helvetica,Arial;font-size:14px;line-height:1.6;">
   <tr>
-  <td style="border:0;padding:0 10px 0 0;min-width:120px;"><a href="https://www.rust-lang.org/" rel="external"><img src="../docs/images/rust-logo-blk.svg" width="120" alt="Rust project"/></a></td>
+  <td style="border:0;padding:0 10px 0 0;min-width:120px;"><a href="https://www.rust-lang.org/" rel="external"><img src="./docs/images/rust-logo-blk.svg" width="120" alt="Rust project"/></a></td>
   <td style="border:0;padding:0;vertical-align:text-top;">This document presents some <a href="https://www.rust-lang.org/" rel="external">Rust</a> setup details on the Windows platform.
   </td>
   </tr>

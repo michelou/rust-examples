@@ -15,7 +15,7 @@
 
 This project depends on two external software for the **Microsoft Windows** plaform:
 
-- [Git 2.37][git_downloads] ([*release notes*][git_relnotes])
+- [Git 2.38][git_downloads] ([*release notes*][git_relnotes])
 - [Rust 1.64][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
 
 > **&#9755;** ***Installation policy***<br/>
@@ -24,7 +24,7 @@ This project depends on two external software for the **Microsoft Windows** plaf
 For instance our development environment looks as follows (*October 2022*) <sup id="anchor_02">[2](#footnote_02)</sup>:
 
 <pre style="font-size:80%;">
-C:\opt\Git-2.37.3\      <i>(289 MB)</i>
+C:\opt\Git-2.38.0\      <i>(317 MB)</i>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\   <i>(100 MB)</i>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.rustup\  <i>(593 MB, installed toolchains and configuration options)</i>
 </pre>
@@ -99,7 +99,7 @@ Command [**`setenv`**](setenv.bat) is executed once to setup your development en
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
    cargo 1.64.0, rustc 1.64.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#1438-2021-10-20" rel="external">1.4.38-stable</a>, rustup 1.25.1,
-   pelook v1.73, git 2.37.3.windows.1, diff 3.8, bash 4.4.23(1)-release
+   pelook v1.73, git 2.38.0.windows.1, diff 3.8, bash 4.4.23(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\cargo.exe
@@ -114,20 +114,20 @@ Command [**`setenv -verbose`**](setenv.bat) also displays the tool paths:
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
    cargo 1.64.0, rustc 1.64.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#1438-2021-10-20" rel="external">1.4.38-stable</a>, rustup 1.25.1,
-   pelook v1.73, git 2.37.3.windows.1, diff 3.8, bash 4.4.23(1)-release
+   pelook v1.73, git 2.38.0.windows.1, diff 3.8, bash 4.4.23(1)-release
 Tool paths:
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/cargo/commands/">cargo.exe</a>
    %USERPROFILE%\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a>
    %USERPROFILE%\.cargo\bin\<a href="https://rust-lang.github.io/rustfmt">rustfmt.exe</a>
    %USERPROFILE%\.cargo\bin\<a href="https://rust-lang.github.io/rustup/basics.html">rustup.exe</a>
    R:\bin\pelook.exe
-   C:\opt\Git-2.37.3\bin\git.exe
-   C:\opt\Git-2.37.3\mingw64\bin\git.exe
-   C:\opt\Git-2.37.3\usr\bin\diff.exe
-   C:\opt\Git-2.37.3\bin\bash.exe
+   C:\opt\Git-2.38.0\bin\git.exe
+   C:\opt\Git-2.38.0\mingw64\bin\git.exe
+   C:\opt\Git-2.38.0\usr\bin\diff.exe
+   C:\opt\Git-2.38.0\bin\bash.exe
 Environment variables:
    "CARGO_HOME=%USERPROFILE%\.cargo"
-   "GIT_HOME=C:\opt\Git-2.37.3"
+   "GIT_HOME=C:\opt\Git-2.38.0"
    "MSYS_HOME=C:\opt\msys64"
    "RUSTUP_HOME=%USERPROFILE%\.rustup"
 </pre>
@@ -167,7 +167,7 @@ In our case we downloaded the following installation files (see <a href="#proj_d
 <dd>
 <pre style="font-size:80%;">
 <a href="https://www.rust-lang.org/tools/install">rust-init.exe</a>                     <i>( 8 MB)</i>
-<a href="https://git-scm.com/download/win">PortableGit-2.37.3-64-bit.7z.exe</a>  <i>(42 MB)</i>
+<a href="https://git-scm.com/download/win">PortableGit-2.38.0-64-bit.7z.exe</a>  <i>(46 MB)</i>
 </pre>
 </dd>
 <dd>
@@ -190,7 +190,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [git_docs]: https://git-scm.com/docs/git
 [git_downloads]: https://git-scm.com/download/win
 [github_markdown]: https://github.github.com/gfm/
-[git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.37.3.txt
+[git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.38.0.txt
 [golang_examples]: https://github.com/michelou/golang-examples
 [graalvm_examples]: https://github.com/michelou/graalvm-examples
 [haskell_examples]: https://github.com/michelou/haskell-examples
