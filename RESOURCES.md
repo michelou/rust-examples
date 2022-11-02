@@ -50,7 +50,7 @@
 - [Using C libraries in Rust: make a sys crate][blog_kornelski] by Pornel Kornelski.
 - [Fearless Concurrency with Rust][blog_turon] by Aaron Turon, April 2015.
 
-## <span id="books">Books</span>[**&#x25B4;**](#top)
+## <span id="books">Books</span> [**&#x25B4;**](#top)
 
 <!-- ISBN 13 (since 2007)
   Registration group: 93 = India
@@ -72,9 +72,10 @@
 - [Build exe file for Windows](https://users.rust-lang.org/t/build-exe-file-for-windows/19469), 2018.
 
 
-## <span id="news">News</span>[**&#x25B4;**](#top)
+## <span id="news">News</span> [**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.64.0](https://blog.rust-lang.org/2022/09/22/Rust-1.64.0.html), September 2022.
   - [Announcing Rust 1.63.0](https://blog.rust-lang.org/2022/08/11/Rust-1.63.0.html), August 2022.
   <!--
   - [Announcing Rust 1.62.1](https://blog.rust-lang.org/2022/07/19/Rust-1.62.1.html), July 2022.
@@ -95,7 +96,7 @@
 
 - [Leveraging Rust types for modular specification and verification](paper_astrauskas) by Vytautas Astrauskas et al., December 2018.
 
-## <span id="projects">Projects</span>[**&#x25B4;**](#top)
+## <span id="projects">Projects</span> [**&#x25B4;**](#top)
 
 - [`Miri`](https://rustrepo.com/repo/rust-lang-miri) - an experimental interpreter for Rust's [mid-level intermediate representation][rust_mir] (MIR).
 - [Redox](https://www.redox-os.org/) - a Unix-like Operating System written in [Rust][rust_lang].
@@ -125,7 +126,7 @@
   - [Day 5 - environment variables](https://siciarz.net/24-days-rust-environment-variables/)
   - [Day 8 - serde](https://siciarz.net/24-days-rust-serde/)
 
-## <span id="tools">Tools and Frameworks</span>[**&#x25B4;**](#top)
+## <span id="tools">Tools and Frameworks</span> [**&#x25B4;**](#top)
 
 - [Actix](https://github.com/actix/actix) &ndash; an Actor framework for [Rust][rust_lang].
 - [cargo-ramdisk](https://github.com/PauMAVA/cargo-ramdisk) &ndash; a RAMdisk for faster [Rust][rust_lang] compilation (*Unix only*).
@@ -160,7 +161,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/October 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/November 2022* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

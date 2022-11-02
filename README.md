@@ -4,7 +4,7 @@
   <tr>
   <td style="border:0;padding:0 10px 0 0;min-width:120px;"><a href="https://www.rust-lang.org/" rel="external"><img src="docs/images/rust-logo-blk.svg" width="120" alt="Rust project"/></a></td>
   <td style="border:0;padding:0;vertical-align:text-top;">This repository gathers <a href="https://www.rust-lang.org/" rel="external">Rust</a> code examples coming from various websites and books.<br/>
-  It also includes several <a href="https://en.wikibooks.org/wiki/Windows_Batch_Scripting">batch files</a> for experimenting with <a href="https://www.rust-lang.org/" rel="external">Rust</a> on the <b>Microsoft Windows</b> platform.
+  It also includes several build scripts (<a href="https://en.wikibooks.org/wiki/Windows_Batch_Scripting">batch files</a>, <a href="https://makefiletutorial.com/" rel="external">Make scripts</a> and more) for experimenting with <a href="https://www.rust-lang.org/" rel="external">Rust</a> on the <b>Microsoft Windows</b> platform.
   </td>
   </tr>
 </table>
@@ -21,10 +21,10 @@ This project depends on two external software for the **Microsoft Windows** plaf
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [`/opt/`][linux_opt] directory on Unix).
 
-For instance our development environment looks as follows (*October 2022*) <sup id="anchor_02">[2](#footnote_02)</sup>:
+For instance our development environment looks as follows (*November 2022*) <sup id="anchor_02">[2](#footnote_02)</sup>:
 
 <pre style="font-size:80%;">
-C:\opt\Git-2.38.0\      <i>(317 MB)</i>
+C:\opt\Git-2.38.1\      <i>(317 MB)</i>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\   <i>(100 MB)</i>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.rustup\  <i>(593 MB, installed toolchains and configuration options)</i>
 </pre>
@@ -93,13 +93,13 @@ We distinguish different sets of batch commands:
 
 ### **`setenv.bat`**
 
-Command [**`setenv`**](setenv.bat) is executed once to setup your development environment:
+Command [**`setenv.bat`**](setenv.bat) is executed once to setup your development environment:
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
    cargo 1.64.0, rustc 1.64.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#1438-2021-10-20" rel="external">1.4.38-stable</a>, rustup 1.25.1,
-   pelook v1.73, git 2.38.0.windows.1, diff 3.8, bash 4.4.23(1)-release
+   pelook v1.73, git 2.38.1.windows.1, diff 3.8, bash 4.4.23(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\cargo.exe
@@ -108,28 +108,33 @@ Tool versions:
 R:\bin\<a href="http://bytepointer.com/tools/index.htm#pelook">pelook.exe</a>
 </pre>
 
-Command [**`setenv -verbose`**](setenv.bat) also displays the tool paths:
+Command [**`setenv.bat`**](setenv.bat) with option **`-verbose`** displays additional information:
+- the tool paths (which may not contain the version suffix, i.e. **`C:\opt\Git\bin\git.exe`** in some installations),
+- the environment variables *defined locally* within this session,
+- and the path associations (i.e. **`F:\`** in this case, but other drive names may be displayed as path associations are *globally defined*).
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
    cargo 1.64.0, rustc 1.64.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#1438-2021-10-20" rel="external">1.4.38-stable</a>, rustup 1.25.1,
-   pelook v1.73, git 2.38.0.windows.1, diff 3.8, bash 4.4.23(1)-release
+   pelook v1.73, git 2.38.1.windows.1, diff 3.8, bash 4.4.23(1)-release
 Tool paths:
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/cargo/commands/">cargo.exe</a>
    %USERPROFILE%\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a>
    %USERPROFILE%\.cargo\bin\<a href="https://rust-lang.github.io/rustfmt">rustfmt.exe</a>
    %USERPROFILE%\.cargo\bin\<a href="https://rust-lang.github.io/rustup/basics.html">rustup.exe</a>
    R:\bin\pelook.exe
-   C:\opt\Git-2.38.0\bin\git.exe
-   C:\opt\Git-2.38.0\mingw64\bin\git.exe
-   C:\opt\Git-2.38.0\usr\bin\diff.exe
-   C:\opt\Git-2.38.0\bin\bash.exe
+   C:\opt\Git-2.38.1\bin\git.exe
+   C:\opt\Git-2.38.1\mingw64\bin\git.exe
+   C:\opt\Git-2.38.1\usr\bin\diff.exe
+   C:\opt\Git-2.38.1\bin\bash.exe
 Environment variables:
    "CARGO_HOME=%USERPROFILE%\.cargo"
-   "GIT_HOME=C:\opt\Git-2.38.0"
+   "GIT_HOME=C:\opt\Git-2.38.1"
    "MSYS_HOME=C:\opt\msys64"
    "RUSTUP_HOME=%USERPROFILE%\.rustup"
+Path associations:
+   R:\: => C:\Users\michelou\workspace-perso\rust-examples
 </pre>
 
 ## <span id="footnotes">Footnotes</span>
@@ -137,7 +142,7 @@ Environment variables:
 <span id="footnote_01">[1]</span> ***LLVM Backend*** [↩](#anchor_01)
 
 <dl><dd>
-<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html"><code>rustc</code></a> uses LLVM for code generation (see section <a href="https://rustc-dev-guide.rust-lang.org/backend/codegen.html">Code Generation</a> in the online <a href="https://rustc-dev-guide.rust-lang.org/">Rustc Development Guide</a>).
+<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html" rel="external"><code>rustc</code></a> uses LLVM for code generation (see section <a href="https://rustc-dev-guide.rust-lang.org/backend/codegen.html" rel="external">Code Generation</a> in the online <a href="https://rustc-dev-guide.rust-lang.org/" rel="external">Rustc Development Guide</a>).
 </dd>
 <dd>
 <pre style="font-size:80%;">
@@ -152,7 +157,7 @@ LLVM version: 14.0.6
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.64.0" rel="external">1.64.0</a></td><td><a href="https://releases.llvm.org/14.0.0/docs/ReleaseNotes.html">14.0.6</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.62.0" rel="external">1.62.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.63.0" rel="external">1.63.0</a></td><td><a href="https://releases.llvm.org/14.0.5/docs/ReleaseNotes.html" rel="external">14.0.5</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.60.0" rel="external">1.60.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.61.0" rel="external">1.61.0</a></td><td><a href="https://releases.llvm.org/14.0.0/docs/ReleaseNotes.html" rel="external">14.0.0</a></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.56.0">1.56.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.59.0">1.59.0</a></td><td><a href="https://releases.llvm.org/13.0.0/docs/ReleaseNotes.html">13.0.0</a></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.56.0">1.56.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.59.https0">1.59.0</a></td><td><a href="https://releases.llvm.org/13.0.0/docs/ReleaseNotes.html">13.0.0</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.55.0">1.55.0</a></td><td><a href="https://releases.llvm.org/12.0.0/docs/ReleaseNotes.html" rel="external">12.0.1</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.52.0">1.52.0</a> - 1.54.0</td><td><a href="https://releases.llvm.org/12.0.0/docs/ReleaseNotes.html">12.0.0</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.47.0">1.47.0</a> - 1.51.0</td><td><a href="https://releases.llvm.org/11.0.0/docs/ReleaseNotes.html">11.0.0</a></td></tr>
@@ -167,7 +172,7 @@ In our case we downloaded the following installation files (see <a href="#proj_d
 <dd>
 <pre style="font-size:80%;">
 <a href="https://www.rust-lang.org/tools/install">rust-init.exe</a>                     <i>( 8 MB)</i>
-<a href="https://git-scm.com/download/win">PortableGit-2.38.0-64-bit.7z.exe</a>  <i>(46 MB)</i>
+<a href="https://git-scm.com/download/win">PortableGit-2.38.1-64-bit.7z.exe</a>  <i>(46 MB)</i>
 </pre>
 </dd>
 <dd>
@@ -176,7 +181,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/October 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/November 2022* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -190,7 +195,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [git_docs]: https://git-scm.com/docs/git
 [git_downloads]: https://git-scm.com/download/win
 [github_markdown]: https://github.github.com/gfm/
-[git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.38.0.txt
+[git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.38.1.txt
 [golang_examples]: https://github.com/michelou/golang-examples
 [graalvm_examples]: https://github.com/michelou/graalvm-examples
 [haskell_examples]: https://github.com/michelou/haskell-examples
