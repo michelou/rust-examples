@@ -19,7 +19,7 @@ This project depends on two external software for the **Microsoft Windows** plaf
 - [Rust 1.64][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
 
 > **&#9755;** ***Installation policy***<br/>
-> When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [`/opt/`][linux_opt] directory on Unix).
+> When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [**`/opt/`**][linux_opt] directory on Unix).
 
 For instance our development environment looks as follows (*November 2022*) <sup id="anchor_02">[2](#footnote_02)</sup>:
 
@@ -87,7 +87,7 @@ We distinguish different sets of batch commands:
        help        display this help message</pre>
 
 2. [**`rust-by-example\*\build.bat`**](rust-by-example\01_Display\build-bat) - Finally each example can be built/run using the [**`build`**](rust-by-example\01_Display\build-bat) command.
-    > **&#9755;** While using **`cargo`** is the recommanded way to build/run [Rust][rust_lang] projects we also provide the batch command [**`build`**](examples/dotty-example-project/build.bat) in order to exercise the usage of the [**`rustc`**][rustc_cli] command.
+    > **&#9755;** While using **`cargo`** is the recommanded way to build/run [Rust][rust_lang] projects we also provide the batch command [**`build.bat`**](examples/dotty-example-project/build.bat) in order to exercise the usage of the [**`rustc.exe`**][rustc_cli] command.
 
 ## <span id="usage_examples">Usage examples</span>[**&#x25B4;**](#top)
 
@@ -142,7 +142,7 @@ Path associations:
 <span id="footnote_01">[1]</span> ***LLVM Backend*** [↩](#anchor_01)
 
 <dl><dd>
-<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html" rel="external"><code>rustc</code></a> uses LLVM for code generation (see section <a href="https://rustc-dev-guide.rust-lang.org/backend/codegen.html" rel="external">Code Generation</a> in the online <a href="https://rustc-dev-guide.rust-lang.org/" rel="external">Rustc Development Guide</a>).
+<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html" rel="external"><code>rustc.exe</code></a> uses LLVM for code generation (see section <a href="https://rustc-dev-guide.rust-lang.org/backend/codegen.html" rel="external">Code Generation</a> in the online <a href="https://rustc-dev-guide.rust-lang.org/" rel="external">Rustc Development Guide</a>).
 </dd>
 <dd>
 <pre style="font-size:80%;">
@@ -176,7 +176,7 @@ In our case we downloaded the following installation files (see <a href="#proj_d
 </pre>
 </dd>
 <dd>
-Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b><code>rustup</code></b></a> tool is installed, we can update our installation by simply running <a href="https://rust-lang.github.io/rustup/basics.html"><b><code>rustup update</code></b></a>. 
+Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b><code>rustup.exe</code></b></a> tool is installed, we can update our installation by simply running <a href="https://rust-lang.github.io/rustup/basics.html"><b><code>rustup.exe update</code></b></a>. 
 </dd></dl>
 
 ***

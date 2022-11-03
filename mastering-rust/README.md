@@ -9,7 +9,7 @@
   </tr>
 </table>
 
-Code examples in directory `mastering-rust\` can be build/run with the following build tools in addition to [**`cargo`**][cargo_cli], the standard tool <sup id="anchor_01">[1](#footnote_01)</sup> for [Rust] projects :
+Code examples in directory `mastering-rust\` can be build/run with the following build tools in addition to [**`cargo.exe`**][cargo_cli], the standard tool <sup id="anchor_01">[1](#footnote_01)</sup> for [Rust] projects :
 
 | Build tool                    | Configuration file(s)                    |Parent file(s) | Environment(s) |
 |-------------------------------|------------------------------------------|----|----|
@@ -108,7 +108,7 @@ Missing argument.
 Fibonacci number at 10 is 34
 </pre>
 
-Command `build run` generates the same output :
+Command `build.bat run` generates the same output :
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="./Chapter17/buggie/build.bat">build</a> -verbose run</b>
@@ -131,7 +131,7 @@ Code example `rr_demo` depends on Crate [`rand`](https://crates.io/crates/rand) 
 <span id="footnote_01">[1]</span> **`cargo` commands** [↩](#anchor_01)
 
 <dl><dd>
-<a href="https://doc.rust-lang.org/cargo/commands/cargo.html"><b></code>cargo</code></b></a> is actually <i>both</i> a package manager and a build tool for the Rust language; subcommands are organized is several groups :
+<a href="https://doc.rust-lang.org/cargo/commands/cargo.html"><b></code>cargo.exe</code></b></a> is actually <i>both</i> a package manager and a build tool for the Rust language; subcommands are organized is several groups :
 </dd>
 <dd>
 <ul>
@@ -145,7 +145,7 @@ Code example `rr_demo` depends on Crate [`rand`](https://crates.io/crates/rand) 
 <span id="footnote_02">[2]</span> **`build` subcommands** [↩](#anchor_02)
 
 <dl><dd>
-Command <code>build</code> with no subcommand displays the help message:
+Command <code>build.bat</code> with no subcommand displays the help message:
 </dd>
 <dd>
 <image src="../docs/images/build_help.png" />
