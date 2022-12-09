@@ -37,6 +37,7 @@ This project is organized as follows:
 <pre style="font-size:80%;">
 bin\
 docs\
+examples\{<a href="examples/README.md">README.md</a>, <a href="examples/diceroller/">diceroller</a>, <a href="examples/rust-ui-druid/">rust-ui-druid</a>}
 mastering-rust\{<a href="mastering-rust/README.md">README.md</a>, <a href="mastering-rust/Chapter01/">Chapter01</a>, etc.}
 possiblerust-examples\{<a href="possiblerust-examples/README.md">README.md</a>, <a href="possiblerust-examples/InnerFunctions/">InnerFunctions</a>, <a href="possiblerust-examples/TraitObjects/">TraitObjects</a>, etc.}
 rust-by-example\{<a href="rust-by-example/README.md">README.md</a>, <a href="rust-by-example/01_Display/">01_Display</a>, etc.}
@@ -50,8 +51,9 @@ where
 
 - directory [**`bin\`**](bin/) contains utility batch scripts.
 - directory [**`docs\`**](docs/) contains [Rust][rust_lang] related papers/articles.
-- directory [**`mastering-rust\`**](mastering-rust/) contains [Rust][rust_lang] code examples (see [`README.md`](mastering-rust/README.md) file).
-- directory [**`rust-by-example\`**](rust-by-example/) contains [Rust][rust_lang] code examples (see [`README.md`](rust-by-example/README.md) file).
+- directory [**`examples\`**](examples/) contains [Rust][rust_lang] code examples (see [**`README.md`**](./examples/README.md)).
+- directory [**`mastering-rust\`**](mastering-rust/) contains [Rust][rust_lang] code examples (see [`README.md`](mastering-rust/README.md)).
+- directory [**`rust-by-example\`**](rust-by-example/) contains [Rust][rust_lang] code examples (see [`README.md`](rust-by-example/README.md)).
 - file **`README.md`** is the [Markdown][github_markdown] document for this page.
 - file [**`RESOURCES.md`**](RESOURCES.md) is the [Markdown][github_markdown] document presenting external resources.
 - file [**`SETUP.md`**](SETUP.md) gives some [Rust][rust_lang] setup details.
@@ -98,7 +100,7 @@ Command [**`setenv.bat`**](setenv.bat) is executed once to setup your developmen
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
-   cargo 1.64.0, rustc 1.64.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#1438-2021-10-20" rel="external">1.4.38-stable</a>, rustup 1.25.1,
+   cargo 1.65.0, rustc 1.65.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#1438-2021-10-20" rel="external">1.4.38-stable</a>, rustup 1.25.1,
    pelook v1.73, git 2.38.1.windows.1, diff 3.8, bash 4.4.23(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
@@ -116,7 +118,7 @@ Command [**`setenv.bat`**](setenv.bat) with option **`-verbose`** displays addit
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
-   cargo 1.64.0, rustc 1.64.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#1438-2021-10-20" rel="external">1.4.38-stable</a>, rustup 1.25.1,
+   cargo 1.65.0, rustc 1.65.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#1438-2021-10-20" rel="external">1.4.38-stable</a>, rustup 1.25.1,
    pelook v1.73, git 2.38.1.windows.1, diff 3.8, bash 4.4.23(1)-release
 Tool paths:
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/cargo/commands/">cargo.exe</a>
@@ -147,14 +149,14 @@ Path associations:
 <dd>
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc</a> --version --verbose | <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr">findstr</a> /b "rustc LLVM"</b>
-rustc 1.64.0 (a55dd71d5 2022-09-19)
-LLVM version: 14.0.6
+rustc 1.65.0 (897e37553 2022-11-02
+LLVM version: 15.0.0
 </pre>
 </dd>
 <dd>
 <table>
 <tr><th>Rustc Version</th><th>LLVM Version</th></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.65.0" rel="external">1.65.0</a></td><td></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.65.0" rel="external">1.65.0</a></td><a href="https://releases.llvm.org/15.0.0/docs/ReleaseNotes.html" rel="external">15.0.0</a><td></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.64.0" rel="external">1.64.0</a></td><td><a href="https://releases.llvm.org/14.0.0/docs/ReleaseNotes.html">14.0.6</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.62.0" rel="external">1.62.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.63.0" rel="external">1.63.0</a></td><td><a href="https://releases.llvm.org/14.0.5/docs/ReleaseNotes.html" rel="external">14.0.5</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.60.0" rel="external">1.60.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.61.0" rel="external">1.61.0</a></td><td><a href="https://releases.llvm.org/14.0.0/docs/ReleaseNotes.html" rel="external">14.0.0</a></td></tr>

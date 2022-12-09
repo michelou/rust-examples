@@ -7,6 +7,7 @@
 *.dot
 *.hprof
 *.iml
+*.lock
 *.log
 *.o
 *.obj

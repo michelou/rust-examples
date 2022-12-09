@@ -1,0 +1,17 @@
+[package]
+name = "diceroller"
+version = "0.1.0"
+authors = ["Nicolas Frankel <nicolas@frankel.ch>"]
+edition = "2021"
+publish = false
+
+# https://crates.io/crates/paste
+# https://crates.io/crates/rand
+
+[dependencies]
+paste = "1.0.9"
+rand = "0.8.5" 
+
+[[bin]]
+name = "main"
+path = "src/main.rs"

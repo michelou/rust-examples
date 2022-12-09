@@ -1,0 +1,2 @@
+Website: https://blog.frankel.ch/start-rust/8/
+Source : https://github.com/ajavageek/diceroller
