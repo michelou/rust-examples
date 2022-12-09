@@ -61,7 +61,8 @@
 - [Learn Rust Programming](https://https://bpbonline.com/products/learn-rust-programming) by Claus Matzinger, July 2022.<br/><span style="font-size:80%;">([BPB Online][bpb_online], ISBN 978-93-5551-154-6, 268 pages)</span>
 - [Beginning Rust][book_milanesi] (2<sup>nd</sup> Ed.) by Carlo Milanesi, 2022.<br/><span style="font-size:80%;">(Apress, ISBN 978-1-4842-7208-4, 413 pages)</span>
 - [Rust in Action][book_mcnamara] by Tim McNamara, June 2021.<br/><span style="font-size:80%;">(Manning, ISBN 978-1-6172-9455-6, 456 pages)</span>
-- [Beginning Rust Programming][book_messier] by Ric Messier, March 2021.<br/><span style="font-size:80%;">(Wiley, ISBN 978-1-119-71297-8, 416 pages)</span>
+- [Programming Rust][book_blandy] (2<sup>nd</sup> Ed.) by Jim Blandy, June 2021.</br><span style="font-size:80%;">(O'Reilly, ISBN 978-1-4920-5259-3, ? pages)</span>
+ - [Beginning Rust Programming][book_messier] by Ric Messier, March 2021.<br/><span style="font-size:80%;">(Wiley, ISBN 978-1-119-71297-8, 416 pages)</span>
 - [The Rust Programming Language][book_klabnik] by Steve Klabnik and Carol Nichols, August 2019.<br/><span style="font-size:80%;">(No Strach Press, ISBN 978-1-7185-0044-0, 526 pages)</span>
 - [Rust Programming Cookbook][book_matzinger] by Claus Matzinger, 2019.<br/><span style="font-size:80%;">(Packt, ISBN 978-1-7895-3066-7, 444 pages)</span>
 - [Mastering Rust][book_sharma] (2<sup>nd</sup> Ed.) by Rahul Sharma and Vesa Kaihlavirta, January 2019.<br/><span style="font-size:80%;">(Packt, ISBN 978-1-7893-4657-2, 554 pages)</span>
@@ -75,6 +76,7 @@
 ## <span id="news">News</span> [**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.65.0](https://blog.rust-lang.org/2022/11/03/Rust-1.65.0.html), November 2022.
   - [Announcing Rust 1.64.0](https://blog.rust-lang.org/2022/09/22/Rust-1.64.0.html), September 2022.
   - [Announcing Rust 1.63.0](https://blog.rust-lang.org/2022/08/11/Rust-1.63.0.html), August 2022.
   <!--
@@ -161,7 +163,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/November 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/December 2022* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -179,6 +181,7 @@ version = "12"
 [article_oxide]: https://arxiv.org/abs/1903.00982
 [article_slow_build]: https://fasterthanli.me/articles/why-is-my-rust-build-so-slow
 [article_stone]: https://developers.redhat.com/blog/2021/04/30/how-rust-makes-rayons-data-parallelism-magical
+[book_blandy]: https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/
 [blog_fraenkel_7]: https://blog.frankel.ch/start-rust/7/
 [blog_fraenkel_8]: https://blog.frankel.ch/start-rust/8/
 [blog_fraenkel_9]: https://blog.frankel.ch/start-rust/9/

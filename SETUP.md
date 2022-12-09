@@ -99,7 +99,7 @@ Current installation options:
 %USERPROFILE%\.cargo\bin\rustup.exe
 &nbsp;
 <b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a> --version</b>
-rustc 1.62.1 (e092d0b6b 2022-07-16)
+rustc 1.65.0 (897e37553 2022-11-02)
 </pre>
 
 ## <span id="update">Installation update</span>[**&#x25B4;**](#top)
@@ -112,7 +112,7 @@ Command **`rustup update stable`** updates an existing [Rust][rust_lang] install
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2022-09-22, rust version 1.64.0 (a55dd71d5 2022-09-19)
+info: latest update on 2022-11-03, rust version 1.65.0 (897e37553 2022-11-02)
 [...]
 info: downloading component 'rustc'
  56.7 MiB /  56.7 MiB (100 %)   1.2 MiB/s in 52s ETA:  0s
@@ -124,7 +124,7 @@ info: installing component 'rustc'
 info: installing component 'rustfmt'
 info: checking for self-updates
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.64.0 (a55dd71d5 2022-09-19) (from rustc 1.63.0 (4b91a6ea7 2022-08-08))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.65.0 (897e37553 2022-11-02) (from rustc 1.64.0 (a55dd71d5 2022-09-19))
 
 info: cleaning up downloads & tmp directories
 </pre>
@@ -142,19 +142,19 @@ Command [`cargo audit`][cargo_audit] does audit `Cargo.lock` files for crates wi
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/cargo.html" rel="external">cargo</a> install cargo-audit</b>
     Updating crates.io index
-  Downloaded cargo-audit v0.16.0
+  Downloaded cargo-audit v0.17.4
   Downloaded 1 crate (35.7 KB) in 0.73s
-  Installing cargo-audit v0.16.0
-  Downloaded fixedbitset v0.4.1
+  Installing cargo-audit v0.17.4
+  Downloaded fixedbitset v0.4.2
   [...]
-  Downloaded libgit2-sys v0.12.26+1.3.0
+  Downloaded libgit2-sys v0.14.0+1.5.0
   Downloaded 100 crates (10.4 MB) in 1m 11s (largest was `libgit2-sys` at 1.5 MB)
-   Compiling proc-macro2 v1.0.36
+   Compiling proc-macro2 v1.0.47
    [...]
-   Compiling cargo-audit v0.16.0
+   Compiling cargo-audit v0.17.4
     Finished release [optimized] target(s) in 13m 36s
   Installing %CARGO_HOME%\bin\cargo-audit.exe
-   Installed package `cargo-audit v0.16.0` (executable `cargo-audit.exe`)
+   Installed package `cargo-audit v0.17.4` (executable `cargo-audit.exe`)
 &nbsp;
 <b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/cargo.html" rel="external">cargo</a> audit</b>
     Fetching advisory database from `https://github.com/RustSec/advisory-db.git`
@@ -181,7 +181,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/November 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/December 2022* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
