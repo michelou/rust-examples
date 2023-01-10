@@ -398,7 +398,7 @@ goto :eof
 :dump
 set "__EXE_FILE=%_TARGET_DIR%\%_CRATE_NAME%.exe"
 if not exist "%__EXE_FILE%" (
-    echo %_ERROR_LABEL% Executable %_CRATE_NAME%.exe not found 1>&2
+    echo %_ERROR_LABEL% Executable "%_CRATE_NAME%.exe" not found 1>&2
     set _EXITCODE=1
     goto :eof
 )
@@ -412,7 +412,7 @@ if %_DEBUG%==1 (
     call "%_PELOOK_CMD%" %__PELOOK_OPTS% "%__EXE_FILE%" | findstr "signature machine linkver modules"
 )
 if not %ERRORLEVEL%==0 (
-    echo %_ERROR_LABEL% Dump of executable %_CRATE_NAME%.exe failed 1>&2
+    echo %_ERROR_LABEL% Failed to dump PE/COFF infos for executable "%_CRATE_NAME%.exe" 1>&2
     set _EXITCODE=1
     goto :eof
 )
@@ -421,7 +421,7 @@ goto :eof
 :run
 set "__EXE_FILE=%_TARGET_DIR%\%_CRATE_NAME%.exe"
 if not exist "%__EXE_FILE%" (
-    echo %_ERROR_LABEL% Executable %_CRATE_NAME%.exe not found 1>&2
+    echo %_ERROR_LABEL% Executable "%_CRATE_NAME%.exe" not found 1>&2
     set _EXITCODE=1
     goto :eof
 )
@@ -430,7 +430,7 @@ if %_DEBUG%==1 ( echo %_DEBUG_LABEL% "%__EXE_FILE%" 1>&2
 )
 call "%__EXE_FILE%"
 if not %ERRORLEVEL%==0 (
-    echo %_ERROR_LABEL% Execution status is %ERRORLEVEL% 1>&2
+    echo %_ERROR_LABEL% Failed to execute program "!__EXE_FILE:%_ROOT_DIR%=!" 1>&2
     set _EXITCODE=1
     goto :eof
 )

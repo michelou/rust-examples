@@ -47,7 +47,7 @@ help:
 	@$(ECHO) "    build  compile Rust source files"
 	@$(ECHO) "    clean  delete generated files"
 	@$(ECHO) "    help   display this help message"
-	@$(ECHO) "    run    execute main program $(CRATE_NAME)$(EXE_SUFFIX)"
+	@$(ECHO) "    run    execute main program \"$(CRATE_NAME)$(EXE_SUFFIX)\""
 
 ##############################################################################
 ## phony

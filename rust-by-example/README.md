@@ -39,7 +39,7 @@ Compile 1 Rust source files to directory "target"
 Hello World!
 </pre>
 
-## <span id="02_Literals">`02_Literals`</span>[**&#x25B4;**](#top)
+## <span id="02_Literals">`02_Literals`</span> [**&#x25B4;**](#top)
 
 Command `cargo run` executes the Rust program [`main.rs`](./02_Literals/src/main.rs) :
 
@@ -85,7 +85,7 @@ mutable: true
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/December 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/January 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

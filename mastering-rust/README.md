@@ -82,7 +82,7 @@ Result from closure: 30
 > Float: 0.3
 > </pre>
 
-## <span id="chapter02">Chapter02</span>
+## <span id="chapter02">Chapter02</span> [**&#x25B4;**](#top)
 
 <i>WIP</i>
 
@@ -126,7 +126,7 @@ Code example `rr_demo` depends on Crate [`rand`](https://crates.io/crates/rand) 
 0 3 7 9 5 2 4 1 6 8 Hello, world!
 </pre>
 
-## <span id="footnotes">Footnotes</span>
+## <span id="footnotes">Footnotes</span> [**&#x25B4;**](#top)
 
 <span id="footnote_01">[1]</span> **`cargo` commands** [↩](#anchor_01)
 
@@ -153,7 +153,7 @@ Command <code>build.bat</code> with no subcommand displays the help message:
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/December 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/January 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

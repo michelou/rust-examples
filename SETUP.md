@@ -102,7 +102,7 @@ Current installation options:
 rustc 1.65.0 (897e37553 2022-11-02)
 </pre>
 
-## <span id="update">Installation update</span>[**&#x25B4;**](#top)
+## <span id="update">Installation update</span> [**&#x25B4;**](#top)
 
 Command **`rustup update stable`** updates an existing [Rust][rust_lang] installation:
 
@@ -112,19 +112,19 @@ Command **`rustup update stable`** updates an existing [Rust][rust_lang] install
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2022-11-03, rust version 1.65.0 (897e37553 2022-11-02)
+info: latest update on 2022-12-15, rust version 1.66.0 (69f9c33d7 2022-12-12)
 [...]
 info: downloading component 'rustc'
- 56.7 MiB /  56.7 MiB (100 %)   1.2 MiB/s in 52s ETA:  0s
+ 65.4 MiB /  65.4 MiB (100 %)   1.1 MiB/s in  1m  2s ETA:  0s
 info: downloading component 'rustfmt'
-  2.2 MiB /   2.2 MiB (100 %)   1.2 MiB/s in  1s ETA:  0s
+  2.6 MiB /   2.6 MiB (100 %)   1.2 MiB/s in  2s ETA:  0s
 [...]
-info: installing component 'rustc'
- 65.2 MiB /  65.2 MiB (100 %)  12.4 MiB/s in  5s ETA:  0s
+info: downloading component 'rustc'
+ 65.4 MiB /  65.4 MiB (100 %)   1.1 MiB/s in  1m  2s ETA:  0s
 info: installing component 'rustfmt'
 info: checking for self-updates
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.65.0 (897e37553 2022-11-02) (from rustc 1.64.0 (a55dd71d5 2022-09-19))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.66.0 (69f9c33d7 2022-12-12) (from rustc 1.65.0 (897e37553 2022-11-02))
 
 info: cleaning up downloads & tmp directories
 </pre>
@@ -163,7 +163,7 @@ Command [`cargo audit`][cargo_audit] does audit `Cargo.lock` files for crates wi
     Scanning Cargo.lock for vulnerabilities (9 crate dependencies)
 </pre>
 
-## <span id="footnotes">Footnotes</span>[**&#x25B4;**](#top)
+## <span id="footnotes">Footnotes</span> [**&#x25B4;**](#top)
 
 <span id="footnote_01">[1]</span> ***Installation settings*** [↩](#anchor_01)
 
@@ -181,7 +181,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/December 2022* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/January 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

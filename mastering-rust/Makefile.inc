@@ -9,6 +9,7 @@ ifeq ($(OS),Windows_NT)
 RUSTC      = $(subst \,/,$(CARGO_HOME))/bin/rustc.exe
 TARGET_SUFFIX = .exe
 TARGET_TRIPLE = $(shell arch)-pc-windows-msvc
+EXE_SUFFIX = .exe
 PSEP       = ;
 CP         = $(subst \,/,$(GIT_HOME))/usr/bin/cp.exe
 ECHO       = $(subst \,/,$(GIT_HOME))/usr/bin/echo.exe
@@ -21,6 +22,7 @@ else
 RUSTC      = rustc
 TARGET_SUFFIX =
 TARGET_TRIPLE = $(shell arch)-unknown-linux-gnu
+EXE_SUFFIX = 
 PSEP       = :
 CP         = cp
 ECHO       = echo
