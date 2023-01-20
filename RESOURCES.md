@@ -69,6 +69,7 @@
 
 ## <span id="forums">Forums</span>
 
+- [Linux Hint](https://linuxhint.com/) &ndash; [Rust Lang](https://linuxhint.com/category/rust/).
 - [Read Rust](https://readrust.net/) collects interesting posts related to the [Rust programming language](https://www.rust-lang.org/).
 - [Build exe file for Windows](https://users.rust-lang.org/t/build-exe-file-for-windows/19469), 2018.
 
@@ -76,6 +77,7 @@
 ## <span id="news">News</span> [**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.66.0](https://blog.rust-lang.org/2022/12/15/Rust-1.66.0.html), December 2022.
   - [Announcing Rust 1.65.0](https://blog.rust-lang.org/2022/11/03/Rust-1.65.0.html), November 2022.
   - [Announcing Rust 1.64.0](https://blog.rust-lang.org/2022/09/22/Rust-1.64.0.html), September 2022.
   - [Announcing Rust 1.63.0](https://blog.rust-lang.org/2022/08/11/Rust-1.63.0.html), August 2022.

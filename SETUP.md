@@ -40,7 +40,7 @@ OPTIONS:
     -t, --target &lt;targets&gt;...                      Target name to also install
 </pre>
 
-As a first run let's choose option `"3) Cancel installation"` inorder to *pay attention* to the default settings <sup id="anchor_01"><a href="#footnote_01">[1]</a></sup> with not installation actions:
+As a first run let's choose option `"3) Cancel installation"` inorder to *pay attention* to the default settings <sup id="anchor_01">[1](#footnote_01)</sup> with not installation actions:
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\downloads\<a href="https://rust-lang.github.io/rustup/installation/index.html">rustup-init</a></b>
@@ -112,19 +112,19 @@ Command **`rustup update stable`** updates an existing [Rust][rust_lang] install
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2022-12-15, rust version 1.66.0 (69f9c33d7 2022-12-12)
+info: latest update on 2023-01-10, rust version 1.66.1 (90743e729 2023-01-10)
 [...]
 info: downloading component 'rustc'
- 65.4 MiB /  65.4 MiB (100 %)   1.1 MiB/s in  1m  2s ETA:  0s
+ 65.5 MiB /  65.5 MiB (100 %)   1.3 MiB/s in 55s ETA:  0s
 info: downloading component 'rustfmt'
-  2.6 MiB /   2.6 MiB (100 %)   1.2 MiB/s in  2s ETA:  0s
+  2.5 MiB /   2.5 MiB (100 %)   1.3 MiB/s in  2s ETA:  0s
 [...]
-info: downloading component 'rustc'
- 65.4 MiB /  65.4 MiB (100 %)   1.1 MiB/s in  1m  2s ETA:  0s
+info: installing component 'rustc'
+ 65.5 MiB /  65.5 MiB (100 %)  12.5 MiB/s in  5s ETA:  0s
 info: installing component 'rustfmt'
 info: checking for self-updates
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.66.0 (69f9c33d7 2022-12-12) (from rustc 1.65.0 (897e37553 2022-11-02))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.66.1 (90743e729 2023-01-10) (from rustc 1.66.0 (69f9c33d7 2022-12-12))
 
 info: cleaning up downloads & tmp directories
 </pre>
@@ -137,7 +137,7 @@ info: cleaning up downloads & tmp directories
 
 ## <span id="cargo-audit">`cargo-audit`</span>
 
-Command [`cargo audit`][cargo_audit] does audit `Cargo.lock` files for crates with security vulnerabilities (based on [`rustsec/advisory-db`](https://github.com/RustSec/advisory-db/)).
+Command [`cargo audit`][cargo_audit] <sup id="anchor_02">[2](#footnote_02)</sup> does audit `Cargo.lock` files for crates with security vulnerabilities (based on [`rustsec/advisory-db`](https://github.com/RustSec/advisory-db/)).
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/cargo.html" rel="external">cargo</a> install cargo-audit</b>
@@ -158,7 +158,7 @@ Command [`cargo audit`][cargo_audit] does audit `Cargo.lock` files for crates wi
 &nbsp;
 <b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/cargo.html" rel="external">cargo</a> audit</b>
     Fetching advisory database from `https://github.com/RustSec/advisory-db.git`
-      Loaded 400 security advisories (from %CARGO_HOME%\advisory-db)
+      Loaded 487 security advisories (from %CARGO_HOME%\advisory-db)
     Updating crates.io index
     Scanning Cargo.lock for vulnerabilities (9 crate dependencies)
 </pre>
@@ -176,6 +176,43 @@ profile = "default"
 version = "12"
 &nbsp;
 [overrides]
+</pre>
+</dd></dl>
+
+<span id="footnote_02">[2]</span> ***Cargo commands*** [↩](#anchor_02)
+
+<dl><dd>
+Option <code>--list</code> displays the list of available Cargo commands :
+<pre style="font-size:80%;">
+<b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/cargo.html" rel="external">cargo</a> --list</b>
+Installed Commands:
+    [...]
+    b                    alias: build
+    bench                Execute all benchmarks of a local package
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-build.html"><b>build</b></a>                Compile a local package and all of its dependencies
+    c                    alias: check
+    check                Check a local package and all of its dependencies for errors
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-clean.html"><b>clean</b></a>                Remove artifacts that cargo has generated in the past
+    d                    alias: doc
+    doc                  Build a package's documentation
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-fetch.html"><b>fetch</b></a>                Fetch dependencies of a package from the network
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-fix.html"><b>fix</b></a>                  Automatically fix lint warnings reported by rustc
+    help                 Displays help for a cargo subcommand
+    init                 Create a new cargo package in an existing directory
+    install              Install a Rust binary. Default location is $HOME/.cargo/bin
+    locate-project       Print a JSON representation of a Cargo.toml file's location
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-new.html"><b>new</b></a>                  Create a new cargo package at &lt;path&gt;
+    r                    alias: run
+    run                  Run a binary or example of the local package
+    rustc                Compile a package, and pass extra options to the compiler
+    rustdoc              Build a package's documentation, using specified custom flags.
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-search.html"><b>search</b></a>               Search packages in crates.io
+    t                    alias: test
+    test                 Execute all unit and integration tests and build examples of a local package
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-tree.html"><b>tree</b></a>                 Display a tree visualization of a dependency graph
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-uninstall.html"><b>uninstall</b></a>            Remove a Rust binary
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-update.html"><b>update</b></a>               Update dependencies as recorded in the local lock file
+    [...]
 </pre>
 </dd></dl>
 

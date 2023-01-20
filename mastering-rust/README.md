@@ -51,6 +51,29 @@ Execute program "target\closures.exe"
 Result from closure: 30
 </pre>
 
+We can display the executed command lines with option `-debug`, e.g.
+
+<pre style="font-size:80%;">
+>build -debug clean run
+[build] Options    : _EDITION=2021 _TARGET=msvc _TIMER=0 _VERBOSE=0
+[build] Subcommands: _CLEAN=1 _COMPILE=1 _DOC=0 _DUMP=0 _RUN=1 _TEST=0
+[build] Variables  : "CARGO_HOME=%USERPROFILE%\.cargo"
+[build] Variables  : "GIT_HOME=C:\opt\Git-2.39.1"
+[build] Variables  : "MSYS_HOME=C:\opt\msys64"
+[build] Variables  : "RUSTUP_HOME=%USERPROFILE%\.rustup"
+[build] Variables  : _CRATE_NAME=arrays _CRATE_TYPE=bin
+[build] Variables  : _TARGET_TRIPLE="x86_64-pc-windows-msvc"
+[build] rmdir /s /q "R:\mastering-rust\Chapter01\target"
+[build] 00000000000000 Target : 'R:\mastering-rust\Chapter01\target\arrays.exe'
+[build] 20211025151633 Sources: 'R:\mastering-rust\Chapter01\src\*.rs'
+[build] _ACTION_REQUIRED=1
+[build] "%USERPROFILE%\.cargo\bin\rustc.exe" -g  --crate-name "arrays" --crate-type bin --edition 2021 --out-dir "R:\mastering-rust\Chapter01\target" --target "x86_64-pc-windows-msvc"  "R:\mastering-rust\Chapter01\src\arrays.rs"
+[build] "R:\mastering-rust\Chapter01\target\arrays.exe"
+Number: 7
+Float: 0.3
+[build] _EXITCODE=0
+</pre>
+
 ### <b id="cargo">`cargo.exe`</b>
 
 The default main program is [`arrays.rs`](Chapter01/src/arrays.rs) is defined in configuration file [`Cargo.toml`](Chapter01/Cargo.toml):
@@ -81,6 +104,32 @@ Result from closure: 30
 > Number: 7
 > Float: 0.3
 > </pre>
+
+### <b id="make">`make.exe`</b>
+
+<pre style="font-size:80%;">
+<b>&gt; <a href="https://www.gnu.org/software/make/manual/html_node/Running.html">make</a> clean run</b>
+"C:/opt/Git-2.39.1/usr/bin/rm.exe" -rf "target"
+"C:/opt/Git-2.39.1/usr/bin/rm.exe" -f "Cargo.lock"
+[ -d "target" ] || "C:/opt/Git-2.39.1/usr/bin/mkdir.exe" -p "target"
+"%USERPROFILE%/.cargo/bin/rustc.exe"  --crate-name "arrays" --crate-type bin --edition 2018 --out-dir "target" --target "x86_64-pc-windows-msvc" src/arrays.rs
+target\arrays.exe
+Number: 7
+Float: 0.3
+</pre>
+
+`2018` is the default [Rust edition](https://doc.rust-lang.org/edition-guide/editions/) (see above session example); we can select another edition with variable `EDITION`, e.g.
+
+<pre style="font-size:80%;">
+<b>&gt; <a href="https://www.gnu.org/software/make/manual/html_node/Running.html">make</a> EDITION=2021 clean run</b>
+"C:/opt/Git-2.39.1/usr/bin/rm.exe" -rf "target"
+"C:/opt/Git-2.39.1/usr/bin/rm.exe" -f "Cargo.lock"
+[ -d "target" ] || "C:/opt/Git-2.39.1/usr/bin/mkdir.exe" -p "target"
+"%USERPROFILE%/.cargo/bin/rustc.exe"  --crate-name "arrays" --crate-type bin --edition 2021 --out-dir "target" --target "x86_64-pc-windows-msvc" src/arrays.rs
+target\arrays.exe
+Number: 7
+Float: 0.3
+</pre>
 
 ## <span id="chapter02">Chapter02</span> [**&#x25B4;**](#top)
 
