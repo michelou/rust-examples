@@ -54,7 +54,7 @@ Result from closure: 30
 We can display the executed command lines with option `-debug`, e.g.
 
 <pre style="font-size:80%;">
->build -debug clean run
+<b>&gt; <a href="Chapter01/build.bat">build</a> -debug clean run</b>
 [build] Options    : _EDITION=2021 _TARGET=msvc _TIMER=0 _VERBOSE=0
 [build] Subcommands: _CLEAN=1 _COMPILE=1 _DOC=0 _DUMP=0 _RUN=1 _TEST=0
 [build] Variables  : "CARGO_HOME=%USERPROFILE%\.cargo"
@@ -180,7 +180,7 @@ Code example `rr_demo` depends on Crate [`rand`](https://crates.io/crates/rand) 
 <span id="footnote_01">[1]</span> **`cargo` commands** [↩](#anchor_01)
 
 <dl><dd>
-<a href="https://doc.rust-lang.org/cargo/commands/cargo.html"><b></code>cargo.exe</code></b></a> is actually <i>both</i> a package manager and a build tool for the Rust language; subcommands are organized is several groups :
+<a href="https://doc.rust-lang.org/cargo/commands/cargo.html" rel="external"><b></code>cargo.exe</code></b></a> is actually <i>both</i> a package manager and a build tool for the <a href="https://www.rust-lang.org/" rel="external">Rust</a> language; subcommands are organized is several groups :
 </dd>
 <dd>
 <ul>
