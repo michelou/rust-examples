@@ -16,7 +16,12 @@
 This project depends on two external software for the **Microsoft Windows** plaform:
 
 - [Git 2.39][git_downloads] ([*release notes*][git_relnotes])
-- [Rust 1.66][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
+- [Rust 1.67][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
+
+<!--
+Rust 1.67.0 -> 2023-01-26
+Rust 1.66.0 -> 2022-12-15
+-->
 
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [**`/opt/`**][linux_opt] directory on Unix).
@@ -41,6 +46,7 @@ examples\{<a href="examples/README.md">README.md</a>, <a href="examples/diceroll
 mastering-rust\{<a href="mastering-rust/README.md">README.md</a>, <a href="mastering-rust/Chapter01/">Chapter01</a>, etc.}
 possiblerust-examples\{<a href="possiblerust-examples/README.md">README.md</a>, <a href="possiblerust-examples/InnerFunctions/">InnerFunctions</a>, <a href="possiblerust-examples/TraitObjects/">TraitObjects</a>, etc.}
 rust-by-example\{<a href="rust-by-example/README.md">README.md</a>, <a href="rust-by-example/01_Display/">01_Display</a>, etc.}
+<a href="CONTRIBUTIONS.md">CONTRIBUTIONS.md</a>
 README.md
 <a href="RESOURCES.md">RESOURCES.md</a>
 <a href="SETUP.md">SETUP.md</a>
@@ -54,6 +60,7 @@ where
 - directory [**`examples\`**](examples/) contains [Rust][rust_lang] code examples (see [**`README.md`**](./examples/README.md)).
 - directory [**`mastering-rust\`**](mastering-rust/) contains [Rust][rust_lang] code examples (see [`README.md`](mastering-rust/README.md)).
 - directory [**`rust-by-example\`**](rust-by-example/) contains [Rust][rust_lang] code examples (see [`README.md`](rust-by-example/README.md)).
+- file [**`CONTRIBUTIONS.md`**](CONTRIBUTIONS.md) gathers reported issues and pull requests to the [Rust][rust_lang] project.
 - file **`README.md`** is the [Markdown][github_markdown] document for this page.
 - file [**`RESOURCES.md`**](RESOURCES.md) is the [Markdown][github_markdown] document presenting external resources.
 - file [**`SETUP.md`**](SETUP.md) gives some [Rust][rust_lang] setup details.
@@ -100,7 +107,7 @@ Command [**`setenv.bat`**](setenv.bat) is executed once to setup your developmen
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
-   cargo 1.66.1, rustc 1.66.1, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#151-2022-06-24" rel="external">1.5.1-stable</a>, rustup 1.25.1,
+   cargo 1.67.0, rustc 1.67.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#151-2022-06-24" rel="external">1.5.1-stable</a>, rustup 1.25.1,
    pelook v1.73, git 2.39.1.windows.1, diff 3.8, bash 4.4.23(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
@@ -118,7 +125,7 @@ Command [**`setenv.bat`**](setenv.bat) with option **`-verbose`** displays addit
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
-   cargo 1.66.1, rustc 1.66.1, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.5.1-stable</a>, rustup 1.25.1,
+   cargo 1.67.0, rustc 1.67.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.5.1-stable</a>, rustup 1.25.1,
    pelook v1.73, git 2.39.1.windows.1, diff 3.8, bash 4.4.23(1)-release
 Tool paths:
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/cargo/commands/">cargo.exe</a>
@@ -156,6 +163,7 @@ LLVM version: 15.0.2
 <dd>
 <table>
 <tr><th>Rustc Version</th><th>LLVM Version</th></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.67.0" rel="external">1.67.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-15-0-2-released/65695" rel="external">15.0.2</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.66.1" rel="external">1.66.1</a></td><td><a href="https://discourse.llvm.org/t/llvm-15-0-2-released/65695" rel="external">15.0.2</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.66.0" rel="external">1.66.0</a></td><td><a href="https://releases.llvm.org/15.0.0/docs/ReleaseNotes.html" rel="external">15.0.0</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.64.0" rel="external">1.64.0</a></td><td><a href="https://releases.llvm.org/14.0.0/docs/ReleaseNotes.html">14.0.6</a></td></tr>

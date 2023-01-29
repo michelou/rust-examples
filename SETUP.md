@@ -10,7 +10,8 @@
 
 In normal case we are facing one of the following situations:
 - [Fresh installation](#installation).
-- [Installation update](#update]).
+- [Installation update](#update).
+- [Some useful crates](#crates).
 
 ## <span id="installation">Fresh Installation</span>
 
@@ -104,7 +105,7 @@ rustc 1.65.0 (897e37553 2022-11-02)
 
 ## <span id="update">Installation update</span> [**&#x25B4;**](#top)
 
-Command **`rustup update stable`** updates an existing [Rust][rust_lang] installation:
+Command **`rustup update stable`** <sup id="anchor_02">[2](#footnote_02)</sup>  updates an existing [Rust][rust_lang] installation:
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> rustup</b>
@@ -112,7 +113,7 @@ Command **`rustup update stable`** updates an existing [Rust][rust_lang] install
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2023-01-10, rust version 1.66.1 (90743e729 2023-01-10)
+info: latest update on 2023-01-26, rust version 1.67.0 (fc594f156 2023-01-24)
 [...]
 info: downloading component 'rustc'
  65.5 MiB /  65.5 MiB (100 %)   1.3 MiB/s in 55s ETA:  0s
@@ -124,7 +125,7 @@ info: installing component 'rustc'
 info: installing component 'rustfmt'
 info: checking for self-updates
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.66.1 (90743e729 2023-01-10) (from rustc 1.66.0 (69f9c33d7 2022-12-12))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.67.0 (fc594f156 2023-01-24) (from rustc 1.66.1 (90743e729 2023-01-10))
 
 info: cleaning up downloads & tmp directories
 </pre>
@@ -135,12 +136,14 @@ info: cleaning up downloads & tmp directories
 > stable-x86_64-pc-windows-msvc (default)
 > </pre>
 
-## <span id="cargo-audit">`cargo-audit`</span>
+## <span id="crates">Some useful crates</span> [**&#x25B4;**](#top)
 
-Command [`cargo audit`][cargo_audit] <sup id="anchor_02">[2](#footnote_02)</sup> does audit `Cargo.lock` files for crates with security vulnerabilities (based on [`rustsec/advisory-db`](https://github.com/RustSec/advisory-db/)).
+### <span id="cargo-audit">`cargo-audit` crate</span>
+
+Command [`cargo audit`][cargo_audit] <sup id="anchor_03">[3](#footnote_03)</sup> does audit `Cargo.lock` files for crates with security vulnerabilities (based on [`rustsec/advisory-db`](https://github.com/RustSec/advisory-db/)).
 
 <pre style="font-size:80%;">
-<b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/cargo.html" rel="external">cargo</a> install cargo-audit</b>
+<b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/cargo.html" rel="external">cargo</a> install <a href="https://crates.io/crates/cargo-audit" rel="external">cargo-audit</a></b>
     Updating crates.io index
   Downloaded cargo-audit v0.17.4
   Downloaded 1 crate (35.7 KB) in 0.73s
@@ -163,6 +166,10 @@ Command [`cargo audit`][cargo_audit] <sup id="anchor_02">[2](#footnote_02)</sup>
     Scanning Cargo.lock for vulnerabilities (9 crate dependencies)
 </pre>
 
+### <span id="crates_windows">`windows`/`windows-sys` Crates</span>
+
+The [`windows`](https://crates.io/crates/windows)/[`windows-sys`](https://crates.io/crates/windows-sys) crates provide a natural and idiomatic way for [Rust][rust_lang] developers to call Windows APIs.
+
 ## <span id="footnotes">Footnotes</span> [**&#x25B4;**](#top)
 
 <span id="footnote_01">[1]</span> ***Installation settings*** [↩](#anchor_01)
@@ -179,7 +186,23 @@ version = "12"
 </pre>
 </dd></dl>
 
-<span id="footnote_02">[2]</span> ***Cargo commands*** [↩](#anchor_02)
+<span id="footnote_02">[2]</span> **`rustup` *command options*** [↩](#anchor_02)
+
+<dl><dd>
+Option <code>--installed</code> displays the list of <i>installed</i> (instead of <i>available</i>) Rust components :
+<pre style="font-size:80%">
+<b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> component list --installed</b>
+cargo-x86_64-pc-windows-msvc
+clippy-x86_64-pc-windows-msvc
+rust-docs-x86_64-pc-windows-msvc
+rust-std-x86_64-pc-windows-gnu
+rust-std-x86_64-pc-windows-msvc
+rustc-x86_64-pc-windows-msvc
+rustfmt-x86_64-pc-windows-msvc
+</pre>
+</dd></dl>
+
+<span id="footnote_03">[3]</span> ***Cargo command options*** [↩](#anchor_03)
 
 <dl><dd>
 Option <code>--list</code> displays the list of available Cargo commands :

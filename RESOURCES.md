@@ -1,6 +1,6 @@
 # <span id="top">Rust Resources</span> <span style="size:30%;"><a href="README.md">↩</a></span>
 
-<table style="font-family:Helvetica,Arial;font-size:12px;line-height:1.6;">
+<table style="font-family:Helvetica,Arial;line-height:1.6;">
   <tr>
   <td style="border:0;padding:0 10px 0 0;min-width:120px;"><a href="https://www.rust-lang.org/" rel="external"><img src="./docs/images/rust-logo-blk.svg" width="120" alt="Rust project"/></a></td>
   <td style="border:0;padding:0;vertical-align:text-top;">This document gathers <a href="https://www.rust-lang.org/" rel="external">Rust</a> related resources that caught our attention.
@@ -10,6 +10,7 @@
 
 ## <span id="articles">Articles</span>
 
+- [Introducing Rust calls to C library functions](https://opensource.com/article/22/11/rust-calls-c-library-functions) by Marty Kalin, November 2022.
 - [**fasterthanli**](https://fasterthanli.me/articles) articles :
   - [When rustc explodes][article_explodes], July 2022.
   - [Some mistakes Rust doesn't catch][article_mistakes], February 2022.
@@ -77,6 +78,7 @@
 ## <span id="news">News</span> [**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.67.0](https://blog.rust-lang.org/2023/01/26/Rust-1.67.0.html), January 2023 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1670-2023-01-26)*).
   - [Announcing Rust 1.66.0](https://blog.rust-lang.org/2022/12/15/Rust-1.66.0.html), December 2022.
   - [Announcing Rust 1.65.0](https://blog.rust-lang.org/2022/11/03/Rust-1.65.0.html), November 2022.
   - [Announcing Rust 1.64.0](https://blog.rust-lang.org/2022/09/22/Rust-1.64.0.html), September 2022.
@@ -102,13 +104,16 @@
 
 ## <span id="projects">Projects</span> [**&#x25B4;**](#top)
 
-- [`Miri`](https://rustrepo.com/repo/rust-lang-miri) - an experimental interpreter for Rust's [mid-level intermediate representation][rust_mir] (MIR).
-- [Redox](https://www.redox-os.org/) - a Unix-like Operating System written in [Rust][rust_lang].
-- [`ripgrep`][github_ripgrep]: recursively searches directories for a regex pattern.
-- [`winapi-rs`][github_winapi_rs] - Rust bindings to Windows API.
+- [`Miri`](https://rustrepo.com/repo/rust-lang-miri) &ndash; an experimental interpreter for Rust's [mid-level intermediate representation][rust_mir] (MIR).
+- [`Redox`](https://www.redox-os.org/) &ndash; a Unix-like Operating System written in [Rust][rust_lang].
+- [`ripgrep`][github_ripgrep] &ndash; recursively searches directories for a regex pattern.
+- [Rust for Windows](https://github.com/microsoft/windows-rs).
+- [`Simphonia`](https://github.com/pdeljanov/Symphonia) &ndash; a multimedia format demuxing, tag reading, and audio decoding library.
+- [`winapi-rs`][github_winapi_rs] &ndash; [Rust][rust_lang] bindings to Windows API.
 
 ## <span id="training">Training and Tutorials</span>
 
+- [24 days of Rust](https://zsiciarz.github.io/24daysofrust/index.html) by Zbigniew Siciarz, 2023.
 - [Rust for the Polyglot Programmer](https://www.chiark.greenend.org.uk/~ianmdlvl/rust-polyglot/) by Ian Jackson and contributors, 2021.
 - [A Not so Short Introduction to the Rust Programming Language][tutorial_mueller] by Kasper Müller, November 2021.
 - [learn-rust Series](https://dev.to/cthutu/series/13395) by Matt Davies.
