@@ -104,6 +104,7 @@
 
 ## <span id="projects">Projects</span> [**&#x25B4;**](#top)
 
+- [Druid](https://github.com/linebender/druid) &ndash; a data-first Rust-native UI toolkit.
 - [`Miri`](https://rustrepo.com/repo/rust-lang-miri) &ndash; an experimental interpreter for Rust's [mid-level intermediate representation][rust_mir] (MIR).
 - [`Redox`](https://www.redox-os.org/) &ndash; a Unix-like Operating System written in [Rust][rust_lang].
 - [`ripgrep`][github_ripgrep] &ndash; recursively searches directories for a regex pattern.
