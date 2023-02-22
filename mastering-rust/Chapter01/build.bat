@@ -266,7 +266,7 @@ goto :eof
 
 :help
 if %_VERBOSE%==1 (
-    set __BEG_P=%_STRONG_FG_CYAN%%_UNDERSCORE%
+    set __BEG_P=%_STRONG_FG_CYAN%
     set __BEG_O=%_STRONG_FG_GREEN%
     set __BEG_N=%_NORMAL_FG_YELLOW%
     set __END=%_RESET%
@@ -292,7 +292,7 @@ echo     %__BEG_O%compile%__END%             generate executable
 echo     %__BEG_O%doc%__END%                 generate HTML documentation
 echo     %__BEG_O%dump%__END%                dump PE/COFF infos for generated executable
 echo     %__BEG_O%help%__END%                display this help message
-echo     %__BEG_O%run%__END%                 run generated executable %__BEG_O%%_CRATE_NAME%%__END%
+echo     %__BEG_O%run%__END%                 run generated executable "%__BEG_O%%_CRATE_NAME%%__END%"
 echo     %__BEG_O%test%__END%                test generated executable
 echo.
 echo   %__BEG_P%Option values:%__END%
@@ -389,7 +389,7 @@ if %_DEBUG%==1 echo %_DEBUG_LABEL% "%_RUSTDOC_CMD%" %__RUSTDOC_OPTS% %__SOURCE_F
 )
 call "%_RUSTDOC_CMD%" %__RUSTDOC_OPTS% %__SOURCE_FILES%
 if not %ERRORLEVEL%==0 (
-    echo %_ERROR_LABEL% Failed to generate HTML documentation 1>&2
+    echo %_ERROR_LABEL% Failed to generate HTML documentation into directory "!_TARGET_DOCS_DIR:%_ROOT_DIR%=!" 1>&2
     set _EXITCODE=1
     goto :eof
 )

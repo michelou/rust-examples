@@ -16,10 +16,11 @@
   - [Some mistakes Rust doesn't catch][article_mistakes], February 2022.
   - [Why is my Rust build so slow?][article_slow_build], December 2021.
   - [A half-hour to learn Rust][article_half_hour], January 2020.
-- [**fettblog.eu**](https://fettblog.eu/articles) articles :
-  - [Idiomatic Rust][article_baumgartner_idiomatic] by Stefan Baumgartner, December 2021.
-  - [Serverless Rust][article_baumgartner_serverless] by Stefan Baumgartner, December 2021.
-  - [Error handling in Rust][article_baumgartner_error] by Stefan Baumgartner, September 2021.
+- [**fettblog.eu**](https://fettblog.eu/articles) articles by Stefan Baumgartner :
+  - [Rust: Tiny little traits](https://fettblog.eu/rust-tiny-little-traits/), April 2022.
+  - [Idiomatic Rust][article_baumgartner_idiomatic], December 2021.
+  - [Serverless Rust][article_baumgartner_serverless], December 2021.
+  - [Error handling in Rust][article_baumgartner_error], September 2021.
 - [**Red Hat** Developer](https://developers.redhat.com/) articles :
   - [How Rust makes Rayon's data parallelism magical][article_stone] by Josh Stone, April 2021.
 - [Intro to Rust: The Modern-Day, Safe Low-Level Programming Language][article_novak] by Marcus Novak, December 2020.
@@ -143,6 +144,7 @@
 - [Clap](https://clap.rs/) &ndash; a fast and modern CLI framework for [Rust][rust_lang].
 - [diesel](https://github.com/diesel-rs/diesel) &ndash; a safe, extensible ORM and Query Builder for [Rust][rust_lang]. 
 - [fleet](https://fleet.rs/) &ndash; a build tool which makes your [Rust][rust_lang] builds up to 5x faster.
+- [Fast and safe HTTP for the Rust language](https://hyper.rs/) &ndash; a fast and safe HTTP for [Rust].
 - [redb](https://github.com/cberner/redb) &ndash; an embedded key-value database in pure [Rust][rust_lang]. 
 - [rust.analyzer](https://rust-analyzer.github.io/) &ndash; an implementation of [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) for the [Rust][rust_lang] programming language.
 

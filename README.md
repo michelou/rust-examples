@@ -1,6 +1,6 @@
 # <span id="top">Playing with Rust on Windows</span>
 
-<table style="font-family:Helvetica,Arial;font-size:14px;line-height:1.6;">
+<table style="font-family:Helvetica,Arial;line-height:1.6;">
   <tr>
   <td style="border:0;padding:0 10px 0 0;min-width:120px;"><a href="https://www.rust-lang.org/" rel="external"><img src="docs/images/rust-logo-blk.svg" width="120" alt="Rust project"/></a></td>
   <td style="border:0;padding:0;vertical-align:text-top;">This repository gathers <a href="https://www.rust-lang.org/" rel="external">Rust</a> code examples coming from various websites and books.<br/>
@@ -19,7 +19,7 @@ This project depends on two external software for the **Microsoft Windows** plaf
 - [Rust 1.67][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
 
 <!--
-Rust 1.67.0 -> 2023-01-26
+Rust 1.67.1 -> 2023-01-26
 Rust 1.66.0 -> 2022-12-15
 -->
 
@@ -29,7 +29,7 @@ Rust 1.66.0 -> 2022-12-15
 For instance our development environment looks as follows (*February 2023*) <sup id="anchor_02">[2](#footnote_02)</sup>:
 
 <pre style="font-size:80%;">
-C:\opt\Git-2.39.1\      <i>(314 MB)</i>
+C:\opt\Git-2.39.2\      <i>(314 MB)</i>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\   <i>(100 MB)</i>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.rustup\  <i>(593 MB, installed toolchains and configuration options)</i>
 </pre>
@@ -107,8 +107,8 @@ Command [**`setenv.bat`**](setenv.bat) is executed once to setup your developmen
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
-   cargo 1.67.0, rustc 1.67.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#151-2022-06-24" rel="external">1.5.1-stable</a>, rustup 1.25.1,
-   pelook v1.73, git 2.39.1.windows.1, diff 3.8, bash 4.4.23(1)-release
+   cargo 1.67.1, rustc 1.67.1, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#151-2022-06-24" rel="external">1.5.1-stable</a>, rustup 1.25.2,
+   pelook v1.73, git 2.39.2.windows.1, diff 3.8, bash 4.4.23(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\cargo.exe
@@ -125,21 +125,21 @@ Command [**`setenv.bat`**](setenv.bat) with option **`-verbose`** displays addit
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
-   cargo 1.67.0, rustc 1.67.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.5.1-stable</a>, rustup 1.25.1,
-   pelook v1.73, git 2.39.1.windows.1, diff 3.8, bash 4.4.23(1)-release
+   cargo 1.67.1, rustc 1.67.1, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.5.1-stable</a>, rustup 1.25.2,
+   pelook v1.73, git 2.39.2.windows.1, diff 3.8, bash 4.4.23(1)-release
 Tool paths:
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/cargo/commands/">cargo.exe</a>
    %USERPROFILE%\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a>
    %USERPROFILE%\.cargo\bin\<a href="https://rust-lang.github.io/rustfmt">rustfmt.exe</a>
    %USERPROFILE%\.cargo\bin\<a href="https://rust-lang.github.io/rustup/basics.html">rustup.exe</a>
    R:\bin\pelook.exe
-   C:\opt\Git-2.39.1\bin\git.exe
-   C:\opt\Git-2.39.1\mingw64\bin\git.exe
-   C:\opt\Git-2.39.1\usr\bin\diff.exe
-   C:\opt\Git-2.39.1\bin\bash.exe
+   C:\opt\Git-2.39.2\bin\git.exe
+   C:\opt\Git-2.39.2\mingw64\bin\git.exe
+   C:\opt\Git-2.39.2\usr\bin\diff.exe
+   C:\opt\Git-2.39.2\bin\bash.exe
 Environment variables:
    "CARGO_HOME=%USERPROFILE%\.cargo"
-   "GIT_HOME=C:\opt\Git-2.39.1"
+   "GIT_HOME=C:\opt\Git-2.39.2"
    "MSYS_HOME=C:\opt\msys64"
    "RUSTUP_HOME=%USERPROFILE%\.rustup"
 Path associations:
@@ -156,14 +156,14 @@ Path associations:
 <dd>
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc</a> --version --verbose | <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr">findstr</a> /b "rustc LLVM"</b>
-rustc 1.66.1 (90743e729 2023-01-10)
-LLVM version: 15.0.2
+rustc 1.67.1 (d5a82bbd2 2023-02-07)
+LLVM version: 15.0.6
 </pre>
 </dd>
 <dd>
 <table>
 <tr><th>Rustc Version</th><th>LLVM Version</th></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.67.0" rel="external">1.67.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-15-0-2-released/65695" rel="external">15.0.2</a></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.67.1" rel="external">1.67.1</a></td><td><a href="https://discourse.llvm.org/t/llvm-15-0-6-released/66899" rel="external">15.0.6</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.66.1" rel="external">1.66.1</a></td><td><a href="https://discourse.llvm.org/t/llvm-15-0-2-released/65695" rel="external">15.0.2</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.66.0" rel="external">1.66.0</a></td><td><a href="https://releases.llvm.org/15.0.0/docs/ReleaseNotes.html" rel="external">15.0.0</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.64.0" rel="external">1.64.0</a></td><td><a href="https://releases.llvm.org/14.0.0/docs/ReleaseNotes.html">14.0.6</a></td></tr>
@@ -184,7 +184,7 @@ In our case we downloaded the following installation files (see <a href="#proj_d
 <dd>
 <pre style="font-size:80%;">
 <a href="https://www.rust-lang.org/tools/install">rust-init.exe</a>                     <i>( 8 MB)</i>
-<a href="https://git-scm.com/download/win">PortableGit-2.39.1-64-bit.7z.exe</a>  <i>(46 MB)</i>
+<a href="https://git-scm.com/download/win">PortableGit-2.39.2-64-bit.7z.exe</a>  <i>(46 MB)</i>
 </pre>
 </dd>
 <dd>
@@ -208,7 +208,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [git_docs]: https://git-scm.com/docs/git
 [git_downloads]: https://git-scm.com/download/win
 [github_markdown]: https://github.github.com/gfm/
-[git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.39.1.txt
+[git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.39.2.txt
 [golang_examples]: https://github.com/michelou/golang-examples
 [graalvm_examples]: https://github.com/michelou/graalvm-examples
 [haskell_examples]: https://github.com/michelou/haskell-examples

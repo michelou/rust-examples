@@ -1,6 +1,6 @@
 # <span id="top">Rust Setup</span> <span style="size:30%;"><a href="README.md">↩</a></span>
 
-<table style="font-family:Helvetica,Arial;font-size:12px;line-height:1.6;">
+<table style="font-family:Helvetica,Arial;line-height:1.6;">
   <tr>
   <td style="border:0;padding:0 10px 0 0;min-width:120px;"><a href="https://www.rust-lang.org/" rel="external"><img src="./docs/images/rust-logo-blk.svg" width="120" alt="Rust project"/></a></td>
   <td style="border:0;padding:0;vertical-align:text-top;">This document presents some <a href="https://www.rust-lang.org/" rel="external">Rust</a> setup details on the Windows platform.
@@ -100,7 +100,7 @@ Current installation options:
 %USERPROFILE%\.cargo\bin\rustup.exe
 &nbsp;
 <b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a> --version</b>
-rustc 1.65.0 (897e37553 2022-11-02)
+rustc 1.67.1 (d5a82bbd2 2023-02-07)
 </pre>
 
 ## <span id="update">Installation update</span> [**&#x25B4;**](#top)
@@ -113,7 +113,7 @@ Command **`rustup update stable`** <sup id="anchor_02">[2](#footnote_02)</sup>  
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2023-01-26, rust version 1.67.0 (fc594f156 2023-01-24)
+info: latest update on 2023-02-09, rust version 1.67.1 (d5a82bbd2 2023-02-07)
 [...]
 info: downloading component 'rustc'
  65.5 MiB /  65.5 MiB (100 %)   1.3 MiB/s in 55s ETA:  0s
@@ -125,7 +125,7 @@ info: installing component 'rustc'
 info: installing component 'rustfmt'
 info: checking for self-updates
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.67.0 (fc594f156 2023-01-24) (from rustc 1.66.1 (90743e729 2023-01-10))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.67.1 (d5a82bbd2 2023-02-07) (from rustc 1.67.0 (fc594f156 2023-01-24))
 
 info: cleaning up downloads & tmp directories
 </pre>
@@ -211,27 +211,27 @@ Option <code>--list</code> displays the list of available Cargo commands :
 Installed Commands:
     [...]
     b                    alias: build
-    bench                Execute all benchmarks of a local package
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-bench.html"><b>bench</b></a>                Execute all benchmarks of a local package
     <a href="https://doc.rust-lang.org/cargo/commands/cargo-build.html"><b>build</b></a>                Compile a local package and all of its dependencies
     c                    alias: check
-    check                Check a local package and all of its dependencies for errors
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-check.html"><b>check</b></a>                Check a local package and all of its dependencies for errors
     <a href="https://doc.rust-lang.org/cargo/commands/cargo-clean.html"><b>clean</b></a>                Remove artifacts that cargo has generated in the past
     d                    alias: doc
-    doc                  Build a package's documentation
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-doc.html"><b>doc</b></a>                  Build a package's documentation
     <a href="https://doc.rust-lang.org/cargo/commands/cargo-fetch.html"><b>fetch</b></a>                Fetch dependencies of a package from the network
     <a href="https://doc.rust-lang.org/cargo/commands/cargo-fix.html"><b>fix</b></a>                  Automatically fix lint warnings reported by rustc
-    help                 Displays help for a cargo subcommand
-    init                 Create a new cargo package in an existing directory
-    install              Install a Rust binary. Default location is $HOME/.cargo/bin
-    locate-project       Print a JSON representation of a Cargo.toml file's location
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-help.html"><b>help</b></a>                 Displays help for a cargo subcommand
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-init.html"><b>init</b></a>                 Create a new cargo package in an existing directory
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-install.html"><b>install</b></a>              Install a Rust binary. Default location is $HOME/.cargo/bin
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-locate-project.html"><b>locate-project</b></a>       Print a JSON representation of a Cargo.toml file's location
     <a href="https://doc.rust-lang.org/cargo/commands/cargo-new.html"><b>new</b></a>                  Create a new cargo package at &lt;path&gt;
     r                    alias: run
-    run                  Run a binary or example of the local package
-    rustc                Compile a package, and pass extra options to the compiler
-    rustdoc              Build a package's documentation, using specified custom flags.
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-run.html"><b>run</b></a>                  Run a binary or example of the local package
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-rustc.html"><b>rustc</b></a>                Compile a package, and pass extra options to the compiler
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-rustdoc.html"><b>rustdoc</b></a>              Build a package's documentation, using specified custom flags.
     <a href="https://doc.rust-lang.org/cargo/commands/cargo-search.html"><b>search</b></a>               Search packages in crates.io
     t                    alias: test
-    test                 Execute all unit and integration tests and build examples of a local package
+    <a href="https://doc.rust-lang.org/cargo/commands/cargo-test.html"><b>test</b></a>                 Execute all unit and integration tests and build examples of a local package
     <a href="https://doc.rust-lang.org/cargo/commands/cargo-tree.html"><b>tree</b></a>                 Display a tree visualization of a dependency graph
     <a href="https://doc.rust-lang.org/cargo/commands/cargo-uninstall.html"><b>uninstall</b></a>            Remove a Rust binary
     <a href="https://doc.rust-lang.org/cargo/commands/cargo-update.html"><b>update</b></a>               Update dependencies as recorded in the local lock file

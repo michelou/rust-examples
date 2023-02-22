@@ -211,7 +211,7 @@ goto :eof
 
 :help
 if %_VERBOSE%==1 (
-    set __BEG_P=%_STRONG_FG_CYAN%%_UNDERSCORE%
+    set __BEG_P=%_STRONG_FG_CYAN%
     set __BEG_O=%_STRONG_FG_GREEN%
     set __BEG_N=%_NORMAL_FG_YELLOW%
     set __END=%_RESET%
@@ -236,7 +236,7 @@ echo     %__BEG_O%compile%__END%               generate executable
 echo     %__BEG_O%doc%__END%                   generate HTML documentation
 echo     %__BEG_O%dump%__END%                  dump PE/COFF infos for generated executable
 echo     %__BEG_O%help%__END%                  display this help message
-echo     %__BEG_O%run%__END%                   run generated executable
+echo     %__BEG_O%run%__END%                   run generated executable"%__BEG_O%%_CRATE_NAME%%__END%"
 echo     %__BEG_O%test%__END%                  test generated executable
 goto :eof
 
