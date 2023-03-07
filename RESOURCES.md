@@ -79,23 +79,24 @@
 ## <span id="news">News</span> [**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.68.0](https://blog.rust-lang.org/2023/03/09/Rust-1.68.0.html), March 2023 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1680-2023-03-09)*)
   - [Announcing Rust 1.67.0](https://blog.rust-lang.org/2023/01/26/Rust-1.67.0.html), January 2023 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1670-2023-01-26)*).
-  - [Announcing Rust 1.66.0](https://blog.rust-lang.org/2022/12/15/Rust-1.66.0.html), December 2022.
-  - [Announcing Rust 1.65.0](https://blog.rust-lang.org/2022/11/03/Rust-1.65.0.html), November 2022.
-  - [Announcing Rust 1.64.0](https://blog.rust-lang.org/2022/09/22/Rust-1.64.0.html), September 2022.
-  - [Announcing Rust 1.63.0](https://blog.rust-lang.org/2022/08/11/Rust-1.63.0.html), August 2022.
+  - [Announcing Rust 1.66.0](https://blog.rust-lang.org/2022/12/15/Rust-1.66.0.html), December 2022 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1660-2022-12-15)*).
+  - [Announcing Rust 1.65.0](https://blog.rust-lang.org/2022/11/03/Rust-1.65.0.html), November 2022 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1650-2022-11-03)*).
+  - [Announcing Rust 1.64.0](https://blog.rust-lang.org/2022/09/22/Rust-1.64.0.html), September 2022 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1640-2022-09-22)*).
+  - [Announcing Rust 1.63.0](https://blog.rust-lang.org/2022/08/11/Rust-1.63.0.html), August 2022 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1630-2022-08-11)*).
   <!--
   - [Announcing Rust 1.62.1](https://blog.rust-lang.org/2022/07/19/Rust-1.62.1.html), July 2022.
   -->
-  - [Announcing Rust 1.62.0](https://blog.rust-lang.org/2022/06/30/Rust-1.62.0.html), June 2022.
-  - [Announcing Rust 1.61.0](https://blog.rust-lang.org/2022/05/19/Rust-1.61.0.html), May 2022.
-  - [Announcing Rust 1.60.0](https://blog.rust-lang.org/2022/04/07/Rust-1.60.0.html), April 2022.
-  - [Announcing Rust 1.59.0](https://blog.rust-lang.org/2022/02/24/Rust-1.59.0.html) February 2022.
-  - [Announcing Rust 1.58.0](https://blog.rust-lang.org/2022/01/13/Rust-1.58.0.html), January 2022.
-  - [Announcing Rust 1.57.0](https://blog.rust-lang.org/2021/12/02/Rust-1.57.0.html), December 2021.
-  - [Announcing Rust 1.56.0](https://blog.rust-lang.org/2021/10/21/Rust-1.56.0.html), October 2021.
-  - [Announcing Rust 1.55.0](https://blog.rust-lang.org/2021/09/09/Rust-1.55.0.html), September 2021.
-  - [Announcing Rust 1.38.0](https://blog.rust-lang.org/2019/09/26/Rust-1.38.0.html), September 2019.
+  - [Announcing Rust 1.62.0](https://blog.rust-lang.org/2022/06/30/Rust-1.62.0.html), June 2022 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1620-2022-06-30)*).
+  - [Announcing Rust 1.61.0](https://blog.rust-lang.org/2022/05/19/Rust-1.61.0.html), May 2022 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1610-2022-05-19)*).
+  - [Announcing Rust 1.60.0](https://blog.rust-lang.org/2022/04/07/Rust-1.60.0.html), April 2022 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1600-2022-04-07)*).
+  - [Announcing Rust 1.59.0](https://blog.rust-lang.org/2022/02/24/Rust-1.59.0.html), February 2022 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1590-2022-02-24)*).
+  - [Announcing Rust 1.58.0](https://blog.rust-lang.org/2022/01/13/Rust-1.58.0.html), January 2022 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1580-2022-01-13)*).
+  - [Announcing Rust 1.57.0](https://blog.rust-lang.org/2021/12/02/Rust-1.57.0.html), December 2021 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1570-2021-12-02)*).
+  - [Announcing Rust 1.56.0](https://blog.rust-lang.org/2021/10/21/Rust-1.56.0.html), October 2021 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1560-2021-10-21)*).
+  - [Announcing Rust 1.55.0](https://blog.rust-lang.org/2021/09/09/Rust-1.55.0.html), September 2021 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1550-2021-09-09)*).
+  - [Announcing Rust 1.38.0](https://blog.rust-lang.org/2019/09/26/Rust-1.38.0.html), September 2019 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1380-2019-09-26)*).
 - [**reddit**](https://www.reddit.com/) [r/rust](https://www.reddit.com/r/rust/) - The Rust Programming Language.
 - [This Week in Rust][news_this_week].
 
@@ -173,7 +174,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/February 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/March 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

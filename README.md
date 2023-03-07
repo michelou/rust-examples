@@ -16,17 +16,18 @@
 This project depends on two external software for the **Microsoft Windows** plaform:
 
 - [Git 2.39][git_downloads] ([*release notes*][git_relnotes])
-- [Rust 1.67][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
+- [Rust 1.68][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
 
 <!--
 Rust 1.67.1 -> 2023-01-26
 Rust 1.66.0 -> 2022-12-15
+Rust 1.68.0 -> 2023-03-09
 -->
 
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [**`/opt/`**][linux_opt] directory on Unix).
 
-For instance our development environment looks as follows (*February 2023*) <sup id="anchor_02">[2](#footnote_02)</sup>:
+For instance our development environment looks as follows (*March 2023*) <sup id="anchor_02">[2](#footnote_02)</sup>:
 
 <pre style="font-size:80%;">
 C:\opt\Git-2.39.2\      <i>(314 MB)</i>
@@ -193,7 +194,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/February 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/March 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

@@ -1,6 +1,6 @@
 EDITION ?= 2018
 ifeq ($(filter $(EDITION), 2015 2018 2021 2024),)
-   $(error Legal values for variable `EDITION` are: 2015,2018,2021)
+   $(error Legal values for variable `EDITION` are: 2015,2018,2021,2024)
 endif
 
 include ../Makefile.inc
