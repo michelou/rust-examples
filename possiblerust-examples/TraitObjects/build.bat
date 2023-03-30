@@ -126,7 +126,7 @@ set _STRONG_BG_BLUE=[104m
 goto :eof
 
 @rem input parameter: %*
-@rem output parameter(s): _CLEAN, _COMPILE, _RUN, _DEBUG, _TEST, _VERBOSE
+@rem output parameters: _CLEAN, _COMPILE, _RUN, _DEBUG, _TEST, _VERBOSE
 :args
 set _CLEAN=0
 set _COMPILE=0
@@ -204,7 +204,9 @@ if %_TARGET%==gnu if not defined MSYS_HOME (
 if %_DEBUG%==1 (
     echo %_DEBUG_LABEL% Options    : _EDITION=%_EDITION% _TARGET=%_TARGET% _TIMER=%_TIMER% _VERBOSE=%_VERBOSE% 1>&2
     echo %_DEBUG_LABEL% Subcommands: _CLEAN=%_CLEAN% _COMPILE=%_COMPILE% _DOC=%_DOC% _DUMP=%_DUMP% _RUN=%_RUN% _TEST=%_TEST% 1>&2
-    echo %_DEBUG_LABEL% Variables  : CARGO_HOME="%CARGO_HOME%" MSYS_HOME="%MSYS_HOME%" 1>&2
+    echo %_DEBUG_LABEL% Variables  : "CARGO_HOME=%CARGO_HOME%"
+    echo %_DEBUG_LABEL% Variables  : "GIT_HOME=%GIT_HOME%"
+    echo %_DEBUG_LABEL% Variables  : "MSYS_HOME=%MSYS_HOME%" 1>&2
 )
 if %_TIMER%==1 for /f "delims=" %%i in ('powershell -c "(Get-Date)"') do set _TIMER_START=%%i
 goto :eof
@@ -224,7 +226,7 @@ if %_VERBOSE%==1 (
 echo Usage: %__BEG_O%%_BASENAME% { ^<option^> ^| ^<subcommand^> }%__END%
 echo.
 echo   %__BEG_P%Options:%__END%
-echo     %__BEG_O%-debug%__END%                show commands executed by this script
+echo     %__BEG_O%-debug%__END%                display commands executed by this script
 echo     %__BEG_O%-edition:^<2015^|2018^>%__END%  set Rust edition 
 echo     %__BEG_O%-target:^<gcc^|msvc^>%__END%    set plaform target ^(default: %__BEG_O%msvc%__END%/%__BEG_O%cl%__END%^)
 echo     %__BEG_O%-timer%__END%                display total elapsed time
@@ -253,7 +255,8 @@ if %_DEBUG%==1 ( echo %_DEBUG_LABEL% rmdir /s /q "!__DIR!" 1>&2
 ) else if %_VERBOSE%==1 ( echo Delete directory "!__DIR:%_ROOT_DIR%=!" 1>&2
 )
 rmdir /s /q "!__DIR!"
-if not %ERRORLEVEL%==0 (
+if not errorlevel 0 (
+    echo %_ERROR_LABEL% Failed to delete directory "!__DIR:%_ROOT_DIR%=!" 1>&2
     set _EXITCODE=1
     goto :eof
 )
@@ -296,7 +299,7 @@ if %_DEBUG%==1 ( echo %_DEBUG_LABEL% "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FIL
 ) else if %_VERBOSE%==1 ( echo Compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
 )
 call "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FILES%
-if not %ERRORLEVEL%==0 (
+if not errorlevel 0 (
     if %_TARGET%==gnu set "PATH=%__PATH%"
     echo %_ERROR_LABEL% Failed to compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
     set _EXITCODE=1
@@ -322,7 +325,7 @@ if %_DEBUG%==1 echo %_DEBUG_LABEL% "%_RUSTDOC_CMD%" %__RUSTDOC_OPTS% %__SOURCE_F
 ) else if %_VERBOSE%==1 ( echo Generate HTML documentation into directory "!_TARGET_DOCS_DIR:%_ROOT_DIR%=!" 1>&2
 )
 call "%_RUSTDOC_CMD%" %__RUSTDOC_OPTS% %__SOURCE_FILES%
-if not %ERRORLEVEL%==0 (
+if not errorlevel 0 (
     echo %_ERROR_LABEL% Failed to generate HTML documentation 1>&2
     set _EXITCODE=1
     goto :eof
@@ -332,7 +335,7 @@ goto :eof
 :dump
 set "__EXE_FILE=%_TARGET_DIR%\%_CRATE_NAME%.exe"
 if not exist "%__EXE_FILE%" (
-    echo %_ERROR_LABEL% Executable %_CRATE_NAME%.exe not found 1>&2
+    echo %_ERROR_LABEL% Executable "%_CRATE_NAME%.exe" not found 1>&2
     set _EXITCODE=1
     goto :eof
 )
@@ -344,8 +347,8 @@ if %_DEBUG%==1 (
     echo executable:           !__EXE_FILE:%_ROOT_DIR%=!
     call "%_PELOOK_CMD%" %_PELOOK_OPTS% "%__EXE_FILE%" | findstr "signature machine linkver modules"
 )
-if not %ERRORLEVEL%==0 (
-    echo %_ERROR_LABEL% Dump of executable %_CRATE_NAME%.exe failed 1>&2
+if not errorlevel 0 (
+    echo %_ERROR_LABEL% Failed to dump executable "%_CRATE_NAME%.exe" 1>&2
     set _EXITCODE=1
     goto :eof
 )
@@ -354,12 +357,12 @@ goto :eof
 :run
 set "__EXE_FILE=%_TARGET_DIR%\%_CRATE_NAME%.exe"
 if not exist "%__EXE_FILE%" (
-    echo %_ERROR_LABEL% Executable %_CRATE_NAME%.exe not found 1>&2
+    echo %_ERROR_LABEL% Executable "%_CRATE_NAME%.exe" not found 1>&2
     set _EXITCODE=1
     goto :eof
 )
 call "%__EXE_FILE%"
-if not %ERRORLEVEL%==0 (
+if not errorlevel 0 (
     echo %_ERROR_LABEL% Execution status is %ERRORLEVEL% 1>&2
     set _EXITCODE=1
     goto :eof

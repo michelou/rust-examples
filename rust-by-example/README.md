@@ -9,7 +9,7 @@
   </tr>
 </table>
 
-## <span id="01_Display">`01_Display`</a>
+## <span id="01_Display">`01_Display` Example</span>
 
 Command `cargo run` executes the Rust program [`main.rs`](./01_Display/src/main.rs) :
 
@@ -28,7 +28,7 @@ Debug: Point2D { x: 3.3, y: 7.2 }
 </pre>
 
 
-## `01_HelloWorld`
+## <span id="01_HelloWorld">`01_HelloWorld` Example</span>
 
 Command `build run` executes the Rust program [`main.rs`](./01_HelloWorld/src/main.rs) :
 
@@ -39,7 +39,7 @@ Compile 1 Rust source files to directory "target"
 Hello World!
 </pre>
 
-## <span id="02_Literals">`02_Literals`</span> [**&#x25B4;**](#top)
+## <span id="02_Literals">`02_Literals` Example</span> [**&#x25B4;**](#top)
 
 Command `cargo run` executes the Rust program [`main.rs`](./02_Literals/src/main.rs) :
 
@@ -61,7 +61,7 @@ NOT true is false
 One million is written as 1000000
 </pre>
 
-## <span id="02_Primitives">`02_Primitives`</span>
+## <span id="02_Primitives">`02_Primitives` Example</span>
 
 Command `cargo run` executes the Rust program [`main.rs`](./02_Primitives/src/main.rs) :
 
@@ -85,7 +85,7 @@ mutable: true
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/March 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/April 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

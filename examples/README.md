@@ -13,7 +13,7 @@
 
 Example [`diceroller`](./diceroller/) is presented by Nicolas Fränkel in his blog post ["diceroller, a sample Rust project"](https://blog.frankel.ch/start-rust/8/) (July 2021).
 
-Project files are: [`Cargo.toml`](./diceroller/Cargo.toml), [`src\main.rs`](./diceroller/src/main.rs), [`src\droller\damage.rs`](./diceroller/src/droller/damage.rs), [`src\droller\dice.rs`](./diceroller/src/droller/dice.rs), [`src\droller\mod.rs`](./diceroller/src/droller/mod.rs).
+Project file is [`Cargo.toml`](./diceroller/Cargo.toml) and source files are [`src\main.rs`](./diceroller/src/main.rs), [`src\droller\damage.rs`](./diceroller/src/droller/damage.rs), [`src\droller\dice.rs`](./diceroller/src/droller/dice.rs), [`src\droller\mod.rs`](./diceroller/src/droller/mod.rs).
 
 <pre style="font-size:80%;">
 <b>diceroller&gt; <a href="https://doc.rust-lang.org/cargo/commands/cargo-run.html" rel="external">cargo</a> -q run</b>
@@ -37,7 +37,7 @@ Project files are: [`Cargo.toml`](./rust-ui-druid/Cargo.toml), [`src\main.rs`](.
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/March 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/April 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

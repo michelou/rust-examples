@@ -7,4 +7,4 @@ edition = "2021"
 # https://crates.io/crates/druid
 
 [dependencies]
-druid = "0.8.2"
+druid = "0.8.3"

@@ -47,6 +47,7 @@
 - [What is Rust and why is it so popular?](https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/) by Jake Goulding, January 2020.
 - [Rust Compiler Internals : Mid-level Intermediate Representation (MIR)][blog_kanishkar] by Kanishkar J, December 2019.
 - [Using Rust in Windows](https://msrc-blog.microsoft.com/2019/11/07/using-rust-in-windows/), November 2019.
+- [10 Key Learnings in Rust after 30,000 Lines of Code][blog_nahum] by Dotan Nahum, April 2019.
 - [Existential types in Rust][blog_vaktor] by Vaktor, July 2018.
 - [Getting started with Rust on the command line](https://asquera.de/blog/2018-01-20/getting-started-with-rust-on-the-command-line/), January 2018.
 - [Using C libraries in Rust: make a sys crate][blog_kornelski] by Pornel Kornelski.
@@ -73,6 +74,7 @@
 
 - [Linux Hint](https://linuxhint.com/) &ndash; [Rust Lang](https://linuxhint.com/category/rust/).
 - [Read Rust](https://readrust.net/) collects interesting posts related to the [Rust programming language](https://www.rust-lang.org/).
+- [Rust Zulip Chat](https://rust-lang.zulipchat.com/) &ndash; discussions on [Rust][rust_lang] compiler, language, libraries and more.
 - [Build exe file for Windows](https://users.rust-lang.org/t/build-exe-file-for-windows/19469), 2018.
 
 
@@ -174,7 +176,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/March 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/April 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -199,6 +201,7 @@ version = "12"
 [blog_howarth]: https://blog.discord.com/why-discord-is-switching-from-go-to-rust-a190bbca2b1f
 [blog_kanishkar]: https://kanishkarj.github.io/rust-internals-mir
 [blog_kornelski]: https://kornel.ski/rust-sys-crate
+[blog_nahum]: https://jondot.medium.com/my-key-learnings-after-30-000-loc-in-rust-a553e6403c19
 [blog_nethercote]: https://blog.mozilla.org/nnethercote/2020/09/08/how-to-speed-up-the-rust-compiler-one-last-time/
 [blog_roman]: https://pvs-studio.com/en/blog/posts/0733/
 [blog_thorsten]: https://www.thorsten-hans.com/working-with-environment-variables-in-rust/

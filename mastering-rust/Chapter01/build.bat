@@ -182,6 +182,7 @@ if "%__ARG:~0,1%"=="-" (
     ) else if "%__ARG%"=="-edition:2015" ( set _EDITION=2015
     ) else if "%__ARG%"=="-edition:2018" ( set _EDITION=2018
     ) else if "%__ARG%"=="-edition:2021" ( set _EDITION=2021
+    ) else if "%__ARG%"=="-edition:2024" ( set _EDITION=2024
     ) else if "%__ARG%"=="-help" ( set _HELP=1
     ) else if "%__ARG:~0,6%"=="-main:" (
         call :set_main "%__ARG:~6%"
@@ -279,7 +280,7 @@ if %_VERBOSE%==1 (
 echo Usage: %__BEG_O%%_BASENAME% { ^<option^> ^| ^<subcommand^> }%__END%
 echo.
 echo   %__BEG_P%Options:%__END%
-echo     %__BEG_O%-debug%__END%              show commands executed by this script
+echo     %__BEG_O%-debug%__END%              display commands executed by this script
 echo     %__BEG_O%-edition:^<edition^>%__END%  set Rust edition
 echo     %__BEG_O%-main:^<name^>%__END%        set main program ^(defaut: %__BEG_O%%_DEFAULT_RUN%%__END%^)
 echo     %__BEG_O%-target:^<target^>%__END%    set plaform target ^(default: %__BEG_O%msvc%__END%/%__BEG_O%cl%__END%^)
@@ -319,7 +320,8 @@ if %_DEBUG%==1 ( echo %_DEBUG_LABEL% rmdir /s /q "!__DIR!" 1>&2
 ) else if %_VERBOSE%==1 ( echo Delete directory "!__DIR:%_ROOT_DIR%=!" 1>&2
 )
 rmdir /s /q "!__DIR!"
-if not %ERRORLEVEL%==0 (
+if not errorlevel 0 (
+    echo %_ERROR_LABEL% Failed to delete directory "!__DIR:%_ROOT_DIR%=!" 1>&2
     set _EXITCODE=1
     goto :eof
 )
@@ -343,26 +345,27 @@ if %__N%==0 (
 ) else if %__N%==1 ( set __N_FILES=%__N% Rust source file
 ) else ( set __N_FILES=%__N% Rust source files
 )
-set __PATH=%PATH%
 @rem We add gcc.exe to PATH if _TARGET=gnu
-if %_TARGET%==gnu set "PATH=%PATH%;%MSYS_HOME%\mingw64\bin"
-
+if %_TARGET%==gnu (
+    set "__PATH=%PATH%"
+    set "PATH=%PATH%;%MSYS_HOME%\mingw64\bin"
+)
 @rem Lint levels: -A (allow), -W (warning), -D (deny), -F (forbid)
 @rem See https://doc.rust-lang.org/rustc/lints/levels.html
-set _RUST_LINT_OPTS=
+set __RUST_LINT_OPTS=
 
 @rem should work (https://github.com/rust-lang/rust/issues/63576)
 @rem set "__OPTS_FILE=%_TARGET_DIR%\rustc_opts.txt"
 @rem echo %_RUSTC_OPTS% > "%__OPTS_FILE%"
 set __RUST_CRATE_OPTS=--crate-name "%_CRATE_NAME%" --crate-type %_CRATE_TYPE%
-set __RUSTC_OPTS=%_RUST_LINT_OPTS% %__RUST_CRATE_OPTS% --edition %_EDITION% --out-dir "%_TARGET_DIR%" --target "%_TARGET_TRIPLE%"
+set __RUSTC_OPTS=%__RUST_LINT_OPTS% %__RUST_CRATE_OPTS% --edition %_EDITION% --out-dir "%_TARGET_DIR%" --target "%_TARGET_TRIPLE%"
 if %_DEBUG%==1 set __RUSTC_OPTS=-g %__RUSTC_OPTS%
 
 if %_DEBUG%==1 ( echo %_DEBUG_LABEL% "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FILES% 1>&2
 ) else if %_VERBOSE%==1 ( echo Compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
 )
 call "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FILES%
-if not %ERRORLEVEL%==0 (
+if not errorlevel 0 (
     if %_TARGET%==gnu set "PATH=%__PATH%"
     echo %_ERROR_LABEL% Failed to compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
     set _EXITCODE=1
@@ -388,7 +391,7 @@ if %_DEBUG%==1 echo %_DEBUG_LABEL% "%_RUSTDOC_CMD%" %__RUSTDOC_OPTS% %__SOURCE_F
 ) else if %_VERBOSE%==1 ( echo Generate HTML documentation into directory "!_TARGET_DOCS_DIR:%_ROOT_DIR%=!" 1>&2
 )
 call "%_RUSTDOC_CMD%" %__RUSTDOC_OPTS% %__SOURCE_FILES%
-if not %ERRORLEVEL%==0 (
+if not errorlevel 0 (
     echo %_ERROR_LABEL% Failed to generate HTML documentation into directory "!_TARGET_DOCS_DIR:%_ROOT_DIR%=!" 1>&2
     set _EXITCODE=1
     goto :eof
@@ -411,7 +414,7 @@ if %_DEBUG%==1 (
     echo executable:           !__EXE_FILE:%_ROOT_DIR%=!
     call "%_PELOOK_CMD%" %__PELOOK_OPTS% "%__EXE_FILE%" | findstr "signature machine linkver modules"
 )
-if not %ERRORLEVEL%==0 (
+if not errorlevel 0 (
     echo %_ERROR_LABEL% Failed to dump PE/COFF infos for executable "%_CRATE_NAME%.exe" 1>&2
     set _EXITCODE=1
     goto :eof
@@ -429,7 +432,7 @@ if %_DEBUG%==1 ( echo %_DEBUG_LABEL% "%__EXE_FILE%" 1>&2
 ) else if %_VERBOSE%==1 ( echo Execute program "!__EXE_FILE:%_ROOT_DIR%=!" 1>&2
 )
 call "%__EXE_FILE%"
-if not %ERRORLEVEL%==0 (
+if not errorlevel 0 (
     echo %_ERROR_LABEL% Failed to execute program "!__EXE_FILE:%_ROOT_DIR%=!" 1>&2
     set _EXITCODE=1
     goto :eof

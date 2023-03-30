@@ -1,3 +1,10 @@
+##
+## Copyright (c) 2018-2023 Stéphane Micheloud
+##
+## Licensed under the MIT License.
+##
+##############################################################################
+
 EDITION ?= 2018
 ifeq ($(filter $(EDITION), 2015 2018 2021 2024),)
    $(error Legal values for variable `EDITION` are: 2015,2018,2021,2024)
@@ -57,3 +64,6 @@ help:
 ## phony
 
 .PHONY: all build clean help run
+
+.SUFFIXES:
+.SUFFIXES: .exe *.pdb *.rs

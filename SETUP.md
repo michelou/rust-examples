@@ -113,21 +113,20 @@ Command **`rustup update stable`** <sup id="anchor_02">[2](#footnote_02)</sup>  
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2023-02-09, rust version 1.67.1 (d5a82bbd2 2023-02-07)
+info: latest update on 2023-03-23, rust version 1.68.1 (8460ca823 2023-03-20)
 [...]
 info: downloading component 'rustc'
- 65.5 MiB /  65.5 MiB (100 %)   1.3 MiB/s in 55s ETA:  0s
+ 62.8 MiB /  62.8 MiB (100 %)   1.3 MiB/s in 50s ETA:  0s
 info: downloading component 'rustfmt'
-  2.5 MiB /   2.5 MiB (100 %)   1.3 MiB/s in  2s ETA:  0s
+  1.5 MiB /   1.5 MiB (100 %)   1.3 MiB/s in  1s ETA:  0s
 [...]
 info: installing component 'rustc'
- 65.5 MiB /  65.5 MiB (100 %)  12.5 MiB/s in  5s ETA:  0s
+ 62.8 MiB /  62.8 MiB (100 %)  13.4 MiB/s in  4s ETA:  0s
 info: installing component 'rustfmt'
+
+  stable-x86_64-pc-windows-msvc updated - rustc 1.68.1 (8460ca823 2023-03-20) (from rustc 1.67.1 (d5a82bbd2 2023-02-07))
+
 info: checking for self-updates
-
-  stable-x86_64-pc-windows-msvc updated - rustc 1.67.1 (d5a82bbd2 2023-02-07) (from rustc 1.67.0 (fc594f156 2023-01-24))
-
-info: cleaning up downloads & tmp directories
 </pre>
 
 > **:mag_right:** We can execute the following command to print an overview of what is installed on our system.
@@ -241,7 +240,7 @@ Installed Commands:
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/March 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/April 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
