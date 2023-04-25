@@ -113,7 +113,7 @@ Command **`rustup update stable`** <sup id="anchor_02">[2](#footnote_02)</sup>  
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2023-03-28, rust version 1.68.2 (9eb3afe9e 2023-03-27)
+info: latest update on 2023-04-20, rust version 1.69.0 (84c898d65 2023-04-16)
 [...]
 info: downloading component 'rustc'
  62.8 MiB /  62.8 MiB (100 %)   1.3 MiB/s in 50s ETA:  0s
@@ -124,7 +124,7 @@ info: installing component 'rustc'
  62.8 MiB /  62.8 MiB (100 %)  13.4 MiB/s in  4s ETA:  0s
 info: installing component 'rustfmt'
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.68.2 (9eb3afe9e 2023-03-27) (from rustc 1.68.1 (8460ca823 2023-03-20))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.69.0 (84c898d65 2023-04-16) (from rustc 1.68.2 (9eb3afe9e 2023-03-27))
 
 info: checking for self-updates
 </pre>
@@ -144,19 +144,19 @@ Command [`cargo audit`][cargo_audit] <sup id="anchor_03">[3](#footnote_03)</sup>
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/cargo.html" rel="external">cargo</a> install <a href="https://crates.io/crates/cargo-audit" rel="external">cargo-audit</a></b>
     Updating crates.io index
-  Downloaded cargo-audit v0.17.4
+  Downloaded cargo-audit v0.17.5
   Downloaded 1 crate (35.7 KB) in 0.73s
-  Installing cargo-audit v0.17.4
+  Installing cargo-audit v0.17.5
   Downloaded fixedbitset v0.4.2
   [...]
   Downloaded libgit2-sys v0.14.0+1.5.0
   Downloaded 100 crates (10.4 MB) in 1m 11s (largest was `libgit2-sys` at 1.5 MB)
    Compiling proc-macro2 v1.0.47
    [...]
-   Compiling cargo-audit v0.17.4
+   Compiling cargo-audit v0.17.5
     Finished release [optimized] target(s) in 13m 36s
   Installing %CARGO_HOME%\bin\cargo-audit.exe
-   Installed package `cargo-audit v0.17.4` (executable `cargo-audit.exe`)
+   Installed package `cargo-audit v0.17.5` (executable `cargo-audit.exe`)
 &nbsp;
 <b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/cargo.html" rel="external">cargo</a> audit</b>
     Fetching advisory database from `https://github.com/RustSec/advisory-db.git`
@@ -165,7 +165,7 @@ Command [`cargo audit`][cargo_audit] <sup id="anchor_03">[3](#footnote_03)</sup>
     Scanning Cargo.lock for vulnerabilities (9 crate dependencies)
 </pre>
 
-### <span id="crates_windows">`windows`/`windows-sys` Crates</span>
+### <span id="crates_windows">`windows`/`windows-sys` crates</span>
 
 The [`windows`](https://crates.io/crates/windows)/[`windows-sys`](https://crates.io/crates/windows-sys) crates provide a natural and idiomatic way for [Rust][rust_lang] developers to call Windows APIs.
 

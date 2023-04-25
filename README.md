@@ -16,7 +16,7 @@
 This project depends on two external software for the **Microsoft Windows** platform:
 
 - [Git 2.40][git_downloads] ([*release notes*][git_relnotes])
-- [Rust 1.68][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
+- [Rust 1.69][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
 
 <!--
 See changelogs on https://releases.rs/
