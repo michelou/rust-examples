@@ -1,5 +1,5 @@
 [package]
-name = "Trait Objects"
+name = "Trait_Objects"
 description = "Possible Rust - Trait Objects"
 version = "1.0.0"
 license = "MIT License <https://www.rust-lang.org/policies/licenses>"

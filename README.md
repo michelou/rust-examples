@@ -30,7 +30,7 @@ Rust 1.70.0 -> 2023-03-28
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [**`/opt/`**][linux_opt] directory on Unix).
 
-For instance our development environment looks as follows (*June 2023*) <sup id="anchor_02">[2](#footnote_02)</sup>:
+For instance our development environment looks as follows (*July 2023*) <sup id="anchor_02">[2](#footnote_02)</sup>:
 
 <pre style="font-size:80%;">
 C:\opt\Git-2.41.0\      <i>(358 MB)</i>
@@ -200,7 +200,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/June 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/July 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

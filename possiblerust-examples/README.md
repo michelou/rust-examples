@@ -25,9 +25,23 @@ Compile 1 Rust source file to directory "target"
 
 This code example is adapted from the article [Non-Generic Inner Functions](https://www.possiblerust.com/pattern/non-generic-inner-functions0).
 
+Project files are [`build.bat`](./InnerFunctions/build.bat), [`Cargo.toml`](./InnerFunctions/Cargo.toml) and [`src\main.rs`](./InnerFunctions/src/main.rs).
+
+<pre style="font-size:80%;">
+<b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/cargo-run.html" rel="external">cargo</a> clean & <a href="https://doc.rust-lang.org/cargo/commands/cargo-run.html" rel="external">cargo</a> run</b>
+   Compiling Trait_Objects v1.0.0 (R:\possiblerust-examples\InnerFunctions)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.44s
+     Running `target\debug\main.exe`
+path: C:\temp\file.txt
+Hello John
+path: some\path\with\a
+Error: Os { code: 3, kind: NotFound, message: "The system cannot find the path specified." }
+error: process didn't exit successfully: `target\debug\main.exe` (exit code: 1)
+</pre>
+
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/April 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/July 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

@@ -31,7 +31,7 @@
 - [Oxide: The Essence of Rust][article_oxide] by Aaron Weiss &amp; al., March 2019.
 - [Making a *-sys crate](https://kornel.ski/rust-sys-crate) by Kornel.
 
-## <span id="blogs">Blogs</span>
+## <span id="blogs">Blogs</span> [**&#x25B4;**](#top)
 
 - [Rust's Vector][blog_fraenkel_9] by Nicolas Fränkel, August 2021.
 - [diceroller, a sample Rust project][blog_fraenkel_8] by Nicolas Fränkel, July 2021.
@@ -81,6 +81,8 @@
 ## <span id="news">News</span> [**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.70.0](https://blog.rust-lang.org/2023/06/01/Rust-1.70.0.html), June 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.70.0)*).
+  - [Announcing Rust 1.69.0](https://blog.rust-lang.org/2023/04/20/Rust-1.69.0.html), April 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.69.0)*).
   - [Announcing Rust 1.68.0](https://blog.rust-lang.org/2023/03/09/Rust-1.68.0.html), March 2023 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1680-2023-03-09)*)
   - [Announcing Rust 1.67.0](https://blog.rust-lang.org/2023/01/26/Rust-1.67.0.html), January 2023 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1670-2023-01-26)*).
   - [Announcing Rust 1.66.0](https://blog.rust-lang.org/2022/12/15/Rust-1.66.0.html), December 2022 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1660-2022-12-15)*).
@@ -104,7 +106,9 @@
 
 ## <span id="papers">Papers</span>
 
+- [Rust: The Programming Language for Safety and Performance][paper_bugden] by William Bugden and Ayman Alahmar, June 2022.
 - [Leveraging Rust types for modular specification and verification](paper_astrauskas) by Vytautas Astrauskas et al., December 2018.
+- [Patina: A Formalization of the Rust Programming Language][paper_reed] by Eric Reed, February 2015.
 
 ## <span id="projects">Projects</span> [**&#x25B4;**](#top)
 
@@ -176,7 +180,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/June 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/July 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -219,6 +223,8 @@ version = "12"
 [github_winapi_rs]: https://github.com/retep998/winapi-rs/
 [news_this_week]: https://this-week-in-rust.org/
 [paper_astrauskas]: https://www.research-collection.ethz.ch/handle/20.500.11850/311092
+[paper_bugden]: https://arxiv.org/abs/2206.05503
+[paper_reed]: https://dada.cs.washington.edu/research/tr/2015/03/
 [rust_downloads]: https://www.rust-lang.org/tools/install
 [rust_lang]: https://www.rust-lang.org/
 [rust_mir]: https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md
