@@ -9,7 +9,7 @@
   </tr>
 </table>
 
-[Ada][ada_examples], [Akka][akka_examples], [C++][cpp_examples], [Dart][dart_examples], [Deno][deno_examples], [Flix][flix_examples], [Golang][golang_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kafka][kafka_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Python][python_examples], [Scala 3][scala3_examples], [Spark][spark_examples], [Spring][spring_examples], [TruffleSqueak][trufflesqueak_examples] and [WiX Toolset][wix_examples] are other trending topics we are continuously monitoring.
+[Ada][ada_examples], [Akka][akka_examples], [C++][cpp_examples], [Dart][dart_examples], [Deno][deno_examples], [Docker][docker_examples], [Flix][flix_examples], [Golang][golang_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kafka][kafka_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Python][python_examples], [Scala 3][scala3_examples], [Spark][spark_examples], [Spring][spring_examples], [TruffleSqueak][trufflesqueak_examples] and [WiX Toolset][wix_examples] are other trending topics we are continuously monitoring.
 
 ## <span id="proj_deps">Project dependencies</span>
 
@@ -25,6 +25,7 @@ Rust 1.66.0 -> 2022-12-15
 Rust 1.68.0 -> 2023-03-09
 Rust 1.68.1 -> 2023-03-23
 Rust 1.70.0 -> 2023-03-28
+Rust 1.71.0 -> 2023-07-12
 -->
 
 > **&#9755;** ***Installation policy***<br/>
@@ -111,8 +112,8 @@ Command [**`setenv.bat`**](setenv.bat) is executed once to setup your developmen
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
-   cargo 1.70.0, rustc 1.70.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#152-2023-01-24" rel="external">1.5.2-stable</a>, rustup 1.26.0,
-   pelook v1.73, git 2.41.0.windows.1, diff 3.9, bash 4.4.23(1)-release
+   cargo 1.71.0, rustc 1.71.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#152-2023-01-24" rel="external">1.5.2-stable</a>, rustup 1.26.0,
+   pelook v1.73, git 2.41.0.windows.1, diff 3.9, bash 5.2.15(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\cargo.exe
@@ -129,7 +130,7 @@ Command [**`setenv.bat`**](setenv.bat) with option **`-verbose`** displays addit
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
-   cargo 1.70.0, rustc 1.70.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.5.1-stable</a>, rustup 1.26.0,
+   cargo 1.71.0, rustc 1.71.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.5.1-stable</a>, rustup 1.26.0,
    pelook v1.73, git 2.41.0.windows.1, diff 3.9, bash 4.4.23(1)-release
 Tool paths:
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/cargo/commands/">cargo.exe</a>
@@ -162,7 +163,7 @@ Path associations:
 <dd>
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc</a> --version --verbose | <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr">findstr</a> /b "rustc LLVM"</b>
-rustc 1.70.0 (d5a82bbd2 2023-02-07)
+rustc 1.71.0 (d5a82bbd2 2023-02-07)
 LLVM version: 15.0.6
 </pre>
 </dd>

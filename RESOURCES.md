@@ -81,6 +81,7 @@
 ## <span id="news">News</span> [**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.71.0](https://blog.rust-lang.org/2023/07/13/Rust-1.71.0.html), July 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.71.0)*).
   - [Announcing Rust 1.70.0](https://blog.rust-lang.org/2023/06/01/Rust-1.70.0.html), June 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.70.0)*).
   - [Announcing Rust 1.69.0](https://blog.rust-lang.org/2023/04/20/Rust-1.69.0.html), April 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.69.0)*).
   - [Announcing Rust 1.68.0](https://blog.rust-lang.org/2023/03/09/Rust-1.68.0.html), March 2023 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1680-2023-03-09)*)
