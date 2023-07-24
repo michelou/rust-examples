@@ -16,7 +16,7 @@
 This project depends on two external software for the **Microsoft Windows** platform:
 
 - [Git 2.41][git_downloads] ([*release notes*][git_relnotes])
-- [Rust 1.70][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
+- [Rust 1.71][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
 
 <!--
 See changelogs on https://releases.rs/
@@ -163,13 +163,14 @@ Path associations:
 <dd>
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc</a> --version --verbose | <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr">findstr</a> /b "rustc LLVM"</b>
-rustc 1.71.0 (d5a82bbd2 2023-02-07)
-LLVM version: 15.0.6
+rustc 1.71.0 (8ede3aae2 2023-07-12)
+LLVM version: 16.0.5
 </pre>
 </dd>
 <dd>
 <table>
 <tr><th>Rustc Version</th><th>LLVM Version</th></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.71.0">1.71.0</a></td><td><a href="https://discourse.llvm.org/t/16-0-5-release/71097" rel="external">16.0.5</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.70.0">1.70.0</a></td><td><a href="https://releases.llvm.org/16.0.0/docs/ReleaseNotes.html" rel="external">16.0.0</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.68.1" rel="external">1.68.1</a></td><td><a href="https://discourse.llvm.org/t/llvm-15-0-6-released/66899" rel="external">15.0.6</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.66.1" rel="external">1.66.1</a></td><td><a href="https://discourse.llvm.org/t/llvm-15-0-2-released/65695" rel="external">15.0.2</a></td></tr>
@@ -212,6 +213,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [cpp_examples]: https://github.com/michelou/cpp-examples
 [dart_examples]: https://github.com/michelou/dart-examples
 [deno_examples]: https://github.com/michelou/deno-examples
+[docker_examples]: https://github.com/michelou/docker-examples
 [flix_examples]: https://github.com/michelou/flix-examples
 [git_docs]: https://git-scm.com/docs/git
 [git_downloads]: https://git-scm.com/download/win
