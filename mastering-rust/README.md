@@ -58,7 +58,7 @@ We can display the executed command lines with option `-debug`, e.g.
 [build] Options    : _EDITION=2021 _TARGET=msvc _TIMER=0 _VERBOSE=0
 [build] Subcommands: _CLEAN=1 _COMPILE=1 _DOC=0 _DUMP=0 _RUN=1 _TEST=0
 [build] Variables  : "CARGO_HOME=%USERPROFILE%\.cargo"
-[build] Variables  : "GIT_HOME=C:\opt\Git-2.39.1"
+[build] Variables  : "GIT_HOME=C:\opt\Git-2.41.0"
 [build] Variables  : "MSYS_HOME=C:\opt\msys64"
 [build] Variables  : "RUSTUP_HOME=%USERPROFILE%\.rustup"
 [build] Variables  : _CRATE_NAME=arrays _CRATE_TYPE=bin
@@ -109,9 +109,9 @@ Result from closure: 30
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://www.gnu.org/software/make/manual/html_node/Running.html">make</a> clean run</b>
-"C:/opt/Git-2.39.1/usr/bin/rm.exe" -rf "target"
-"C:/opt/Git-2.39.1/usr/bin/rm.exe" -f "Cargo.lock"
-[ -d "target" ] || "C:/opt/Git-2.39.1/usr/bin/mkdir.exe" -p "target"
+"C:/opt/Git-2.41.0/usr/bin/rm.exe" -rf "target"
+"C:/opt/Git-2.41.0/usr/bin/rm.exe" -f "Cargo.lock"
+[ -d "target" ] || "C:/opt/Git-2.41.0/usr/bin/mkdir.exe" -p "target"
 "%USERPROFILE%/.cargo/bin/rustc.exe"  --crate-name "arrays" --crate-type bin --edition 2018 --out-dir "target" --target "x86_64-pc-windows-msvc" src/arrays.rs
 target\arrays.exe
 Number: 7
@@ -122,9 +122,9 @@ Float: 0.3
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://www.gnu.org/software/make/manual/html_node/Running.html">make</a> EDITION=2021 clean run</b>
-"C:/opt/Git-2.39.1/usr/bin/rm.exe" -rf "target"
-"C:/opt/Git-2.39.1/usr/bin/rm.exe" -f "Cargo.lock"
-[ -d "target" ] || "C:/opt/Git-2.39.1/usr/bin/mkdir.exe" -p "target"
+"C:/opt/Git-2.41.0/usr/bin/rm.exe" -rf "target"
+"C:/opt/Git-2.41.0/usr/bin/rm.exe" -f "Cargo.lock"
+[ -d "target" ] || "C:/opt/Git-2.41.0/usr/bin/mkdir.exe" -p "target"
 "%USERPROFILE%/.cargo/bin/rustc.exe"  --crate-name "arrays" --crate-type bin --edition 2021 --out-dir "target" --target "x86_64-pc-windows-msvc" src/arrays.rs
 target\arrays.exe
 Number: 7
@@ -202,7 +202,7 @@ Command <code>build.bat</code> with no subcommand displays the help message:
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/April 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/August 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

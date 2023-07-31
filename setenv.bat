@@ -102,7 +102,7 @@ set _STRONG_BG_BLUE=[104m
 goto :eof
 
 @rem input parameter: %*
-@rem output parameter: _BASH, _HELP, _VERBOSE
+@rem output parameters: _BASH, _HELP, _VERBOSE
 :args
 set _BASH=0
 set _HELP=0
@@ -148,6 +148,8 @@ goto :eof
 @rem output parameter: _DRIVE_NAME (2 characters: letter + ':')
 :drive_name
 set "__GIVEN_PATH=%~1"
+@rem remove trailing path separator if present
+if "%__GIVEN_PATH:~-1,1%"=="\" set "__GIVEN_PATH=%__GIVEN_PATH:~0,-1%"
 
 @rem https://serverfault.com/questions/62578/how-to-get-a-list-of-drive-letters-on-a-system-through-a-windows-shell-bat-cmd
 set __DRIVE_NAMES=F:G:H:I:J:K:L:M:N:O:P:Q:R:S:T:U:V:W:X:Y:Z:
@@ -164,7 +166,7 @@ for /f "tokens=1,2,*" %%f in ('subst') do (
     set "__SUBST_DRIVE=%%f"
     set "__SUBST_DRIVE=!__SUBST_DRIVE:~0,2!"
     set "__SUBST_PATH=%%h"
-    if "!__SUBST_DRiVE!"=="!__GIVEN_PATH:~0,2!" (
+    if "!__SUBST_DRIVE!"=="!__GIVEN_PATH:~0,2!" (
         set _DRIVE_NAME=!__SUBST_DRIVE:~0,2!
         if %_DEBUG%==1 ( echo %_DEBUG_LABEL% Select drive !_DRIVE_NAME! for which a substitution already exists 1>&2
         ) else if %_VERBOSE%==1 ( echo Select drive !_DRIVE_NAME! for which a substitution already exists 1>&2
@@ -192,7 +194,7 @@ if %_DEBUG%==1 ( echo %_DEBUG_LABEL% subst "%_DRIVE_NAME%" "%__GIVEN_PATH%" 1>&2
 )
 subst "%_DRIVE_NAME%" "%__GIVEN_PATH%"
 if not %ERRORLEVEL%==0 (
-    echo %_ERROR_LABEL% Failed to assigned drive %_DRIVE_NAME% to path 1>&2
+    echo %_ERROR_LABEL% Failed to assign drive %_DRIVE_NAME% to path 1>&2
     set _EXITCODE=1
     goto :eof
 )
@@ -323,13 +325,13 @@ set _GIT_PATH=
 set __GIT_CMD=
 for /f %%f in ('where git.exe 2^>NUL') do set "__GIT_CMD=%%f"
 if defined __GIT_CMD (
-    if %_DEBUG%==1 echo %_DEBUG_LABEL% Using path of Git executable found in PATH 1>&2
-    for %%i in ("%__GIT_CMD%") do set "__GIT_BIN_DIR=%%~dpi"
+    for /f "delims=" %%i in ("%__GIT_CMD%") do set "__GIT_BIN_DIR=%%~dpi"
     for %%f in ("!__GIT_BIN_DIR!\.") do set "_GIT_HOME=%%~dpf"
     @rem Executable git.exe is present both in bin\ and \mingw64\bin\
     if not "!_GIT_HOME:mingw=!"=="!_GIT_HOME!" (
-        for %%f in ("!_GIT_HOME!.") do set "_GIT_HOME=%%~dpf"
+        for %%f in ("!_GIT_HOME!\.") do set "_GIT_HOME=%%~dpf"
     )
+    if %_DEBUG%==1 echo %_DEBUG_LABEL% Using path of Git executable found in PATH 1>&2
     @rem keep _GIT_PATH undefined since executable already in path
     goto :eof
 ) else if defined GIT_HOME (
@@ -350,7 +352,7 @@ if defined __GIT_CMD (
     )
 )
 if not exist "%_GIT_HOME%\bin\git.exe" (
-    echo %_ERROR_LABEL% Git executable not found ^(%_GIT_HOME%^) 1>&2
+    echo %_ERROR_LABEL% Git executable not found ^("%_GIT_HOME%"^) 1>&2
     set _EXITCODE=1
     goto :eof
 )
@@ -444,8 +446,8 @@ endlocal & (
         )
         if %_BASH%==1 (
             @rem see https://conemu.github.io/en/GitForWindows.html
-            if %_DEBUG%==1 echo %_DEBUG_LABEL% %GIT_HOME%\usr\bin\bash.exe --login 1>&2
-            cmd.exe /c "%GIT_HOME%\usr\bin\bash.exe --login"
+            if %_DEBUG%==1 echo %_DEBUG_LABEL% %_GIT_HOME%\usr\bin\bash.exe --login 1>&2
+            cmd.exe /c "%_GIT_HOME%\usr\bin\bash.exe --login"
         )
     )
     if %_DEBUG%==1 echo %_DEBUG_LABEL% _EXITCODE=%_EXITCODE% 1>&2
