@@ -107,7 +107,6 @@ goto :eof
 set _BASH=0
 set _HELP=0
 set _VERBOSE=0
-set __N=0
 :args_loop
 set "__ARG=%~1"
 if not defined __ARG goto args_done
@@ -130,7 +129,6 @@ if "%__ARG:~0,1%"=="-" (
         set _EXITCODE=1
         goto args_done
     )
-    set /a __N+=1
 )
 shift
 goto args_loop
@@ -224,7 +222,7 @@ echo.
 echo   %__BEG_P%Options:%__END%
 echo     %__BEG_O%-bash%__END%       start Git bash shell instead of Windows command prompt
 echo     %__BEG_O%-debug%__END%      display commands executed by this script
-echo     %__BEG_O%-verbose%__END%    display environment settings
+echo     %__BEG_O%-verbose%__END%    display progress messages
 echo.
 echo   %__BEG_P%Subcommands:%__END%
 echo     %__BEG_O%help%__END%        display this help message
@@ -236,7 +234,7 @@ set _MAKE_HOME=
 set _MAKE_PATH=
 
 set __MAKE_CMD=
-for /f %%f in ('where make.exe 2^>NUL') do set "__MAKE_CMD=%%f"
+for /f "delims=" %%f in ('where make.exe 2^>NUL') do set "__MAKE_CMD=%%f"
 if defined __MAKE_CMD (
     if %_DEBUG%==1 echo %_DEBUG_LABEL% Using path of Make executable found in PATH 1>&2
     rem keep _MAKE_PATH undefined since executable already in path
@@ -264,7 +262,7 @@ goto :eof
 set _MSYS_HOME=
 
 set __GCC_CMD=
-for /f %%f in ('where gcc.exe 2^>NUL') do set "__GCC_CMD=%%f"
+for /f "delims=" %%f in ('where gcc.exe 2^>NUL') do set "__GCC_CMD=%%f"
 if defined __GCC_CMD (
     if %_DEBUG%==1 echo %_DEBUG_LABEL% Using path of GNU Make executable found in PATH 1>&2
     for /f "delims=" %%i in ("%__GCC_CMD%") do set "__MAKE_BIN_DIR=%%~dpi"
@@ -296,7 +294,7 @@ set _CARGO_HOME=
 set _CARGO_PATH=
 
 set __CARGO_CMD=
-for /f %%f in ('where cargo.exe 2^>NUL') do set "__CARGO_CMD=%%f"
+for /f "delims=" %%f in ('where cargo.exe 2^>NUL') do set "__CARGO_CMD=%%f"
 if defined __CARGO_CMD (
     for %%i in ("%__CARGO_CMD%") do set "__CARGO_BIN_DIR=%%~dpi"
     for %%f in ("!__CARGO_BIN_DIR!\.") do set "_CARGO_HOME=%%~dpf"
