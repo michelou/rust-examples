@@ -17,11 +17,13 @@
   - [Why is my Rust build so slow?][article_slow_build], December 2021.
   - [A half-hour to learn Rust][article_half_hour], January 2020.
 - [**fettblog.eu**](https://fettblog.eu/articles) articles by Stefan Baumgartner :
+  - [Refactoring in Rust: Introducing Traits][article_baumgartner_traits], March 2023.
   - [Rust: Tiny little traits](https://fettblog.eu/rust-tiny-little-traits/), April 2022.
   - [Idiomatic Rust][article_baumgartner_idiomatic], December 2021.
   - [Serverless Rust][article_baumgartner_serverless], December 2021.
   - [Error handling in Rust][article_baumgartner_error], September 2021.
 - [**Red Hat** Developer](https://developers.redhat.com/) articles :
+  - [How to create C binding for a Rust library][article_ge] by Gris Ge, September 2022.
   - [How Rust makes Rayon's data parallelism magical][article_stone] by Josh Stone, April 2021.
 - [Intro to Rust: The Modern-Day, Safe Low-Level Programming Language][article_novak] by Marcus Novak, December 2020.
 - [The rustwasmc tool](https://www.secondstate.io/articles/rustwasmc/) by Second State, 2020.<br/>(GitHub project: [`second-state/rustwasmc`](https://github.com/second-state/rustwasmc))
@@ -81,6 +83,7 @@
 ## <span id="news">News</span> [**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.72.0](https://blog.rust-lang.org/2023/08/24/Rust-1.72.0.html), August 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.72.0)*)
   - [Announcing Rust 1.71.0](https://blog.rust-lang.org/2023/07/13/Rust-1.71.0.html), July 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.71.0)*).
   - [Announcing Rust 1.70.0](https://blog.rust-lang.org/2023/06/01/Rust-1.70.0.html), June 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.70.0)*).
   - [Announcing Rust 1.69.0](https://blog.rust-lang.org/2023/04/20/Rust-1.69.0.html), April 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.69.0)*).
@@ -121,7 +124,7 @@
 - [`Simphonia`](https://github.com/pdeljanov/Symphonia) &ndash; a multimedia format demuxing, tag reading, and audio decoding library.
 - [`winapi-rs`][github_winapi_rs] &ndash; [Rust][rust_lang] bindings to Windows API.
 
-## <span id="training">Training and Tutorials</span>
+## <span id="training">Training and Tutorials</span> [**&#x25B4;**](#top)
 
 - [24 days of Rust](https://zsiciarz.github.io/24daysofrust/index.html) by Zbigniew Siciarz, 2023.
 - [Rust for the Polyglot Programmer](https://www.chiark.greenend.org.uk/~ianmdlvl/rust-polyglot/) by Ian Jackson and contributors, 2021.
@@ -150,11 +153,13 @@
 - [Actix](https://github.com/actix/actix) &ndash; an Actor framework for [Rust][rust_lang].
 - [cargo-ramdisk](https://github.com/PauMAVA/cargo-ramdisk) &ndash; a RAMdisk for faster [Rust][rust_lang] compilation (*Unix only*).
 - [Clap](https://clap.rs/) &ndash; a fast and modern CLI framework for [Rust][rust_lang].
+- [Clippy](https://github.com/rust-lang/rust-clippy) &ndash; a collection of lints to catch common mistakes and improve your Rust code.
 - [diesel](https://github.com/diesel-rs/diesel) &ndash; a safe, extensible ORM and Query Builder for [Rust][rust_lang]. 
 - [fleet](https://fleet.rs/) &ndash; a build tool which makes your [Rust][rust_lang] builds up to 5x faster.
 - [Fast and safe HTTP for the Rust language](https://hyper.rs/) &ndash; a fast and safe HTTP for [Rust].
 - [redb](https://github.com/cberner/redb) &ndash; an embedded key-value database in pure [Rust][rust_lang]. 
 - [rust.analyzer](https://rust-analyzer.github.io/) &ndash; an implementation of [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) for the [Rust][rust_lang] programming language.
+- [Rust for Windows](https://github.com/microsoft/windows-rs) &ndash; Rust bindings for the Windows API. 
 
 ## <span id="videos">Videos</span>
 
@@ -189,9 +194,11 @@ version = "12"
 [article_baumgartner_error]: https://fettblog.eu/rust-error-handling/
 [article_baumgartner_idiomatic]: https://fettblog.eu/slides/idiomatic-rust/
 [article_baumgartner_serverless]: https://fettblog.eu/slides/serverless-rust/
+[article_baumgartner_traits]: https://fettblog.eu/refactoring-rust-introducing-traits/
 [article_bursell]: https://opensource.com/article/20/5/rust-java
 [article_cargo]: https://opensource.com/article/20/3/rust-cargo
 [article_dreimanis]: https://serokell.io/blog/rust-guide
+[article_ge]: https://developers.redhat.com/articles/2022/09/05/how-create-c-binding-rust-library
 [article_explodes]: https://fasterthanli.me/articles/when-rustc-explodes
 [article_half_hour]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
 [article_mistakes]: https://fasterthanli.me/articles/some-mistakes-rust-doesnt-catch

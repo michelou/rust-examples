@@ -15,8 +15,8 @@
 
 This project depends on two external software for the **Microsoft Windows** platform:
 
-- [Git 2.41][git_downloads] ([*release notes*][git_relnotes])
-- [Rust 1.71][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
+- [Git 2.42][git_downloads] ([*release notes*][git_relnotes])
+- [Rust 1.72][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
 
 <!--
 See changelogs on https://releases.rs/
@@ -26,6 +26,7 @@ Rust 1.68.0 -> 2023-03-09
 Rust 1.68.1 -> 2023-03-23
 Rust 1.70.0 -> 2023-03-28
 Rust 1.71.0 -> 2023-07-12
+Rust 1.72.0 -> 2023-08-24
 -->
 
 > **&#9755;** ***Installation policy***<br/>
@@ -34,7 +35,7 @@ Rust 1.71.0 -> 2023-07-12
 For instance our development environment looks as follows (*August 2023*) <sup id="anchor_02">[2](#footnote_02)</sup>:
 
 <pre style="font-size:80%;">
-C:\opt\Git-2.41.0\      <i>(358 MB)</i>
+C:\opt\Git\             <i>(367 MB)</i>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\   <i>(100 MB)</i>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.rustup\  <i>(593 MB, installed toolchains and configuration options)</i>
 </pre>
@@ -71,7 +72,7 @@ where
 - file [**`SETUP.md`**](SETUP.md) gives some [Rust][rust_lang] setup details.
 - file [**`setenv.bat`**](setenv.bat) is the batch script for setting up our environment.
 
-We also define a virtual drive **`R:`** in our working environment in order to reduce/hide the real path of our project directory (see article ["Windows command prompt limitation"][windows_limitation] from Microsoft Support).
+We also define a virtual drive &ndash; e.g. drive **`R:`** &ndash; in our working environment in order to reduce/hide the real path of our project directory (see article ["Windows command prompt limitation"][windows_limitation] from Microsoft Support).
 
 > **:mag_right:** We use the Windows external command [**`subst`**][windows_subst] to create virtual drives; for instance:
 >
@@ -81,7 +82,7 @@ We also define a virtual drive **`R:`** in our working environment in order to r
 
 In the next section we give a brief description of the batch files present in this project.
 
-## <span id="batch_commands">Batch commands</span>
+## <span id="batch_commands">Batch commands</span> [**&#x25B4;**](#top)
 
 
 We distinguish different sets of batch commands:
@@ -94,7 +95,7 @@ We distinguish different sets of batch commands:
    &nbsp;
      Options:
        -bash       start Git bash shell instead of Windows command prompt
-       -debug      show commands executed by this script
+       -debug      display commands executed by this script
        -verbose    display environment settings
    &nbsp;
      Subcommands:
@@ -107,13 +108,13 @@ We distinguish different sets of batch commands:
 
 ### **`setenv.bat`**
 
-Command [**`setenv.bat`**](setenv.bat) is executed once to setup your development environment:
+We execute command [**`setenv.bat`**](setenv.bat) once to setup our development environment:
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
-   cargo 1.71.0, rustc 1.71.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md#152-2023-01-24" rel="external">1.5.2-stable</a>, rustup 1.26.0,
-   pelook v1.73, git 2.41.0.windows.1, diff 3.9, bash 5.2.15(1)-release
+   cargo 1.72.0, rustc 1.72.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.6.0-stable</a>, rustup 1.26.0,
+   pelook v1.73, git 2.42.0.windows.1, diff 3.10, bash 5.2.15(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\cargo.exe
@@ -130,21 +131,21 @@ Command [**`setenv.bat`**](setenv.bat) with option **`-verbose`** displays addit
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
-   cargo 1.71.0, rustc 1.71.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.5.1-stable</a>, rustup 1.26.0,
-   pelook v1.73, git 2.41.0.windows.1, diff 3.9, bash 4.4.23(1)-release
+   cargo 1.72.0, rustc 1.72.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.6.0-stable</a>, rustup 1.26.0,
+   pelook v1.73, git 2.42.0.windows.1, diff 3.10, bash 5.2.15(1)-release
 Tool paths:
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/cargo/commands/">cargo.exe</a>
    %USERPROFILE%\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a>
    %USERPROFILE%\.cargo\bin\<a href="https://rust-lang.github.io/rustfmt">rustfmt.exe</a>
    %USERPROFILE%\.cargo\bin\<a href="https://rust-lang.github.io/rustup/basics.html">rustup.exe</a>
    R:\bin\pelook.exe
-   C:\opt\Git-2.41.0\bin\git.exe
-   C:\opt\Git-2.41.0\mingw64\bin\git.exe
-   C:\opt\Git-2.41.0\usr\bin\diff.exe
-   C:\opt\Git-2.41.0\bin\bash.exe
+   C:\opt\Git\bin\git.exe
+   C:\opt\Git\mingw64\bin\git.exe
+   C:\opt\Git\usr\bin\diff.exe
+   C:\opt\Git\bin\bash.exe
 Environment variables:
    "CARGO_HOME=%USERPROFILE%\.cargo"
-   "GIT_HOME=C:\opt\Git-2.41.0"
+   "GIT_HOME=C:\opt\Git"
    "MSYS_HOME=C:\opt\msys64"
    "RUSTUP_HOME=%USERPROFILE%\.rustup"
 Path associations:
@@ -158,18 +159,19 @@ Path associations:
 <span id="footnote_01">[1]</span> ***LLVM Backend*** [↩](#anchor_01)
 
 <dl><dd>
-<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html" rel="external"><code>rustc.exe</code></a> uses LLVM for code generation (see section <a href="https://rustc-dev-guide.rust-lang.org/backend/codegen.html" rel="external">Code Generation</a> in the online <a href="https://rustc-dev-guide.rust-lang.org/" rel="external">Rustc Development Guide</a>).
+<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html" rel="external"><code>rustc.exe</code></a> uses <a href="https://llvm.org/">LLVM</a> for code generation (see section <a href="https://rustc-dev-guide.rust-lang.org/backend/codegen.html" rel="external">Code Generation</a> in the online <a href="https://rustc-dev-guide.rust-lang.org/" rel="external">Rustc Development Guide</a>).
 </dd>
 <dd>
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc</a> --version --verbose | <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr">findstr</a> /b "rustc LLVM"</b>
-rustc 1.71.0 (8ede3aae2 2023-07-12)
+rustc 1.72.0 (8ede3aae2 2023-08-24)
 LLVM version: 16.0.5
 </pre>
 </dd>
 <dd>
 <table>
 <tr><th>Rustc Version</th><th>LLVM Version</th></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.72.0">1.72.0</a></td><td><a href="https://discourse.llvm.org/t/16-0-5-release/71097" rel="external">16.0.5</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.71.0">1.71.0</a></td><td><a href="https://discourse.llvm.org/t/16-0-5-release/71097" rel="external">16.0.5</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.70.0">1.70.0</a></td><td><a href="https://releases.llvm.org/16.0.0/docs/ReleaseNotes.html" rel="external">16.0.0</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.68.1" rel="external">1.68.1</a></td><td><a href="https://discourse.llvm.org/t/llvm-15-0-6-released/66899" rel="external">15.0.6</a></td></tr>
@@ -193,7 +195,7 @@ In our case we downloaded the following installation files (see <a href="#proj_d
 <dd>
 <pre style="font-size:80%;">
 <a href="https://www.rust-lang.org/tools/install">rust-init.exe</a>                     <i>( 8 MB)</i>
-<a href="https://git-scm.com/download/win">PortableGit-2.41.0-64-bit.7z.exe</a>  <i>(46 MB)</i>
+<a href="https://git-scm.com/download/win">PortableGit-2.42.0-64-bit.7z.exe</a>  <i>(46 MB)</i>
 </pre>
 </dd>
 <dd>
@@ -218,7 +220,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [git_docs]: https://git-scm.com/docs/git
 [git_downloads]: https://git-scm.com/download/win
 [github_markdown]: https://github.github.com/gfm/
-[git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.41.0.txt
+[git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.42.0.txt
 [golang_examples]: https://github.com/michelou/golang-examples
 [graalvm_examples]: https://github.com/michelou/graalvm-examples
 [haskell_examples]: https://github.com/michelou/haskell-examples

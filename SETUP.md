@@ -113,7 +113,7 @@ Command **`rustup update stable`** <sup id="anchor_02">[2](#footnote_02)</sup>  
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2023-06-01, rust version 1.71.0 (8ede3aae2 2023-07-12)
+info: latest update on 2023-08-24, rust version 1.72.0 (5680fa18f 2023-08-23)
 [...]
 info: downloading component 'rustc'
  62.8 MiB /  62.8 MiB (100 %)   1.3 MiB/s in 50s ETA:  0s
@@ -124,7 +124,7 @@ info: installing component 'rustc'
  62.8 MiB /  62.8 MiB (100 %)  13.4 MiB/s in  4s ETA:  0s
 info: installing component 'rustfmt'
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.71.0 (8ede3aae2 2023-07-12) (from rustc 1.70.0 (90c541806 2023-05-31))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.72.0 (5680fa18f 2023-08-23) (from rustc 1.71.0 (8ede3aae2 2023-07-12))
 
 info: checking for self-updates
 </pre>
@@ -134,6 +134,16 @@ info: checking for self-updates
 > <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="externale">rustup</a> toolchain list</a></b>
 > stable-x86_64-pc-windows-msvc (default)
 > </pre>
+
+Command **`rustup component add rustfmt`** installs the formatting tool [`rustfmt`](https://github.com/rust-lang/rustfmt) into the `CARGO_HOME` directory:
+
+<pre style="font-size:80%;">
+<b>&gt; where rustfmt</b>
+%CARGO_HOME%\bin\rustfmt.exe
+
+<b>&gt; rustfmt --version</b>
+rustfmt 1.6.0-stable (5680fa18 2023-08-23)
+</pre>
 
 ## <span id="crates">Some useful crates</span> [**&#x25B4;**](#top)
 
@@ -240,7 +250,7 @@ Installed Commands:
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/July 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/August 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
