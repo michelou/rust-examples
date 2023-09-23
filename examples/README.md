@@ -23,7 +23,7 @@ killing damage (half): stun: 1, body: 1 (mult: 1)
 killing damage (pip): stun: 5, body: 1 (mult: 5)
 </pre>
 
-### <span id="rust_ui_druid">`rust-ui-druid` Example</span>
+### <span id="rust_ui_druid">`rust-ui-druid` Example</span> [**&#x25B4;**](#top)
 
 Example [`rust-ui-druid`](./rust-ui-druid/) illustrates the usage of [Druid], a data-oriented Rust UI design toolkit.
 
@@ -37,7 +37,7 @@ Project files are: [`Cargo.toml`](./rust-ui-druid/Cargo.toml), [`src\main.rs`](.
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/August 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/September 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

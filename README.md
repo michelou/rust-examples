@@ -32,7 +32,7 @@ Rust 1.72.0 -> 2023-08-24
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [**`/opt/`**][linux_opt] directory on Unix).
 
-For instance our development environment looks as follows (*August 2023*) <sup id="anchor_02">[2](#footnote_02)</sup>:
+For instance our development environment looks as follows (*September 2023*) <sup id="anchor_02">[2](#footnote_02)</sup>:
 
 <pre style="font-size:80%;">
 C:\opt\Git\             <i>(367 MB)</i>
@@ -131,13 +131,13 @@ Command [**`setenv.bat`**](setenv.bat) with option **`-verbose`** displays addit
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
-   cargo 1.72.0, rustc 1.72.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.6.0-stable</a>, rustup 1.26.0,
+   cargo 1.72.1, rustc 1.72.1, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.6.0-stable</a>, rustup 1.26.0,
    pelook v1.73, git 2.42.0.windows.1, diff 3.10, bash 5.2.15(1)-release
 Tool paths:
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/cargo/commands/">cargo.exe</a>
-   %USERPROFILE%\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a>
-   %USERPROFILE%\.cargo\bin\<a href="https://rust-lang.github.io/rustfmt">rustfmt.exe</a>
-   %USERPROFILE%\.cargo\bin\<a href="https://rust-lang.github.io/rustup/basics.html">rustup.exe</a>
+   <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a>
+   <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://rust-lang.github.io/rustfmt">rustfmt.exe</a>
+   <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://rust-lang.github.io/rustup/basics.html">rustup.exe</a>
    R:\bin\pelook.exe
    C:\opt\Git\bin\git.exe
    C:\opt\Git\mingw64\bin\git.exe
@@ -149,7 +149,7 @@ Environment variables:
    "MSYS_HOME=C:\opt\msys64"
    "RUSTUP_HOME=%USERPROFILE%\.rustup"
 Path associations:
-   R:\: => C:\Users\michelou\workspace-perso\rust-examples
+   R:\: => <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\workspace-perso\rust-examples
 </pre>
 
 <!--=======================================================================-->
@@ -164,7 +164,7 @@ Path associations:
 <dd>
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc</a> --version --verbose | <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr">findstr</a> /b "rustc LLVM"</b>
-rustc 1.72.0 (8ede3aae2 2023-08-24)
+rustc 1.72.1 (8ede3aae2 2023-08-24)
 LLVM version: 16.0.5
 </pre>
 </dd>

@@ -13,7 +13,7 @@ In normal case we are facing one of the following situations:
 - [Installation update](#update).
 - [Some useful crates](#crates).
 
-## <span id="installation">Fresh Installation</span>
+## <span id="installation">Fresh Installation</span> [**&#x25B4;**](#top)
 
 Command **`rustup-init --help`** displays the available options:
 
@@ -113,7 +113,7 @@ Command **`rustup update stable`** <sup id="anchor_02">[2](#footnote_02)</sup>  
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2023-08-24, rust version 1.72.0 (5680fa18f 2023-08-23)
+info: latest update on 2023-09-19, rust version 1.72.1 (d5c2e9c34 2023-09-13)
 [...]
 info: downloading component 'rustc'
  62.8 MiB /  62.8 MiB (100 %)   1.3 MiB/s in 50s ETA:  0s
@@ -124,7 +124,7 @@ info: installing component 'rustc'
  62.8 MiB /  62.8 MiB (100 %)  13.4 MiB/s in  4s ETA:  0s
 info: installing component 'rustfmt'
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.72.0 (5680fa18f 2023-08-23) (from rustc 1.71.0 (8ede3aae2 2023-07-12))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.72.1 (d5c2e9c34 2023-09-13) (from rustc 1.72.0 (5680fa18f 2023-08-23))
 
 info: checking for self-updates
 </pre>
@@ -250,7 +250,7 @@ Installed Commands:
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/August 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/September 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

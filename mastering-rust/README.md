@@ -11,9 +11,9 @@
 
 Code examples in directory `mastering-rust\` can be build/run with the following build tools in addition to [**`cargo.exe`**][cargo_cli], the standard tool <sup id="anchor_01">[1](#footnote_01)</sup> for [Rust] projects :
 
-| Build tool                    | Configuration file(s)                    |Parent file(s) | Environment(s) |
+| Build&nbsp;tool                    | Build&nbsp;file(s)                    |Parent file(s) | Environment(s) |
 |-------------------------------|------------------------------------------|----|----|
-[**`build.bat`**](./Chapter01/build.bat) | [**`build.properties`**](./Chapter01/build.properties) <sup><b>a)</b></sup> | &nbsp; | Windows only |
+| [**`cmd.exe`**][cmd_cli] | [**`build.bat`**](./Chapter01/build.bat)<br/>[**`build.properties`**](./Chapter01/build.properties) <sup><b>a)</b></sup> | &nbsp; | Windows only |
 | [**`cargo.exe`**][cargo_cli]      | [**`Cargo.toml`**](Chapter01/Cargo.toml) | &nbsp; | Any <sup><b>b)</b></sup> |
 | [**`make.exe`**][gmake_cli] | [`Makefile`](Chapter01/Makefile) | [`Makefile.inc`](./Makefile.inc) | Any |
 <div style="font-size:90%;margin:-10px 0 10px 8px;">
@@ -58,7 +58,7 @@ We can display the executed command lines with option `-debug`, e.g.
 [build] Options    : _EDITION=2021 _TARGET=msvc _TIMER=0 _VERBOSE=0
 [build] Subcommands: _CLEAN=1 _COMPILE=1 _DOC=0 _DUMP=0 _RUN=1 _TEST=0
 [build] Variables  : "CARGO_HOME=%USERPROFILE%\.cargo"
-[build] Variables  : "GIT_HOME=C:\opt\Git-2.41.0"
+[build] Variables  : "GIT_HOME=C:\opt\Git"
 [build] Variables  : "MSYS_HOME=C:\opt\msys64"
 [build] Variables  : "RUSTUP_HOME=%USERPROFILE%\.rustup"
 [build] Variables  : _CRATE_NAME=arrays _CRATE_TYPE=bin
@@ -202,7 +202,7 @@ Command <code>build.bat</code> with no subcommand displays the help message:
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/August 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/September 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -210,6 +210,7 @@ Command <code>build.bat</code> with no subcommand displays the help message:
 [cargo_book]: https://doc.rust-lang.org/cargo/
 [cargo_cli]: https://doc.rust-lang.org/cargo/commands/cargo.html
 [cargo_run]: https://doc.rust-lang.org/cargo/commands/cargo-run.html#target-selection
+[cmd_cli]: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cmd
 [gmake_cli]: http://www.glue.umd.edu/lsf-docs/man/gmake.html
 [rust]: https://www.rust-lang.org/
 [rustc_cli]: https://doc.rust-lang.org/rustc/command-line-arguments.html

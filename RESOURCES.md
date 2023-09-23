@@ -83,6 +83,7 @@
 ## <span id="news">News</span> [**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.72.1](https://blog.rust-lang.org/2023/09/19/Rust-1.72.1.html), September 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.72.1)*).
   - [Announcing Rust 1.72.0](https://blog.rust-lang.org/2023/08/24/Rust-1.72.0.html), August 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.72.0)*)
   - [Announcing Rust 1.71.0](https://blog.rust-lang.org/2023/07/13/Rust-1.71.0.html), July 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.71.0)*).
   - [Announcing Rust 1.70.0](https://blog.rust-lang.org/2023/06/01/Rust-1.70.0.html), June 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.70.0)*).
@@ -186,7 +187,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/August 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/September 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
