@@ -100,7 +100,7 @@ Current installation options:
 %USERPROFILE%\.cargo\bin\rustup.exe
 &nbsp;
 <b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a> --version</b>
-rustc 1.67.1 (d5a82bbd2 2023-02-07)
+rustc 1.73.0 (cc66ad468 2023-10-03)
 </pre>
 
 ## <span id="update">Installation update</span> [**&#x25B4;**](#top)
@@ -113,7 +113,7 @@ Command **`rustup update stable`** <sup id="anchor_02">[2](#footnote_02)</sup>  
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2023-09-19, rust version 1.72.1 (d5c2e9c34 2023-09-13)
+info: latest update on 2023-10-05, rust version 1.73.0 (cc66ad468 2023-10-03)
 [...]
 info: downloading component 'rustc'
  62.8 MiB /  62.8 MiB (100 %)   1.3 MiB/s in 50s ETA:  0s
@@ -124,26 +124,39 @@ info: installing component 'rustc'
  62.8 MiB /  62.8 MiB (100 %)  13.4 MiB/s in  4s ETA:  0s
 info: installing component 'rustfmt'
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.72.1 (d5c2e9c34 2023-09-13) (from rustc 1.72.0 (5680fa18f 2023-08-23))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.73.0 (cc66ad468 2023-10-03) (from rustc 1.72.1 (d5c2e9c34 2023-09-13))
 
 info: checking for self-updates
 </pre>
 
-> **:mag_right:** We can execute the following command to print an overview of what is installed on our system.
+> **:mag_right:** The following command prints an overview of what is installed on our system.
 > <pre style="font-size:80%;">
 > <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="externale">rustup</a> toolchain list</a></b>
 > stable-x86_64-pc-windows-msvc (default)
+> </pre>
+> The following command lists only installed components :
+> <pre style="font-size:80%;">
+> <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="externale">rustup</a> component list --installed</b>
+> cargo-x86_64-pc-windows-msvc
+> clippy-x86_64-pc-windows-msvc
+> rust-docs-x86_64-pc-windows-msvc
+> rust-std-x86_64-pc-windows-gnu
+> rust-std-x86_64-pc-windows-msvc
+> rustc-x86_64-pc-windows-msvc
+> rustfmt-x86_64-pc-windows-msvc
 > </pre>
 
 Command **`rustup component add rustfmt`** installs the formatting tool [`rustfmt`](https://github.com/rust-lang/rustfmt) into the `CARGO_HOME` directory:
 
 <pre style="font-size:80%;">
-<b>&gt; where rustfmt</b>
+<b>&gt; <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/where" rel="external">where</a> rustfmt</b>
 %CARGO_HOME%\bin\rustfmt.exe
 
-<b>&gt; rustfmt --version</b>
-rustfmt 1.6.0-stable (5680fa18 2023-08-23)
+<b>&gt; <a href="https://linuxcommandlibrary.com/man/rustfmt">rustfmt</a> --version</b>
+rustfmt 1.6.0-stable (5680fa18 2023-10-03)
 </pre>
+
+<!--=======================================================================-->
 
 ## <span id="crates">Some useful crates</span> [**&#x25B4;**](#top)
 
@@ -178,6 +191,8 @@ Command [`cargo audit`][cargo_audit] <sup id="anchor_03">[3](#footnote_03)</sup>
 ### <span id="crates_windows">`windows`/`windows-sys` crates</span>
 
 The [`windows`](https://crates.io/crates/windows)/[`windows-sys`](https://crates.io/crates/windows-sys) crates provide a natural and idiomatic way for [Rust][rust_lang] developers to call Windows APIs.
+
+<!--=======================================================================-->
 
 ## <span id="footnotes">Footnotes</span> [**&#x25B4;**](#top)
 
@@ -250,7 +265,7 @@ Installed Commands:
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/September 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/October 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

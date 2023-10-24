@@ -35,6 +35,8 @@
 
 ## <span id="blogs">Blogs</span> [**&#x25B4;**](#top)
 
+- [Why Rust is the most admired language among developers][blog_verdi] by Sara Verdi, August 2023.
+- [Microsoft is busy rewriting core Windows code in Rust][blog_claburn] by Thomas Claburn, April 2023.
 - [Rust's Vector][blog_fraenkel_9] by Nicolas Fränkel, August 2021.
 - [diceroller, a sample Rust project][blog_fraenkel_8] by Nicolas Fränkel, July 2021.
 - [Rust and the JVM][blog_fraenkel_7] by Nicolas Fränkel, July 2021.
@@ -83,6 +85,7 @@
 ## <span id="news">News</span> [**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.73.0](https://blog.rust-lang.org/2023/10/05/Rust-1.73.0.html), October 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.73.0)*).
   - [Announcing Rust 1.72.1](https://blog.rust-lang.org/2023/09/19/Rust-1.72.1.html), September 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.72.1)*).
   - [Announcing Rust 1.72.0](https://blog.rust-lang.org/2023/08/24/Rust-1.72.0.html), August 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.72.0)*)
   - [Announcing Rust 1.71.0](https://blog.rust-lang.org/2023/07/13/Rust-1.71.0.html), July 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.71.0)*).
@@ -187,7 +190,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/September 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/October 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -208,6 +211,7 @@ version = "12"
 [article_slow_build]: https://fasterthanli.me/articles/why-is-my-rust-build-so-slow
 [article_stone]: https://developers.redhat.com/blog/2021/04/30/how-rust-makes-rayons-data-parallelism-magical
 [book_blandy]: https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/
+[blog_claburn]: https://www.theregister.com/2023/04/27/microsoft_windows_rust/
 [blog_fraenkel_7]: https://blog.frankel.ch/start-rust/7/
 [blog_fraenkel_8]: https://blog.frankel.ch/start-rust/8/
 [blog_fraenkel_9]: https://blog.frankel.ch/start-rust/9/
@@ -220,6 +224,7 @@ version = "12"
 [blog_thorsten]: https://www.thorsten-hans.com/working-with-environment-variables-in-rust/
 [blog_turon]: https://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html
 [blog_vaktor]: https://varkor.github.io/blog/2018/07/03/existential-types-in-rust.html
+[blog_verdi]: https://github.blog/2023-08-30-why-rust-is-the-most-admired-language-among-developers/
 [bpb_online]: https://bpbonline.com
 [book_klabnik]: https://github.com/rust-lang/book
 [book_matzinger]: https://www.packtpub.com/product/rust-programming-cookbook/9781789530667

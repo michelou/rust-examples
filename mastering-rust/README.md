@@ -11,10 +11,10 @@
 
 Code examples in directory `mastering-rust\` can be build/run with the following build tools in addition to [**`cargo.exe`**][cargo_cli], the standard tool <sup id="anchor_01">[1](#footnote_01)</sup> for [Rust] projects :
 
-| Build&nbsp;tool                    | Build&nbsp;file(s)                    |Parent file(s) | Environment(s) |
+| Build&nbsp;tool                    | Build&nbsp;file(s)                    |Parent&nbsp;file | Environment(s) |
 |-------------------------------|------------------------------------------|----|----|
-| [**`cmd.exe`**][cmd_cli] | [**`build.bat`**](./Chapter01/build.bat)<br/>[**`build.properties`**](./Chapter01/build.properties) <sup><b>a)</b></sup> | &nbsp; | Windows only |
-| [**`cargo.exe`**][cargo_cli]      | [**`Cargo.toml`**](Chapter01/Cargo.toml) | &nbsp; | Any <sup><b>b)</b></sup> |
+| [**`cmd.exe`**][cmd_cli] | [`build.bat`](./Chapter01/build.bat)<br/>[`build.properties`](./Chapter01/build.properties) <sup><b>a)</b></sup> | &nbsp; | Windows only |
+| [**`cargo.exe`**][cargo_cli]      | [`Cargo.toml`](Chapter01/Cargo.toml) | &nbsp; | Any <sup><b>b)</b></sup> |
 | [**`make.exe`**][gmake_cli] | [`Makefile`](Chapter01/Makefile) | [`Makefile.inc`](./Makefile.inc) | Any |
 <div style="font-size:90%;margin:-10px 0 10px 8px;">
 <sup><b>a)</b></sup> Optional (batch file defines default values).<br/>
@@ -109,9 +109,9 @@ Result from closure: 30
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://www.gnu.org/software/make/manual/html_node/Running.html">make</a> clean run</b>
-"C:/opt/Git-2.41.0/usr/bin/rm.exe" -rf "target"
-"C:/opt/Git-2.41.0/usr/bin/rm.exe" -f "Cargo.lock"
-[ -d "target" ] || "C:/opt/Git-2.41.0/usr/bin/mkdir.exe" -p "target"
+"C:/opt/Git/usr/bin/rm.exe" -rf "target"
+"C:/opt/Git/usr/bin/rm.exe" -f "Cargo.lock"
+[ -d "target" ] || "C:/opt/Git/usr/bin/mkdir.exe" -p "target"
 "%USERPROFILE%/.cargo/bin/rustc.exe"  --crate-name "arrays" --crate-type bin --edition 2018 --out-dir "target" --target "x86_64-pc-windows-msvc" src/arrays.rs
 target\arrays.exe
 Number: 7
@@ -122,9 +122,9 @@ Float: 0.3
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://www.gnu.org/software/make/manual/html_node/Running.html">make</a> EDITION=2021 clean run</b>
-"C:/opt/Git-2.41.0/usr/bin/rm.exe" -rf "target"
-"C:/opt/Git-2.41.0/usr/bin/rm.exe" -f "Cargo.lock"
-[ -d "target" ] || "C:/opt/Git-2.41.0/usr/bin/mkdir.exe" -p "target"
+"C:/opt/Git/usr/bin/rm.exe" -rf "target"
+"C:/opt/Git/usr/bin/rm.exe" -f "Cargo.lock"
+[ -d "target" ] || "C:/opt/Git/usr/bin/mkdir.exe" -p "target"
 "%USERPROFILE%/.cargo/bin/rustc.exe"  --crate-name "arrays" --crate-type bin --edition 2021 --out-dir "target" --target "x86_64-pc-windows-msvc" src/arrays.rs
 target\arrays.exe
 Number: 7
@@ -202,7 +202,7 @@ Command <code>build.bat</code> with no subcommand displays the help message:
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/September 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/October 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
