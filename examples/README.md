@@ -37,7 +37,7 @@ Project files are: [`Cargo.toml`](./rust-ui-druid/Cargo.toml), [`src\main.rs`](.
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/September 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/November 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

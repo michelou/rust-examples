@@ -30,7 +30,7 @@ if %_CLEAN%==1 (
     if not !_EXITCODE!==0 goto end
 )
 if %_COMPILE%==1 (
-    call :compile
+    call :compile_%_DISTRO%
     if not !_EXITCODE!==0 goto end
 )
 if %_DOC%==1 (
@@ -77,6 +77,10 @@ if not exist "%CARGO_HOME%\bin\rustc.exe" (
 set "_RUSTC_CMD=%CARGO_HOME%\bin\rustc.exe"
 set "_RUSTDOC_CMD=%CARGO_HOME%\bin\rustdoc.exe"
 
+set _GNU_RUSTC_CMD=
+if exist "%MSYS_HOME%\clang64\bin\rustc.exe" (
+    set "_GNU_RUSTC_CMD=%MSYS_HOME%\clang64\bin\rustc.exe"
+)
 set _PELOOK_CMD=pelook.exe
 goto :eof
 
@@ -159,6 +163,7 @@ goto :eof
 :args
 set _CLEAN=0
 set _COMPILE=0
+set _DISTRO=cargo
 set _DOC=0
 set _DUMP=0
 set _EDITION=2021
@@ -183,6 +188,7 @@ if "%__ARG:~0,1%"=="-" (
     ) else if "%__ARG%"=="-edition:2018" ( set _EDITION=2018
     ) else if "%__ARG%"=="-edition:2021" ( set _EDITION=2021
     ) else if "%__ARG%"=="-edition:2024" ( set _EDITION=2024
+    ) else if "%__ARG%"=="-gnu" ( set _DISTRO=gnu
     ) else if "%__ARG%"=="-help" ( set _HELP=1
     ) else if "%__ARG:~0,6%"=="-main:" (
         call :set_main "%__ARG:~6%"
@@ -239,8 +245,12 @@ if %_TARGET%==gnu if not defined MSYS_HOME (
     set _EXITCODE=1
     goto :eof
 )
+if %_DISTRO%==gnu if not defined _GNU_RUSTC_CMD (
+    echo %_WARNING_LABEL% GNU Front-End for Rust not found 1>&2
+    set _DISTRO=cargo
+)
 if %_DEBUG%==1 (
-    echo %_DEBUG_LABEL% Options    : _EDITION=%_EDITION% _TARGET=%_TARGET% _TIMER=%_TIMER% _VERBOSE=%_VERBOSE% 1>&2
+    echo %_DEBUG_LABEL% Options    : _DISTRO=%_DISTRO% _EDITION=%_EDITION% _TARGET=%_TARGET% _TIMER=%_TIMER% _VERBOSE=%_VERBOSE% 1>&2
     echo %_DEBUG_LABEL% Subcommands: _CLEAN=%_CLEAN% _COMPILE=%_COMPILE% _DOC=%_DOC% _DUMP=%_DUMP% _RUN=%_RUN% _TEST=%_TEST% 1>&2
     echo %_DEBUG_LABEL% Variables  : "CARGO_HOME=%CARGO_HOME%" 1>&2
     echo %_DEBUG_LABEL% Variables  : "GIT_HOME=%GIT_HOME%" 1>&2
@@ -280,19 +290,19 @@ if %_VERBOSE%==1 (
 echo Usage: %__BEG_O%%_BASENAME% { ^<option^> ^| ^<subcommand^> }%__END%
 echo.
 echo   %__BEG_P%Options:%__END%
-echo     %__BEG_O%-debug%__END%              display commands executed by this script
+echo     %__BEG_O%-debug%__END%              print commands executed by this script
 echo     %__BEG_O%-edition:^<edition^>%__END%  set Rust edition
 echo     %__BEG_O%-main:^<name^>%__END%        set main program ^(defaut: %__BEG_O%%_DEFAULT_RUN%%__END%^)
 echo     %__BEG_O%-target:^<target^>%__END%    set plaform target ^(default: %__BEG_O%msvc%__END%/%__BEG_O%cl%__END%^)
-echo     %__BEG_O%-timer%__END%              display total elapsed time
-echo     %__BEG_O%-verbose%__END%            display progress messages
+echo     %__BEG_O%-timer%__END%              print total execution time
+echo     %__BEG_O%-verbose%__END%            print progress messages
 echo.
 echo   %__BEG_P%Subcommands:%__END%
 echo     %__BEG_O%clean%__END%               delete generated files
 echo     %__BEG_O%compile%__END%             generate executable
 echo     %__BEG_O%doc%__END%                 generate HTML documentation
 echo     %__BEG_O%dump%__END%                dump PE/COFF infos for generated executable
-echo     %__BEG_O%help%__END%                display this help message
+echo     %__BEG_O%help%__END%                print this help message
 echo     %__BEG_O%run%__END%                 run generated executable "%__BEG_O%%_CRATE_NAME%%__END%"
 echo     %__BEG_O%test%__END%                test generated executable
 echo.
@@ -327,7 +337,7 @@ if not errorlevel 0 (
 )
 goto :eof
 
-:compile
+:compile_cargo
 if not exist "%_TARGET_DIR%" mkdir "%_TARGET_DIR%"
 
 call :action_required "%_TARGET_DIR%\%_CRATE_NAME%.exe" "%_SOURCE_DIR%\*.rs"
@@ -365,13 +375,46 @@ if %_DEBUG%==1 ( echo %_DEBUG_LABEL% "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FIL
 ) else if %_VERBOSE%==1 ( echo Compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
 )
 call "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FILES%
-if not errorlevel 0 (
+if not %ERRORLEVEL%==0 (
     if %_TARGET%==gnu set "PATH=%__PATH%"
     echo %_ERROR_LABEL% Failed to compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
     set _EXITCODE=1
     goto :eof
 )
 if %_TARGET%==gnu set "PATH=%__PATH%"
+goto :eof
+
+:compile_gnu
+if not exist "%_TARGET_DIR%" mkdir "%_TARGET_DIR%"
+
+call :action_required "%_TARGET_DIR%\%_CRATE_NAME%.exe" "%_SOURCE_DIR%\*.rs"
+if %_ACTION_REQUIRED%==0 goto :eof
+
+set __SOURCE_FILES=
+set __N=0
+for %%f in (%_SOURCE_DIR%\%_CRATE_NAME%.rs) do (
+    set __SOURCE_FILES=!__SOURCE_FILES! "%%f"
+    set /a __N+=1
+)
+if %__N%==0 (
+    echo %_WARNING_LABEL% No Rust source file found 1>&2
+    goto :eof
+) else if %__N%==1 ( set __N_FILES=%__N% Rust source file
+) else ( set __N_FILES=%__N% Rust source files
+)
+set __RUST_CRATE_OPTS=--crate-name "%_CRATE_NAME%" --crate-type %_CRATE_TYPE%
+set __RUSTC_OPTS=%__RUST_LINT_OPTS% %__RUST_CRATE_OPTS% --edition %_EDITION% --out-dir "%_TARGET_DIR%"
+if %_DEBUG%==1 set __RUSTC_OPTS=-g %__RUSTC_OPTS%
+
+if %_DEBUG%==1 ( echo %_DEBUG_LABEL% "%_GNU_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FILES% 1>&2
+) else if %_VERBOSE%==1 ( echo Compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
+)
+call "%_GNU_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FILES%
+if not %ERRORLEVEL%==0 (
+    echo %_ERROR_LABEL% Failed to compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
+    set _EXITCODE=1
+    goto :eof
+)
 goto :eof
 
 @rem Generated index page is %_TARGET_DOCS_DIR%\%_CRATE_NAME%\index.html

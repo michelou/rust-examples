@@ -16,7 +16,8 @@
 This project depends on two external software for the **Microsoft Windows** platform:
 
 - [Git 2.42][git_downloads] ([*release notes*][git_relnotes])
-- [Rust 1.73][rust_downloads] <sup id="anchor_01"><a href="#footnote_01">1</a></sup> ([*release notes*][rust_relnotes])
+- [GNU Front-End for Rust 1.73](https://rust-gcc.github.io/) <sup id="anchor_01"><a href="#footnote_01">1</a></sup>
+- [Rust 1.73][rust_downloads] <sup id="anchor_02"><a href="#footnote_02">2</a></sup> ([*release notes*][rust_relnotes])
 
 <!--
 See changelogs on https://releases.rs/
@@ -30,13 +31,18 @@ Rust 1.73.0 -> 2023-08-24
 Rust 1.73.0 -> 2023-10-06
 -->
 
+Optionally one may also install the following software:
+
+- [Visual Studio Code 1.83][vscode_downloads] ([*release notes*][vscode_relnotes])
+
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [**`/opt/`**][linux_opt] directory on Unix).
 
-For instance our development environment looks as follows (*October 2023*) <sup id="anchor_02">[2](#footnote_02)</sup>:
+For instance our development environment looks as follows (*November 2023*) <sup id="anchor_03">[3](#footnote_03)</sup>:
 
 <pre style="font-size:80%;">
 C:\opt\Git\             <i>(367 MB)</i>
+C:\opt\msys64\          <i>(3.4 GB)</i>
 C:\opt\VSCode\          <i>(341 MB)</i>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\   <i>(100 MB)</i>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.rustup\  <i>(593 MB, installed toolchains and configuration options)</i>
@@ -148,6 +154,7 @@ Tool paths:
 Environment variables:
    "CARGO_HOME=%USERPROFILE%\.cargo"
    "GIT_HOME=C:\opt\Git"
+   "MAKE_HOME=C:\opt\make-3.81"
    "MSYS_HOME=C:\opt\msys64"
    "RUSTUP_HOME=%USERPROFILE%\.rustup"
 Path associations:
@@ -158,16 +165,52 @@ Path associations:
 
 ## <span id="footnotes">Footnotes</span> [**&#x25B4;**](#top)
 
-<span id="footnote_01">[1]</span> ***LLVM Backend*** [↩](#anchor_01)
+<span id="footnote_01">[1]</span> ***GNU Front-End for Rust*** [↩](#anchor_01)
 
 <dl><dd>
-<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html" rel="external"><code>rustc.exe</code></a> uses <a href="https://llvm.org/">LLVM</a> for code generation (see section <a href="https://rustc-dev-guide.rust-lang.org/backend/codegen.html" rel="external">Code Generation</a> in the online <a href="https://rustc-dev-guide.rust-lang.org/" rel="external">Rustc Development Guide</a>).
+<pre style="font-size:80%;">
+<b>&gt; c:\opt\msys64\usr\bin\<a href="https://www.msys2.org/docs/package-management/"  rel="external">pacman.exe</a> -Sy mingw-w64-clang-x86_64-rust</b>
+:: Synchronizing package databases...
+ clangarm64 is up to date
+ mingw32 is up to date
+ mingw64 is up to date
+ ucrt64 is up to date
+ clang32 is up to date
+ clang64 is up to date
+ msys is up to date
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (32) mingw-w64-clang-x86_64-brotli-1.1.0-1
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[...]
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;mingw-w64-clang-x86_64-zlib-1.3-1
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;mingw-w64-clang-x86_64-zstd-1.5.5-1
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;mingw-w64-clang-x86_64-rust-1.73.0-1
+&nbsp;
+Total Download Size:    255.01 MiB
+Total Installed Size:  1655.04 MiB
+&nbsp;
+:: Proceed with installation? [Y/n] y
+[...]
+&nbsp;
+<b>&gt; <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/where" rel="external">where</a> /r c:\opt\msys64 rustc</b>
+c:\opt\msys64\clang64\bin\rustc.exe
+&nbsp;
+<b>&gt; c:\opt\msys64\clang64\bin\\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html" rel="external">rustc.exe</a> --version</b>
+rustc 1.73.0 (cc66ad468 2023-10-03) (Rev1, Built by MSYS2 project)
+</pre>
+</dd></dl>
+
+<span id="footnote_02">[2]</span> ***LLVM Backend*** [↩](#anchor_02)
+
+<dl><dd>
+<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html" rel="external"><code><b>rustc.exe</b></code></a> uses <a href="https://llvm.org/">LLVM</a> for code generation (see section <a href="https://rustc-dev-guide.rust-lang.org/backend/codegen.html" rel="external">Code Generation</a> in the online <a href="https://rustc-dev-guide.rust-lang.org/" rel="external">Rustc Development Guide</a>).
 </dd>
 <dd>
 <pre style="font-size:80%;">
-<b>&gt; <a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc</a> --version --verbose | <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr">findstr</a> /b "rustc LLVM"</b>
-rustc 1.72.1 (8ede3aae2 2023-08-24)
-LLVM version: 16.0.5
+<b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc</a> --version --verbose | <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr">findstr</a> /b "rustc LLVM"</b>
+rustc 1.73.0 (cc66ad468 2023-10-03)
+LLVM version: 17.0.2
 </pre>
 </dd>
 <dd>
@@ -190,7 +233,7 @@ LLVM version: 16.0.5
 </table>
 </dd></dl>
 
-<span id="footnote_02">[2]</span> ***Downloads*** [↩](#anchor_02)
+<span id="footnote_03">[3]</span> ***Downloads*** [↩](#anchor_03)
 
 <dl><dd>
 In our case we downloaded the following installation files (see <a href="#proj_deps">section 1</a>):
@@ -199,6 +242,7 @@ In our case we downloaded the following installation files (see <a href="#proj_d
 <pre style="font-size:80%;">
 <a href="https://www.rust-lang.org/tools/install">rust-init.exe</a>                     <i>( 8 MB)</i>
 <a href="https://git-scm.com/download/win">PortableGit-2.42.0-64-bit.7z.exe</a>  <i>(46 MB)</i>
+<a href="http://repo.msys2.org/distrib/x86_64/">msys2-x86_64-20190524.exe</a>         <i>(86 MB)</i>
 </pre>
 </dd>
 <dd>
@@ -207,7 +251,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/October 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/November 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -250,6 +294,8 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [spark_examples]: https://github.com/michelou/spark-examples
 [spring_examples]: https://github.com/michelou/spring-examples
 [trufflesqueak_examples]: https://github.com/michelou/trufflesqueak-examples
+[vscode_downloads]: https://code.visualstudio.com/#alt-downloads
+[vscode_relnotes]: https://code.visualstudio.com/updates/
 [windows_limitation]: https://support.microsoft.com/en-gb/help/830473/command-prompt-cmd-exe-command-line-string-limitation
 [windows_subst]: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/subst
 [wix_examples]: https://github.com/michelou/wix-examples

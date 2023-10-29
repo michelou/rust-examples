@@ -90,14 +90,14 @@ help() {
 Usage: $BASENAME { <option> | <subcommand> }
 
   Options:
-    -debug       display commands executed by this script
-    -timer       display total execution time
-    -verbose     display progress messages
+    -debug       print commands executed by this script
+    -timer       print total execution time
+    -verbose     print progress messages
 
   Subcommands:
     clean        delete generated files
     compile      compile Rust source files
-    help         display this help message
+    help         print this help message
     run          execute the generated executable "$CRATE_NAME"
 EOS
 }

@@ -194,7 +194,7 @@ Code example `rr_demo` depends on Crate [`rand`](https://crates.io/crates/rand) 
 <span id="footnote_02">[2]</span> **`build` subcommands** [↩](#anchor_02)
 
 <dl><dd>
-Command <code>build.bat</code> with no subcommand displays the help message:
+Command <code><b>build.bat</b></code> with no subcommand displays the help message:
 </dd>
 <dd>
 <image src="../docs/images/build_help.png" />
@@ -202,7 +202,7 @@ Command <code>build.bat</code> with no subcommand displays the help message:
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/October 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/November 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
