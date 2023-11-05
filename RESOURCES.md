@@ -25,6 +25,7 @@
 - [**Red Hat** Developer](https://developers.redhat.com/) articles :
   - [How to create C binding for a Rust library][article_ge] by Gris Ge, September 2022.
   - [How Rust makes Rayon's data parallelism magical][article_stone] by Josh Stone, April 2021.
+  - [Speed up your Python using Rust](https://developers.redhat.com/blog/2017/11/16/speed-python-using-rust#) by Bruno Rocha, November 2017.
 - [Intro to Rust: The Modern-Day, Safe Low-Level Programming Language][article_novak] by Marcus Novak, December 2020.
 - [The rustwasmc tool](https://www.secondstate.io/articles/rustwasmc/) by Second State, 2020.<br/>(GitHub project: [`second-state/rustwasmc`](https://github.com/second-state/rustwasmc))
 - [Introduction to Rust][article_dreimanis] by Gints Dreimanis, August 2020.
@@ -40,8 +41,13 @@
 - [Rust's Vector][blog_fraenkel_9] by Nicolas Fränkel, August 2021.
 - [diceroller, a sample Rust project][blog_fraenkel_8] by Nicolas Fränkel, July 2021.
 - [Rust and the JVM][blog_fraenkel_7] by Nicolas Fränkel, July 2021.
+- [pretzelhammer's Rust blog](https://github.com/pretzelhammer/rust-blog/tree/master#pretzelhammers-rust-blog-) :
+  - [Tour of Rust's Standard Library Traits](https://github.com/pretzelhammer/rust-blog/blob/master/posts/tour-of-rusts-standard-library-traits.md), March 2021.
+  - [Sizedness in Rust](https://github.com/pretzelhammer/rust-blog/blob/master/posts/sizedness-in-rust.md), July 2020.
+  - [Common Rust Lifetime Misconceptions](https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md), May 2020.
+  - [Learning Rust in 2020](https://github.com/pretzelhammer/rust-blog/blob/master/posts/learning-rust-in-2020.md), May 2020.
 - [How to speed up the Rust compiler one last time][blog_nethercote] by Nicholas Nethercote, September 2020.
-- [PingCAP Blog](https://en.pingcap.com/blog/):
+- [PingCAP Blog](https://en.pingcap.com/blog/) :
   - [A Few More Reasons Rust Compiles Slowly](https://en.pingcap.com/blog/reasons-rust-compiles-slowly/) by Brian Anderson, June 2020.
   - [Rust’s Huge Compilation Units](https://en.pingcap.com/blog/rust-huge-compilation-units/) by Brian Anderson, June 2020.
   - [Generics and Compile-Time in Rust](https://en.pingcap.com/blog/generics-and-compile-time-in-rust/) by Brian Anderson, June 2020.
@@ -160,7 +166,9 @@
 - [Clippy](https://github.com/rust-lang/rust-clippy) &ndash; a collection of lints to catch common mistakes and improve your Rust code.
 - [diesel](https://github.com/diesel-rs/diesel) &ndash; a safe, extensible ORM and Query Builder for [Rust][rust_lang]. 
 - [fleet](https://fleet.rs/) &ndash; a build tool which makes your [Rust][rust_lang] builds up to 5x faster.
-- [Fast and safe HTTP for the Rust language](https://hyper.rs/) &ndash; a fast and safe HTTP for [Rust].
+- [Fast and safe HTTP for the Rust language](https://hyper.rs/) &ndash; a fast and safe HTTP for [Rust][rust_lang].
+- [Lapce](https://github.com/lapce/lapce) &ndash; a lightning-fast and powerful code editor written in [Rust][rust_lang].
+- [**nannou**](https://github.com/nannou-org/nannou) &ndash; an open-source creative-coding toolkit for [Rust][rust_lang].
 - [redb](https://github.com/cberner/redb) &ndash; an embedded key-value database in pure [Rust][rust_lang]. 
 - [rust.analyzer](https://rust-analyzer.github.io/) &ndash; an implementation of [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) for the [Rust][rust_lang] programming language.
 - [Rust for Windows](https://github.com/microsoft/windows-rs) &ndash; Rust bindings for the Windows API. 

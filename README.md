@@ -15,8 +15,8 @@
 
 This project depends on two external software for the **Microsoft Windows** platform:
 
+- [GCC Front-End for Rust 1.73](https://rust-gcc.github.io/) <sup id="anchor_01"><a href="#footnote_01">1</a></sup>
 - [Git 2.42][git_downloads] ([*release notes*][git_relnotes])
-- [GNU Front-End for Rust 1.73](https://rust-gcc.github.io/) <sup id="anchor_01"><a href="#footnote_01">1</a></sup>
 - [Rust 1.73][rust_downloads] <sup id="anchor_02"><a href="#footnote_02">2</a></sup> ([*release notes*][rust_relnotes])
 
 <!--
@@ -122,7 +122,7 @@ We execute command [**`setenv.bat`**](setenv.bat) once to setup our development 
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
    cargo 1.73.0, rustc 1.73.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.6.0-stable</a>, rustup 1.26.0,
-   pelook v1.73, git 2.42.0.windows.1, diff 3.10, bash 5.2.15(1)-release
+   pelook v1.73, make 4.4.1, git 2.42.0.windows.1, diff 3.10, bash 5.2.15(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\cargo.exe
@@ -139,7 +139,7 @@ Command [**`setenv.bat`**](setenv.bat) with option **`-verbose`** displays addit
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
-   cargo 1.72.1, rustc 1.72.1, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.6.0-stable</a>, rustup 1.26.0,
+   cargo 1.73.0, rustc 1.73.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.6.0-stable</a>, rustup 1.26.0,
    pelook v1.73, git 2.42.0.windows.1, diff 3.10, bash 5.2.15(1)-release
 Tool paths:
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/cargo/commands/">cargo.exe</a>
@@ -152,11 +152,10 @@ Tool paths:
    C:\opt\Git\usr\bin\diff.exe
    C:\opt\Git\bin\bash.exe
 Environment variables:
-   "CARGO_HOME=%USERPROFILE%\.cargo"
+   "CARGO_HOME=<a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo"
    "GIT_HOME=C:\opt\Git"
-   "MAKE_HOME=C:\opt\make-3.81"
    "MSYS_HOME=C:\opt\msys64"
-   "RUSTUP_HOME=%USERPROFILE%\.rustup"
+   "RUSTUP_HOME=<a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.rustup"
 Path associations:
    R:\: => <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\workspace-perso\rust-examples
 </pre>

@@ -18,8 +18,32 @@ if not %_EXITCODE%==0 goto end
 @rem #########################################################################
 @rem ## Main
 
-for %%i in (%_COMMANDS%) do (
-    call :%%i
+if %_HELP%==1 (
+    call :help
+    exit /b !_EXITCODE!
+)
+if %_CLEAN%==1 (
+    call :clean
+    if not !_EXITCODE!==0 goto end
+)
+if %_COMPILE%==1 (
+    call :compile
+    if not !_EXITCODE!==0 goto end
+)
+if %_DOC%==1 (
+    call :doc
+    if not !_EXITCODE!==0 goto end
+)
+if %_DUMP%==1 (
+    call :dump
+    if not !_EXITCODE!==0 goto end
+)
+if %_RUN%==1 (
+    call :run
+    if not !_EXITCODE!==0 goto end
+)
+if %_TEST%==1 (
+    call :test
     if not !_EXITCODE!==0 goto end
 )
 goto end
@@ -37,6 +61,8 @@ call :env_colors
 set _DEBUG_LABEL=%_NORMAL_BG_CYAN%[%_BASENAME%]%_RESET%
 set _ERROR_LABEL=%_STRONG_FG_RED%Error%_RESET%:
 set _WARNING_LABEL=%_STRONG_FG_YELLOW%Warning%_RESET%:
+
+set _CRATE_NAME=main
 
 set "_SOURCE_DIR=%_ROOT_DIR%src"
 set "_TARGET_DIR=%_ROOT_DIR%target"
@@ -100,18 +126,24 @@ set _STRONG_BG_BLUE=[104m
 goto :eof
 
 @rem input parameter: %*
-@rem output parameters: _COMMANDS, _DEBUG, _TARGET, _VERBOSE
+@rem output parameters: _CLEAN, _COMPILE, _RUN, _DEBUG, _TEST, _VERBOSE
 :args
-set _COMMANDS=
+set _CLEAN=0
+set _COMPILE=0
+set _DOC=0
+set _DUMP=0
 set _EDITION=2018
+set _HELP=0
+set _RUN=0
 set _TARGET=msvc
+set _TEST=0
 set _TIMER=0
 set _VERBOSE=0
 set __N=0
 :args_loop
 set "__ARG=%~1"
 if not defined __ARG (
-    if !__N!==0 set _COMMANDS=help
+    if !__N!==0 set _HELP=1
     goto args_done
 )
 if "%__ARG:~0,1%"=="-" (
@@ -119,7 +151,7 @@ if "%__ARG:~0,1%"=="-" (
     if "%__ARG%"=="-debug" ( set _DEBUG=1
     ) else if "%__ARG%"=="-edition:2015" ( set _EDITION=2015
     ) else if "%__ARG%"=="-edition:2018" ( set _EDITION=2018
-    ) else if "%__ARG%"=="-help" ( set _COMMANDS=help
+    ) else if "%__ARG%"=="-help" ( set _HELP=1
     ) else if "%__ARG%"=="-target:cl" ( set _TARGET=msvc
     ) else if "%__ARG%"=="-target:gcc" ( set _TARGET=gnu
     ) else if "%__ARG%"=="-target:gnu" ( set _TARGET=gnu
@@ -133,13 +165,13 @@ if "%__ARG:~0,1%"=="-" (
     )
 ) else (
     @rem subcommand
-    if "%__ARG%"=="clean" ( set _COMMANDS=!_COMMANDS! clean
-    ) else if "%__ARG%"=="compile" ( set _COMMANDS=!_COMMANDS! compile
-    ) else if "%__ARG%"=="doc" ( set _COMMANDS=!_COMMANDS! doc
-    ) else if "%__ARG%"=="dump" ( set _COMMANDS=!_COMMANDS! compile dump
-    ) else if "%__ARG%"=="help" ( set _COMMANDS=help
-    ) else if "%__ARG%"=="run" ( set _COMMANDS=!_COMMANDS! compile run
-    ) else if "%__ARG%"=="test" ( set _COMMANDS=!_COMMANDS! compile run test
+    if "%__ARG%"=="clean" ( set _CLEAN=1
+    ) else if "%__ARG%"=="compile" ( set _COMPILE=1
+    ) else if "%__ARG%"=="doc" ( set _DOC=1
+    ) else if "%__ARG%"=="dump" ( set _COMPILE=1& set _DUMP=1
+    ) else if "%__ARG%"=="help" ( set _HELP=1
+    ) else if "%__ARG%"=="run" ( set _COMPILE=1& set _RUN=1
+    ) else if "%__ARG%"=="test" ( set _COMPILE=1& set _RUN=1& set _TEST=1
     ) else (
         echo %_ERROR_LABEL% Unknown subcommand "%__ARG%" 1>&2
         set _EXITCODE=1
@@ -152,8 +184,6 @@ goto :args_loop
 :args_done
 set _STDOUT_REDIRECT=1^>NUL
 if %_DEBUG%==1 set _STDOUT_REDIRECT=1^>^&2
-
-set _CRATE_NAME=main
 
 @rem General format: <arch>-<vendor>-<sys>-<abi> where
 @rem arch   = x86_64, i686, arm, mips, etc.
@@ -173,11 +203,10 @@ if %_TARGET%==gnu if not defined MSYS_HOME (
 )
 if %_DEBUG%==1 (
     echo %_DEBUG_LABEL% Options    : _EDITION=%_EDITION% _TARGET=%_TARGET% _TIMER=%_TIMER% _VERBOSE=%_VERBOSE% 1>&2
-    echo %_DEBUG_LABEL% Subcommands: %_COMMANDS% 1>&2
-    echo %_DEBUG_LABEL% Variables  : "CARGO_HOME=%CARGO_HOME%" 1>&2
-    echo %_DEBUG_LABEL% Variables  : "GIT_HOME=%GIT_HOME%" 1>&2
+    echo %_DEBUG_LABEL% Subcommands: _CLEAN=%_CLEAN% _COMPILE=%_COMPILE% _DOC=%_DOC% _DUMP=%_DUMP% _RUN=%_RUN% _TEST=%_TEST% 1>&2
+    echo %_DEBUG_LABEL% Variables  : "CARGO_HOME=%CARGO_HOME%"
+    echo %_DEBUG_LABEL% Variables  : "GIT_HOME=%GIT_HOME%"
     echo %_DEBUG_LABEL% Variables  : "MSYS_HOME=%MSYS_HOME%" 1>&2
-    echo %_DEBUG_LABEL% Variables  : "RUSTUP_HOME=%RUSTUP_HOME%" 1>&2
 )
 if %_TIMER%==1 for /f "delims=" %%i in ('powershell -c "(Get-Date)"') do set _TIMER_START=%%i
 goto :eof
@@ -198,7 +227,7 @@ echo Usage: %__BEG_O%%_BASENAME% { ^<option^> ^| ^<subcommand^> }%__END%
 echo.
 echo   %__BEG_P%Options:%__END%
 echo     %__BEG_O%-debug%__END%                print commands executed by this script
-echo     %__BEG_O%-edition:^<2015^|2018^>%__END%  set Rust edition ^(default: %_BEG_O%2018%__END%^)
+echo     %__BEG_O%-edition:^<2015^|2018^>%__END%  set Rust edition 
 echo     %__BEG_O%-target:^<gcc^|msvc^>%__END%    set plaform target ^(default: %__BEG_O%msvc%__END%/%__BEG_O%cl%__END%^)
 echo     %__BEG_O%-timer%__END%                print total execution time
 echo     %__BEG_O%-verbose%__END%              print progress messages
@@ -234,12 +263,14 @@ if not %ERRORLEVEL%==0 (
 goto :eof
 
 :compile
-setlocal
 if not exist "%_TARGET_DIR%" mkdir "%_TARGET_DIR%"
+
+call :action_required "%_TARGET_DIR%\%_CRATE_NAME%.exe" "%_SOURCE_DIR%\*.rs"
+if %_ACTION_REQUIRED%==0 goto :eof
 
 set __SOURCE_FILES=
 set __N=0
-for /f "delims=" %%f in ('dir /b /s "%_SOURCE_DIR%\*.rs" 2^NUL') do (
+for /f "delims=" %%f in ('dir /b /s "%_SOURCE_DIR%\*.rs" 2^>NUL') do (
     set __SOURCE_FILES=!__SOURCE_FILES! "%%f"
     set /a __N+=1
 )
@@ -262,9 +293,7 @@ set _RUST_LINT_OPTS=
 @rem echo %_RUSTC_OPTS% > "%__OPTS_FILE%"
 set __RUST_CRATE_OPTS=--crate-name "%_CRATE_NAME%" --crate-type bin
 set __RUSTC_OPTS=%_RUST_LINT_OPTS% %__RUST_CRATE_OPTS% --edition %_EDITION% --out-dir "%_TARGET_DIR%" --target "%_TARGET_TRIPLE%"
-if %_DEBUG%==1 ( set __RUSTC_OPTS=-g %__RUSTC_OPTS%
-) else ( set __RUSTC_OPTS=-Clink-arg=/DEBUG:NONE %__RUSTC_OPTS%
-)
+if %_DEBUG%==1 set __RUSTC_OPTS=-g %__RUSTC_OPTS%
 
 if %_DEBUG%==1 ( echo %_DEBUG_LABEL% "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FILES% 1>&2
 ) else if %_VERBOSE%==1 ( echo Compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
@@ -306,22 +335,20 @@ goto :eof
 :dump
 set "__EXE_FILE=%_TARGET_DIR%\%_CRATE_NAME%.exe"
 if not exist "%__EXE_FILE%" (
-    echo %_ERROR_LABEL% Rust program "%_CRATE_NAME%.exe" not found 1>&2
+    echo %_ERROR_LABEL% Executable "%_CRATE_NAME%.exe" not found 1>&2
     set _EXITCODE=1
     goto :eof
 )
-set __PELOOK_OPTS=
-
 if %_DEBUG%==1 (
-    echo %_DEBUG_LABEL% "%_PELOOK_CMD%" %__PELOOK_OPTS% "!__EXE_FILE:%_ROOT_DIR%=!" 1>&2
-    call "%_PELOOK_CMD%" %__PELOOK_OPTS% "%__EXE_FILE%"
+    echo %_DEBUG_LABEL% "%_PELOOK_CMD%" %_PELOOK_OPTS% "!__EXE_FILE:%_ROOT_DIR%=!" 1>&2
+    call "%_PELOOK_CMD%" %_PELOOK_OPTS% "%__EXE_FILE%"
 ) else (
     if %_VERBOSE%==1 echo Dump PE/COFF infos for executable !__EXE_FILE:%_ROOT_DIR%=! 1>&2
     echo executable:           !__EXE_FILE:%_ROOT_DIR%=!
-    call "%_PELOOK_CMD%" %__PELOOK_OPTS% "%__EXE_FILE%" | findstr "signature machine linkver modules"
+    call "%_PELOOK_CMD%" %_PELOOK_OPTS% "%__EXE_FILE%" | findstr "signature machine linkver modules"
 )
 if not %ERRORLEVEL%==0 (
-    echo %_ERROR_LABEL% Failed to dump Rust program "%_CRATE_NAME%.exe" 1>&2
+    echo %_ERROR_LABEL% Failed to dump executable "%_CRATE_NAME%.exe" 1>&2
     set _EXITCODE=1
     goto :eof
 )
@@ -330,19 +357,75 @@ goto :eof
 :run
 set "__EXE_FILE=%_TARGET_DIR%\%_CRATE_NAME%.exe"
 if not exist "%__EXE_FILE%" (
-    echo %_ERROR_LABEL% Rust program "%_CRATE_NAME%.exe" not found 1>&2
+    echo %_ERROR_LABEL% Executable "%_CRATE_NAME%.exe" not found 1>&2
     set _EXITCODE=1
     goto :eof
 )
 call "%__EXE_FILE%"
 if not %ERRORLEVEL%==0 (
-    echo %_ERROR_LABEL% Failed to execute Rust program "%_CRATE_NAME%.exe" 1>&2
+    echo %_ERROR_LABEL% Execution status is %ERRORLEVEL% 1>&2
     set _EXITCODE=1
     goto :eof
 )
 goto :eof
 
 :test
+echo %_WARNING_LABEL% Not yet implemented 1>&2
+goto :eof
+
+@rem input parameter: 1=target file 2,3,..=path (wildcards accepted)
+@rem output parameter: _ACTION_REQUIRED
+:action_required
+set "__TARGET_FILE=%~1"
+
+set __PATH_ARRAY=
+set __PATH_ARRAY1=
+:action_path
+shift
+set "__PATH=%~1"
+if not defined __PATH goto action_next
+if defined __PATH_ARRAY set "__PATH_ARRAY=%__PATH_ARRAY%,"
+set __PATH_ARRAY=%__PATH_ARRAY%'%__PATH%'
+if defined __PATH_ARRAY1 set "__PATH_ARRAY1=%__PATH_ARRAY1%,"
+set __PATH_ARRAY1=%__PATH_ARRAY1%'!__PATH:%_ROOT_DIR%=!'
+goto action_path
+
+:action_next
+set __TARGET_TIMESTAMP=00000000000000
+for /f "usebackq" %%i in (`powershell -c "gci -path '%__TARGET_FILE%' -ea Stop | select -last 1 -expandProperty LastWriteTime | Get-Date -uformat %%Y%%m%%d%%H%%M%%S" 2^>NUL`) do (
+     set __TARGET_TIMESTAMP=%%i
+)
+set __SOURCE_TIMESTAMP=00000000000000
+for /f "usebackq" %%i in (`powershell -c "gci -recurse -path %__PATH_ARRAY% -ea Stop | sort LastWriteTime | select -last 1 -expandProperty LastWriteTime | Get-Date -uformat %%Y%%m%%d%%H%%M%%S" 2^>NUL`) do (
+    set __SOURCE_TIMESTAMP=%%i
+)
+call :newer %__SOURCE_TIMESTAMP% %__TARGET_TIMESTAMP%
+set _ACTION_REQUIRED=%_NEWER%
+if %_DEBUG%==1 (
+    echo %_DEBUG_LABEL% %__TARGET_TIMESTAMP% Target : '%__TARGET_FILE%' 1>&2
+    echo %_DEBUG_LABEL% %__SOURCE_TIMESTAMP% Sources: %__PATH_ARRAY% 1>&2
+    echo %_DEBUG_LABEL% _ACTION_REQUIRED=%_ACTION_REQUIRED% 1>&2
+) else if %_VERBOSE%==1 if %_ACTION_REQUIRED%==0 if %__SOURCE_TIMESTAMP% gtr 0 (
+    echo No action required ^(%__PATH_ARRAY1%^) 1>&2
+)
+goto :eof
+
+@rem output parameter: _NEWER
+:newer
+set __TIMESTAMP1=%~1
+set __TIMESTAMP2=%~2
+
+set __DATE1=%__TIMESTAMP1:~0,8%
+set __TIME1=%__TIMESTAMP1:~-6%
+
+set __DATE2=%__TIMESTAMP2:~0,8%
+set __TIME2=%__TIMESTAMP2:~-6%
+
+if %__DATE1% gtr %__DATE2% ( set _NEWER=1
+) else if %__DATE1% lss %__DATE2% ( set _NEWER=0
+) else if %__TIME1% gtr %__TIME2% ( set _NEWER=1
+) else ( set _NEWER=0
+)
 goto :eof
 
 @rem output parameter: _DURATION

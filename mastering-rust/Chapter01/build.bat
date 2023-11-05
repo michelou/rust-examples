@@ -345,7 +345,7 @@ if %_ACTION_REQUIRED%==0 goto :eof
 
 set __SOURCE_FILES=
 set __N=0
-for %%f in (%_SOURCE_DIR%\%_CRATE_NAME%.rs) do (
+for /f "delims=" %%f in ('dir /b /s "%_SOURCE_DIR%\%_CRATE_NAME%.rs" 2^>NUL') do (
     set __SOURCE_FILES=!__SOURCE_FILES! "%%f"
     set /a __N+=1
 )
@@ -392,7 +392,7 @@ if %_ACTION_REQUIRED%==0 goto :eof
 
 set __SOURCE_FILES=
 set __N=0
-for %%f in (%_SOURCE_DIR%\%_CRATE_NAME%.rs) do (
+for /f "delims=" %%f in ('dir /b /s "%_SOURCE_DIR%\%_CRATE_NAME%.rs" 2^>NUL') do (
     set __SOURCE_FILES=!__SOURCE_FILES! "%%f"
     set /a __N+=1
 )
@@ -423,7 +423,7 @@ if not exist "%_TARGET_DOCS_DIR%" mkdir "%_TARGET_DOCS_DIR%"
 
 set __SOURCE_FILES=
 set __N=0
-for %%f in (%_SOURCE_DIR%\%_MAIN%.rs) do (
+for /f "delims=" %%f in ('dir /b /s "%_SOURCE_DIR%\%_MAIN%.rs" 2^>NUL') do (
     set __SOURCE_FILES=!__SOURCE_FILES! "%%f"
     set /a __N+=1
 )

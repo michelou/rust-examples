@@ -21,11 +21,11 @@ Compile 1 Rust source file to directory "target"
 50.26548245743669
 </pre>
 
-## <span id="inner_functions">Inner Functions</a>
+## <span id="inner_functions">Inner Functions</a> [**&#x25B4;**](#top)
 
-This code example is adapted from the article [Non-Generic Inner Functions](https://www.possiblerust.com/pattern/non-generic-inner-functions0).
+This code example is adapted from the article "[Non-Generic Inner Functions](https://www.possiblerust.com/pattern/non-generic-inner-functions)" by Andrew Brinker, October 2020.
 
-Project files are [`build.bat`](./InnerFunctions/build.bat), [`Cargo.toml`](./InnerFunctions/Cargo.toml) and [`src\main.rs`](./InnerFunctions/src/main.rs).
+Source file is [`src\main.rs`](./InnerFunctions/src/main.rs) and project files are [`build.bat`](./InnerFunctions/build.bat) and [`Cargo.toml`](./InnerFunctions/Cargo.toml).
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/cargo-run.html" rel="external">cargo</a> clean & <a href="https://doc.rust-lang.org/cargo/commands/cargo-run.html" rel="external">cargo</a> run</b>

@@ -159,7 +159,7 @@ if "%__ARG:~0,1%"=="-" (
     ) else if "%__ARG%"=="-timer" ( set _TIMER=1
     ) else if "%__ARG%"=="-verbose" ( set _VERBOSE=1
     ) else (
-        echo %_ERROR_LABEL% Unknown option %__ARG% 1>&2
+        echo %_ERROR_LABEL% Unknown option "%__ARG%" 1>&2
         set _EXITCODE=1
         goto args_done
     )
@@ -173,7 +173,7 @@ if "%__ARG:~0,1%"=="-" (
     ) else if "%__ARG%"=="run" ( set _COMPILE=1& set _RUN=1
     ) else if "%__ARG%"=="test" ( set _COMPILE=1& set _RUN=1& set _TEST=1
     ) else (
-        echo %_ERROR_LABEL% Unknown subcommand %__ARG% 1>&2
+        echo %_ERROR_LABEL% Unknown subcommand "%__ARG%" 1>&2
         set _EXITCODE=1
         goto args_done
     )
@@ -226,18 +226,18 @@ if %_VERBOSE%==1 (
 echo Usage: %__BEG_O%%_BASENAME% { ^<option^> ^| ^<subcommand^> }%__END%
 echo.
 echo   %__BEG_P%Options:%__END%
-echo     %__BEG_O%-debug%__END%                display commands executed by this script
+echo     %__BEG_O%-debug%__END%                print commands executed by this script
 echo     %__BEG_O%-edition:^<2015^|2018^>%__END%  set Rust edition 
 echo     %__BEG_O%-target:^<gcc^|msvc^>%__END%    set plaform target ^(default: %__BEG_O%msvc%__END%/%__BEG_O%cl%__END%^)
-echo     %__BEG_O%-timer%__END%                display total elapsed time
-echo     %__BEG_O%-verbose%__END%              display progress messages
+echo     %__BEG_O%-timer%__END%                print total execution time
+echo     %__BEG_O%-verbose%__END%              print progress messages
 echo.
 echo   %__BEG_P%Subcommands:%__END%
 echo     %__BEG_O%clean%__END%                 delete generated files
 echo     %__BEG_O%compile%__END%               generate executable
 echo     %__BEG_O%doc%__END%                   generate HTML documentation
 echo     %__BEG_O%dump%__END%                  dump PE/COFF infos for generated executable
-echo     %__BEG_O%help%__END%                  display this help message
+echo     %__BEG_O%help%__END%                  print this help message
 echo     %__BEG_O%run%__END%                   run generated executable "%__BEG_O%%_CRATE_NAME%%__END%"
 echo     %__BEG_O%test%__END%                  test generated executable
 goto :eof
@@ -255,7 +255,7 @@ if %_DEBUG%==1 ( echo %_DEBUG_LABEL% rmdir /s /q "%__DIR%" 1>&2
 ) else if %_VERBOSE%==1 ( echo Delete directory "!__DIR:%_ROOT_DIR%=!" 1>&2
 )
 rmdir /s /q "%__DIR%"
-if not errorlevel 0 (
+if not %ERRORLEVEL%==0 (
     echo %_ERROR_LABEL% Failed to delete directory "!__DIR:%_ROOT_DIR%=!" 1>&2
     set _EXITCODE=1
     goto :eof
@@ -270,7 +270,7 @@ if %_ACTION_REQUIRED%==0 goto :eof
 
 set __SOURCE_FILES=
 set __N=0
-for %%f in (%_SOURCE_DIR%\*.rs) do (
+for /f "delims=" %%f in (%_SOURCE_DIR%\*.rs) do (
     set __SOURCE_FILES=!__SOURCE_FILES! "%%f"
     set /a __N+=1
 )
@@ -299,7 +299,7 @@ if %_DEBUG%==1 ( echo %_DEBUG_LABEL% "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FIL
 ) else if %_VERBOSE%==1 ( echo Compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
 )
 call "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FILES%
-if not errorlevel 0 (
+if not %ERRORLEVEL%==0 (
     if %_TARGET%==gnu set "PATH=%__PATH%"
     echo %_ERROR_LABEL% Failed to compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
     set _EXITCODE=1
@@ -314,7 +314,7 @@ if not exist "%_TARGET_DOCS_DIR%" mkdir "%_TARGET_DOCS_DIR%"
 
 set __SOURCE_FILES=
 set __N=0
-for %%f in (%_SOURCE_DIR%\*.rs) do (
+for / "delims=" %%f in (%_SOURCE_DIR%\*.rs) do (
     set __SOURCE_FILES=!__SOURCE_FILES! "%%f"
     set /a __N+=1
 )
@@ -325,8 +325,8 @@ if %_DEBUG%==1 echo %_DEBUG_LABEL% "%_RUSTDOC_CMD%" %__RUSTDOC_OPTS% %__SOURCE_F
 ) else if %_VERBOSE%==1 ( echo Generate HTML documentation into directory "!_TARGET_DOCS_DIR:%_ROOT_DIR%=!" 1>&2
 )
 call "%_RUSTDOC_CMD%" %__RUSTDOC_OPTS% %__SOURCE_FILES%
-if not errorlevel 0 (
-    echo %_ERROR_LABEL% Failed to generate HTML documentation 1>&2
+if not %ERRORLEVEL%==0 (
+    echo %_ERROR_LABEL% Failed to generate HTML documentation into directory "!_TARGET_DOCS_DIR:%_ROOT_DIR%=!" 1>&2
     set _EXITCODE=1
     goto :eof
 )
@@ -347,7 +347,7 @@ if %_DEBUG%==1 (
     echo executable:           !__EXE_FILE:%_ROOT_DIR%=!
     call "%_PELOOK_CMD%" %_PELOOK_OPTS% "%__EXE_FILE%" | findstr "signature machine linkver modules"
 )
-if not errorlevel 0 (
+if not %ERRORLEVEL%==0 (
     echo %_ERROR_LABEL% Dump of executable %_CRATE_NAME%.exe failed 1>&2
     set _EXITCODE=1
     goto :eof
@@ -362,7 +362,7 @@ if not exist "%__EXE_FILE%" (
     goto :eof
 )
 call "%__EXE_FILE%"
-if not errorlevel 0 (
+if not %ERRORLEVEL%==0 (
     echo %_ERROR_LABEL% Execution status is %ERRORLEVEL% 1>&2
     set _EXITCODE=1
     goto :eof

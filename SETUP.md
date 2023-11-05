@@ -162,7 +162,7 @@ rustfmt 1.6.0-stable (5680fa18 2023-10-03)
 
 ### <span id="cargo-audit">`cargo-audit` crate</span>
 
-Command [`cargo audit`][cargo_audit] <sup id="anchor_03">[3](#footnote_03)</sup> does audit `Cargo.lock` files for crates with security vulnerabilities (based on [`rustsec/advisory-db`](https://github.com/RustSec/advisory-db/)).
+Command [**`cargo audit`**][cargo_audit] <sup id="anchor_03">[3](#footnote_03)</sup> does audit `Cargo.lock` files for crates with security vulnerabilities (based on [`rustsec/advisory-db`](https://github.com/RustSec/advisory-db/)).
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://doc.rust-lang.org/cargo/commands/cargo.html" rel="external">cargo</a> install <a href="https://crates.io/crates/cargo-audit" rel="external">cargo-audit</a></b>
@@ -265,7 +265,7 @@ Installed Commands:
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/October 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/November 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
