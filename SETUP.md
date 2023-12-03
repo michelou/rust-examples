@@ -100,7 +100,7 @@ Current installation options:
 %USERPROFILE%\.cargo\bin\rustup.exe
 &nbsp;
 <b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a> --version</b>
-rustc 1.73.0 (cc66ad468 2023-10-03)
+rustc 1.74.0 (79e9716c9 2023-11-13)
 </pre>
 
 ## <span id="update">Installation update</span> [**&#x25B4;**](#top)
@@ -113,7 +113,7 @@ Command **`rustup update stable`** <sup id="anchor_02">[2](#footnote_02)</sup>  
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2023-10-05, rust version 1.73.0 (cc66ad468 2023-10-03)
+info: latest update on 2023-11-16, rust version 1.74.0 (79e9716c9 2023-11-13)
 [...]
 info: downloading component 'rustc'
  62.8 MiB /  62.8 MiB (100 %)   1.3 MiB/s in 50s ETA:  0s
@@ -124,7 +124,7 @@ info: installing component 'rustc'
  62.8 MiB /  62.8 MiB (100 %)  13.4 MiB/s in  4s ETA:  0s
 info: installing component 'rustfmt'
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.73.0 (cc66ad468 2023-10-03) (from rustc 1.72.1 (d5c2e9c34 2023-09-13))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.74.0 (79e9716c9 2023-11-13) (from rustc 1.73.0 (cc66ad468 2023-10-03))
 
 info: checking for self-updates
 </pre>
@@ -265,7 +265,7 @@ Installed Commands:
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/November 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/December 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

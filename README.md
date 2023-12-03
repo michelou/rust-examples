@@ -16,7 +16,7 @@
 This project depends on two external software for the **Microsoft Windows** platform:
 
 - [GCC Front-End for Rust 1.73](https://rust-gcc.github.io/) <sup id="anchor_01"><a href="#footnote_01">1</a></sup>
-- [Git 2.42][git_downloads] ([*release notes*][git_relnotes])
+- [Git 2.43][git_downloads] ([*release notes*][git_relnotes])
 - [Rust 1.73][rust_downloads] <sup id="anchor_02"><a href="#footnote_02">2</a></sup> ([*release notes*][rust_relnotes])
 
 <!--
@@ -122,7 +122,7 @@ We execute command [**`setenv.bat`**](setenv.bat) once to setup our development 
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
    cargo 1.73.0, rustc 1.73.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.6.0-stable</a>, rustup 1.26.0,
-   pelook v1.73, make 4.4.1, git 2.42.0.windows.1, diff 3.10, bash 5.2.15(1)-release
+   pelook v1.73, make 4.4.1, git 2.43.0.windows.1, diff 3.10, bash 5.2.15(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\cargo.exe
@@ -140,7 +140,7 @@ Command [**`setenv.bat`**](setenv.bat) with option **`-verbose`** displays addit
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
    cargo 1.73.0, rustc 1.73.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.6.0-stable</a>, rustup 1.26.0,
-   pelook v1.73, git 2.42.0.windows.1, diff 3.10, bash 5.2.15(1)-release
+   pelook v1.73, git 2.43.0.windows.1, diff 3.10, bash 5.2.15(1)-release
 Tool paths:
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/cargo/commands/">cargo.exe</a>
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a>
@@ -215,6 +215,7 @@ LLVM version: 17.0.2
 <dd>
 <table>
 <tr><th>Rustc Version</th><th>LLVM Version</th></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.74.0">1.74.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-2-released/73840" rel="external">17.0.2</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.73.0">1.73.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-2-released/73840" rel="external">17.0.2</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.72.0">1.72.0</a></td><td><a href="https://discourse.llvm.org/t/16-0-5-release/71097" rel="external">16.0.5</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.71.0">1.71.0</a></td><td><a href="https://discourse.llvm.org/t/16-0-5-release/71097" rel="external">16.0.5</a></td></tr>
@@ -240,7 +241,7 @@ In our case we downloaded the following installation files (see <a href="#proj_d
 <dd>
 <pre style="font-size:80%;">
 <a href="https://www.rust-lang.org/tools/install">rust-init.exe</a>                     <i>( 8 MB)</i>
-<a href="https://git-scm.com/download/win">PortableGit-2.42.0-64-bit.7z.exe</a>  <i>(46 MB)</i>
+<a href="https://git-scm.com/download/win">PortableGit-2.43.0-64-bit.7z.exe</a>  <i>(46 MB)</i>
 <a href="http://repo.msys2.org/distrib/x86_64/">msys2-x86_64-20190524.exe</a>         <i>(86 MB)</i>
 </pre>
 </dd>
@@ -266,7 +267,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [git_docs]: https://git-scm.com/docs/git
 [git_downloads]: https://git-scm.com/download/win
 [github_markdown]: https://github.github.com/gfm/
-[git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.42.0.txt
+[git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.43.0.txt
 [golang_examples]: https://github.com/michelou/golang-examples
 [graalvm_examples]: https://github.com/michelou/graalvm-examples
 [haskell_examples]: https://github.com/michelou/haskell-examples

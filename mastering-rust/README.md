@@ -11,8 +11,8 @@
 
 Code examples in directory `mastering-rust\` can be build/run with the following build tools in addition to [**`cargo.exe`**][cargo_cli], the standard tool <sup id="anchor_01">[1](#footnote_01)</sup> for [Rust] projects :
 
-| Build&nbsp;tool                    | Build&nbsp;file(s)                    |Parent&nbsp;file | Environment(s) |
-|-------------------------------|------------------------------------------|----|----|
+| Build&nbsp;tool               | Build&nbsp;file                     | Parent&nbsp;file | Environment(s) |
+|-------------------------------|-------------------------------------|----|----|
 | [**`cmd.exe`**][cmd_cli] | [`build.bat`](./Chapter01/build.bat)<br/>[`build.properties`](./Chapter01/build.properties) <sup><b>a)</b></sup> | &nbsp; | Windows only |
 | [**`cargo.exe`**][cargo_cli]      | [`Cargo.toml`](Chapter01/Cargo.toml) | &nbsp; | Any <sup><b>b)</b></sup> |
 | [**`make.exe`**][gmake_cli] | [`Makefile`](Chapter01/Makefile) | [`Makefile.inc`](./Makefile.inc) | Any |
@@ -202,7 +202,7 @@ Command <code><b>build.bat</b></code> with no subcommand displays the help messa
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/November 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/December 2023* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
