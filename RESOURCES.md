@@ -36,6 +36,10 @@
 
 ## <span id="blogs">Blogs</span> [**&#x25B4;**](#top)
 
+- [**Weekly Rust Trivia**](https://www.thorsten-hans.com/tags/weekly-rust-trivia) by Thorsten Hans :
+  - [How to use pattern matching][blog_hans_patmat], August 2023.
+  - [How to share state between threads][blog_hans_threads], July 2023.
+  - [How to write a function-like macro][blog_hans_macro], July 2023.
 - [Why Rust is the most admired language among developers][blog_verdi] by Sara Verdi, August 2023.
 - [Microsoft is busy rewriting core Windows code in Rust][blog_claburn] by Thomas Claburn, April 2023.
 - [Rust's Vector][blog_fraenkel_9] by Nicolas Fränkel, August 2021.
@@ -57,6 +61,7 @@
 - [What is Rust and why is it so popular?](https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/) by Jake Goulding, January 2020.
 - [Rust Compiler Internals : Mid-level Intermediate Representation (MIR)][blog_kanishkar] by Kanishkar J, December 2019.
 - [Using Rust in Windows](https://msrc-blog.microsoft.com/2019/11/07/using-rust-in-windows/), November 2019.
+- [Using C Libraries in Rust](https://medium.com/dwelo-r-d/using-c-libraries-in-rust-13961948c72a) by Jeff Hinter, August 2019.
 - [10 Key Learnings in Rust after 30,000 Lines of Code][blog_nahum] by Dotan Nahum, April 2019.
 - [Existential types in Rust][blog_vaktor] by Vaktor, July 2018.
 - [Getting started with Rust on the command line](https://asquera.de/blog/2018-01-20/getting-started-with-rust-on-the-command-line/), January 2018.
@@ -91,6 +96,7 @@
 ## <span id="news">News</span> [**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.74.1](https://blog.rust-lang.org/2023/12/07/Rust-1.74.1.html), December 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.74.1)*).
   - [Announcing Rust 1.73.0](https://blog.rust-lang.org/2023/10/05/Rust-1.73.0.html), October 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.73.0)*).
   - [Announcing Rust 1.72.1](https://blog.rust-lang.org/2023/09/19/Rust-1.72.1.html), September 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.72.1)*).
   - [Announcing Rust 1.72.0](https://blog.rust-lang.org/2023/08/24/Rust-1.72.0.html), August 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.72.0)*)
@@ -213,6 +219,9 @@ version = "12"
 [article_ge]: https://developers.redhat.com/articles/2022/09/05/how-create-c-binding-rust-library
 [article_explodes]: https://fasterthanli.me/articles/when-rustc-explodes
 [article_half_hour]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
+[blog_hans_macro]: https://www.thorsten-hans.com/weekly-rust-trivia-function-like-macros/
+[blog_hans_patmat]: https://www.thorsten-hans.com/weekly-rust-trivia-pattern-matching/
+[blog_hans_threads]: https://www.thorsten-hans.com/weekly-rust-trivia-share-state-between-threads/
 [article_mistakes]: https://fasterthanli.me/articles/some-mistakes-rust-doesnt-catch
 [article_novak]: https://www.wwt.com/article/intro-to-rust-the-modern-day-safe-low-level-programming-language
 [article_oxide]: https://arxiv.org/abs/1903.00982
