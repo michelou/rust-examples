@@ -9,15 +9,15 @@
   </tr>
 </table>
 
-[Ada][ada_examples], [Akka][akka_examples], [C++][cpp_examples], [Dart][dart_examples], [Deno][deno_examples], [Docker][docker_examples], [Flix][flix_examples], [Golang][golang_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kafka][kafka_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Python][python_examples], [Scala 3][scala3_examples], [Spark][spark_examples], [Spring][spring_examples], [TruffleSqueak][trufflesqueak_examples] and [WiX Toolset][wix_examples] are other trending topics we are continuously monitoring.
+[Ada][ada_examples], [Akka][akka_examples], [C++][cpp_examples], [Dart][dart_examples], [Deno][deno_examples], [Docker][docker_examples], [Flix][flix_examples], [Golang][golang_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kafka][kafka_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Modula-2][m2_examples], [Node.js][nodejs_examples], [Scala 3][scala3_examples], [Spark][spark_examples], [Spring][spring_examples], [TruffleSqueak][trufflesqueak_examples] and [WiX Toolset][wix_examples] are other trending topics we are continuously monitoring.
 
 ## <span id="proj_deps">Project dependencies</span>
 
 This project depends on two external software for the **Microsoft Windows** platform:
 
-- [GCC Front-End for Rust 1.73](https://rust-gcc.github.io/) <sup id="anchor_01"><a href="#footnote_01">1</a></sup>
+- [GCC Front-End for Rust 1.75](https://rust-gcc.github.io/) <sup id="anchor_01"><a href="#footnote_01">1</a></sup>
 - [Git 2.43][git_downloads] ([*release notes*][git_relnotes])
-- [Rust 1.73][rust_downloads] <sup id="anchor_02"><a href="#footnote_02">2</a></sup> ([*release notes*][rust_relnotes])
+- [Rust 1.75][rust_downloads] <sup id="anchor_02"><a href="#footnote_02">2</a></sup> ([*release notes*][rust_relnotes])
 
 <!--
 See changelogs on https://releases.rs/
@@ -33,12 +33,12 @@ Rust 1.73.0 -> 2023-10-06
 
 Optionally one may also install the following software:
 
-- [Visual Studio Code 1.83][vscode_downloads] ([*release notes*][vscode_relnotes])
+- [Visual Studio Code 1.85][vscode_downloads] ([*release notes*][vscode_relnotes])
 
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [**`/opt/`**][linux_opt] directory on Unix).
 
-For instance our development environment looks as follows (*November 2023*) <sup id="anchor_03">[3](#footnote_03)</sup>:
+For instance our development environment looks as follows (*January 2024*) <sup id="anchor_03">[3](#footnote_03)</sup>:
 
 <pre style="font-size:80%;">
 C:\opt\Git\             <i>(367 MB)</i>
@@ -116,7 +116,7 @@ We distinguish different sets of batch commands:
 
 ### **`setenv.bat`**
 
-We execute command [**`setenv.bat`**](setenv.bat) once to setup our development environment:
+We execute command [**`setenv.bat`**](setenv.bat) once to setup our development environment; it makes external tools such as [**`cargo.exe`**][cargo_cli] and [**`git.exe`**][git_cli] directly available from the command prompt.
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a></b>
@@ -124,11 +124,10 @@ Tool versions:
    cargo 1.73.0, rustc 1.73.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.6.0-stable</a>, rustup 1.26.0,
    pelook v1.73, make 4.4.1, git 2.43.0.windows.1, diff 3.10, bash 5.2.15(1)-release
 &nbsp;
-<b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo rustc rustup pelook</b>
+<b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo git</b>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\cargo.exe
-<a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\rustc.exe
-<a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\rustup.exe
-R:\bin\<a href="http://bytepointer.com/tools/index.htm#pelook">pelook.exe</a>
+C:\opt\Git\bin\git.exe
+C:\opt\Git\mingw64\bin\git.exe
 </pre>
 
 Command [**`setenv.bat`**](setenv.bat) with option **`-verbose`** displays additional information:
@@ -215,6 +214,7 @@ LLVM version: 17.0.2
 <dd>
 <table>
 <tr><th>Rustc Version</th><th>LLVM Version</th></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.75.0">1.75.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-2-released/73840" rel="external">17.0.2</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.74.0">1.74.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-2-released/73840" rel="external">17.0.2</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.73.0">1.73.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-2-released/73840" rel="external">17.0.2</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.72.0">1.72.0</a></td><td><a href="https://discourse.llvm.org/t/16-0-5-release/71097" rel="external">16.0.5</a></td></tr>
@@ -242,7 +242,7 @@ In our case we downloaded the following installation files (see <a href="#proj_d
 <pre style="font-size:80%;">
 <a href="https://www.rust-lang.org/tools/install">rust-init.exe</a>                     <i>( 8 MB)</i>
 <a href="https://git-scm.com/download/win">PortableGit-2.43.0-64-bit.7z.exe</a>  <i>(46 MB)</i>
-<a href="http://repo.msys2.org/distrib/x86_64/">msys2-x86_64-20190524.exe</a>         <i>(86 MB)</i>
+<a href="http://repo.msys2.org/distrib/x86_64/">msys2-x86_64-20240113.exe</a>         <i>(86 MB)</i>
 </pre>
 </dd>
 <dd>
@@ -251,7 +251,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/November 2023* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/January 2024* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -264,6 +264,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [deno_examples]: https://github.com/michelou/deno-examples
 [docker_examples]: https://github.com/michelou/docker-examples
 [flix_examples]: https://github.com/michelou/flix-examples
+[git_cli]: https://git-scm.com/docs/git
 [git_docs]: https://git-scm.com/docs/git
 [git_downloads]: https://git-scm.com/download/win
 [github_markdown]: https://github.github.com/gfm/
@@ -275,6 +276,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [kotlin_examples]: https://github.com/michelou/kotlin-examples
 [linux_opt]: https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/opt.html
 [llvm_examples]: https://github.com/michelou/llvm-examples
+[m2_examples]: https://github.com/michelou/m2-examples
 [man1_awk]: https://www.linux.org/docs/man1/awk.html
 [man1_diff]: https://www.linux.org/docs/man1/diff.html
 [man1_file]: https://www.linux.org/docs/man1/file.html
@@ -284,6 +286,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [man1_rmdir]: https://www.linux.org/docs/man1/rmdir.html
 [man1_sed]: https://www.linux.org/docs/man1/sed.html
 [man1_wc]: https://www.linux.org/docs/man1/wc.html
+[nodejs_examples]: https://github.com/michelou/nodejs-examples
 [python_examples]: https://github.com/michelou/python-examples
 [rust_downloads]: https://forge.rust-lang.org/infra/other-installation-methods.html#standalone-installers
 [rust_lang]: https://www.rust-lang.org/
