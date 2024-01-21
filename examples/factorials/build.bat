@@ -199,7 +199,7 @@ echo Usage: %__BEG_O%%_BASENAME% { ^<option^> ^| ^<subcommand^> }%__END%
 echo.
 echo   %__BEG_P%Options:%__END%
 echo     %__BEG_O%-debug%__END%                print commands executed by this script
-echo     %__BEG_O%-edition:^<2015^|2018^>%__END%  set Rust edition ^(default: %_BEG_O%2018%__END%^)
+echo     %__BEG_O%-edition:^<edition^>%__END%  set Rust edition ^(default: %_BEG_O%2018%__END%^)
 echo     %__BEG_O%-target:^<gcc^|msvc^>%__END%    set plaform target ^(default: %__BEG_O%msvc%__END%/%__BEG_O%cl%__END%^)
 echo     %__BEG_O%-timer%__END%                print total execution time
 echo     %__BEG_O%-verbose%__END%              print progress messages
@@ -212,6 +212,9 @@ echo     %__BEG_O%dump%__END%                  dump PE/COFF infos for generated 
 echo     %__BEG_O%help%__END%                  print this help message
 echo     %__BEG_O%run%__END%                   run generated executable
 echo     %__BEG_O%test%__END%                  test generated executable
+echo.
+echo   %__BEG_P%Values:%__END%
+echo     %__BEG_O%^<edition^>%__END% : 2015, 2018, 2021
 goto :eof
 
 :clean
@@ -240,7 +243,7 @@ if not exist "%_TARGET_DIR%" mkdir "%_TARGET_DIR%"
 
 set __SOURCE_FILES=
 set __N=0
-for /f "delims=" %%f in ('dir /b /s "%_SOURCE_DIR%\*.rs" 2^>NUL') do (
+for /f "delims=" %%f in ('dir /b /s "%_SOURCE_DIR%\main\rust\*.rs" 2^>NUL') do (
     set __SOURCE_FILES=!__SOURCE_FILES! "%%f"
     set /a __N+=1
 )

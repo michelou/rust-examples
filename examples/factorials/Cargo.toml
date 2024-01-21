@@ -1,0 +1,13 @@
+[package]
+name = "factorials"
+version = "0.1.0"
+authors = ["https://oopscenities.net/"]
+edition = "2021"
+publish = false
+
+# dependencies:
+[dependencies]
+
+[[bin]]
+name = "main"
+path = "src/main/rust/main.rs"

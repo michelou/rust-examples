@@ -183,7 +183,7 @@ Packages (32) mingw-w64-clang-x86_64-brotli-1.1.0-1
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[...]
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;mingw-w64-clang-x86_64-zlib-1.3-1
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;mingw-w64-clang-x86_64-zstd-1.5.5-1
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;mingw-w64-clang-x86_64-rust-1.73.0-1
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;mingw-w64-clang-x86_64-rust-1.75.0-1
 &nbsp;
 Total Download Size:    255.01 MiB
 Total Installed Size:  1655.04 MiB
@@ -195,7 +195,7 @@ Total Installed Size:  1655.04 MiB
 c:\opt\msys64\clang64\bin\rustc.exe
 &nbsp;
 <b>&gt; c:\opt\msys64\clang64\bin\\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html" rel="external">rustc.exe</a> --version</b>
-rustc 1.73.0 (cc66ad468 2023-10-03) (Rev1, Built by MSYS2 project)
+rustc 1.75.0 (82e1608df 2023-12-21) (Rev1, Built by MSYS2 project)
 </pre>
 </dd></dl>
 
@@ -207,14 +207,14 @@ rustc 1.73.0 (cc66ad468 2023-10-03) (Rev1, Built by MSYS2 project)
 <dd>
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc</a> --version --verbose | <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr">findstr</a> /b "rustc LLVM"</b>
-rustc 1.73.0 (cc66ad468 2023-10-03)
-LLVM version: 17.0.2
+rustc 1.75.0 (82e1608df 2023-12-21)
+LLVM version: 17.0.6
 </pre>
 </dd>
 <dd>
 <table>
 <tr><th>Rustc Version</th><th>LLVM Version</th></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.75.0">1.75.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-2-released/73840" rel="external">17.0.2</a></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.75.0">1.75.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-6-released/73840" rel="external">17.0.6</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.74.0">1.74.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-2-released/73840" rel="external">17.0.2</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.73.0">1.73.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-2-released/73840" rel="external">17.0.2</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.72.0">1.72.0</a></td><td><a href="https://discourse.llvm.org/t/16-0-5-release/71097" rel="external">16.0.5</a></td></tr>

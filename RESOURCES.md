@@ -42,6 +42,7 @@
   - [How to write a function-like macro][blog_hans_macro], July 2023.
 - [Why Rust is the most admired language among developers][blog_verdi] by Sara Verdi, August 2023.
 - [Microsoft is busy rewriting core Windows code in Rust][blog_claburn] by Thomas Claburn, April 2023.
+- [C++ vs. Rust: Factorial](https://oopscenities.net/2023/02/22/factorial-in-rust-vs-factorial-in-c/) by [Oopscene](https://twitter.com/oopscene), February 2023.
 - [Rust's Vector][blog_fraenkel_9] by Nicolas Fränkel, August 2021.
 - [diceroller, a sample Rust project][blog_fraenkel_8] by Nicolas Fränkel, July 2021.
 - [Rust and the JVM][blog_fraenkel_7] by Nicolas Fränkel, July 2021.
