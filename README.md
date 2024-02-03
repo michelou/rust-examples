@@ -33,12 +33,12 @@ Rust 1.73.0 -> 2023-10-06
 
 Optionally one may also install the following software:
 
-- [Visual Studio Code 1.85][vscode_downloads] ([*release notes*][vscode_relnotes])
+- [Visual Studio Code 1.86][vscode_downloads] ([*release notes*][vscode_relnotes])
 
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [**`/opt/`**][linux_opt] directory on Unix).
 
-For instance our development environment looks as follows (*January 2024*) <sup id="anchor_03">[3](#footnote_03)</sup>:
+For instance our development environment looks as follows (*February 2024*) <sup id="anchor_03">[3](#footnote_03)</sup>:
 
 <pre style="font-size:80%;">
 C:\opt\Git\             <i>(367 MB)</i>
@@ -116,18 +116,21 @@ We distinguish different sets of batch commands:
 
 ### **`setenv.bat`**
 
-We execute command [**`setenv.bat`**](setenv.bat) once to setup our development environment; it makes external tools such as [**`cargo.exe`**][cargo_cli] and [**`git.exe`**][git_cli] directly available from the command prompt.
+We execute command [**`setenv.bat`**](setenv.bat) once to setup our development environment; it makes external tools such as [**`cargo.exe`**][cargo_cli], [**`git.exe`**][git_cli] and [**`sh.exe`**][sh_cli] directly available from the command prompt.
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
-   cargo 1.73.0, rustc 1.73.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.6.0-stable</a>, rustup 1.26.0,
-   pelook v1.73, make 4.4.1, git 2.43.0.windows.1, diff 3.10, bash 5.2.15(1)-release
+   cargo 1.75.0, rustc 1.75.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.7.-stable</a>, rustup 1.26.0,
+   pelook v1.73, make 4.4.1, git 2.43.0.windows.1, diff 3.10, bash 5.2.21(1)-release
 &nbsp;
-<b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo git</b>
+<b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo git sh</b>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\cargo.exe
 C:\opt\Git\bin\git.exe
 C:\opt\Git\mingw64\bin\git.exe
+C:\opt\Git\bin\sh.exe
+C:\opt\Git\usr\bin\sh.exe
+C:\opt\msys64\usr\bin\sh.exe
 </pre>
 
 Command [**`setenv.bat`**](setenv.bat) with option **`-verbose`** displays additional information:
@@ -178,7 +181,7 @@ Path associations:
  msys is up to date
 resolving dependencies...
 looking for conflicting packages...
-
+&nbsp;
 Packages (32) mingw-w64-clang-x86_64-brotli-1.1.0-1
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[...]
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;mingw-w64-clang-x86_64-zlib-1.3-1
@@ -251,7 +254,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/January 2024* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/February 2024* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -294,6 +297,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [rustc_cli]: https://doc.rust-lang.org/rustc/command-line-arguments.html
 [rustup_cli]: https://github.com/rust-lang/rustup/blob/master/README.md
 [scala3_examples]: https://github.com/michelou/dotty-examples
+[sh_cli]: https://man7.org/linux/man-pages/man1/sh.1p.html
 [spark_examples]: https://github.com/michelou/spark-examples
 [spring_examples]: https://github.com/michelou/spring-examples
 [trufflesqueak_examples]: https://github.com/michelou/trufflesqueak-examples
