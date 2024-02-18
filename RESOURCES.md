@@ -29,7 +29,9 @@
 - [Intro to Rust: The Modern-Day, Safe Low-Level Programming Language][article_novak] by Marcus Novak, December 2020.
 - [The rustwasmc tool](https://www.secondstate.io/articles/rustwasmc/) by Second State, 2020.<br/>(GitHub project: [`second-state/rustwasmc`](https://github.com/second-state/rustwasmc))
 - [Introduction to Rust][article_dreimanis] by Gints Dreimanis, August 2020.
-- [Why I'm enjoying learning Rust as a Java programmer][article_bursell] by Mike Bursell, May 2020.
+- [**Opensource** community](https://opensource.com/) :
+  - [Why I'm enjoying learning Rust as a Java programmer][article_bursell] by Mike Bursell, May 2020.
+  - [Getting started with the Rust package manager, Cargo](https://opensource.com/article/20/3/rust-cargo) by Gaurav Kamathe, March 2020.
 - [Getting started with Cargo][article_cargo] by Gaurav Kamathe, March 2020.
 - [Oxide: The Essence of Rust][article_oxide] by Aaron Weiss &amp; al., March 2019.
 - [Making a *-sys crate](https://kornel.ski/rust-sys-crate) by Kornel.
@@ -60,6 +62,11 @@
 - [C++ Is Faster and Safer Than Rust: Benchmarked by Yandex][blog_roman] by Roman, May 2020.
 - &#128077; [Why Discord is switching from Go to Rust][blog_howarth] by Jesse Howarth, February 2020.
 - [What is Rust and why is it so popular?](https://stackoverflow.blog/2020/01/20/what-is-rust-and-why-is-it-so-popular/) by Jake Goulding, January 2020.
+- [varkor's blog](https://varkor.github.io/blog/) :
+  - [Idiomatic monads in Rust](https://varkor.github.io/blog/2019/03/28/idiomatic-monads-in-rust.html), March 2019.
+  - [Monadic do notation in Rust: Part I](https://varkor.github.io/blog/2018/11/10/monadic-do-notation-in-rust-part-i.html), November 2018.
+  - [Feasible functors in Rust](https://varkor.github.io/blog/2018/08/28/feasible-functors-in-rust.html), August 2018.
+  - [Existential types in Rust](https://varkor.github.io/blog/2018/07/03/existential-types-in-rust.html), July 2018.
 - [Rust Compiler Internals : Mid-level Intermediate Representation (MIR)][blog_kanishkar] by Kanishkar J, December 2019.
 - [Using Rust in Windows](https://msrc-blog.microsoft.com/2019/11/07/using-rust-in-windows/), November 2019.
 - [Using C Libraries in Rust](https://medium.com/dwelo-r-d/using-c-libraries-in-rust-13961948c72a) by Jeff Hinter, August 2019.
