@@ -96,8 +96,8 @@ set _STRONG_BG_BLUE=[104m
 
 @rem we define _RESET in last position to avoid crazy console output with type command
 set _BOLD=[1m
-set _INVERSE=[7m
 set _UNDERSCORE=[4m
+set _INVERSE=[7m
 set _RESET=[0m
 goto :eof
 
@@ -106,7 +106,7 @@ goto :eof
 :args
 set _COMMANDS=
 set _EDITION=2018
-set _TARGET=msvc
+set _TARGET_ABI=msvc
 set _TIMER=0
 set _VERBOSE=0
 set __N=0
@@ -123,10 +123,10 @@ if "%__ARG:~0,1%"=="-" (
     ) else if "%__ARG%"=="-edition:2018" ( set _EDITION=2018
     ) else if "%__ARG%"=="-edition:2021" ( set _EDITION=2021
     ) else if "%__ARG%"=="-help" ( set _COMMANDS=help
-    ) else if "%__ARG%"=="-target:cl" ( set _TARGET=msvc
-    ) else if "%__ARG%"=="-target:gcc" ( set _TARGET=gnu
-    ) else if "%__ARG%"=="-target:gnu" ( set _TARGET=gnu
-    ) else if "%__ARG%"=="-target:msvc" ( set _TARGET=msvc
+    ) else if "%__ARG%"=="-target:cl" ( set _TARGET_ABI=msvc
+    ) else if "%__ARG%"=="-target:gcc" ( set _TARGET_ABI=gnu
+    ) else if "%__ARG%"=="-target:gnu" ( set _TARGET_ABI=gnu
+    ) else if "%__ARG%"=="-target:msvc" ( set _TARGET_ABI=msvc
     ) else if "%__ARG%"=="-timer" ( set _TIMER=1
     ) else if "%__ARG%"=="-verbose" ( set _VERBOSE=1
     ) else (
@@ -164,18 +164,15 @@ set _CRATE_NAME=main
 @rem sys    = none, linux, windows, etc.
 @rem abi    = gnu, android, elf, msvc, etc.
 @rem Command: rustc --print target-list | findstr windows
-set __TARGET_ARCH=x86_64
-set __TARGET_VENDOR=pc
-set __TARGET_SYS=windows
-set _TARGET_TRIPLE=%__TARGET_ARCH%-%__TARGET_VENDOR%-%__TARGET_SYS%-%_TARGET%
+set _TARGET_TRIPLE=x86_64-pc-windows-%_TARGET_ABI%
 
-if %_TARGET%==gnu if not defined MSYS_HOME (
+if %_TARGET_ABI%==gnu if not defined MSYS_HOME (
     echo %_ERROR_LABEL% MSYS installation not found 1>&2
     set _EXITCODE=1
     goto :eof
 )
 if %_DEBUG%==1 (
-    echo %_DEBUG_LABEL% Options    : _EDITION=%_EDITION% _TARGET=%_TARGET% _TIMER=%_TIMER% _VERBOSE=%_VERBOSE% 1>&2
+    echo %_DEBUG_LABEL% Options    : _EDITION=%_EDITION% _TARGET_ABI=%_TARGET_ABI% _TIMER=%_TIMER% _VERBOSE=%_VERBOSE% 1>&2
     echo %_DEBUG_LABEL% Subcommands: %_COMMANDS% 1>&2
     echo %_DEBUG_LABEL% Variables  : "CARGO_HOME=%CARGO_HOME%" 1>&2
     echo %_DEBUG_LABEL% Variables  : "GIT_HOME=%GIT_HOME%" 1>&2
@@ -256,8 +253,8 @@ if %__N%==0 (
 ) else ( set __N_FILES=%__N% Rust source files
 )
 set __PATH=%PATH%
-@rem We add gcc.exe to PATH if _TARGET=gnu
-if %_TARGET%==gnu set "PATH=%PATH%;%MSYS_HOME%\mingw64\bin"
+@rem We add gcc.exe to PATH if _TARGET_ABI=gnu
+if %_TARGET_ABI%==gnu set "PATH=%PATH%;%MSYS_HOME%\mingw64\bin"
 
 @rem Lint levels: -A (allow), -W (warning), -D (deny), -F (forbid)
 @rem See https://doc.rust-lang.org/rustc/lints/levels.html
@@ -281,12 +278,12 @@ if %_DEBUG%==1 ( echo %_DEBUG_LABEL% "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FIL
 )
 call "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FILES%
 if not %ERRORLEVEL%==0 (
-    if %_TARGET%==gnu set "PATH=%__PATH%"
+    if %_TARGET_ABI%==gnu set "PATH=%__PATH%"
     echo %_ERROR_LABEL% Failed to compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
     set _EXITCODE=1
     goto :eof
 )
-if %_TARGET%==gnu set "PATH=%__PATH%"
+if %_TARGET_ABI%==gnu set "PATH=%__PATH%"
 goto :eof
 
 @rem Generated index page is %_TARGET_DOCS_DIR%\%_CRATE_NAME%\index.html
