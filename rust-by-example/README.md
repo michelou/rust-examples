@@ -11,6 +11,18 @@
 
 ## <span id="01_Display">`01_Display` Example</span>
 
+Example `01_Display` is organized as follows :
+
+<pre style="font-size:80%;">
+<b>&gt; <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/tree" rel="external">tree</a> /a /f . | <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/findstr" rel="external">findstr</a> /v /b [A-Z]</b>
+|   <a href="./01_Display/build.bat">build.bat</a>
+|   <a href="./01_Display/Cargo.toml">Cargo.toml</a>
+|   <a href="./01_Display/rustfmt.toml">rustfmt.toml</a>
+|
+\---src
+        <a href="./01_Display/src/main.rs">main.rs</a>
+</pre>
+
 Command `cargo run` executes the Rust program [`main.rs`](./01_Display/src/main.rs) :
 
 <pre style="font-size:80%;">
@@ -85,7 +97,7 @@ mutable: true
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/March 2024* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/April 2024* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

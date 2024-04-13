@@ -9,15 +9,15 @@
   </tr>
 </table>
 
-[Ada][ada_examples], [Akka][akka_examples], [C++][cpp_examples], [Dart][dart_examples], [Deno][deno_examples], [Docker][docker_examples], [Flix][flix_examples], [Golang][golang_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kafka][kafka_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Modula-2][m2_examples], [Node.js][nodejs_examples], [Scala 3][scala3_examples], [Spark][spark_examples], [Spring][spring_examples], [TruffleSqueak][trufflesqueak_examples] and [WiX Toolset][wix_examples] are other trending topics we are continuously monitoring.
+[Ada][ada_examples], [Akka][akka_examples], [C++][cpp_examples], [COBOL][cobol_examples],  [Dart][dart_examples], [Deno][deno_examples], [Docker][docker_examples], [Flix][flix_examples], [Golang][golang_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kafka][kafka_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Modula-2][m2_examples], [Node.js][nodejs_examples], [Scala 3][scala3_examples], [Spark][spark_examples], [Spring][spring_examples], [TruffleSqueak][trufflesqueak_examples] and [WiX Toolset][wix_examples] are other trending topics we are continuously monitoring.
 
 ## <span id="proj_deps">Project dependencies</span>
 
 This project depends on two external software for the **Microsoft Windows** platform:
 
 - [GCC Front-End for Rust 1.75](https://rust-gcc.github.io/) <sup id="anchor_01"><a href="#footnote_01">1</a></sup>
-- [Git 2.43][git_downloads] ([*release notes*][git_relnotes])
-- [Rust 1.76][rust_downloads] <sup id="anchor_02"><a href="#footnote_02">2</a></sup> ([*release notes*][rust_relnotes])
+- [Git 2.44][git_downloads] ([*release notes*][git_relnotes])
+- [Rust 1.77][rust_downloads] <sup id="anchor_02"><a href="#footnote_02">2</a></sup> ([*release notes*][rust_relnotes])
 
 <!--
 See changelogs on https://releases.rs/
@@ -29,16 +29,18 @@ Rust 1.70.0 -> 2023-03-28
 Rust 1.71.0 -> 2023-07-12
 Rust 1.73.0 -> 2023-08-24
 Rust 1.73.0 -> 2023-10-06
+Rust 1.76.0 -> 2024-02-04
+Rust 1.77.1 -> 2024-03-27
 -->
 
 Optionally one may also install the following software:
 
-- [Visual Studio Code 1.86][vscode_downloads] ([*release notes*][vscode_relnotes])
+- [Visual Studio Code 1.88][vscode_downloads] ([*release notes*][vscode_relnotes])
 
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [**`/opt/`**][linux_opt] directory on Unix).
 
-For instance our development environment looks as follows (*March 2024*) <sup id="anchor_03">[3](#footnote_03)</sup>:
+For instance our development environment looks as follows (*April 2024*) <sup id="anchor_03">[3](#footnote_03)</sup>:
 
 <pre style="font-size:80%;">
 C:\opt\Git\             <i>(367 MB)</i>
@@ -217,10 +219,8 @@ LLVM version: 17.0.6
 <dd>
 <table>
 <tr><th>Rustc Version</th><th>LLVM Version</th></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.76.0">1.76.0</a></td><td></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.75.0">1.75.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-6-released/73840" rel="external">17.0.6</a></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.74.0">1.74.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-2-released/73840" rel="external">17.0.2</a></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.73.0">1.73.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-2-released/73840" rel="external">17.0.2</a></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.75.0">1.75.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.77.1">1.77.1</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-6-released/73840" rel="external">17.0.6</a></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.73.0">1.73.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.74.0">1.74.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-2-released/73840" rel="external">17.0.2</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.72.0">1.72.0</a></td><td><a href="https://discourse.llvm.org/t/16-0-5-release/71097" rel="external">16.0.5</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.71.0">1.71.0</a></td><td><a href="https://discourse.llvm.org/t/16-0-5-release/71097" rel="external">16.0.5</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.70.0">1.70.0</a></td><td><a href="https://releases.llvm.org/16.0.0/docs/ReleaseNotes.html" rel="external">16.0.0</a></td></tr>
@@ -255,7 +255,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/March 2024* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/April 2024* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -263,6 +263,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [ada_examples]: https://github.com/michelou/ada-examples
 [akka_examples]: https://github.com/michelou/akka-examples
 [cargo_cli]: https://doc.rust-lang.org/cargo/commands/cargo.html
+[cobol_examples]: https://github.com/michelou/cobol-examples
 [cpp_examples]: https://github.com/michelou/cpp-examples
 [dart_examples]: https://github.com/michelou/dart-examples
 [deno_examples]: https://github.com/michelou/deno-examples

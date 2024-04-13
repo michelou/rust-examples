@@ -10,7 +10,6 @@
 
 ## <span id="articles">Articles</span>
 
-- [Introducing Rust calls to C library functions](https://opensource.com/article/22/11/rust-calls-c-library-functions) by Marty Kalin, November 2022.
 - [**fasterthanli**](https://fasterthanli.me/articles) articles :
   - [When rustc explodes][article_explodes], July 2022.
   - [Some mistakes Rust doesn't catch][article_mistakes], February 2022.
@@ -29,7 +28,12 @@
 - [Intro to Rust: The Modern-Day, Safe Low-Level Programming Language][article_novak] by Marcus Novak, December 2020.
 - [The rustwasmc tool](https://www.secondstate.io/articles/rustwasmc/) by Second State, 2020.<br/>(GitHub project: [`second-state/rustwasmc`](https://github.com/second-state/rustwasmc))
 - [Introduction to Rust][article_dreimanis] by Gints Dreimanis, August 2020.
-- [**Opensource** community](https://opensource.com/) :
+- [**opensource.com**](https://opensource.com/) articles :
+  - [How to read and write files in Rust](https://opensource.com/article/23/1/read-write-files-rust) by Stephan Avenwedde, January 2023.
+  - [Introducing Rust calls to C library functions](https://opensource.com/article/22/11/rust-calls-c-library-functions) by Marty Kalin, November 2022.
+  - [Asynchronous programming in Rust](https://opensource.com/article/22/10/asynchronous-programming-rust) by Stephan Avenwedde, October 2022.
+  - [Manage your Rust toolchain using rustup](https://opensource.com/article/22/6/rust-toolchain-rustup) by Gaurav Kamathe, June 2022.
+
   - [Why I'm enjoying learning Rust as a Java programmer][article_bursell] by Mike Bursell, May 2020.
   - [Getting started with the Rust package manager, Cargo](https://opensource.com/article/20/3/rust-cargo) by Gaurav Kamathe, March 2020.
 - [Getting started with Cargo][article_cargo] by Gaurav Kamathe, March 2020.
@@ -78,6 +82,7 @@
 
 ## <span id="books">Books</span> [**&#x25B4;**](#top)
 
+- [The Rust Performance Book](https://nnethercote.github.io/perf-book/title-page.html) (online) by Nicholas Nethercote and others, November 2022.
 <!-- ISBN 13 (since 2007)
   Registration group: 93 = India
   The last number is the check number (X = 10).
@@ -104,6 +109,8 @@
 ## <span id="news">News</span> [**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.77.2](https://blog.rust-lang.org/2024/04/09/Rust-1.77.2.html), April 2024 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.77.2)*).
+  - [Announcing Rust 1.77.0](https://blog.rust-lang.org/2024/03/21/Rust-1.77.0.html), March 2024 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.77.0)*).
   - [Announcing Rust 1.74.1](https://blog.rust-lang.org/2023/12/07/Rust-1.74.1.html), December 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.74.1)*).
   - [Announcing Rust 1.73.0](https://blog.rust-lang.org/2023/10/05/Rust-1.73.0.html), October 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.73.0)*).
   - [Announcing Rust 1.72.1](https://blog.rust-lang.org/2023/09/19/Rust-1.72.1.html), September 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.72.1)*).
@@ -212,7 +219,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/March 2024* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/April 2024* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

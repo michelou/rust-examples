@@ -6,6 +6,7 @@ $(error Variable MAVEN_HOME is not set)
 endif
 
 ifeq ($(OS),Windows_NT)
+CARGO      = $(subst \,/,$(CARGO_HOME))/bin/cargo.exe
 MVN        = $(subst \,/,$(MAVEN_HOME))/bin/mvn.cmd
 RUSTC      = $(subst \,/,$(CARGO_HOME))/bin/rustc.exe
 RUSTDOC    = $(subst \,/,$(CARGO_HOME))/bin/rustdoc.exe
@@ -20,6 +21,7 @@ RM         = /usr/bin/rm.exe
 TOUCH      = /usr/bin/touch.exe
 WGET       = /usr/bin/wget
 else
+CARGO      = $(CARGO_HOME)/bin/cargo
 MVN        = $(MAVEN_HOME)/bin/mvn
 RUSTC      = $(CARGO_HOME)/bin/rustc
 RUSTDOC    = $(CARGO_HOME)/bin/rustdoc
