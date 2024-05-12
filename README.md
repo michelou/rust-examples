@@ -9,7 +9,7 @@
   </tr>
 </table>
 
-[Ada][ada_examples], [Akka][akka_examples], [C++][cpp_examples], [COBOL][cobol_examples],  [Dart][dart_examples], [Deno][deno_examples], [Docker][docker_examples], [Flix][flix_examples], [Golang][golang_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kafka][kafka_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Modula-2][m2_examples], [Node.js][nodejs_examples], [Scala 3][scala3_examples], [Spark][spark_examples], [Spring][spring_examples], [TruffleSqueak][trufflesqueak_examples] and [WiX Toolset][wix_examples] are other trending topics we are continuously monitoring.
+[Ada][ada_examples], [Akka][akka_examples], [C++][cpp_examples], [COBOL][cobol_examples],  [Dart][dart_examples], [Deno][deno_examples], [Docker][docker_examples], [Flix][flix_examples], [Golang][golang_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kafka][kafka_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Modula-2][m2_examples], [Node.js][nodejs_examples], [Scala 3][scala3_examples], [Spark][spark_examples], [Spring][spring_examples], [TruffleSqueak][trufflesqueak_examples] and [WiX Toolset][wix_examples] are other topics we are continuously monitoring.
 
 ## <span id="proj_deps">Project dependencies</span>
 
@@ -35,7 +35,8 @@ Rust 1.77.1 -> 2024-03-27
 
 Optionally one may also install the following software:
 
-- [Visual Studio Code 1.88][vscode_downloads] ([*release notes*][vscode_relnotes])
+- [ConEmu][conemu_downloads] ([*release notes*][conemu_relnotes])
+- [Visual Studio Code 1.89][vscode_downloads] ([*release notes*][vscode_relnotes])
 
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [**`/opt/`**][linux_opt] directory on Unix).
@@ -43,6 +44,7 @@ Optionally one may also install the following software:
 For instance our development environment looks as follows (*May 2024*) <sup id="anchor_03">[3](#footnote_03)</sup>:
 
 <pre style="font-size:80%;">
+C:\opt\ConEmu\          <i>( 26 MB)</i>
 C:\opt\Git\             <i>(367 MB)</i>
 C:\opt\msys64\          <i>(3.4 GB)</i>
 C:\opt\VSCode\          <i>(341 MB)</i>
@@ -124,7 +126,8 @@ We execute command [**`setenv.bat`**](setenv.bat) once to setup our development 
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
    cargo 1.75.0, rustc 1.75.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.7.-stable</a>, rustup 1.26.0,
-   pelook v1.73, make 4.4.1, git 2.43.0.windows.1, diff 3.10, bash 5.2.21(1)-release
+   pelook v1.73, make 4.4.1,
+   git 2.45.0, diff 3.10, bash 5.2.26(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo git sh</b>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\cargo.exe
@@ -144,7 +147,8 @@ Command [**`setenv.bat`**](setenv.bat) with option **`-verbose`** displays addit
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
    cargo 1.73.0, rustc 1.73.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.6.0-stable</a>, rustup 1.26.0,
-   pelook v1.73, git 2.43.0.windows.1, diff 3.10, bash 5.2.15(1)-release
+   pelook v1.73, make 4.4.1,
+   git 2.45.0, diff 3.10, bash 5.2.26(1)-release
 Tool paths:
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/cargo/commands/">cargo.exe</a>
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a>
@@ -245,7 +249,7 @@ In our case we downloaded the following installation files (see <a href="#proj_d
 <dd>
 <pre style="font-size:80%;">
 <a href="https://www.rust-lang.org/tools/install">rust-init.exe</a>                     <i>( 8 MB)</i>
-<a href="https://git-scm.com/download/win">PortableGit-2.43.0-64-bit.7z.exe</a>  <i>(46 MB)</i>
+<a href="https://git-scm.com/download/win">PortableGit-2.45.0-64-bit.7z.exe</a>  <i>(46 MB)</i>
 <a href="http://repo.msys2.org/distrib/x86_64/">msys2-x86_64-20240113.exe</a>         <i>(86 MB)</i>
 </pre>
 </dd>
@@ -264,6 +268,8 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [akka_examples]: https://github.com/michelou/akka-examples
 [cargo_cli]: https://doc.rust-lang.org/cargo/commands/cargo.html
 [cobol_examples]: https://github.com/michelou/cobol-examples
+[conemu_downloads]: https://github.com/Maximus5/ConEmu/releases
+[conemu_relnotes]: https://conemu.github.io/blog/2023/07/24/Build-230724.html
 [cpp_examples]: https://github.com/michelou/cpp-examples
 [dart_examples]: https://github.com/michelou/dart-examples
 [deno_examples]: https://github.com/michelou/deno-examples
@@ -273,7 +279,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [git_docs]: https://git-scm.com/docs/git
 [git_downloads]: https://git-scm.com/download/win
 [github_markdown]: https://github.github.com/gfm/
-[git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.43.0.txt
+[git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.45.0.txt
 [golang_examples]: https://github.com/michelou/golang-examples
 [graalvm_examples]: https://github.com/michelou/graalvm-examples
 [haskell_examples]: https://github.com/michelou/haskell-examples
