@@ -16,7 +16,7 @@ TARGET_DOCS_DIR = $(TARGET_DIR)/docs
 ##############################################################################
 ## main rules
 
-SOURCES = $(wildcard $(SOURCE_DIR)/main.rs)
+SOURCES = $(wildcard $(SOURCE_DIR)/main/rust/main.rs)
 TARGET  = $(TARGET_EXE_DIR)/$(PROJECT_NAME)$(TARGET_EXT)
 
 ## General format: <arch>-<vendor>-<sys>-<abi>
@@ -51,7 +51,7 @@ run: build
 	$(TARGET)
 
 help:
-	@$(ECHO) "Usage: make all|build|clean|doc|help|lint|run|test"
+	@$(ECHO) "Usage: make all|build|clean|doc|help|lint|run"
 	@$(ECHO) ""
 	@$(ECHO) "  Subcommands:"
 	@$(ECHO) "    all    alias for build"

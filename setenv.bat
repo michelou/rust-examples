@@ -25,7 +25,11 @@ if %_HELP%==1 (
 
 set _CARGO_PATH=
 set _GIT_PATH=
+set _MAVEN_PATH=
 set _MSYS_PATH=
+
+call :maven
+if not %_EXITCODE%==0 goto end
 
 call :msys
 if not %_EXITCODE%==0 goto end
@@ -227,6 +231,48 @@ echo   %__BEG_P%Subcommands:%__END%
 echo     %__BEG_O%help%__END%        print this help message
 goto :eof
 
+@rem output parameters: _MAVEN_HOME, _MAVEN_PATH
+:maven
+set _MAVEN_HOME=
+set _MAVEN_PATH=
+
+set __MVN_CMD=
+for /f "delims=" %%f in ('where mvn.cmd 2^>NUL') do (
+    set "__MVN_CMD=%%f"
+    @rem we ignore Scoop managed Maven installation
+    if not "!__MVN_CMD:scoop=!"=="!__MVN_CMD!" set __MVN_CMD=
+)
+if defined __MVN_CMD (
+    for /f "delims=" %%i in ("%__MVN_CMD%") do set "__MAVEN_BIN_DIR=%%~dpi"
+    for /f "delims=" %%f in ("!__MAVEN_BIN_DIR!\.") do set "_MAVEN_HOME=%%~dpf"
+    if %_DEBUG%==1 echo %_DEBUG_LABEL% Using path of Maven executable found in PATH 1>&2
+    @rem keep _MAVEN_PATH undefined since executable already in path
+    goto :eof
+) else if defined MAVEN_HOME (
+    set "_MAVEN_HOME=%MAVEN_HOME%"
+    if %_DEBUG%==1 echo %_DEBUG_LABEL% Using environment variable MAVEN_HOME 1>&2
+) else (
+    set __PATH=C:\opt
+    if exist "!__PATH!\apache-maven\" ( set "_MAVEN_HOME=!__PATH!\apache-maven"
+    ) else (
+        for /f "delims=" %%f in ('dir /ad /b "!__PATH!\apache-maven-*" 2^>NUL') do set "_MAVEN_HOME=!__PATH!\%%f"
+        if not defined _MAVEN_HOME (
+            set "__PATH=%ProgramFiles%"
+            for /f "delims=" %%f in ('dir /ad /b "!__PATH!\apache-maven*" 2^>NUL') do set "_MAVEN_HOME=!__PATH!\%%f"
+        )
+    )
+    if defined _MAVEN_HOME (
+        if %_DEBUG%==1 echo %_DEBUG_LABEL% Using default Maven installation directory "!_MAVEN_HOME!" 1>&2
+    )
+)
+if not exist "%_MAVEN_HOME%\bin\mvn.cmd" (
+    echo %_ERROR_LABEL% Maven executable not found ^("%_MAVEN_HOME%"^) 1>&2
+    set _EXITCODE=1
+    goto :eof
+)
+set "_MAVEN_PATH=;%_MAVEN_HOME%\bin"
+goto :eof
+
 @rem output parameter: _MSYS_HOME, _MSYS_PATH
 :msys
 set _MSYS_HOME=
@@ -389,11 +435,16 @@ echo   %__VERSIONS_LINE2%
 echo   %__VERSIONS_LINE3%
 if %__VERBOSE%==1 (
     echo Tool paths: 1>&2
-    for /f "tokens=*" %%p in ('where %__WHERE_ARGS%') do echo    %%p 1>&2
-    echo Environment variables: 1>&2
+    for /f "tokens=*" %%p in ('where %__WHERE_ARGS%') do (
+	    set "__LINE=%%p"
+        setlocal enabledelayedexpansion
+		echo    !__LINE:%USERPROFILE%=%%USERPROFILE%%! 1>&2
+    )
+	echo Environment variables: 1>&2
     if defined CARGO_HOME echo    "CARGO_HOME=%CARGO_HOME%" 1>&2
     if defined GIT_HOME echo    "GIT_HOME=%GIT_HOME%" 1>&2
     if defined MAKE_HOME echo    "MAKE_HOME=%MAKE_HOME%" 1>&2
+    if defined MAVEN_HOME echo    "MAVEN_HOME=%MAVEN_HOME%" 1>&2
     if defined MSYS_HOME echo    "MSYS_HOME=%MSYS_HOME%" 1>&2
     if defined RUSTUP_HOME echo    "RUSTUP_HOME=%RUSTUP_HOME%" 1>&2
     echo Path associations: 1>&2
@@ -413,10 +464,11 @@ endlocal & (
     if %_EXITCODE%==0 (
         if not defined CARGO_HOME set "CARGO_HOME=%_CARGO_HOME%"
         if not defined GIT_HOME set "GIT_HOME=%_GIT_HOME%"
+        if not defined MAVEN_HOME set "MAVEN_HOME=%_MAVEN_HOME%"
         if not defined MSYS_HOME set "MSYS_HOME=%_MSYS_HOME%"
         if not defined RUSTUP_HOME set "RUSTUP_HOME=%USERPROFILE%\.rustup"
         @rem We prepend %_GIT_HOME%\bin to hide C:\Windows\System32\bash.exe
-        set "PATH=%GIT_HOME%\bin;%PATH%%_CARGO_PATH%%_GIT_PATH%%_MSYS_PATH%;%~dp0bin"
+        set "PATH=%GIT_HOME%\bin;%PATH%%_CARGO_PATH%%_MAVEN_PATH%%_GIT_PATH%%_MSYS_PATH%;%~dp0bin"
         call :print_env %_VERBOSE%
         if not "%CD:~0,2%"=="%_DRIVE_NAME%" (
             if %_DEBUG%==1 echo %_DEBUG_LABEL% cd /d %_DRIVE_NAME% 1>&2
