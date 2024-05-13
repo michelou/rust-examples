@@ -297,7 +297,7 @@ if defined __GCC_CMD (
         for /f "delims=" %%f in ('dir /ad /b "!__PATH!\msys*" 2^>NUL') do set "_MSYS_HOME=!__PATH!\%%f"
     )
 )
-if not exist "%_MSYS_HOME%\mingw64\bin\gcc.exe" (
+if not exist "%_MSYS_HOME%\usr\bin\gcc.exe" (
     echo %_ERROR_LABEL% GNU C++ executable not found ^("%_MSYS_HOME%"^) 1>&2
     set _MSYS_HOME=
     set _EXITCODE=1
@@ -441,12 +441,12 @@ if %__VERBOSE%==1 (
 		echo    !__LINE:%USERPROFILE%=%%USERPROFILE%%! 1>&2
     )
 	echo Environment variables: 1>&2
-    if defined CARGO_HOME echo    "CARGO_HOME=%CARGO_HOME%" 1>&2
+    if defined CARGO_HOME echo    "CARGO_HOME=!CARGO_HOME:%USERPROFILE%=%%USERPROFILE%%!" 1>&2
     if defined GIT_HOME echo    "GIT_HOME=%GIT_HOME%" 1>&2
     if defined MAKE_HOME echo    "MAKE_HOME=%MAKE_HOME%" 1>&2
     if defined MAVEN_HOME echo    "MAVEN_HOME=%MAVEN_HOME%" 1>&2
     if defined MSYS_HOME echo    "MSYS_HOME=%MSYS_HOME%" 1>&2
-    if defined RUSTUP_HOME echo    "RUSTUP_HOME=%RUSTUP_HOME%" 1>&2
+    if defined RUSTUP_HOME echo    "RUSTUP_HOME=!RUSTUP_HOME:%USERPROFILE%=%%USERPROFILE%%!" 1>&2
     echo Path associations: 1>&2
     for /f "delims=" %%i in ('subst') do (
         set "__LINE=%%i"
