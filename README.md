@@ -13,7 +13,7 @@
 
 ## <span id="proj_deps">Project dependencies</span>
 
-This project depends on two external software for the **Microsoft Windows** platform:
+This project depends on the following external software for the **Microsoft Windows** platform:
 
 - [GCC Front-End for Rust 1.75](https://rust-gcc.github.io/) <sup id="anchor_01"><a href="#footnote_01">1</a></sup>
 - [Git 2.45][git_downloads] ([*release notes*][git_relnotes])
@@ -128,7 +128,7 @@ We execute command [**`setenv.bat`**](setenv.bat) once to setup our development 
 Tool versions:
    cargo 1.78.0, rustc 1.78.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.7.0-stable</a>, rustup 1.27.1,
    pelook v1.73, make 4.4.1,
-   git 2.45.0, diff 3.10, bash 5.2.26(1)-release
+   git 2.45.1, diff 3.10, bash 5.2.26(1)-release
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo git sh</b>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\cargo.exe
@@ -149,7 +149,7 @@ Command [**`setenv.bat`**](setenv.bat) with option **`-verbose`** displays addit
 Tool versions:
    cargo 1.78.0, rustc 1.78.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.7.0-stable</a>, rustup 1.27.1,
    pelook v1.73, make 4.4.1,
-   git 2.45.0, diff 3.10, bash 5.2.26(1)-release
+   git 2.45.1, diff 3.10, bash 5.2.26(1)-release
 Tool paths:
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/cargo/commands/">cargo.exe</a>
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a>
@@ -250,8 +250,9 @@ In our case we downloaded the following installation files (see <a href="#proj_d
 </dd>
 <dd>
 <pre style="font-size:80%;">
+<a href="https://github.com/Maximus5/ConEmu/releases/tag/v23.07.24" rel="external">ConEmuPack.230724.7z</a>              <i>(  5 MB)</i>
 <a href="http://repo.msys2.org/distrib/x86_64/">msys2-x86_64-20240113.exe</a>         <i>( 86 MB)</i>
-<a href="https://git-scm.com/download/win">PortableGit-2.45.0-64-bit.7z.exe</a>  <i>( 46 MB)</i>
+<a href="https://git-scm.com/download/win">PortableGit-2.45.1-64-bit.7z.exe</a>  <i>( 46 MB)</i>
 <a href="https://www.rust-lang.org/tools/install">rust-init.exe</a>                     <i>(  8 MB)</i>
 <a href="https://code.visualstudio.com/Download#" rel="external">VSCode-win32-x64-1.89.1.zip</a>       <i>(131 MB)</i>
 </pre>
@@ -267,31 +268,31 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 
 <!-- link refs -->
 
-[ada_examples]: https://github.com/michelou/ada-examples
-[akka_examples]: https://github.com/michelou/akka-examples
+[ada_examples]: https://github.com/michelou/ada-examples#top
+[akka_examples]: https://github.com/michelou/akka-examples#top
 [cargo_cli]: https://doc.rust-lang.org/cargo/commands/cargo.html
-[cobol_examples]: https://github.com/michelou/cobol-examples
+[cobol_examples]: https://github.com/michelou/cobol-examples#top
 [conemu_downloads]: https://github.com/Maximus5/ConEmu/releases
 [conemu_relnotes]: https://conemu.github.io/blog/2023/07/24/Build-230724.html
-[cpp_examples]: https://github.com/michelou/cpp-examples
-[dart_examples]: https://github.com/michelou/dart-examples
-[deno_examples]: https://github.com/michelou/deno-examples
-[docker_examples]: https://github.com/michelou/docker-examples
-[erlang_examples]: https://github.com/michelou/erlang-examples
-[flix_examples]: https://github.com/michelou/flix-examples
+[cpp_examples]: https://github.com/michelou/cpp-examples#top
+[dart_examples]: https://github.com/michelou/dart-examples#top
+[deno_examples]: https://github.com/michelou/deno-examples#top
+[docker_examples]: https://github.com/michelou/docker-examples#top
+[erlang_examples]: https://github.com/michelou/erlang-examples#top
+[flix_examples]: https://github.com/michelou/flix-examples#top
 [git_cli]: https://git-scm.com/docs/git
 [git_docs]: https://git-scm.com/docs/git
 [git_downloads]: https://git-scm.com/download/win
 [github_markdown]: https://github.github.com/gfm/
-[git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.45.0.txt
-[golang_examples]: https://github.com/michelou/golang-examples
-[graalvm_examples]: https://github.com/michelou/graalvm-examples
-[haskell_examples]: https://github.com/michelou/haskell-examples
-[kafka_examples]: https://github.com/michelou/kafka-examples
-[kotlin_examples]: https://github.com/michelou/kotlin-examples
+[git_relnotes]: https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.45.1.txt
+[golang_examples]: https://github.com/michelou/golang-examples#top
+[graalvm_examples]: https://github.com/michelou/graalvm-examples#top
+[haskell_examples]: https://github.com/michelou/haskell-examples#top
+[kafka_examples]: https://github.com/michelou/kafka-examples#top
+[kotlin_examples]: https://github.com/michelou/kotlin-examples#top
 [linux_opt]: https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/opt.html
-[llvm_examples]: https://github.com/michelou/llvm-examples
-[m2_examples]: https://github.com/michelou/m2-examples
+[llvm_examples]: https://github.com/michelou/llvm-examples#top
+[m2_examples]: https://github.com/michelou/m2-examples#top
 [man1_awk]: https://www.linux.org/docs/man1/awk.html
 [man1_diff]: https://www.linux.org/docs/man1/diff.html
 [man1_file]: https://www.linux.org/docs/man1/file.html
@@ -301,21 +302,21 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [man1_rmdir]: https://www.linux.org/docs/man1/rmdir.html
 [man1_sed]: https://www.linux.org/docs/man1/sed.html
 [man1_wc]: https://www.linux.org/docs/man1/wc.html
-[nodejs_examples]: https://github.com/michelou/nodejs-examples
-[python_examples]: https://github.com/michelou/python-examples
+[nodejs_examples]: https://github.com/michelou/nodejs-examples#top
+[python_examples]: https://github.com/michelou/python-examples#top
 [rust_downloads]: https://forge.rust-lang.org/infra/other-installation-methods.html#standalone-installers
 [rust_lang]: https://www.rust-lang.org/
 [rust_relnotes]: https://github.com/rust-lang/rust/blob/master/RELEASES.md
 [rustc_cli]: https://doc.rust-lang.org/rustc/command-line-arguments.html
 [rustup_cli]: https://github.com/rust-lang/rustup/blob/master/README.md
-[scala3_examples]: https://github.com/michelou/dotty-examples
+[scala3_examples]: https://github.com/michelou/dotty-examples#top
 [sh_cli]: https://man7.org/linux/man-pages/man1/sh.1p.html
-[spark_examples]: https://github.com/michelou/spark-examples
-[spring_examples]: https://github.com/michelou/spring-examples
-[trufflesqueak_examples]: https://github.com/michelou/trufflesqueak-examples
+[spark_examples]: https://github.com/michelou/spark-examples#top
+[spring_examples]: https://github.com/michelou/spring-examples#top
+[trufflesqueak_examples]: https://github.com/michelou/trufflesqueak-examples#top
 [vscode_downloads]: https://code.visualstudio.com/#alt-downloads
 [vscode_relnotes]: https://code.visualstudio.com/updates/
 [windows_limitation]: https://support.microsoft.com/en-gb/help/830473/command-prompt-cmd-exe-command-line-string-limitation
 [windows_subst]: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/subst
-[wix_examples]: https://github.com/michelou/wix-examples
+[wix_examples]: https://github.com/michelou/wix-examples#top
 [zip_archive]: https://www.howtogeek.com/178146/
