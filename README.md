@@ -9,7 +9,7 @@
   </tr>
 </table>
 
-[Ada][ada_examples], [Akka][akka_examples], [C++][cpp_examples], [COBOL][cobol_examples],  [Dart][dart_examples], [Deno][deno_examples], [Docker][docker_examples], [Erlang][erlang_examples], [Flix][flix_examples], [Golang][golang_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kafka][kafka_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Modula-2][m2_examples], [Node.js][nodejs_examples], [Scala 3][scala3_examples], [Spark][spark_examples], [Spring][spring_examples], [TruffleSqueak][trufflesqueak_examples] and [WiX Toolset][wix_examples] are other topics we are continuously monitoring.
+[Ada][ada_examples], [Akka][akka_examples], [C++][cpp_examples], [COBOL][cobol_examples],  [Dart][dart_examples], [Deno][deno_examples], [Docker][docker_examples], [Erlang][erlang_examples], [Flix][flix_examples], [Golang][golang_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kafka][kafka_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Modula-2][m2_examples], [Node.js][nodejs_examples], [Scala 3][scala3_examples], [Spark][spark_examples], [Spring][spring_examples], [TruffleSqueak][trufflesqueak_examples], [WiX Toolset][wix_examples] and [Zig][zig_examples] are other topics we are continuously monitoring.
 
 <!--
 > **&#9755;** The blog post ["Rust vs Alternative Programming Languages: How Do They Compare?"](https://kruschecompany.com/rust-vs-alternatives/) presents a comparison of Rust's strengths against other programming languages.
@@ -41,7 +41,7 @@ Rust 1.78.0 ->
 Optionally one may also install the following software:
 
 - [ConEmu][conemu_downloads] ([*release notes*][conemu_relnotes])
-- [Visual Studio Code 1.89][vscode_downloads] ([*release notes*][vscode_relnotes])
+- [Visual Studio Code 1.90][vscode_downloads] ([*release notes*][vscode_relnotes])
 
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [**`/opt/`**][linux_opt] directory on Unix).
@@ -193,14 +193,11 @@ Path associations:
 resolving dependencies...
 looking for conflicting packages...
 &nbsp;
-Packages (32) mingw-w64-clang-x86_64-brotli-1.1.0-1
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[...]
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;mingw-w64-clang-x86_64-zlib-1.3-1
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;mingw-w64-clang-x86_64-zstd-1.5.5-1
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;mingw-w64-clang-x86_64-rust-1.75.0-1
+Packages (1) mingw-w64-clang-x86_64-rust-1.79.0-1
 &nbsp;
-Total Download Size:    255.01 MiB
-Total Installed Size:  1655.04 MiB
+Total Download Size:    88.01 MiB
+Total Installed Size:  406.29 MiB
+Net Upgrade Size:      -21.21 MiB
 &nbsp;
 :: Proceed with installation? [Y/n] y
 [...]
@@ -209,7 +206,7 @@ Total Installed Size:  1655.04 MiB
 c:\opt\msys64\clang64\bin\rustc.exe
 &nbsp;
 <b>&gt; c:\opt\msys64\clang64\bin\\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html" rel="external">rustc.exe</a> --version</b>
-rustc 1.78.0 (9b00956e5 2024-04-29) (Rev1, Built by MSYS2 project)
+rustc 1.79.0 (129f3b996 2024-06-10) (Rev1, Built by MSYS2 project)
 </pre>
 </dd></dl>
 
@@ -228,7 +225,8 @@ LLVM version: 18.1.2
 <dd>
 <table>
 <tr><th>Rustc Version</th><th>LLVM Version</th></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.78.0">1.78.0</a></td><td><a href="https://discourse.llvm.org/t/16-0-5-release/71097" rel="external">18.1.2</a></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.79.0">1.79.0</a></td><td><a href="https://discourse.llvm.org/t/18-1-7-released/79433" rel="external">18.1.7</a></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.78.0">1.78.0</a></td><td><a href="https://discourse.llvm.org/t/18-1-7-released/79433" rel="external">18.1.7</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.75.0">1.75.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.77.2">1.77.2</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-6-released/73840" rel="external">17.0.6</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.73.0">1.73.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.74.0">1.74.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-2-released/73840" rel="external">17.0.2</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.72.0">1.72.0</a></td><td><a href="https://discourse.llvm.org/t/16-0-5-release/71097" rel="external">16.0.5</a></td></tr>
@@ -258,7 +256,7 @@ In our case we downloaded the following installation files (see <a href="#proj_d
 <a href="http://repo.msys2.org/distrib/x86_64/">msys2-x86_64-20240113.exe</a>         <i>( 86 MB)</i>
 <a href="https://git-scm.com/download/win">PortableGit-2.45.2-64-bit.7z.exe</a>  <i>( 46 MB)</i>
 <a href="https://www.rust-lang.org/tools/install">rust-init.exe</a>                     <i>(  8 MB)</i>
-<a href="https://code.visualstudio.com/Download#" rel="external">VSCode-win32-x64-1.89.1.zip</a>       <i>(131 MB)</i>
+<a href="https://code.visualstudio.com/Download#" rel="external">VSCode-win32-x64-1.90.1.zip</a>       <i>(131 MB)</i>
 </pre>
 </dd>
 <dd>

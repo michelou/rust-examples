@@ -113,7 +113,7 @@ Command **`rustup update stable`** <sup id="anchor_02">[2](#footnote_02)</sup>  
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2024-05-02, rust version 1.78.0 (9b00956e5 2024-04-29)
+info: latest update on 2024-06-13, rust version 1.79.0 (129f3b996 2024-06-10)
 [...]
 info: downloading component 'rustc'
  62.8 MiB /  62.8 MiB (100 %)   1.3 MiB/s in 50s ETA:  0s
@@ -124,7 +124,7 @@ info: installing component 'rustc'
  62.8 MiB /  62.8 MiB (100 %)  13.4 MiB/s in  4s ETA:  0s
 info: installing component 'rustfmt'
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.78.0 (9b00956e5 2024-04-29) (from rustc 1.77.2 (25ef9e3d8 2024-04-09))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.79.0 (129f3b996 2024-06-10) (from rustc 1.78.0 (9b00956e5 2024-04-29))
 
 info: checking for self-updates
 </pre>
@@ -149,10 +149,7 @@ info: checking for self-updates
 Command **`rustup component add rustfmt`** installs the formatting tool [`rustfmt`](https://github.com/rust-lang/rustfmt) into the `CARGO_HOME` directory:
 
 <pre style="font-size:80%;">
-<b>&gt; <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/where" rel="external">where</a> rustfmt</b>
-%CARGO_HOME%\bin\rustfmt.exe
-
-<b>&gt; <a href="https://linuxcommandlibrary.com/man/rustfmt">rustfmt</a> --version</b>
+<b>&gt; <a href="https://linuxcommandlibrary.com/man/rustfmt">%CARGO_HOME%\bin\rustfmt.exe</a> --version</b>
 rustfmt 1.7.0-stable (7cf61ebd 2024-03-27)
 </pre>
 
