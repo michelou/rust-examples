@@ -42,6 +42,9 @@
 
 ## <span id="blogs">Blogs</span> [**&#x25B4;**](#top)
 
+- [Michael's Blog posts]() :
+  - [My Best and Worst Deadlock in Rust](https://www.snoyman.com/blog/2024/01/best-worst-deadlock-rust/), January 2024.
+  - [Owned values and Futures in Rust](https://www.snoyman.com/blog/owned-values-and-futures/), September 2023.
 - [**Weekly Rust Trivia**](https://www.thorsten-hans.com/tags/weekly-rust-trivia) by Thorsten Hans :
   - [How to use pattern matching][blog_hans_patmat], August 2023.
   - [How to share state between threads][blog_hans_threads], July 2023.
@@ -219,7 +222,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/June 2024* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/July 2024* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
