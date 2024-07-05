@@ -11,14 +11,14 @@
 
 ### <span id="diceroller">`diceroller` Example</span>
 
-Example [`diceroller`](./diceroller/) is presented by Nicolas Fränkel in his blog post ["diceroller, a sample Rust project"](https://blog.frankel.ch/start-rust/8/) (July 2021). The project is organized as follows :
+Example [`diceroller`](./diceroller/) is presented by Nicolas Fränkel in his blog post ["diceroller, a sample Rust project"](https://blog.frankel.ch/start-rust/8/) (July 2021). The project has the following directory structure :
 <pre style="font-size:80%;margin-top:-16px;">
-<b>diceroller&gt; <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/tree">tree</a> /a /f . | <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/findstr">findstr</a> /v /b [A-Z]</b>
+<b>diceroller&gt; <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/tree" rel="external">tree</a> /a /f . | <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/findstr" rel="external">findstr</a> /v /b [A-Z]</b>
 |   <a href="./diceroller/00download.txt">00download.txt</a>
 |   <a href="./diceroller/Cargo.toml">Cargo.toml</a>
-\---src
+\---<b>src</b>
     |   <a href="./diceroller/src/main.rs">main.rs</a>
-    \---droller
+    \---<b>droller</b>
             <a href="./diceroller/src/droller/damage.rs">damage.rs</a>
             <a href="./diceroller/src/droller/dice.rs">dice.rs</a>
             <a href="./diceroller/src/droller/mod.rs">mod.rs</a>
@@ -43,10 +43,9 @@ Example [`factorials`](./factorials/) is presented by Oopscene in his blog post 
 |   <a href="./factorials/00download.txt">00download.txt</a>
 |   <a href="./factorials/build.bat">build.bat</a>
 |   <a href="./factorials/Cargo.toml">Cargo.toml</a>
-|
-\---src
-    \---main
-        \---rust
+\---<b>src</b>
+    \---<b>main</b>
+        \---<b>rust</b>
                 <a href="./factorials/src/main/rust/main.rs">main.rs</a>
 </pre>
 
@@ -79,8 +78,7 @@ Example [`rust-ui-druid`](./rust-ui-druid/) illustrates the usage of [Druid], a 
 <b>rust-ui-druid&gt; <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/tree">tree</a> /a /f . | <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/findstr">findstr</a> /v /b [A-Z]</b>
 |   <a href="./rust-ui-druid/00download.txt">00download.txt</a>
 |   <a href="./rust-ui-druid/Cargo.toml">Cargo.toml</a>
-|
-\---src
+\---<b>src</b>
         <a href="./rust-ui-druid/src/main.rs">main.rs</a>
 </pre>
 

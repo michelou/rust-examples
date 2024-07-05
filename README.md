@@ -19,9 +19,11 @@
 
 This project depends on the following external software for the **Microsoft Windows** platform:
 
+<!--
 - [GCC Front-End for Rust 1.75](https://rust-gcc.github.io/) <sup id="anchor_01"><a href="#footnote_01">1</a></sup>
+-->
 - [Git 2.45][git_downloads] ([*release notes*][git_relnotes])
-- [Rust 1.78][rust_downloads] <sup id="anchor_02"><a href="#footnote_02">2</a></sup> ([*release notes*][rust_relnotes])
+- [Rust 1.79][rust_downloads] <sup id="anchor_02"><a href="#footnote_02">2</a></sup> ([*release notes*][rust_relnotes])
 
 <!--
 See changelogs on https://releases.rs/
@@ -36,6 +38,7 @@ Rust 1.73.0 -> 2023-10-06
 Rust 1.76.0 -> 2024-02-04
 Rust 1.77.1 -> 2024-03-27
 Rust 1.78.0 -> 
+Rust 1.79.0 -> 2024-06-10
 -->
 
 Optionally one may also install the following software:
@@ -78,7 +81,7 @@ README.md
 
 where
 
-- directory [**`bin\`**](bin/) contains utility batch scripts.
+- directory [**`bin\`**](bin/) contains utility scripts.
 - directory [**`docs\`**](docs/) contains [Rust][rust_lang] related papers/articles.
 - directory [**`examples\`**](examples/) contains [Rust][rust_lang] code examples (see [**`README.md`**](./examples/README.md)).
 - directory [**`mastering-rust\`**](mastering-rust/) contains [Rust][rust_lang] code examples (see [`README.md`](mastering-rust/README.md)).
@@ -130,7 +133,7 @@ We execute command [**`setenv.bat`**](setenv.bat) once to setup our development 
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
-   cargo 1.78.0, rustc 1.78.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.7.0-stable</a>, rustup 1.27.1,
+   cargo 1.79.0, rustc 1.79.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.7.0-stable</a>, rustup 1.27.1,
    pelook v1.73, make 4.4.1,
    git 2.45.2, diff 3.10, bash 5.2.26(1)
 &nbsp;
@@ -151,9 +154,9 @@ Command [**`setenv.bat`**](setenv.bat) with option **`-verbose`** displays addit
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
-   cargo 1.78.0, rustc 1.78.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.7.0-stable</a>, rustup 1.27.1,
+   cargo 1.79.0, rustc 1.79.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.7.0-stable</a>, rustup 1.27.1,
    pelook v1.73, make 4.4.1,
-   git 2.45.2, diff 3.10, bash 5.2.26(1)-release
+   git 2.45.2, diff 3.10, bash 5.2.26(1)
 Tool paths:
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/cargo/commands/">cargo.exe</a>
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a>
@@ -218,8 +221,8 @@ rustc 1.79.0 (129f3b996 2024-06-10) (Rev1, Built by MSYS2 project)
 <dd>
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc</a> --version --verbose | <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr">findstr</a> /b "rustc LLVM"</b>
-rustc 1.78.0 (9b00956e5 2024-04-29)
-LLVM version: 18.1.2
+rustc 1.79.0 (129f3b996 2024-06-10)
+LLVM version: 18.1.7
 </pre>
 </dd>
 <dd>
@@ -256,7 +259,7 @@ In our case we downloaded the following installation files (see <a href="#proj_d
 <a href="http://repo.msys2.org/distrib/x86_64/">msys2-x86_64-20240113.exe</a>         <i>( 86 MB)</i>
 <a href="https://git-scm.com/download/win">PortableGit-2.45.2-64-bit.7z.exe</a>  <i>( 46 MB)</i>
 <a href="https://www.rust-lang.org/tools/install">rust-init.exe</a>                     <i>(  8 MB)</i>
-<a href="https://code.visualstudio.com/Download#" rel="external">VSCode-win32-x64-1.90.1.zip</a>       <i>(131 MB)</i>
+<a href="https://code.visualstudio.com/Download#" rel="external">VSCode-win32-x64-1.90.2.zip</a>       <i>(131 MB)</i>
 </pre>
 </dd>
 <dd>
