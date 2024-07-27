@@ -1,4 +1,4 @@
-# <span id="top">Book <i>Mastering Rust</i></span> <span style="size:30%;"><a href="../README.md">⬆</a></span>
+# <span id="top">Book <i>Mastering Rust</i></span> <span style="font-size:90%;">[⬆](../README.md#top)</span>
 
 <table style="font-family:Helvetica,Arial;line-height:1.6;">
   <tr>
@@ -202,7 +202,7 @@ Command <code><b>build.bat</b></code> with no subcommand displays the help messa
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/January 2024* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/July 2024* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

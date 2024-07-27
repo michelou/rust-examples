@@ -42,6 +42,13 @@
 
 ## <span id="blogs">Blogs</span> [**&#x25B4;**](#top)
 
+- [Nicholas's Blog posts](https://nnethercote.github.io/) :
+  - [How to speed up the Rust compiler in March 2024](https://nnethercote.github.io/2024/03/06/how-to-speed-up-the-rust-compiler-in-march-2024.html), March 2024.
+  - [Back-end parallelism in the Rust compiler](https://nnethercote.github.io/2023/07/11/back-end-parallelism-in-the-rust-compiler.html), July 2023.
+  - [How to speed up the Rust compiler one last time][blog_nethercote], September 2020.
+- [Ferrous Systems Blog posts](https://ferrous-systems.com/blog) :
+  - [Allocation-free decoding with traits and high-ranked trait bounds](https://ferrous-systems.com/blog/rustls-borrow-checker-p2/), February 2024.
+  - [Using `mem::take` to reduce heap allocations](https://ferrous-systems.com/blog/rustls-borrow-checker-p2/), February 2024.
 - [Michael's Blog posts]() :
   - [My Best and Worst Deadlock in Rust](https://www.snoyman.com/blog/2024/01/best-worst-deadlock-rust/), January 2024.
   - [Owned values and Futures in Rust](https://www.snoyman.com/blog/owned-values-and-futures/), September 2023.
@@ -52,6 +59,7 @@
 - [Why Rust is the most admired language among developers][blog_verdi] by Sara Verdi, August 2023.
 - [Microsoft is busy rewriting core Windows code in Rust][blog_claburn] by Thomas Claburn, April 2023.
 - [C++ vs. Rust: Factorial](https://oopscenities.net/2023/02/22/factorial-in-rust-vs-factorial-in-c/) by [Oopscene](https://twitter.com/oopscene), February 2023.
+- [How Rust went from a side project to the world’s most-loved programming language][blog_thompson] by Clive Thompson, February 2023.
 - [Rust's Vector][blog_fraenkel_9] by Nicolas Fränkel, August 2021.
 - [diceroller, a sample Rust project][blog_fraenkel_8] by Nicolas Fränkel, July 2021.
 - [Rust and the JVM][blog_fraenkel_7] by Nicolas Fränkel, July 2021.
@@ -60,7 +68,6 @@
   - [Sizedness in Rust](https://github.com/pretzelhammer/rust-blog/blob/master/posts/sizedness-in-rust.md), July 2020.
   - [Common Rust Lifetime Misconceptions](https://github.com/pretzelhammer/rust-blog/blob/master/posts/common-rust-lifetime-misconceptions.md), May 2020.
   - [Learning Rust in 2020](https://github.com/pretzelhammer/rust-blog/blob/master/posts/learning-rust-in-2020.md), May 2020.
-- [How to speed up the Rust compiler one last time][blog_nethercote] by Nicholas Nethercote, September 2020.
 - [PingCAP Blog](https://en.pingcap.com/blog/) :
   - [A Few More Reasons Rust Compiles Slowly](https://en.pingcap.com/blog/reasons-rust-compiles-slowly/) by Brian Anderson, June 2020.
   - [Rust’s Huge Compilation Units](https://en.pingcap.com/blog/rust-huge-compilation-units/) by Brian Anderson, June 2020.
@@ -77,6 +84,7 @@
 - [Rust Compiler Internals : Mid-level Intermediate Representation (MIR)][blog_kanishkar] by Kanishkar J, December 2019.
 - [Using Rust in Windows](https://msrc-blog.microsoft.com/2019/11/07/using-rust-in-windows/), November 2019.
 - [Using C Libraries in Rust](https://medium.com/dwelo-r-d/using-c-libraries-in-rust-13961948c72a) by Jeff Hinter, August 2019.
+- [Functional Programming Jargon in Rust](https://functional.works-hub.com/learn/functional-programming-jargon-in-rust-1b555) by Jason Shin, July 2019.
 - [10 Key Learnings in Rust after 30,000 Lines of Code][blog_nahum] by Dotan Nahum, April 2019.
 - [Existential types in Rust][blog_vaktor] by Vaktor, July 2018.
 - [Getting started with Rust on the command line](https://asquera.de/blog/2018-01-20/getting-started-with-rust-on-the-command-line/), January 2018.
@@ -140,6 +148,7 @@
   - [Announcing Rust 1.55.0](https://blog.rust-lang.org/2021/09/09/Rust-1.55.0.html), September 2021 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1550-2021-09-09)*).
   - [Announcing Rust 1.38.0](https://blog.rust-lang.org/2019/09/26/Rust-1.38.0.html), September 2019 (*[release notes](https://github.com/rust-lang/rust/blob/stable/RELEASES.md#version-1380-2019-09-26)*).
 - [**reddit**](https://www.reddit.com/) [r/rust](https://www.reddit.com/r/rust/) - The Rust Programming Language.
+- [Rust Magazine](https://rustmagazine.org/).
 - [This Week in Rust][news_this_week].
 
 ## <span id="papers">Papers</span>
@@ -267,6 +276,7 @@ version = "12"
 [book_messier]: https://www.wiley.com/en-us/Beginning+Rust+Programming-p-9781119712978
 [book_milanesi]: https://link.springer.com/book/10.1007/978-1-4842-7208-4
 [book_sharma]: https://www.packtpub.com/product/mastering-rust-second-edition/9781789346572
+[blog_thompson]: https://www.technologyreview.com/2023/02/14/1067869/rust-worlds-fastest-growing-programming-language/
 [book_uzayr]: https://www.routledge.com/Mastering-Rust-A-Beginners-Guide/Uzayr/p/book/9781032319018
 [github_ripgrep]: https://github.com/BurntSushi/ripgrep
 [github_winapi_rs]: https://github.com/retep998/winapi-rs/
