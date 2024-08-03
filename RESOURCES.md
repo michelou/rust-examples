@@ -42,6 +42,7 @@
 
 ## <span id="blogs">Blogs</span> [**&#x25B4;**](#top)
 
+- [Procedural Macros in Rust](https://www.freecodecamp.org/news/procedural-macros-in-rust/) by Anshul Sanghi, April 2024.
 - [Nicholas's Blog posts](https://nnethercote.github.io/) :
   - [How to speed up the Rust compiler in March 2024](https://nnethercote.github.io/2024/03/06/how-to-speed-up-the-rust-compiler-in-march-2024.html), March 2024.
   - [Back-end parallelism in the Rust compiler](https://nnethercote.github.io/2023/07/11/back-end-parallelism-in-the-rust-compiler.html), July 2023.
@@ -93,6 +94,7 @@
 
 ## <span id="books">Books</span> [**&#x25B4;**](#top)
 
+- [The Little Book of Rust Macros](https://veykril.github.io/tlborm/) by Lukas Wirth, July 2024.
 - [The Rust Performance Book](https://nnethercote.github.io/perf-book/title-page.html) (online) by Nicholas Nethercote and others, November 2022.
 <!-- ISBN 13 (since 2007)
   Registration group: 93 = India
@@ -169,6 +171,7 @@
 
 ## <span id="training">Training and Tutorials</span> [**&#x25B4;**](#top)
 
+- [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/intro.html).
 - [24 days of Rust](https://zsiciarz.github.io/24daysofrust/index.html) by Zbigniew Siciarz, 2023.
 - [Rust for the Polyglot Programmer](https://www.chiark.greenend.org.uk/~ianmdlvl/rust-polyglot/) by Ian Jackson and contributors, 2021.
 - [A Not so Short Introduction to the Rust Programming Language][tutorial_mueller] by Kasper Müller, November 2021.
@@ -182,6 +185,7 @@
   - [Rust #2: Lifetimes, Owners and Borrowers, OH MY! ](https://dev.to/cthutu/rust-2-lifetimes-owners-and-borrowers-oh-my-3fem), June 2021.
   - [Rust #1: Creating your development environment](https://dev.to/cthutu/rust-1-creating-your-development-environment-55bi), June 2021.
 - [ferrous systems](https://ferrous-systems.com/) : [Rust Training Programs](https://ferrous-systems.com/training/).
+- [Rust Latam &ndash; Rust procedural macros](https://github.com/dtolnay/proc-macro-workshop) by David Tolnay, March 2019.
 - [A Gentle Introduction To Rust][tutorial_donovan] by Steve Donovan, 2018.
 - [Rust for Haskell Programmers](https://mmhaskell.com/rust).
 - [Rust Language Cheat Sheet](https://cheats.rs/).
@@ -231,7 +235,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/July 2024* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/August 2024* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
