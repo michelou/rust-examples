@@ -30,7 +30,9 @@ EDITION=2018
 ## See https://doc.rust-lang.org/rustc/lints/levels.html
 RUST_LINT_OPTS=
 RUST_CRATE_OPTS=--crate-name "$(CRATE_NAME)" --crate-type bin
-RUST_DEPS_OPTS=-L "$(TARGET_DIR)/paste-1.0.12/target/debug" -L "$(TARGET_DIR)/rand-0.8.5/target/debug"
+## https://crates.io/crates/paste/1.0.15/
+## https://github.com/rust-random/rand/releases/tag/0.8.5
+RUST_DEPS_OPTS=-L "$(TARGET_DIR)/paste-1.0.15/target/debug" -L "$(TARGET_DIR)/rand-0.8.5/target/debug"
 
 RUSTC_OPTS=$(RUST_LINT_OPTS) $(RUST_CRATE_OPTS) --edition $(EDITION) --out-dir "$(TARGET_DIR)" --target "$(TARGET_TRIPLE)" $(RUST_DEPS_OPTS)
 

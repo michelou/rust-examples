@@ -100,7 +100,7 @@ Current installation options:
 %USERPROFILE%\.cargo\bin\rustup.exe
 &nbsp;
 <b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a> --version</b>
-rustc 1.74.0 (79e9716c9 2023-11-13)
+rustc 1.80.1 (3f5fd8dd4 2024-08-06)
 </pre>
 
 ## <span id="update">Installation update</span> [**&#x25B4;**](#top)
@@ -113,18 +113,18 @@ Command **`rustup update stable`** <sup id="anchor_02">[2](#footnote_02)</sup>  
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2024-07-25, rust version 1.80.0 (051478957 2024-07-21)
+info: latest update on 2024-08-08, rust version 1.80.1 (3f5fd8dd4 2024-08-06)
 [...]
 info: downloading component 'rustc'
- 62.8 MiB /  62.8 MiB (100 %)   1.3 MiB/s in 50s ETA:  0s
+ 57.8 MiB /  57.8 MiB (100 %)  10.7 MiB/s in  5s ETA:  0s
 info: downloading component 'rustfmt'
   1.5 MiB /   1.5 MiB (100 %)   1.3 MiB/s in  1s ETA:  0s
 [...]
 info: installing component 'rustc'
- 62.8 MiB /  62.8 MiB (100 %)  13.4 MiB/s in  4s ETA:  0s
+ 57.8 MiB /  57.8 MiB (100 %)  12.1 MiB/s in  4s ETA:  0s
 info: installing component 'rustfmt'
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.80.0 (051478957 2024-07-21) (from rustc 1.79.0 (129f3b996 2024-06-10))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.80.1 (3f5fd8dd4 2024-08-06) (from rustc 1.80.0 (051478957 2024-07-21))
 
 info: checking for self-updates
 </pre>

@@ -11,6 +11,7 @@
 ## <span id="articles">Articles</span>
 
 - [**fasterthanli**](https://fasterthanli.me/articles) articles :
+  - [Proc macro support in rust-analyzer for nightly rustc versions][article_proc_macro], July 2022.
   - [When rustc explodes][article_explodes], July 2022.
   - [Some mistakes Rust doesn't catch][article_mistakes], February 2022.
   - [Why is my Rust build so slow?][article_slow_build], December 2021.
@@ -43,6 +44,7 @@
 ## <span id="blogs">Blogs</span> [**&#x25B4;**](#top)
 
 - [Procedural Macros in Rust](https://www.freecodecamp.org/news/procedural-macros-in-rust/) by Anshul Sanghi, April 2024.
+- [How I reduced (incremental) Rust compile times by up to 40%](https://www.coderemote.dev/blog/faster-rust-compiler-macro-expansion-caching/), March 2024.
 - [Nicholas's Blog posts](https://nnethercote.github.io/) :
   - [How to speed up the Rust compiler in March 2024](https://nnethercote.github.io/2024/03/06/how-to-speed-up-the-rust-compiler-in-march-2024.html), March 2024.
   - [Back-end parallelism in the Rust compiler](https://nnethercote.github.io/2023/07/11/back-end-parallelism-in-the-rust-compiler.html), July 2023.
@@ -122,6 +124,8 @@
 ## <span id="news">News</span> [**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.80.1](https://blog.rust-lang.org/2024/08/08/Rust-1.80.1.html), August 2024 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.80.1)*).
+  - [Announcing Rust 1.80.0](https://blog.rust-lang.org/2024/07/25/Rust-1.80.0.html), July 2024 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.80.0)*).
   - [Announcing Rust 1.77.2](https://blog.rust-lang.org/2024/04/09/Rust-1.77.2.html), April 2024 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.77.2)*).
   - [Announcing Rust 1.77.0](https://blog.rust-lang.org/2024/03/21/Rust-1.77.0.html), March 2024 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.77.0)*).
   - [Announcing Rust 1.74.1](https://blog.rust-lang.org/2023/12/07/Rust-1.74.1.html), December 2023 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.74.1)*).
@@ -235,7 +239,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/August 2024* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/September 2024* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -256,6 +260,7 @@ version = "12"
 [article_mistakes]: https://fasterthanli.me/articles/some-mistakes-rust-doesnt-catch
 [article_novak]: https://www.wwt.com/article/intro-to-rust-the-modern-day-safe-low-level-programming-language
 [article_oxide]: https://arxiv.org/abs/1903.00982
+[article_proc_macro]: https://fasterthanli.me/articles/proc-macro-support-in-rust-analyzer-for-nightly-rustc-versions
 [article_slow_build]: https://fasterthanli.me/articles/why-is-my-rust-build-so-slow
 [article_stone]: https://developers.redhat.com/blog/2021/04/30/how-rust-makes-rayons-data-parallelism-magical
 [book_blandy]: https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/
