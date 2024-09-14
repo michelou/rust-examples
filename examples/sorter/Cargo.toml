@@ -1,0 +1,16 @@
+[package]
+name = "sorter"
+version = "0.1.0"
+edition = "2021"
+
+# dependencies
+# https://crates.io/crates/rand
+# https://crates.io/crates/rayon
+
+[dependencies]
+rand = "=0.9.0-alpha.2"
+rayon = "1.10.0"
+
+[[bin]]
+name = "main"
+path = "src/main/rust/main.rs"

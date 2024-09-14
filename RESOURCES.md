@@ -24,8 +24,9 @@
   - [Error handling in Rust][article_baumgartner_error], September 2021.
 - [**Red Hat** Developer](https://developers.redhat.com/) articles :
   - [How to create C binding for a Rust library][article_ge] by Gris Ge, September 2022.
-  - [How Rust makes Rayon's data parallelism magical][article_stone] by Josh Stone, April 2021.
+  - [How Rust makes Rayon's data parallelism magical][article_stone_2021] by Josh Stone, April 2021.
   - [Speed up your Python using Rust](https://developers.redhat.com/blog/2017/11/16/speed-python-using-rust#) by Bruno Rocha, November 2017.
+  - [Getting started with rust-toolset][article_stone_2017] by Josh Stone, November 2017.
 - [Intro to Rust: The Modern-Day, Safe Low-Level Programming Language][article_novak] by Marcus Novak, December 2020.
 - [The rustwasmc tool](https://www.secondstate.io/articles/rustwasmc/) by Second State, 2020.<br/>(GitHub project: [`second-state/rustwasmc`](https://github.com/second-state/rustwasmc))
 - [Introduction to Rust][article_dreimanis] by Gints Dreimanis, August 2020.
@@ -262,7 +263,8 @@ version = "12"
 [article_oxide]: https://arxiv.org/abs/1903.00982
 [article_proc_macro]: https://fasterthanli.me/articles/proc-macro-support-in-rust-analyzer-for-nightly-rustc-versions
 [article_slow_build]: https://fasterthanli.me/articles/why-is-my-rust-build-so-slow
-[article_stone]: https://developers.redhat.com/blog/2021/04/30/how-rust-makes-rayons-data-parallelism-magical
+[article_stone_2017]: https://developers.redhat.com/blog/2017/11/01/getting-started-rust-toolset-rhel#
+[article_stone_2021]: https://developers.redhat.com/blog/2021/04/30/how-rust-makes-rayons-data-parallelism-magical
 [book_blandy]: https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/
 [blog_claburn]: https://www.theregister.com/2023/04/27/microsoft_windows_rust/
 [blog_fraenkel_7]: https://blog.frankel.ch/start-rust/7/

@@ -40,6 +40,7 @@ set _WARNING_LABEL=%_STRONG_FG_YELLOW%Warning%_RESET%:
 
 set "_SOURCE_DIR=%_ROOT_DIR%src"
 set "_TARGET_DIR=%_ROOT_DIR%target"
+set "_TARGET_DEPS_DIR=%_TARGET_DIR%\deps"
 set "_TARGET_DOCS_DIR=%_TARGET_DIR%\docs"
 
 if not exist "%CARGO_HOME%\bin\rustc.exe" (
@@ -49,8 +50,16 @@ if not exist "%CARGO_HOME%\bin\rustc.exe" (
 )
 set "_RUSTC_CMD=%CARGO_HOME%\bin\rustc.exe"
 set "_RUSTDOC_CMD=%CARGO_HOME%\bin\rustdoc.exe"
+set "_CARGO_CMD=%CARGO_HOME%\bin\cargo.exe"
 
 set _EDITION_DEFAULT=2021
+
+if not exist "%GIT_HOME%\usr\bin\unzip.exe" (
+    echo %_ERROR_LABEL% Unzip command not found 1>&2
+    set _EXITCODE=1
+    goto :eof
+)
+set "_UNZIP_CMD=%GIT_HOME%\usr\bin\unzip.exe"
 
 @rem use newer PowerShell version if available
 where /q pwsh.exe
@@ -101,7 +110,7 @@ set _STRONG_BG_GREEN=[102m
 set _STRONG_BG_YELLOW=[103m
 set _STRONG_BG_BLUE=[104m
 
-@rem we define _RESET in last position to avoid crazy console output with type command
+@rem we define _RESET in last position to avoid crazy console output from type command
 set _BOLD=[1m
 set _UNDERSCORE=[4m
 set _INVERSE=[7m
@@ -113,7 +122,7 @@ goto :eof
 :args
 set _COMMANDS=
 set _EDITION=%_EDITION_DEFAULT%
-set _TARGET_ABI=msvc
+set _TARGET=msvc
 set _TIMER=0
 set _VERBOSE=0
 set __N=0
@@ -130,10 +139,10 @@ if "%__ARG:~0,1%"=="-" (
     ) else if "%__ARG%"=="-edition:2018" ( set _EDITION=2018
     ) else if "%__ARG%"=="-edition:2021" ( set _EDITION=2021
     ) else if "%__ARG%"=="-help" ( set _COMMANDS=help
-    ) else if "%__ARG%"=="-target:cl" ( set _TARGET_ABI=msvc
-    ) else if "%__ARG%"=="-target:gcc" ( set _TARGET_ABI=gnu
-    ) else if "%__ARG%"=="-target:gnu" ( set _TARGET_ABI=gnu
-    ) else if "%__ARG%"=="-target:msvc" ( set _TARGET_ABI=msvc
+    ) else if "%__ARG%"=="-target:cl" ( set _TARGET=msvc
+    ) else if "%__ARG%"=="-target:gcc" ( set _TARGET=gnu
+    ) else if "%__ARG%"=="-target:gnu" ( set _TARGET=gnu
+    ) else if "%__ARG%"=="-target:msvc" ( set _TARGET=msvc
     ) else if "%__ARG%"=="-timer" ( set _TIMER=1
     ) else if "%__ARG%"=="-verbose" ( set _VERBOSE=1
     ) else (
@@ -171,15 +180,18 @@ set _CRATE_NAME=main
 @rem sys    = none, linux, windows, etc.
 @rem abi    = gnu, android, elf, msvc, etc.
 @rem Command: rustc --print target-list | findstr windows
-set _TARGET_TRIPLE=x86_64-pc-windows-%_TARGET_ABI%
+set __TARGET_ARCH=x86_64
+set __TARGET_VENDOR=pc
+set __TARGET_SYS=windows
+set _TARGET_TRIPLE=%__TARGET_ARCH%-%__TARGET_VENDOR%-%__TARGET_SYS%-%_TARGET%
 
-if %_TARGET_ABI%==gnu if not defined MSYS_HOME (
+if %_TARGET%==gnu if not defined MSYS_HOME (
     echo %_ERROR_LABEL% MSYS installation not found 1>&2
     set _EXITCODE=1
     goto :eof
 )
 if %_DEBUG%==1 (
-    echo %_DEBUG_LABEL% Options    : _EDITION=%_EDITION% _TARGET_ABI=%_TARGET_ABI% _TIMER=%_TIMER% _VERBOSE=%_VERBOSE% 1>&2
+    echo %_DEBUG_LABEL% Options    : _EDITION=%_EDITION% _TARGET=%_TARGET% _TIMER=%_TIMER% _VERBOSE=%_VERBOSE% 1>&2
     echo %_DEBUG_LABEL% Subcommands: %_COMMANDS% 1>&2
     echo %_DEBUG_LABEL% Variables  : "CARGO_HOME=%CARGO_HOME%" 1>&2
     echo %_DEBUG_LABEL% Variables  : "GIT_HOME=%GIT_HOME%" 1>&2
@@ -247,9 +259,12 @@ goto :eof
 setlocal
 if not exist "%_TARGET_DIR%" mkdir "%_TARGET_DIR%"
 
+call :compile_deps
+if not %_EXITCODE%==0 goto :eof
+
 set __SOURCE_FILES=
 set __N=0
-for /f "delims=" %%f in ('dir /b /s "%_SOURCE_DIR%\main.rs" 2^>NUL') do (
+for /f "delims=" %%f in ('dir /b /s "%_SOURCE_DIR%\main\rust\*.rs" 2^>NUL') do (
     set __SOURCE_FILES=!__SOURCE_FILES! "%%f"
     set /a __N+=1
 )
@@ -260,8 +275,8 @@ if %__N%==0 (
 ) else ( set __N_FILES=%__N% Rust source files
 )
 set __PATH=%PATH%
-@rem We add gcc.exe to PATH if _TARGET_ABI=gnu
-if %_TARGET_ABI%==gnu set "PATH=%PATH%;%MSYS_HOME%\mingw64\bin"
+@rem We add gcc.exe to PATH if _TARGET=gnu
+if %_TARGET%==gnu set "PATH=%PATH%;%MSYS_HOME%\mingw64\bin"
 
 @rem Lint levels: -A (allow), -W (warning), -D (deny), -F (forbid)
 @rem See https://doc.rust-lang.org/rustc/lints/levels.html
@@ -271,27 +286,125 @@ set _RUST_LINT_OPTS=
 @rem set "__OPTS_FILE=%_TARGET_DIR%\rustc_opts.txt"
 @rem echo %_RUSTC_OPTS% > "%__OPTS_FILE%"
 set __RUST_CRATE_OPTS=--crate-name "%_CRATE_NAME%" --crate-type bin
-@rem https://stackoverflow.com/questions/49844681/where-are-modules-installed-by-cargo-stored-in-a-rust-project
-@rem https://crates.io/crates/paste/1.0.15/
-@rem https://github.com/rust-random/rand/releases/tag/0.8.5
-@rem https://github.com/rust-lang/crates.io-index/tree/master/pa/st
-set __RUST_DEPS_OPTS=-L "%_TARGET_DIR%\paste-1.0.15\target\debug" -l paste -L "%_TARGET_DIR%\rand-0.8.5\target\debug" -l rand
-set __RUSTC_OPTS=%_RUST_LINT_OPTS% %__RUST_CRATE_OPTS% --edition %_EDITION% --out-dir "%_TARGET_DIR%" --target "%_TARGET_TRIPLE%" %__RUST_DEPS_OPTS%
+set __RUST_DEPS_OPTS=-L "dependency=%_TARGET_DEPS_DIR%"
+set __RUST_DEPS_OPTS=%__RUST_DEPS_OPTS% --extern "rand=%_TARGET_DEPS_DIR%\librand.rlib"
+set __RUST_DEPS_OPTS=%__RUST_DEPS_OPTS% --extern "rayon=%_TARGET_DEPS_DIR%\librayon.rlib"
+set __RUSTC_OPTS=%_RUST_LINT_OPTS% %__RUST_CRATE_OPTS% --edition %_EDITION% --out-dir "%_TARGET_DIR%" --target "%_TARGET_TRIPLE%"
 if %_DEBUG%==1 ( set __RUSTC_OPTS=-g %__RUSTC_OPTS%
 ) else ( set __RUSTC_OPTS=-Clink-arg=/DEBUG:NONE %__RUSTC_OPTS%
 )
 
-if %_DEBUG%==1 ( echo %_DEBUG_LABEL% "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FILES% 1>&2
+if %_DEBUG%==1 ( echo %_DEBUG_LABEL% "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FILES% %__RUST_DEPS_OPTS% 1>&2
 ) else if %_VERBOSE%==1 ( echo Compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
 )
-call "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FILES%
+call "%_RUSTC_CMD%" %__RUSTC_OPTS% %__SOURCE_FILES% %__RUST_DEPS_OPTS%
 if not %ERRORLEVEL%==0 (
-    if %_TARGET_ABI%==gnu set "PATH=%__PATH%"
+    if %_TARGET%==gnu set "PATH=%__PATH%"
     echo %_ERROR_LABEL% Failed to compile %__N_FILES% to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
     set _EXITCODE=1
     goto :eof
 )
-if %_TARGET_ABI%==gnu set "PATH=%__PATH%"
+if %_TARGET%==gnu set "PATH=%__PATH%"
+goto :eof
+
+:compile_deps
+if not exist "%_TARGET_DEPS_DIR%" mkdir "%_TARGET_DEPS_DIR%"
+
+set __URL_RAND_ZIP=https://github.com/rust-random/rand/archive/refs/tags/0.9.0-alpha.2.zip
+set __URL_RAYON_ZIP=https://github.com/rayon-rs/rayon/archive/refs/tags/v1.10.0.zip
+
+call :download_dep "%__URL_RAND_ZIP%" "%_TARGET_DIR%\rand-0.9.0-alpha.2.zip"
+if not %_EXITCODE%==0 goto :eof
+
+call :download_dep "%__URL_RAYON_ZIP%" "%_TARGET_DIR%\rayon-1.10.0.zip"
+if not %_EXITCODE%==0 goto :eof
+
+call :action_required "%_TARGET_DEPS_DIR%\librand.rlib" "%_TARGET_DIR%\rand-0.9.0-alpha.2.zip"
+if %_ACTION_REQUIRED%==1 goto :compile_deps_next
+
+call :action_required "%_TARGET_DEPS_DIR%\librayon.rlib" "%_TARGET_DIR%\rayon-1.10.0.zip"
+if %_ACTION_REQUIRED%==0 goto :eof
+
+:compile_deps_next
+set __UNZIP_OPTS=-o -q
+
+for /f "delims=" %%f in ('dir /s /b "%_TARGET_DIR%\*.zip"') do (
+    if %_DEBUG%==1 echo %_DEBUG_LABEL% "%_UNZIP_CMD%" %__UNZIP_OPTS% "%%f" -d "%_TARGET_DIR%" 1>&2
+    call "%_UNZIP_CMD%" %__UNZIP_OPTS% "%%f" -d "%_TARGET_DIR%"
+    pushd "%_TARGET_DIR%\%%~nf"
+    if %_DEBUG%==1 ( echo %_DEBUG_LABEL% "!_CARGO_CMD:%USERPROFILE%=%%USERPROFILE%%!" -q build ^("!_TARGET_DIR:%_ROOT_DIR%=!\%%~nf"^) 1>&2
+    ) else if %_VERBOSE%==1 ( echo Build library dependency in directory "!_TARGET_DIR:%_ROOT_DIR%=!\%%~nf" 1>&2
+    )
+    call "%_CARGO_CMD%" -q build 2>NUL
+    popd
+    for /f "delims=" %%g in ('dir /s /b "%_TARGET_DIR%\%%~nf\*.rlib" "%_TARGET_DIR%\%%~nf\*.dll"') do (
+        for /f "tokens=1,* delims=-" %%m in ("%%~ng") do set "__FILE_NAME=%%m%%~xg"
+        @rem if %_DEBUG%==1 echo %_DEBUG_LABEL% copy "%%g" "%_TARGET_DEPS_DIR%\!__FILE_NAME!" 1>&2
+        copy "%%g" "%_TARGET_DEPS_DIR%\!__FILE_NAME!" 1>NUL
+    )
+)
+goto :eof
+
+@rem input parameters: %1=Zip URL, %2=Zip output path
+:download_dep
+set "__ZIP_URL=%~1"
+set "__ZIP_FILE=%~2"
+
+if exist "%__ZIP_FILE%" goto :eof
+
+if %_DEBUG%==1 ( echo %_DEBUG_LABEL% "%_PWSH_CMD%" -C "Invoke-WebRequest -Uri '%__ZIP_URL%' -OutFile '%__ZIP_FILE%'" 1>&2
+) else if %_VERBOSE%==1 ( echo Download library "!__ZIP_FILE:%_TARGET_DIR%\=!" to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
+)
+call "%_PWSH_CMD%" -C "$progressPreference='silentlyContinue';Invoke-WebRequest -Uri '%__ZIP_URL%' -OutFile '%__ZIP_FILE%'"
+if not %ERRORLEVEL%==0 (
+    echo %_ERROR_LABEL% Failed to download library "!__ZIP_FILE:%_TARGET_DIR%\=!" to directory "!_TARGET_DIR:%_ROOT_DIR%=!" 1>&2
+    set _EXITCODE=1
+    goto :eof
+)
+goto :eof
+
+@rem input parameter: 1=target file 2=path (wildcards accepted)
+@rem output parameter: _ACTION_REQUIRED
+:action_required
+set __TARGET_FILE=%~1
+set __PATH=%~2
+
+set __TARGET_TIMESTAMP=00000000000000
+for /f "usebackq" %%i in (`call "%_PWSH_CMD%" -c "gci -path '%__TARGET_FILE%' -ea Stop | select -last 1 -expandProperty LastWriteTime | Get-Date -uformat %%Y%%m%%d%%H%%M%%S" 2^>NUL`) do (
+     set __TARGET_TIMESTAMP=%%i
+)
+set __SOURCE_TIMESTAMP=00000000000000
+for /f "usebackq" %%i in (`call "%_PWSH_CMD%" -c "gci -recurse -path '%__PATH%' -ea Stop | sort LastWriteTime | select -last 1 -expandProperty LastWriteTime | Get-Date -uformat %%Y%%m%%d%%H%%M%%S" 2^>NUL`) do (
+    set __SOURCE_TIMESTAMP=%%i
+)
+call :newer %__SOURCE_TIMESTAMP% %__TARGET_TIMESTAMP%
+set _ACTION_REQUIRED=%_NEWER%
+if %_DEBUG%==1 (
+    echo %_DEBUG_LABEL% %__TARGET_TIMESTAMP% Target : "%__TARGET_FILE%" 1>&2
+    echo %_DEBUG_LABEL% %__SOURCE_TIMESTAMP% Sources: "%__PATH%" 1>&2
+    echo %_DEBUG_LABEL% _ACTION_REQUIRED=%_ACTION_REQUIRED% 1>&2
+) else if %_VERBOSE%==1 if %_ACTION_REQUIRED%==0 if %__SOURCE_TIMESTAMP% gtr 0 (
+    echo No action required ^("!__PATH:%_ROOT_DIR%=!"^) 1>&2
+)
+goto :eof
+
+@rem input parameters: %1=file timestamp 1, %2=file timestamp 2
+@rem output parameter: _NEWER
+:newer
+set __TIMESTAMP1=%~1
+set __TIMESTAMP2=%~2
+
+set __DATE1=%__TIMESTAMP1:~0,8%
+set __TIME1=%__TIMESTAMP1:~-6%
+
+set __DATE2=%__TIMESTAMP2:~0,8%
+set __TIME2=%__TIMESTAMP2:~-6%
+
+if %__DATE1% gtr %__DATE2% ( set _NEWER=1
+) else if %__DATE1% lss %__DATE2% ( set _NEWER=0
+) else if %__TIME1% gtr %__TIME2% ( set _NEWER=1
+) else ( set _NEWER=0
+)
 goto :eof
 
 @rem Generated index page is %_TARGET_DOCS_DIR%\%_CRATE_NAME%\index.html

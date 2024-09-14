@@ -89,6 +89,91 @@ We get the following output when executing the [`cargo`][cargo_cli] command :
 
 <img src="images/rust-ui-druid.png" width="300px"/>
 
+<!--=======================================================================-->
+
+### <span id="sorter">`sorter` Example</span> [**&#x25B4;**](#top)
+
+This project has the following directory structure :
+
+<pre style="font-size:80%;">
+<b>sorter&gt; <a href="">tree</a> /f /a . | <a href="">findstr</a> /v /b [A-Z]</b>
+|   <a href="./sorter/build.bat">build.bat</a>
+|   <a href="./sorter/Cargo.toml">Cargo.toml</a>
+\---<b>src</b>
+    \---<b>main</b>
+        \---<b>rust</b>
+                <a href="./sorter/src/main/rust/main.rs">main.rs</a>
+</pre>
+
+Command [**`cargo`**][cargo_cli]`run` genrated and execute the Rust program `target\debug\main.exe` :
+
+<pre style="font-size:80%;">
+<b>sorter&gt; <a href="https://doc.rust-lang.org/cargo/commands/cargo-clean.html">cargo clean</a> &amp; <a href="https://doc.rust-lang.org/cargo/commands/cargo-run.html">cargo run</a></b>
+     Removed 884 files, 148.1MiB total
+    Updating crates.io index
+     Locking 22 packages to latest compatible versions
+      Adding wasi v0.11.0+wasi-snapshot-preview1 (latest: v0.13.2+wasi-0.2.1)
+   [...]
+   Compiling rayon v1.10.0
+   [...]
+   Compiling rand v0.9.0-alpha.2
+   Compiling sorter v0.1.0 (F:\examples\sorter)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 8.33s
+     Running `target\debug\main.exe`
+random numbers: [-105, 108, -84, -75, 45, 26, 29, -106, 83, 16]
+sorted numbers: [-106, -105, -84, -75, 16, 26, 29, 45, 83, 108]
+</pre>
+
+Command [**`build.bat`**](./sorter/build.bat)`-verbose clean run` generates and executes the Rust program `target\main.exe` :
+
+<pre style="font-size:80%;">
+<b>sorter&gt; <a href="./sorter/build.bat">build</a> -verbose clean run</b>
+Download library "rand-0.9.0-alpha.2.zip" to directory "target"
+Download library "rayon-1.10.0.zip" to directory "target"
+Build library dependency in directory "target\rand-0.9.0-alpha.2"
+Build library dependency in directory "target\rayon-1.10.0"
+Compile 1 Rust source file to directory "target"
+random numbers: [94, -79, -93, 123, 77, 99, -18, 35, -92, -72]
+sorted numbers: [-93, -92, -79, -72, -18, 35, 77, 94, 99, 123]
+</pre>
+
+> **:mag_right:** Output files in directory <code>target\\</code> are generated as follows when running batch file <a href="./sorter/build.bat"><code>build.bat</code></a> :
+> <ol>
+> <li>we download the library source archives our program depends on, namely <a href="https://crates.io/crates/rand" rel="external"><code>rand-0.9.0-alpha.2.zip</code></a> and <a href="https://crates.io/crates/rayon" rel="external"><code>rayon-1.10.0.zip</code></a>.</li>
+> <li>we build both libraries with command <code>cargo build</code>.</li>
+> <li>we copy <code>.dll</code> and <code>.rlib</code> files from <code>rand-0.9.0-alpha.2\target\debug\deps\</code> and <code>rayon-1.10.0\target\debug\deps\</code> to subdirectory <code>deps\</code>.</li>
+> <li>we generate the Rust program <code>main.exe</code>.</li>
+> </ol>
+> For instance :
+> <pre style="font-size:80%;">
+> <b>&gt; <a href="">dir</a> /s /b target\deps | <a href="">sed</a> -e 's/^.*target\\\//g'& dir /b target</b>
+> deps\libbyteorder.rlib
+> deps\libcfg_if.rlib
+> deps\libcrossbeam_deque.rlib
+> deps\libcrossbeam_epoch.rlib
+> deps\libcrossbeam_utils.rlib
+> deps\libeither.rlib
+> deps\libgetrandom.rlib
+> deps\libppv_lite86.rlib
+> deps\libproc_macro2.rlib
+> deps\libquote.rlib
+> deps\librand.rlib
+> deps\librand_chacha.rlib
+> deps\librand_core.rlib
+> deps\librayon.rlib
+> deps\librayon_core.rlib
+> deps\libsyn.rlib
+> deps\libunicode_ident.rlib
+> deps\libzerocopy.rlib
+> deps\zerocopy_derive.dll
+> deps
+> main.exe
+> rand-0.9.0-alpha.2
+> rand-0.9.0-alpha.2.zip
+> rayon-1.10.0
+> rayon-1.10.0.zip
+> </pre>
+
 ***
 
 *[mics](https://lampwww.epfl.ch/~michelou/)/September 2024* [**&#9650;**](#top)

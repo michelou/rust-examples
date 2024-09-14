@@ -18,8 +18,8 @@ In normal case we are facing one of the following situations:
 Command **`rustup-init --help`** displays the available options:
 
 <pre style="font-size:80%;">
-<b>&gt; c:\opt\rust-1.24.3\rustup-init</a> --help</b>
-rustup-init 1.24.3 (ce5817a94 2021-05-31)
+<b>&gt; c:\opt\rust\rustup-init</a> --help</b>
+rustup-init 1.27.1 (54dd3d00f 2024-04-24)
 The installer for rustup
 
 USAGE:
@@ -113,7 +113,7 @@ Command **`rustup update stable`** <sup id="anchor_02">[2](#footnote_02)</sup>  
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2024-08-08, rust version 1.80.1 (3f5fd8dd4 2024-08-06)
+info: latest update on 2024-09-05, rust version 1.81.0 (eeb90cda1 2024-09-04)
 [...]
 info: downloading component 'rustc'
  57.8 MiB /  57.8 MiB (100 %)  10.7 MiB/s in  5s ETA:  0s
@@ -124,7 +124,7 @@ info: installing component 'rustc'
  57.8 MiB /  57.8 MiB (100 %)  12.1 MiB/s in  4s ETA:  0s
 info: installing component 'rustfmt'
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.80.1 (3f5fd8dd4 2024-08-06) (from rustc 1.80.0 (051478957 2024-07-21))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.81.0 (eeb90cda1 2024-09-04) (from rustc 1.80.1 (3f5fd8dd4 2024-08-06))
 
 info: checking for self-updates
 </pre>
@@ -262,7 +262,7 @@ Installed Commands:
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/August 2024* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/September 2024* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

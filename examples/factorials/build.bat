@@ -50,6 +50,8 @@ if not exist "%CARGO_HOME%\bin\rustc.exe" (
 set "_RUSTC_CMD=%CARGO_HOME%\bin\rustc.exe"
 set "_RUSTDOC_CMD=%CARGO_HOME%\bin\rustdoc.exe"
 
+set _EDITION_DEFAULT=2021
+
 @rem use newer PowerShell version if available
 where /q pwsh.exe
 if %ERRORLEVEL%==0 ( set _PWSH_CMD=pwsh.exe
@@ -110,7 +112,7 @@ goto :eof
 @rem output parameters: _COMMANDS, _DEBUG, _TARGET, _VERBOSE
 :args
 set _COMMANDS=
-set _EDITION=2018
+set _EDITION=%_EDITION_DEFAULT%
 set _TARGET=msvc
 set _TIMER=0
 set _VERBOSE=0
@@ -206,7 +208,7 @@ echo Usage: %__BEG_O%%_BASENAME% { ^<option^> ^| ^<subcommand^> }%__END%
 echo.
 echo   %__BEG_P%Options:%__END%
 echo     %__BEG_O%-debug%__END%                print commands executed by this script
-echo     %__BEG_O%-edition:^<edition^>%__END%  set Rust edition ^(default: %_BEG_O%2018%__END%^)
+echo     %__BEG_O%-edition:^<edition^>%__END%  set Rust edition ^(default: %_BEG_O%%_EDITION_DEFAULT%%__END%^)
 echo     %__BEG_O%-target:^<gcc^|msvc^>%__END%    set plaform target ^(default: %__BEG_O%msvc%__END%/%__BEG_O%cl%__END%^)
 echo     %__BEG_O%-timer%__END%                print total execution time
 echo     %__BEG_O%-verbose%__END%              print progress messages
