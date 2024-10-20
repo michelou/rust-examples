@@ -113,18 +113,17 @@ Command **`rustup update stable`** <sup id="anchor_02">[2](#footnote_02)</sup>  
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2024-09-05, rust version 1.81.0 (eeb90cda1 2024-09-04)
+info: latest update on 2024-10-17, rust version 1.82.0 (f6e511eec 2024-10-15)
 [...]
+info: downloading component 'rust-docs'
+ 16.3 MiB /  16.3 MiB (100 %)  11.1 MiB/s in  1s ETA:  0s
+info: downloading component 'rust-std'
+ 19.5 MiB /  19.5 MiB (100 %)  11.5 MiB/s in  1s ETA:  0s
 info: downloading component 'rustc'
- 57.8 MiB /  57.8 MiB (100 %)  10.7 MiB/s in  5s ETA:  0s
+ 62.0 MiB /  62.0 MiB (100 %)  11.1 MiB/s in  5s ETA:  0s
 info: downloading component 'rustfmt'
-  1.5 MiB /   1.5 MiB (100 %)   1.3 MiB/s in  1s ETA:  0s
-[...]
-info: installing component 'rustc'
- 57.8 MiB /  57.8 MiB (100 %)  12.1 MiB/s in  4s ETA:  0s
-info: installing component 'rustfmt'
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.81.0 (eeb90cda1 2024-09-04) (from rustc 1.80.1 (3f5fd8dd4 2024-08-06))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.82.0 (f6e511eec 2024-10-15) (from rustc 1.81.0 (eeb90cda1 2024-09-04))
 
 info: checking for self-updates
 </pre>
@@ -262,7 +261,7 @@ Installed Commands:
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/September 2024* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/October 2024* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

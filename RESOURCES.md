@@ -62,6 +62,7 @@
   - [How to write a function-like macro][blog_hans_macro], July 2023.
 - [Why Rust is the most admired language among developers][blog_verdi] by Sara Verdi, August 2023.
 - [Microsoft is busy rewriting core Windows code in Rust][blog_claburn] by Thomas Claburn, April 2023.
+- [Rust : Concepts That We Should Know](https://www.adservio.fr/post/rust-concepts-that-we-should-know), April 2023.
 - [C++ vs. Rust: Factorial](https://oopscenities.net/2023/02/22/factorial-in-rust-vs-factorial-in-c/) by [Oopscene](https://twitter.com/oopscene), February 2023.
 - [How Rust went from a side project to the world’s most-loved programming language][blog_thompson] by Clive Thompson, February 2023.
 - [Rust's Vector][blog_fraenkel_9] by Nicolas Fränkel, August 2021.
@@ -106,7 +107,8 @@
 - [Mastering Rust][book_uzayr], by Sufyan bin Uzayr, November 2022.<br/><span style="font-size:80%;">(CRC Press, ISBN 978-1-0323-1901-8, 318 pages)</span>
 - [Rust Crash Course](https://bpbonline.com/products/rust-crash-course) by Abhishek Kumar, July 2022.<br/><span style="font-size:80%;">([BPB Online][bpb_online], ISBN 978-93-5551-095-2, 328 pages)</span>
 - [Learn Rust Programming](https://https://bpbonline.com/products/learn-rust-programming) by Claus Matzinger, July 2022.<br/><span style="font-size:80%;">([BPB Online][bpb_online], ISBN 978-93-5551-154-6, 268 pages)</span>
-- [Beginning Rust][book_milanesi] (2<sup>nd</sup> Ed.) by Carlo Milanesi, 2022.<br/><span style="font-size:80%;">(Apress, ISBN 978-1-4842-7208-4, 413 pages)</span>
+ - [Zero to Production in Rust][book_palmieri] by Luca Palmieri, March 2022.<br/><span style="font-size:80%;">(ISBN 979-8847211437, 610 pages)</span>
+ - [Beginning Rust][book_milanesi] (2<sup>nd</sup> Ed.) by Carlo Milanesi, 2022.<br/><span style="font-size:80%;">(Apress, ISBN 978-1-4842-7208-4, 413 pages)</span>
 - [Rust in Action][book_mcnamara] by Tim McNamara, June 2021.<br/><span style="font-size:80%;">(Manning, ISBN 978-1-6172-9455-6, 456 pages)</span>
 - [Programming Rust][book_blandy] (2<sup>nd</sup> Ed.) by Jim Blandy, June 2021.</br><span style="font-size:80%;">(O'Reilly, ISBN 978-1-4920-5259-3, ? pages)</span>
  - [Beginning Rust Programming][book_messier] by Ric Messier, March 2021.<br/><span style="font-size:80%;">(Wiley, ISBN 978-1-119-71297-8, 416 pages)</span>
@@ -125,6 +127,8 @@
 ## <span id="news">News</span> [**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.82.0](https://blog.rust-lang.org/2024/10/17/Rust-1.82.0.html), October 2024 ([*release notes*](https://doc.rust-lang.org/nightly/releases.html#version-1820-2024-10-17)).
+  - [Announcing Rust 1.81.0](https://blog.rust-lang.org/2024/09/05/Rust-1.81.0.html), September 2024  ([*release notes*](https://doc.rust-lang.org/nightly/releases.html#version-1810-2024-09-05)).
   - [Announcing Rust 1.80.1](https://blog.rust-lang.org/2024/08/08/Rust-1.80.1.html), August 2024 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.80.1)*).
   - [Announcing Rust 1.80.0](https://blog.rust-lang.org/2024/07/25/Rust-1.80.0.html), July 2024 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.80.0)*).
   - [Announcing Rust 1.77.2](https://blog.rust-lang.org/2024/04/09/Rust-1.77.2.html), April 2024 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.77.2)*).
@@ -176,6 +180,7 @@
 
 ## <span id="training">Training and Tutorials</span> [**&#x25B4;**](#top)
 
+- [100 Exercices To Learn Rust](https://rust-exercises.com/100-exercises/).
 - [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/intro.html).
 - [24 days of Rust](https://zsiciarz.github.io/24daysofrust/index.html) by Zbigniew Siciarz, 2023.
 - [Rust for the Polyglot Programmer](https://www.chiark.greenend.org.uk/~ianmdlvl/rust-polyglot/) by Ian Jackson and contributors, 2021.
@@ -240,7 +245,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/September 2024* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/October 2024* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -286,6 +291,7 @@ version = "12"
 [book_mcnamara]: https://www.manning.com/books/rust-in-action
 [book_messier]: https://www.wiley.com/en-us/Beginning+Rust+Programming-p-9781119712978
 [book_milanesi]: https://link.springer.com/book/10.1007/978-1-4842-7208-4
+[book_palmieri]: https://www.amazon.com/Zero-Production-Rust-introduction-development/dp/B0BHLDMFDQ
 [book_sharma]: https://www.packtpub.com/product/mastering-rust-second-edition/9781789346572
 [blog_thompson]: https://www.technologyreview.com/2023/02/14/1067869/rust-worlds-fastest-growing-programming-language/
 [book_uzayr]: https://www.routledge.com/Mastering-Rust-A-Beginners-Guide/Uzayr/p/book/9781032319018
