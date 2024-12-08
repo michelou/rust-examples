@@ -9,7 +9,7 @@
   </tr>
 </table>
 
-[Ada][ada_examples], [Akka][akka_examples], [C++][cpp_examples], [COBOL][cobol_examples],  [Dart][dart_examples], [Deno][deno_examples], [Docker][docker_examples], [Erlang][erlang_examples], [Flix][flix_examples], [Golang][golang_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kafka][kafka_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Modula-2][m2_examples], [Node.js][nodejs_examples], [Scala 3][scala3_examples], [Spark][spark_examples], [Spring][spring_examples], [TruffleSqueak][trufflesqueak_examples], [WiX Toolset][wix_examples] and [Zig][zig_examples] are other topics we are continuously monitoring.
+[Ada][ada_examples], [Akka][akka_examples], [C++][cpp_examples], [COBOL][cobol_examples],  [Dafny][dafny_examples], [Dart][dart_examples], [Deno][deno_examples], [Docker][docker_examples], [Erlang][erlang_examples], [Flix][flix_examples], [Golang][golang_examples], [GraalVM][graalvm_examples], [Haskell][haskell_examples], [Kafka][kafka_examples], [Kotlin][kotlin_examples], [LLVM][llvm_examples], [Modula-2][m2_examples], [Node.js][nodejs_examples], [Scala 3][scala3_examples], [Spark][spark_examples], [Spring][spring_examples], [TruffleSqueak][trufflesqueak_examples], [WiX Toolset][wix_examples] and [Zig][zig_examples] are other topics we are continuously monitoring.
 
 <!--
 > **&#9755;** The blog post ["Rust vs Alternative Programming Languages: How Do They Compare?"](https://kruschecompany.com/rust-vs-alternatives/) presents a comparison of Rust's strengths against other programming languages.
@@ -23,7 +23,7 @@ This project depends on the following external software for the **Microsoft Wind
 - [GCC Front-End for Rust 1.75](https://rust-gcc.github.io/) <sup id="anchor_01"><a href="#footnote_01">1</a></sup>
 -->
 - [Git 2.47][git_downloads] ([*release notes*][git_relnotes])
-- [Rust 1.82][rust_downloads] <sup id="anchor_02"><a href="#footnote_02">2</a></sup> ([*release notes*][rust_relnotes])
+- [Rust 1.83][rust_downloads] <sup id="anchor_02"><a href="#footnote_02">2</a></sup> ([*release notes*][rust_relnotes])
 
 <!--
 See changelogs on https://releases.rs/
@@ -42,17 +42,18 @@ Rust 1.79.0 -> 2024-06-10
 Rust 1.80.0 -> 2024-07-25
 Rust 1.81.0 -> 2024
 Rust 1.82.0 -> 
+Rust 1.83.0 -> 
 -->
 
 Optionally one may also install the following software:
 
 - [ConEmu 2023][conemu_downloads] ([*release notes*][conemu_relnotes])
-- [Visual Studio Code 1.94][vscode_downloads] ([*release notes*][vscode_relnotes])
+- [Visual Studio Code 1.95][vscode_downloads] ([*release notes*][vscode_relnotes])
 
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [**`/opt/`**][linux_opt] directory on Unix).
 
-For instance our development environment looks as follows (*October 2024*) <sup id="anchor_03">[3](#footnote_03)</sup>:
+For instance our development environment looks as follows (*December 2024*) <sup id="anchor_03">[3](#footnote_03)</sup>:
 
 <pre style="font-size:80%;">
 C:\opt\ConEmu\          <i>( 26 MB)</i>
@@ -136,9 +137,9 @@ We execute command [**`setenv.bat`**](setenv.bat) once to setup our development 
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a></b>
 Tool versions:
-   cargo 1.82.0, rustc 1.82.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.7.0-stable</a>, rustup 1.27.1,
+   cargo 1.83.0, rustc 1.83.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.7.0-stable</a>, rustup 1.27.1,
    pelook v1.73, make 4.4.1,
-   git 2.47.0, diff 3.10, bash 5.2.37(1)
+   git 2.47.1, diff 3.10, bash 5.2.37(1)
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo git sh</b>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\cargo.exe
@@ -157,9 +158,9 @@ Command [**`setenv.bat`**](setenv.bat) with option **`-verbose`** displays addit
 <pre style="font-size:80%;">
 <b>&gt; <a href="setenv.bat">setenv</a> -verbose</b>
 Tool versions:
-   cargo 1.82.0, rustc 1.82.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.7.0-stable</a>, rustup 1.27.1,
+   cargo 1.83.0, rustc 1.83.0, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.7.0-stable</a>, rustup 1.27.1,
    pelook v1.73, make 4.4.1,
-   git 2.47.0, diff 3.10, bash 5.2.37(1)
+   git 2.47.1, diff 3.10, bash 5.2.37(1)
 Tool paths:
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/cargo/commands/">cargo.exe</a>
    <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a>
@@ -199,11 +200,10 @@ Path associations:
 resolving dependencies...
 looking for conflicting packages...
 &nbsp;
-Packages (1) mingw-w64-clang-x86_64-rust-1.80.0-1
+Packages (1) mingw-w64-clang-x86_64-rust-1.83.0-2
 &nbsp;
-Total Download Size:    88.01 MiB
-Total Installed Size:  406.29 MiB
-Net Upgrade Size:      -21.21 MiB
+Total Download Size:    262.18 MiB
+Total Installed Size:  1624.09 MiB
 &nbsp;
 :: Proceed with installation? [Y/n] y
 [...]
@@ -212,7 +212,7 @@ Net Upgrade Size:      -21.21 MiB
 c:\opt\msys64\clang64\bin\rustc.exe
 &nbsp;
 <b>&gt; c:\opt\msys64\clang64\bin\\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html" rel="external">rustc.exe</a> --version</b>
-rustc 1.80.0 (051478957 2024-07-21) (Rev1, Built by MSYS2 project)
+rustc 1.83.0 (051478957 2024-07-21) (Rev1, Built by MSYS2 project)
 </pre>
 </dd></dl>
 
@@ -224,28 +224,29 @@ rustc 1.80.0 (051478957 2024-07-21) (Rev1, Built by MSYS2 project)
 <dd>
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc</a> --version --verbose | <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr">findstr</a> /b "rustc LLVM"</b>
-rustc 1.80.0 (051478957 2024-07-21)
+rustc 1.80.0 (90b35a623 2024-11-26)
 LLVM version: 18.1.7
 </pre>
 </dd>
 <dd>
 <table>
-<tr><th>Rustc Version</th><th>LLVM Version</th></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.78.0">1.78.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.80.0">1.80.0</a></td><td><a href="https://discourse.llvm.org/t/18-1-7-released/79433" rel="external">18.1.7</a></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.75.0">1.75.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.77.2">1.77.2</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-6-released/73840" rel="external">17.0.6</a></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.73.0">1.73.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.74.0">1.74.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-2-released/73840" rel="external">17.0.2</a></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.71.0">1.71.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.72.0">1.72.0</a></td><td><a href="https://discourse.llvm.org/t/16-0-5-release/71097" rel="external">16.0.5</a></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.70.0">1.70.0</a></td><td><a href="https://releases.llvm.org/16.0.0/docs/ReleaseNotes.html" rel="external">16.0.0</a></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.68.1" rel="external">1.68.1</a></td><td><a href="https://discourse.llvm.org/t/llvm-15-0-6-released/66899" rel="external">15.0.6</a></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.66.1" rel="external">1.66.1</a></td><td><a href="https://discourse.llvm.org/t/llvm-15-0-2-released/65695" rel="external">15.0.2</a></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.66.0" rel="external">1.66.0</a></td><td><a href="https://releases.llvm.org/15.0.0/docs/ReleaseNotes.html" rel="external">15.0.0</a></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.64.0" rel="external">1.64.0</a></td><td><a href="https://releases.llvm.org/14.0.0/docs/ReleaseNotes.html">14.0.6</a></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.62.0" rel="external">1.62.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.63.0" rel="external">1.63.0</a></td><td><a href="https://releases.llvm.org/14.0.5/docs/ReleaseNotes.html" rel="external">14.0.5</a></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.60.0" rel="external">1.60.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.61.0" rel="external">1.61.0</a></td><td><a href="https://releases.llvm.org/14.0.0/docs/ReleaseNotes.html" rel="external">14.0.0</a></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.56.0">1.56.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.59.https0">1.59.0</a></td><td><a href="https://releases.llvm.org/13.0.0/docs/ReleaseNotes.html">13.0.0</a></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.55.0">1.55.0</a></td><td><a href="https://releases.llvm.org/12.0.0/docs/ReleaseNotes.html" rel="external">12.0.1</a></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.52.0">1.52.0</a> - 1.54.0</td><td><a href="https://releases.llvm.org/12.0.0/docs/ReleaseNotes.html">12.0.0</a></td></tr>
-<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.47.0">1.47.0</a> - 1.51.0</td><td><a href="https://releases.llvm.org/11.0.0/docs/ReleaseNotes.html">11.0.0</a></td></tr>
+<tr><th>Rustc Version</th><th>LLVM Version</th><th>Notes</th></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.82.0">1.82.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.83.0">1.83.0</a></td><td>19.0</td><td>Unicode 16</td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.78.0">1.78.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.80.0">1.80.0</a></td><td><a href="https://discourse.llvm.org/t/18-1-7-released/79433" rel="external">18.1.7</a></td><td></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.75.0">1.75.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.77.2">1.77.2</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-6-released/73840" rel="external">17.0.6</a></td><td></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.73.0">1.73.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.74.0">1.74.0</a></td><td><a href="https://discourse.llvm.org/t/llvm-17-0-2-released/73840" rel="external">17.0.2</a></td><td></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.71.0">1.71.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.72.0">1.72.0</a></td><td><a href="https://discourse.llvm.org/t/16-0-5-release/71097" rel="external">16.0.5</a></td><td></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.70.0">1.70.0</a></td><td><a href="https://releases.llvm.org/16.0.0/docs/ReleaseNotes.html" rel="external">16.0.0</a></td><td></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.68.1" rel="external">1.68.1</a></td><td><a href="https://discourse.llvm.org/t/llvm-15-0-6-released/66899" rel="external">15.0.6</a></td><td></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.66.1" rel="external">1.66.1</a></td><td><a href="https://discourse.llvm.org/t/llvm-15-0-2-released/65695" rel="external">15.0.2</a></td><td></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.66.0" rel="external">1.66.0</a></td><td><a href="https://releases.llvm.org/15.0.0/docs/ReleaseNotes.html" rel="external">15.0.0</a></td><td></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.64.0" rel="external">1.64.0</a></td><td><a href="https://releases.llvm.org/14.0.0/docs/ReleaseNotes.html">14.0.6</a></td><td></td</tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.62.0" rel="external">1.62.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.63.0" rel="external">1.63.0</a></td><td><a href="https://releases.llvm.org/14.0.5/docs/ReleaseNotes.html" rel="external">14.0.5</a></td><td></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.60.0" rel="external">1.60.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.61.0" rel="external">1.61.0</a></td><td><a href="https://releases.llvm.org/14.0.0/docs/ReleaseNotes.html" rel="external">14.0.0</a></td><td></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.56.0">1.56.0</a> - <a href="https://github.com/rust-lang/rust/releases/tag/1.59.https0">1.59.0</a></td><td><a href="https://releases.llvm.org/13.0.0/docs/ReleaseNotes.html">13.0.0</a></td><td></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.55.0">1.55.0</a></td><td><a href="https://releases.llvm.org/12.0.0/docs/ReleaseNotes.html" rel="external">12.0.1</a></td><td></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.52.0">1.52.0</a> - 1.54.0</td><td><a href="https://releases.llvm.org/12.0.0/docs/ReleaseNotes.html">12.0.0</a></td><td></td></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.47.0">1.47.0</a> - 1.51.0</td><td><a href="https://releases.llvm.org/11.0.0/docs/ReleaseNotes.html">11.0.0</a></td><td></td></tr>
 </table>
 </dd></dl>
 
@@ -258,9 +259,9 @@ In our case we downloaded the following installation files (see <a href="#proj_d
 <pre style="font-size:80%;">
 <a href="https://github.com/Maximus5/ConEmu/releases/tag/v23.07.24" rel="external">ConEmuPack.230724.7z</a>              <i>(  5 MB)</i>
 <a href="http://repo.msys2.org/distrib/x86_64/">msys2-x86_64-20240727.exe</a>         <i>( 86 MB)</i>
-<a href="https://git-scm.com/download/win">PortableGit-2.47.0-64-bit.7z.exe</a>  <i>( 46 MB)</i>
+<a href="https://git-scm.com/download/win">PortableGit-2.47.1-64-bit.7z.exe</a>  <i>( 46 MB)</i>
 <a href="https://www.rust-lang.org/tools/install">rust-init.exe</a>                     <i>(  8 MB)</i>
-<a href="https://code.visualstudio.com/Download#" rel="external">VSCode-win32-x64-1.94.2.zip</a>       <i>(131 MB)</i>
+<a href="https://code.visualstudio.com/Download#" rel="external">VSCode-win32-x64-1.95.3.zip</a>       <i>(131 MB)</i>
 </pre>
 </dd>
 <dd>
@@ -269,7 +270,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/October 2024* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/December 2024* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -281,6 +282,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 [conemu_downloads]: https://github.com/Maximus5/ConEmu/releases
 [conemu_relnotes]: https://conemu.github.io/blog/2023/07/24/Build-230724.html
 [cpp_examples]: https://github.com/michelou/cpp-examples#top
+[dafny_examples]: https://github.com/michelou/dafny-examples#top
 [dart_examples]: https://github.com/michelou/dart-examples#top
 [deno_examples]: https://github.com/michelou/deno-examples#top
 [docker_examples]: https://github.com/michelou/docker-examples#top

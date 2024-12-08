@@ -113,7 +113,7 @@ Command **`rustup update stable`** <sup id="anchor_02">[2](#footnote_02)</sup>  
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2024-10-17, rust version 1.82.0 (f6e511eec 2024-10-15)
+info: latest update on 2024-11-28, rust version 1.83.0 (90b35a623 2024-11-26)
 [...]
 info: downloading component 'rust-docs'
  16.3 MiB /  16.3 MiB (100 %)  11.1 MiB/s in  1s ETA:  0s
@@ -123,7 +123,7 @@ info: downloading component 'rustc'
  62.0 MiB /  62.0 MiB (100 %)  11.1 MiB/s in  5s ETA:  0s
 info: downloading component 'rustfmt'
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.82.0 (f6e511eec 2024-10-15) (from rustc 1.81.0 (eeb90cda1 2024-09-04))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.83.0 (90b35a623 2024-11-26) (from rustc 1.82.0 (f6e511eec 2024-10-15))
 
 info: checking for self-updates
 </pre>
@@ -261,7 +261,7 @@ Installed Commands:
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/October 2024* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/December 2024* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
