@@ -11,6 +11,7 @@
 ## <span id="articles">Articles</span>
 
 - [**fasterthanli**](https://fasterthanli.me/articles) articles :
+  - [Catching up with async Rust](https://fasterthanli.me/articles/catching-up-with-async-rust), December 2024.
   - [Proc macro support in rust-analyzer for nightly rustc versions][article_proc_macro], July 2022.
   - [When rustc explodes][article_explodes], July 2022.
   - [Some mistakes Rust doesn't catch][article_mistakes], February 2022.
@@ -23,6 +24,7 @@
   - [Serverless Rust][article_baumgartner_serverless], December 2021.
   - [Error handling in Rust][article_baumgartner_error], September 2021.
 - [**Red Hat** Developer](https://developers.redhat.com/) articles :
+  - [Improve basic programming safety with Rust lang][article_roy], May 2024.
   - [How to create C binding for a Rust library][article_ge] by Gris Ge, September 2022.
   - [How Rust makes Rayon's data parallelism magical][article_stone_2021] by Josh Stone, April 2021.
   - [Speed up your Python using Rust](https://developers.redhat.com/blog/2017/11/16/speed-python-using-rust#) by Bruno Rocha, November 2017.
@@ -127,6 +129,7 @@
 ## <span id="news">News</span> [**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.83.0](https://blog.rust-lang.org/2024/11/28/Rust-1.83.0.html), November 2024 ([*release notes*](https://doc.rust-lang.org/stable/releases.html#version-1830-2024-11-28)).
   - [Announcing Rust 1.82.0](https://blog.rust-lang.org/2024/10/17/Rust-1.82.0.html), October 2024 ([*release notes*](https://doc.rust-lang.org/nightly/releases.html#version-1820-2024-10-17)).
   - [Announcing Rust 1.81.0](https://blog.rust-lang.org/2024/09/05/Rust-1.81.0.html), September 2024  ([*release notes*](https://doc.rust-lang.org/nightly/releases.html#version-1810-2024-09-05)).
   - [Announcing Rust 1.80.1](https://blog.rust-lang.org/2024/08/08/Rust-1.80.1.html), August 2024 (*[release notes](https://github.com/rust-lang/rust/releases/tag/1.80.1)*).
@@ -245,7 +248,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/December 2024* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/January 2025* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
@@ -260,6 +263,7 @@ version = "12"
 [article_ge]: https://developers.redhat.com/articles/2022/09/05/how-create-c-binding-rust-library
 [article_explodes]: https://fasterthanli.me/articles/when-rustc-explodes
 [article_half_hour]: https://fasterthanli.me/articles/a-half-hour-to-learn-rust
+[article_roy]: https://developers.redhat.com/articles/2024/05/21/improve-basic-programming-safety-rust-lang#
 [blog_hans_macro]: https://www.thorsten-hans.com/weekly-rust-trivia-function-like-macros/
 [blog_hans_patmat]: https://www.thorsten-hans.com/weekly-rust-trivia-pattern-matching/
 [blog_hans_threads]: https://www.thorsten-hans.com/weekly-rust-trivia-share-state-between-threads/
