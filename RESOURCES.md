@@ -211,9 +211,11 @@
 ## <span id="tools">Tools and Frameworks</span> [**&#x25B4;**](#top)
 
 - [Actix](https://github.com/actix/actix) &ndash; an Actor framework for [Rust][rust_lang].
+- [cargo-make](https://sagiegurari.github.io/cargo-make/) &ndash; a Rust task runner and build tool.
 - [cargo-ramdisk](https://github.com/PauMAVA/cargo-ramdisk) &ndash; a RAMdisk for faster [Rust][rust_lang] compilation (*Unix only*).
 - [Clap](https://clap.rs/) &ndash; a fast and modern CLI framework for [Rust][rust_lang].
 - [Clippy](https://github.com/rust-lang/rust-clippy) &ndash; a collection of lints to catch common mistakes and improve your Rust code.
+- [Creusot](https://github.com/creusot-rs/creusot) &ndash; a *deductive* verifier for [Rust][rust_lang] code.
 - [diesel](https://github.com/diesel-rs/diesel) &ndash; a safe, extensible ORM and Query Builder for [Rust][rust_lang]. 
 - [fleet](https://fleet.rs/) &ndash; a build tool which makes your [Rust][rust_lang] builds up to 5x faster.
 - [Fast and safe HTTP for the Rust language](https://hyper.rs/) &ndash; a fast and safe HTTP for [Rust][rust_lang].

@@ -310,16 +310,16 @@ goto :eof
 :compile_deps
 if not exist "%_TARGET_DEPS_DIR%" mkdir "%_TARGET_DEPS_DIR%"
 
-set __URL_RAND_ZIP=https://github.com/rust-random/rand/archive/refs/tags/0.9.0-alpha.2.zip
+set __URL_RAND_ZIP=https://github.com/rust-random/rand/archive/refs/tags/0.9.0-beta.3.zip
 set __URL_RAYON_ZIP=https://github.com/rayon-rs/rayon/archive/refs/tags/v1.10.0.zip
 
-call :download_dep "%__URL_RAND_ZIP%" "%_TARGET_DIR%\rand-0.9.0-alpha.2.zip"
+call :download_dep "%__URL_RAND_ZIP%" "%_TARGET_DIR%\rand-0.9.0-beta.3.zip"
 if not %_EXITCODE%==0 goto :eof
 
 call :download_dep "%__URL_RAYON_ZIP%" "%_TARGET_DIR%\rayon-1.10.0.zip"
 if not %_EXITCODE%==0 goto :eof
 
-call :action_required "%_TARGET_DEPS_DIR%\librand.rlib" "%_TARGET_DIR%\rand-0.9.0-alpha.2.zip"
+call :action_required "%_TARGET_DEPS_DIR%\librand.rlib" "%_TARGET_DIR%\rand-0.9.0-beta.3.zip"
 if %_ACTION_REQUIRED%==1 goto :compile_deps_next
 
 call :action_required "%_TARGET_DEPS_DIR%\librayon.rlib" "%_TARGET_DIR%\rayon-1.10.0.zip"

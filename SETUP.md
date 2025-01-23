@@ -100,7 +100,7 @@ Current installation options:
 %USERPROFILE%\.cargo\bin\rustup.exe
 &nbsp;
 <b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc.exe</a> --version</b>
-rustc 1.80.1 (3f5fd8dd4 2024-08-06)
+rustc 1.84.0 (9fc6b4312 2025-01-07)
 </pre>
 
 ## <span id="update">Installation update</span> [**&#x25B4;**](#top)
@@ -113,7 +113,7 @@ Command **`rustup update stable`** <sup id="anchor_02">[2](#footnote_02)</sup>  
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2024-11-28, rust version 1.83.0 (90b35a623 2024-11-26)
+info: latest update on 2025-01-09, rust version 1.84.0 (9fc6b4312 2025-01-07)
 [...]
 info: downloading component 'rust-docs'
  16.3 MiB /  16.3 MiB (100 %)  11.1 MiB/s in  1s ETA:  0s
@@ -123,7 +123,7 @@ info: downloading component 'rustc'
  62.0 MiB /  62.0 MiB (100 %)  11.1 MiB/s in  5s ETA:  0s
 info: downloading component 'rustfmt'
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.83.0 (90b35a623 2024-11-26) (from rustc 1.82.0 (f6e511eec 2024-10-15))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.84.0 (9fc6b4312 2025-01-07) (from rustc 1.83.0 (90b35a623 2024-11-26))
 
 info: checking for self-updates
 </pre>
@@ -145,11 +145,11 @@ info: checking for self-updates
 > rustfmt-x86_64-pc-windows-msvc
 > </pre>
 
-Command **`rustup component add rustfmt`** installs the formatting tool [`rustfmt`](https://github.com/rust-lang/rustfmt) into the `CARGO_HOME` directory:
+Command **`rustup component add rustfmt`** installs the formatting tool [`rustfmt`](https://github.com/rust-lang/rustfmt) into the [`CARGO_HOME`][cargo_home] directory:
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://linuxcommandlibrary.com/man/rustfmt">%CARGO_HOME%\bin\rustfmt.exe</a> --version</b>
-rustfmt 1.7.0-stable (05147895 2024-07-21)
+rustfmt 1.8.0-stable (9fc6b43126 2025-01-07)
 </pre>
 
 <!--=======================================================================-->
@@ -267,5 +267,6 @@ Installed Commands:
 <!-- link refs -->
 
 [cargo_audit]: https://lib.rs/crates/cargo-audit
+[cargo_home]: https://doc.rust-lang.org/cargo/reference/environment-variables.html
 [rust_lang]: https://www.rust-lang.org/
 [rustc_cli]: https://man.archlinux.org/man/rustc.1.en
