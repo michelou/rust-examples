@@ -113,19 +113,21 @@ Command **`rustup update stable`** <sup id="anchor_02">[2](#footnote_02)</sup>  
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc'
-info: latest update on 2025-03-18, rust version 1.85.1 (4eb161250 2025-03-15)
+info: latest update on 2025-06-26, rust version 1.88.0 (6b00bc388 2025-06-23)
+info: downloading component 'rust-std' for 'x86_64-pc-windows-gnu'
 [...]
-info: downloading component 'rust-docs'
- 16.3 MiB /  16.3 MiB (100 %)  11.1 MiB/s in  1s ETA:  0s
-info: downloading component 'rust-std'
- 19.5 MiB /  19.5 MiB (100 %)  11.5 MiB/s in  1s ETA:  0s
-info: downloading component 'rustc'
- 62.0 MiB /  62.0 MiB (100 %)  11.1 MiB/s in  5s ETA:  0s
-info: downloading component 'rustfmt'
+info: installing component 'rust-docs'
+ 20.1 MiB /  20.1 MiB (100 %)   2.5 MiB/s in 13s
+info: installing component 'rust-std'
+ 20.3 MiB /  20.3 MiB (100 %)   9.6 MiB/s in  2s
+info: installing component 'rustc'
+ 75.7 MiB /  75.7 MiB (100 %)  12.0 MiB/s in  6s
+info: installing component 'rustfmt'
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.85.1 (4eb161250 2025-03-15) (from rustc 1.84.0 (9fc6b4312 2025-01-07))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.88.0 (6b00bc388 2025-06-23) (from rustc 1.85.1 (4eb161250 2025-03-15))
 
-info: checking for self-updates
+info: checking for self-update
+info: downloading self-update
 </pre>
 
 > **:mag_right:** The following command prints an overview of what is installed on our system.
@@ -261,7 +263,7 @@ Installed Commands:
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/March 2025* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/July 2025* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
