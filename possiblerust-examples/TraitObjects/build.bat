@@ -277,7 +277,7 @@ if %_ACTION_REQUIRED%==0 goto :eof
 
 set __SOURCE_FILES=
 set __N=0
-for /f "delims=" %%f in (%_SOURCE_DIR%\*.rs) do (
+for /f "delims=" %%f in ('dir /b /s "%_SOURCE_DIR%\*.rs" 2^>NUL') do (
     set __SOURCE_FILES=!__SOURCE_FILES! "%%f"
     set /a __N+=1
 )
