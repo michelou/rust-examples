@@ -11,6 +11,7 @@
 ## <span id="articles">Articles</span>
 
 - [**fasterthanli**](https://fasterthanli.me/articles) articles :
+- [The promise of Rust](https://fasterthanli.me/articles/the-promise-of-rust), April 2025.
   - [Catching up with async Rust](https://fasterthanli.me/articles/catching-up-with-async-rust), December 2024.
   - [Proc macro support in rust-analyzer for nightly rustc versions][article_proc_macro], July 2022.
   - [When rustc explodes][article_explodes], July 2022.
@@ -129,6 +130,10 @@
 ## <span id="news">News</span> [**&#x25B4;**](#top)
 
 - [Rust Blog](https://blog.rust-lang.org/) by the Rust Team :
+  - [Announcing Rust 1.91.1](https://blog.rust-lang.org/2025/11/10/Rust-1.91.1/), November 2025 ([*release notes*](https://doc.rust-lang.org/stable/releases.html#version-1911-2025-11-10)).
+  - [Announcing Rust 1.91.0](https://blog.rust-lang.org/2025/10/30/Rust-1.91.0/) October 2025 ([*release notes*](https://doc.rust-lang.org/stable/releases.html#version-1910-2025-10-30)).
+  - [Announcing Rust 1.90.0](https://blog.rust-lang.org/2025/09/18/Rust-1.90.0/), September 2025 ([*release notes*](https://doc.rust-lang.org/stable/releases.html#version-1900-2025-09-18)).
+  - [Announcing Rust 1.89.0](https://blog.rust-lang.org/2025/08/07/Rust-1.89.0/), August 2025 ([*release notes*](https://doc.rust-lang.org/stable/releases.html#version-1890-2025-08-07)).
   - [Announcing Rust 1.83.0](https://blog.rust-lang.org/2024/11/28/Rust-1.83.0.html), November 2024 ([*release notes*](https://doc.rust-lang.org/stable/releases.html#version-1830-2024-11-28)).
   - [Announcing Rust 1.82.0](https://blog.rust-lang.org/2024/10/17/Rust-1.82.0.html), October 2024 ([*release notes*](https://doc.rust-lang.org/nightly/releases.html#version-1820-2024-10-17)).
   - [Announcing Rust 1.81.0](https://blog.rust-lang.org/2024/09/05/Rust-1.81.0.html), September 2024  ([*release notes*](https://doc.rust-lang.org/nightly/releases.html#version-1810-2024-09-05)).
@@ -250,7 +255,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/October 2025* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/November 2025* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

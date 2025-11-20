@@ -273,9 +273,9 @@ set _RUST_LINT_OPTS=
 set __RUST_CRATE_OPTS=--crate-name "%_CRATE_NAME%" --crate-type bin
 @rem https://stackoverflow.com/questions/49844681/where-are-modules-installed-by-cargo-stored-in-a-rust-project
 @rem https://crates.io/crates/paste/1.0.15/
-@rem https://github.com/rust-random/rand/releases/tag/0.8.5
+@rem https://github.com/rust-random/rand/releases/tag/0.9.1
 @rem https://github.com/rust-lang/crates.io-index/tree/master/pa/st
-set __RUST_DEPS_OPTS=-L "%_TARGET_DIR%\paste-1.0.15\target\debug" -l paste -L "%_TARGET_DIR%\rand-0.8.5\target\debug" -l rand
+set __RUST_DEPS_OPTS=-L "%_TARGET_DIR%\paste-1.0.15\target\debug" -l paste -L "%_TARGET_DIR%\rand-0.9.1\target\debug" -l rand
 set __RUSTC_OPTS=%_RUST_LINT_OPTS% %__RUST_CRATE_OPTS% --edition %_EDITION% --out-dir "%_TARGET_DIR%" --target "%_TARGET_TRIPLE%" %__RUST_DEPS_OPTS%
 if %_DEBUG%==1 ( set __RUSTC_OPTS=-g %__RUSTC_OPTS%
 ) else ( set __RUSTC_OPTS=-Clink-arg=/DEBUG:NONE %__RUSTC_OPTS%

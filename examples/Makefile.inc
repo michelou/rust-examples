@@ -12,6 +12,7 @@ RUSTC      = $(subst \,/,$(CARGO_HOME))/bin/rustc.exe
 RUSTDOC    = $(subst \,/,$(CARGO_HOME))/bin/rustdoc.exe
 LOCAL_REPO = $(subst \,/,$(USERPROFILE))/.m2/repository
 PSEP       = ;
+TARGET_EXT = .exe
 ## $(MSYS_HOME)\usr\bin\{cp.exe, make.exe, wget.exe}
 CP         = /usr/bin/cp.exe
 ECHO       = /usr/bin/echo.exe
@@ -27,6 +28,7 @@ RUSTC      = $(CARGO_HOME)/bin/rustc
 RUSTDOC    = $(CARGO_HOME)/bin/rustdoc
 LOCAL_REPO = $(HOME)/.m2/repository
 PSEP       = :
+TARGET_EXT =
 CP         = cp
 ECHO       = echo
 FIND       = find

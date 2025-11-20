@@ -17,20 +17,20 @@ TARGET_DOCS_DIR = $(TARGET_DIR)/docs
 ## main rules
 
 SOURCES = $(wildcard $(SOURCE_DIR)/main/rust/main.rs)
-TARGET  = $(TARGET_EXE_DIR)/$(PROJECT_NAME)$(TARGET_EXT)
+TARGET  = $(TARGET_DIR)/$(PROJECT_NAME)$(TARGET_EXT)
 
 ## General format: <arch>-<vendor>-<sys>-<abi>
 ## rustc --print target-list
 TARGET_TRIPLE=x86_64-pc-windows-msvc
 
-CRATE_NAME=main
+CRATE_NAME=$(PROJECT_NAME)
 EDITION=2018
 
 ## Lint levels: -A (allow), -W (warning), -D (deny), -F (forbid)
 ## See https://doc.rust-lang.org/rustc/lints/levels.html
 RUST_LINT_OPTS=
 RUST_CRATE_OPTS=--crate-name "$(CRATE_NAME)" --crate-type bin
-RUST_DEPS_OPTS=-L "$(TARGET_DIR)/paste-1.0.12/target/debug" -L "$(TARGET_DIR)/rand-0.8.5/target/debug"
+RUST_DEPS_OPTS=
 
 RUSTC_OPTS=$(RUST_LINT_OPTS) $(RUST_CRATE_OPTS) --edition $(EDITION) --out-dir "$(TARGET_DIR)" --target "$(TARGET_TRIPLE)" $(RUST_DEPS_OPTS)
 
@@ -51,7 +51,7 @@ run: build
 	$(TARGET)
 
 help:
-	@$(ECHO) "Usage: make all|build|clean|doc|help|lint|run"
+	@$(ECHO) "Usage: make all|build|clean|doc|help|run"
 	@$(ECHO) ""
 	@$(ECHO) "  Subcommands:"
 	@$(ECHO) "    all    alias for build"

@@ -9,7 +9,7 @@ pub struct Die {
 
 impl Die {
     pub fn roll(self) -> u8 {
-        let mut rng = rand::thread_rng();
-        rng.gen_range(1..=self.faces)
+        let mut rng = rand::rng();
+        rng.random_range(1..=self.faces)
     }
 }

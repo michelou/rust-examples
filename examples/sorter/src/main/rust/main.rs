@@ -1,12 +1,11 @@
 extern crate rand;
 extern crate rayon;
 
-use rand::Rng;
+//use rand::Rng;
 use rayon::prelude::*;
 
 fn main() {
-    let rng = rand::thread_rng();
-    //let mut numbers: Vec<i8> = rng.gen_iter().take(10).collect();
+    let rng = rand::rng();
     let mut numbers: Vec<i8> = rng.gen_iter().take(10).collect();
     println!("random numbers: {:?}", numbers);
 
