@@ -38,9 +38,11 @@ set _DEBUG_LABEL=%_NORMAL_BG_CYAN%[%_BASENAME%]%_RESET%
 set _ERROR_LABEL=%_STRONG_FG_RED%Error%_RESET%:
 set _WARNING_LABEL=%_STRONG_FG_YELLOW%Warning%_RESET%:
 
+for /f "delims=" %%f in ("%~dp0.") do set "_LIB_DIR=%%~dpflib"
+
 set "_SOURCE_DIR=%_ROOT_DIR%src"
 set "_TARGET_DIR=%_ROOT_DIR%target"
-set "_TARGET_DEPS_DIR=%_TARGET_DIR%\deps"
+set "_TARGET_DEPS_DIR=%_TARGET_DIR%\deps\debug"
 set "_TARGET_DOCS_DIR=%_TARGET_DIR%\docs"
 
 if not exist "%CARGO_HOME%\bin\rustc.exe" (
@@ -172,7 +174,7 @@ goto args_loop
 set _STDOUT_REDIRECT=1^>NUL
 if %_DEBUG%==1 set _STDOUT_REDIRECT=1^>^&2
 
-set _CRATE_NAME=main
+set _CRATE_NAME=sorter
 
 @rem General format: <arch>-<vendor>-<sys>-<abi> where
 @rem arch   = x86_64, i686, arm, mips, etc.
@@ -237,6 +239,7 @@ goto :eof
 
 :clean
 call :rmdir "%_TARGET_DIR%"
+call :rmdir "%_ROOT_DIR%build"
 if exist "%_ROOT_DIR%\Cargo.lock" del "%_ROOT_DIR%\Cargo.lock" 1>NUL
 goto :eof
 
@@ -308,36 +311,43 @@ if %_TARGET%==gnu set "PATH=%__PATH%"
 goto :eof
 
 :compile_deps
+if not exist "%_LIB_DIR%" mkdir "%_LIB_DIR%"
 if not exist "%_TARGET_DEPS_DIR%" mkdir "%_TARGET_DEPS_DIR%"
 
-set __URL_RAND_ZIP=https://github.com/rust-random/rand/archive/refs/tags/0.9.0-beta.3.zip
-set __URL_RAYON_ZIP=https://github.com/rayon-rs/rayon/archive/refs/tags/v1.10.0.zip
+set __RAND_VERSION=0.9.2
+set __RAYON_VERSION=1.10.0
 
-call :download_dep "%__URL_RAND_ZIP%" "%_TARGET_DIR%\rand-0.9.0-beta.3.zip"
+set __URL_RAND_ZIP=https://github.com/rust-random/rand/archive/refs/tags/%__RAND_VERSION%.zip
+set __URL_RAYON_ZIP=https://github.com/rayon-rs/rayon/archive/refs/tags/v%__RAYON_VERSION%.zip
+
+call :download_dep "%__URL_RAND_ZIP%" "%_LIB_DIR%\rand-%__RAND_VERSION%.zip"
 if not %_EXITCODE%==0 goto :eof
 
-call :download_dep "%__URL_RAYON_ZIP%" "%_TARGET_DIR%\rayon-1.10.0.zip"
+call :download_dep "%__URL_RAYON_ZIP%" "%_LIB_DIR%\rayon-%__RAYON_VERSION%.zip"
 if not %_EXITCODE%==0 goto :eof
 
-call :action_required "%_TARGET_DEPS_DIR%\librand.rlib" "%_TARGET_DIR%\rand-0.9.0-beta.3.zip"
+call :action_required "%_TARGET_DEPS_DIR%\librand.rlib" "%_LIB_DIR%\rand-%__RAND_VERSION%.zip"
 if %_ACTION_REQUIRED%==1 goto :compile_deps_next
 
-call :action_required "%_TARGET_DEPS_DIR%\librayon.rlib" "%_TARGET_DIR%\rayon-1.10.0.zip"
+call :action_required "%_TARGET_DEPS_DIR%\librayon.rlib" "%_LIB_DIR%\rayon-%__RAYON_VERSION%.zip"
 if %_ACTION_REQUIRED%==0 goto :eof
 
 :compile_deps_next
 set __UNZIP_OPTS=-o -q
 
-for /f "delims=" %%f in ('dir /s /b "%_TARGET_DIR%\*.zip"') do (
-    if %_DEBUG%==1 echo %_DEBUG_LABEL% "%_UNZIP_CMD%" %__UNZIP_OPTS% "%%f" -d "%_TARGET_DIR%" 1>&2
-    call "%_UNZIP_CMD%" %__UNZIP_OPTS% "%%f" -d "%_TARGET_DIR%"
-    pushd "%_TARGET_DIR%\%%~nf"
-    if %_DEBUG%==1 ( echo %_DEBUG_LABEL% "!_CARGO_CMD:%USERPROFILE%=%%USERPROFILE%%!" -q build ^("!_TARGET_DIR:%_ROOT_DIR%=!\%%~nf"^) 1>&2
-    ) else if %_VERBOSE%==1 ( echo Build library dependency in directory "!_TARGET_DIR:%_ROOT_DIR%=!\%%~nf" 1>&2
+for /f "delims=" %%f in ('dir /s /b "%_LIB_DIR%\*.zip"') do (
+    set "__ZIP_FILE=%%f"
+    if not exist "!__ZIP_FILE:.zip=!" (
+        if %_DEBUG%==1 echo %_DEBUG_LABEL% "%_UNZIP_CMD%" %__UNZIP_OPTS% "%%f" -d "%_LIB_DIR%" 1>&2
+        call "%_UNZIP_CMD%" %__UNZIP_OPTS% "%%f" -d "%_LIB_DIR%"
+        pushd "%_LIB_DIR%\%%~nf"
+        if %_DEBUG%==1 ( echo %_DEBUG_LABEL% "!_CARGO_CMD:%USERPROFILE%=%%USERPROFILE%%!" -q build ^("!_LIB_DIR:%_ROOT_DIR%=!\%%~nf"^) 1>&2
+        ) else if %_VERBOSE%==1 ( echo Build library dependency in directory "!_LIB_DIR:%_ROOT_DIR%=!\%%~nf" 1>&2
+        )
+        call "%_CARGO_CMD%" -q build 2>NUL
+        popd
     )
-    call "%_CARGO_CMD%" -q build 2>NUL
-    popd
-    for /f "delims=" %%g in ('dir /s /b "%_TARGET_DIR%\%%~nf\*.rlib" "%_TARGET_DIR%\%%~nf\*.dll"') do (
+    for /f "delims=" %%g in ('dir /s /b "%_LIB_DIR%\%%~nf\*.rlib" "%_LIB_DIR%\%%~nf\*.dll"') do (
         for /f "tokens=1,* delims=-" %%m in ("%%~ng") do set "__FILE_NAME=%%m%%~xg"
         @rem if %_DEBUG%==1 echo %_DEBUG_LABEL% copy "%%g" "%_TARGET_DEPS_DIR%\!__FILE_NAME!" 1>&2
         copy "%%g" "%_TARGET_DEPS_DIR%\!__FILE_NAME!" 1>NUL

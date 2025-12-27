@@ -23,7 +23,7 @@ This project depends on the following external software for the **Microsoft Wind
 - [GCC Front-End for Rust 1.75](https://rust-gcc.github.io/) <sup id="anchor_01"><a href="#footnote_01">1</a></sup>
 -->
 - [Git 2.52][git_downloads] ([*release notes*][git_relnotes])
-- [Rust 1.91][rust_downloads] <sup id="anchor_02"><a href="#footnote_02">2</a></sup> ([*release notes*][rust_relnotes])
+- [Rust 1.92][rust_downloads] <sup id="anchor_02"><a href="#footnote_02">2</a></sup> ([*release notes*][rust_relnotes])
 
 <!--
 See changelogs on https://releases.rs/
@@ -47,17 +47,18 @@ Rust 1.88.0 ->
 Rust 1.85.0 -> 
 Rust 1.90.0 -> 
 Rust 1.91.0 -> 2025-10-28
+Rust 1.92.0 -> 2025-12-
 -->
 
 Optionally one may also install the following software:
 
 - [ConEmu 2023][conemu_downloads] ([*release notes*][conemu_relnotes])
-- [Visual Studio Code 1.105][vscode_downloads] ([*release notes*][vscode_relnotes])
+- [Visual Studio Code 1.107][vscode_downloads] ([*release notes*][vscode_relnotes])
 
 > **&#9755;** ***Installation policy***<br/>
 > When possible we install software from a [Zip archive][zip_archive] rather than via a Windows installer. In our case we defined **`C:\opt\`** as the installation directory for optional software tools (*similar to* the [**`/opt/`**][linux_opt] directory on Unix).
 
-For instance our development environment looks as follows (*November 2025*) <sup id="anchor_03">[3](#footnote_03)</sup>:
+For instance our development environment looks as follows (*December 2025*) <sup id="anchor_03">[3](#footnote_03)</sup>:
 
 <pre style="font-size:80%;">
 C:\opt\ConEmu\          <i>( 26 MB)</i>
@@ -143,7 +144,7 @@ We execute command [**`setenv.bat`**](setenv.bat) once to setup our development 
 Tool versions:
    cargo 1.91.1, rustc 1.91.1, rustfmt <a href="https://github.com/rust-lang/rustfmt/blob/master/CHANGELOG.md" rel="external">1.8.0-stable</a>, rustup 1.28.2
    pelook v1.73, make 4.4.1,
-   git 2.51.2, diff 3.12, bash 5.2.37(1)
+   git 2.52.0, diff 3.12, bash 5.2.37(1)
 &nbsp;
 <b>&gt; <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/where_1">where</a> cargo git sh</b>
 <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%USERPROFILE%</a>\.cargo\bin\cargo.exe
@@ -204,11 +205,11 @@ Path associations:
 resolving dependencies...
 looking for conflicting packages...
 &nbsp;
-Packages (1) mingw-w64-clang-x86_64-rust-1.91.0-1
+Packages (1) mingw-w64-clang-x86_64-rust-1.92.0-1
 &nbsp;
-Total Download Size:    63.78 MiB
-Total Installed Size:  252.23 MiB
-Net Upgrade Size:        3.12 MiB
+Total Download Size:    63.75 MiB
+Total Installed Size:  253.31 MiB
+Net Upgrade Size:        1.11 MiB
 &nbsp;
 :: Proceed with installation? [Y/n] y
 [...]
@@ -217,7 +218,7 @@ Net Upgrade Size:        3.12 MiB
 c:\opt\msys64\clang64\bin\rustc.exe
 &nbsp;
 <b>&gt; %MSYS_HOME%\clang64\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html" rel="external">rustc.exe</a> --version</b>
-rustc 1.91.0 (f8297e351 2025-10-28) (Rev3, Built by MSYS2 project)
+rustc 1.92.0 (ded5c06cf 2025-12-08) (Rev1, Built by MSYS2 project)
 </pre>
 </dd></dl>
 
@@ -229,13 +230,14 @@ rustc 1.91.0 (f8297e351 2025-10-28) (Rev3, Built by MSYS2 project)
 <dd>
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://en.wikipedia.org/wiki/Environment_variable#Default_values">%CARGO_HOME%</a>\bin\<a href="https://doc.rust-lang.org/rustc/command-line-arguments.html">rustc</a> --version --verbose | <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr">findstr</a> /b "rustc LLVM"</b>
-rustc 1.91.1 (ed61e7d7e 2025-11-07)
+rustc 1.92.0 (ded5c06cf 2025-12-08)
 LLVM version: 21.1.2
 </pre>
 </dd>
 <dd>
 <table>
 <tr><th>Rustc Version</th><th>LLVM Version</th><th>Notes</th></tr>
+<tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.92.0">1.92.0</a></td><td><a href="https://github.com/rust-lang/rust/pull/143684">21.1.2</a></td><td><a href="https://github.com/rust-lang/rust/pull/145071">LLVM 20+</a></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.91.1">1.91.1</a></td><td><a href="https://github.com/rust-lang/rust/pull/143684">21.1.2</a></td><td></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.91.0">1.91.0</a></td><td><a href="https://github.com/rust-lang/rust/pull/143684">21.1.0</a></td><td></td></tr>
 <tr><td><a href="https://github.com/rust-lang/rust/releases/tag/1.90.0">1.90.0</a></td><td>20.1.8</td><td></td></tr>
@@ -270,7 +272,7 @@ In our case we downloaded the following installation files (see <a href="#proj_d
 <a href="http://repo.msys2.org/distrib/x86_64/">msys2-x86_64-20240727.exe</a>         <i>( 86 MB)</i>
 <a href="https://git-scm.com/download/win">PortableGit-2.52.0-64-bit.7z.exe</a>  <i>( 46 MB)</i>
 <a href="https://www.rust-lang.org/tools/install">rust-init.exe</a>                     <i>(  8 MB)</i>
-<a href="https://code.visualstudio.com/Download#" rel="external">VSCode-win32-x64-1.106.0.zip</a>      <i>(131 MB)</i>
+<a href="https://code.visualstudio.com/Download#" rel="external">VSCode-win32-x64-1.107.1.zip</a>      <i>(131 MB)</i>
 </pre>
 </dd>
 <dd>
@@ -279,7 +281,7 @@ Once the <a href="https://github.com/rust-lang/rustup/blob/master/README.md"><b>
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/November 2025* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/December 2025* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

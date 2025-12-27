@@ -9,5 +9,5 @@ publish = false
 [dependencies]
 
 [[bin]]
-name = "main"
+name = "factorials"
 path = "src/main/rust/main.rs"

@@ -11,13 +11,14 @@
 ## <span id="articles">Articles</span>
 
 - [**fasterthanli**](https://fasterthanli.me/articles) articles :
-- [The promise of Rust](https://fasterthanli.me/articles/the-promise-of-rust), April 2025.
+  - [The promise of Rust](https://fasterthanli.me/articles/the-promise-of-rust), April 2025.
   - [Catching up with async Rust](https://fasterthanli.me/articles/catching-up-with-async-rust), December 2024.
   - [Proc macro support in rust-analyzer for nightly rustc versions][article_proc_macro], July 2022.
   - [When rustc explodes][article_explodes], July 2022.
   - [Some mistakes Rust doesn't catch][article_mistakes], February 2022.
   - [Why is my Rust build so slow?][article_slow_build], December 2021.
   - [A half-hour to learn Rust][article_half_hour], January 2020.
+  - [Rust modules vs files](https://fasterthanli.me/articles/rust-modules-vs-files), July 2019.
 - [**fettblog.eu**](https://fettblog.eu/articles) articles by Stefan Baumgartner :
   - [Refactoring in Rust: Introducing Traits][article_baumgartner_traits], March 2023.
   - [Rust: Tiny little traits](https://fettblog.eu/rust-tiny-little-traits/), April 2022.
@@ -229,7 +230,8 @@
 - [redb](https://github.com/cberner/redb) &ndash; an embedded key-value database in pure [Rust][rust_lang]. 
 - [rust.analyzer](https://rust-analyzer.github.io/) &ndash; an implementation of [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) for the [Rust][rust_lang] programming language.
 - [Rust for Windows](https://github.com/microsoft/windows-rs) &ndash; Rust bindings for the Windows API. 
-
+- [Rust Playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2024)
+.
 ## <span id="videos">Videos</span>
 
 - [Rust at Microsoft][youtube_levick] by Ryan Levick, May 2020 (0h44).
@@ -255,7 +257,7 @@ version = "12"
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/November 2025* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/December 2025* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

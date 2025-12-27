@@ -32,7 +32,7 @@ RUST_LINT_OPTS=
 RUST_CRATE_OPTS=--crate-name "$(CRATE_NAME)" --crate-type bin
 RUST_DEPS_OPTS=
 
-RUSTC_OPTS=$(RUST_LINT_OPTS) $(RUST_CRATE_OPTS) --edition $(EDITION) --out-dir "$(TARGET_DIR)" --target "$(TARGET_TRIPLE)" $(RUST_DEPS_OPTS)
+RUSTC_OPTS=$(RUST_LINT_OPTS) $(RUST_CRATE_OPTS) --edition $(EDITION) --out-dir "$(TARGET_DIR)" --target "$(TARGET_TRIPLE)"
 
 all: build
 
@@ -40,7 +40,7 @@ build: $(TARGET)
 
 $(TARGET): $(SOURCES)
 	[ -d "$(TARGET_DIR)" ] || "$(MKDIR)" -p "$(TARGET_DIR)"
-	"$(RUSTC)" $(RUSTC_OPTS) $(SOURCES)
+	"$(RUSTC)" $(RUSTC_OPTS) $(SOURCES) $(RUST_DEPS_OPTS)
 
 clean:
 	"$(RM)" -rf "$(TARGET_DIR)"

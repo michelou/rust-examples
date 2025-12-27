@@ -19,7 +19,7 @@ Command **`rustup-init --help`** displays the available options:
 
 <pre style="font-size:80%;">
 <b>&gt; c:\opt\rust\rustup-init</a> --help</b>
-rustup-init 1.27.1 (54dd3d00f 2024-04-24)
+rustup-init 1.28.2 (e4f3ad6f8 2025-04-28)
 The installer for rustup
 
 USAGE:
@@ -113,7 +113,7 @@ Command **`rustup update stable`** <sup id="anchor_02">[2](#footnote_02)</sup>  
 &nbsp;
 <b>&gt; <a href="https://rust-lang.github.io/rustup/basics.html" rel="external">rustup</a> update stable</b>
 info: syncing channel updates for 'stable-x86_64-pc-windows-msvc's
-info: latest update on 2025-11-10, rust version 1.91.1 (ed61e7d7e 2025-11-07)
+info: latest update on 2025-12-11, rust version 1.92.0 (ded5c06cf 2025-12-08)
 info: downloading component 'rust-std' for 'x86_64-pc-windows-gnu'
 [...]
 info: downloading component 'rust-docs'
@@ -124,7 +124,7 @@ info: downloading component 'rustc'
  68.6 MiB /  68.6 MiB (100 %)   5.7 MiB/s in 12s
 info: downloading component 'rustfmt'
 
-  stable-x86_64-pc-windows-msvc updated - rustc 1.91.1 (ed61e7d7e 2025-11-07) (from rustc 1.90.0 (1159e78c4 2025-09-14))
+  stable-x86_64-pc-windows-msvc updated - rustc 1.92.0 (ded5c06cf 2025-12-08) (from rustc 1.91.1 (ed61e7d7e 2025-11-07))
 
 info: checking for self-update
 info: downloading self-update
@@ -151,7 +151,7 @@ Command **`rustup component add rustfmt`** installs the formatting tool [`rustfm
 
 <pre style="font-size:80%;">
 <b>&gt; <a href="https://linuxcommandlibrary.com/man/rustfmt">%CARGO_HOME%\bin\rustfmt.exe</a> --version</b>
-rustfmt 1.8.0-stable (9fc6b43126 2025-01-07)
+rustfmt 1.8.0-stable (ded5c06cf2 2025-12-08)
 </pre>
 
 <!--=======================================================================-->
@@ -263,7 +263,7 @@ Installed Commands:
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/November 2025* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/December 2025* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->

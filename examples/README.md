@@ -9,6 +9,12 @@
   </tr>
 </table>
 
+> **Note:** Dependency on CRATE libraries:
+> | Package | Description | Version |
+> |:--------|:------------|:-------:|
+> | [`rand`](https://docs.rs/crate/rand/) | Random number generators | [0.9.2](https://docs.rs/crate/rand/latest/source/CHANGELOG.md) |
+> | [`rand_distr`](https://docs.rs/crate/rand_distr/) | Sampling from random number distributions | [0.5.1](https://github.com/rust-random/rand_distr/blob/master/CHANGELOG.md) |
+
 ### <span id="diceroller">`diceroller` Example</span>
 
 Example [`diceroller`](./diceroller/) is presented by Nicolas Fränkel in his blog post ["diceroller, a sample Rust project"](https://blog.frankel.ch/start-rust/8/) (July 2021). The project has the following directory structure :
@@ -176,7 +182,7 @@ sorted numbers: [-93, -92, -79, -72, -18, 35, 77, 94, 99, 123]
 
 ***
 
-*[mics](https://lampwww.epfl.ch/~michelou/)/November 2025* [**&#9650;**](#top)
+*[mics](https://lampwww.epfl.ch/~michelou/)/December 2025* [**&#9650;**](#top)
 <span id="bottom">&nbsp;</span>
 
 <!-- link refs -->
